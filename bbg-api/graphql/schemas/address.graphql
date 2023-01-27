@@ -1,0 +1,58 @@
+"""
+type Address @node(resolver: "App\\Http\\Controllers\\IndexController@byId") {
+"""
+
+input OldAddressInput{
+    address: String! @rules(apply: ["min:1","max:256","string"])
+    address2: String @rules(apply: ["min:1","max:256","string"])
+    city: String!  @rules(apply: ["required","min:1","max:20","string"])
+    state: String! @rules(apply: ["required","min:1","max:20","string"])
+    zip_postal: String! @rules(apply: ["required","min:1","max:10","string"])
+}
+
+"""Reference = https://lighthouse-php.com/master/eloquent/nested-mutations.html#hasone """
+
+input CreateAddressesInput {
+    address: String! @rules(apply: ["min:1","max:256","string"])
+    address2: String @rules(apply: ["min:1","max:256","string"])
+    city: String!  @rules(apply: ["required","min:1","max:20","string"])
+    state: String! @rules(apply: ["required","min:1","max:20","string"])
+    zip_postal: String! @rules(apply: ["required","min:1","max:10","string"])
+}
+
+input UpdateAddressesInput{
+    id: ID!  @rules(apply: ["required","exists:addresses,id"])
+    address: String! @rules(apply: ["min:1","max:256","string"])
+    address2: String @rules(apply: ["min:1","max:256","string"])
+    city: String!  @rules(apply: ["required","min:1","max:20","string"])
+    state: String! @rules(apply: ["required","min:1","max:20","string"])
+    zip_postal: String! @rules(apply: ["required","min:1","max:10","string"])
+}
+
+
+input AddressInputRelation {
+    connect: ID
+    create: CreateAddressesInput
+    update: UpdateAddressesInput
+    disconnect: ID
+    delete: ID
+}
+
+input AddressInputHasOne {
+    create: CreateAddressesInput
+    update: UpdateAddressesInput
+    delete: ID
+    connect: ID
+}
+
+type Address {
+    id: ID
+    address: String
+    address2: String
+    city: String
+    state: State @hasOne
+    zip_postal: String
+    lot_number: String
+    created_at: DateTime
+    updated_at: DateTime
+}

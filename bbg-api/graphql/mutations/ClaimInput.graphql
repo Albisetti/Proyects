@@ -1,0 +1,98 @@
+"""TODO: force rebate to be double and not just float"""
+
+input ClaimInput {
+
+    is_template: Boolean @rules(apply: ["sometimes"])
+    claim_type: ClaimType @rules(apply: ["sometimes"])
+    name: String
+    status: ClaimStatus @rules(apply: ["sometimes"])
+    claim_start_date: DateTimeUtc
+    claim_end_date: DateTimeUtc
+    total_payment_rebate: Float """Not in factory/product claim"""
+    report_total: Float
+
+    program: ProgramBelongsToCreate
+    claim_template: ClaimTemplateRelation
+
+    rebateReports: ClaimRebateReportsRelation
+    volumeClaimsBuilderRebates: volumeClaimsBuilderRebatesRelation
+
+    duePayment: ClaimHasOneRelation
+}
+
+input CreateClaimTemplateInput{
+    organization_id: Int @rules(apply: ["required","exists:organizations,id"])
+    program_id: Int @rules(apply: ["required","exists:programs,id"])
+    claim_type: ClaimType
+}
+
+input UpdateClaimInput{
+    id: ID
+    input: ClaimInput
+}
+
+input ClaimsInputRelation{
+    update: [UpdateClaimInput]
+    create: [ClaimInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input ClaimsInputRelationConnect{
+    connect: ID
+    disconnect: ID
+}
+
+input ClaimHouseInput {
+    house_id:Int @rules(apply: ["required","exists:houses,id"])
+    note: String
+    ClaimProducts: [ClaimProductInput]
+}
+
+input ClaimProductInput {
+    note: String
+    quantity: Int
+    product_id: Int @rules(apply: ["required","exists:products,id"])
+}
+
+input ClaimRebateReportsRelation {
+    syncWithoutDetaching:[ClaimRebateReportsRelationInput]
+    """Make sure that it works"""
+    disconnect: [ ID ]  @rules(apply: ["exists:rebateReports_houses_products,id"])
+}
+
+input ClaimRebateReportsRelationInput {
+    id: ID @rules(apply: ["exists:rebateReports_houses_products,id"])
+
+    rebate_earned: Float
+    rebate_adjusted: Float
+    note: String
+
+    created_by: Int
+    updated_by: Int
+}
+
+input ClaimTemplateRelation {
+    connect: ClaimTemplateRelationInput
+}
+
+input ClaimTemplateRelationInput {
+    claim_template_product_type: claim_template_product_type @rename(attribute: "type")
+    id: ID
+}
+
+input volumeClaimsBuilderRebatesRelation {
+    syncWithoutDetaching:[volumeClaimsBuilderRebatesRelationInput]
+    """Make sure that it works"""
+    disconnect: [ ID ]  @rules(apply: ["exists:organizations,id"])
+}
+
+input volumeClaimsBuilderRebatesRelationInput {
+    id: ID @rules(apply: ["exists:organizations,id"])
+
+    rebate_earned: Float
+    rebate_adjusted: Float
+    note: String
+}

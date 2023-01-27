@@ -1,0 +1,27 @@
+:root {
+  --padding: 20px;
+  --paddingSm: 35px;
+  --paddingLg: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container-x {
+  @apply px-[var(--padding)] sm:px-[var(--paddingSm)] lg:px-[var(--paddingLg)] max-w-[calc(1270px+(2*calc(var(--paddingLg))))] mx-auto;
+}
+
+.container-x-full {
+  @apply max-w-screen-lg mx-auto;
+}
+
+
+.container-x-timeline {
+  @apply sm:px-[var(--paddingSm)] lg:px-[var(--paddingLg)] max-w-[calc(1270px+(2*calc(var(--paddingLg))))] mx-auto;
+}
+
+.component-spacing {
+  @apply py-[70px]
+}
+

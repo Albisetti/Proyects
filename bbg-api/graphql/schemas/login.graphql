@@ -1,0 +1,26 @@
+union UserResult = User | UserNotFoundError
+
+type UserNotFoundError {
+    message: String!
+}
+
+interface Message {
+    status: Int!
+    message: String!
+}
+type Success implements Message {
+    status: Int!
+    message: String!
+}
+
+type Error implements Message{
+    status: Int!
+    message: String!
+}
+
+type UserLoginResponse {
+    user: User
+    error: Boolean
+    message: String
+    token: String
+}

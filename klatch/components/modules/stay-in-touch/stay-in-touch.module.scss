@@ -1,0 +1,108 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.stayInTouchWrapper {
+  display: flex;
+  background-color: $white;
+  flex-direction: column;
+  @media (min-width: $desktop) {
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0 vwDesktop(40);
+  }
+  .leftWrapper {
+    @apply relative;
+    padding: vwMobile(40) vwMobile(30) vwMobile(40) vwMobile(30);
+    @media (min-width: $desktop) {
+    padding: vwDesktop(132) vwDesktop(65) vwDesktop(132) vwDesktop(120);
+    }
+    .leftWhiteBox {
+      @apply bg-extraLightGray relative flex flex-col items-center;
+      z-index: 2;
+      width: vwMobile(280);
+      height: vwMobile(177);
+      border-radius: vwMobile(20);
+      box-shadow: vwMobile(-8) vwMobile(8) vwMobile(8) vwMobile(-4)rgba(85, 87, 90, 0.3);
+      @media (min-width: $desktop) {
+      width: vwDesktop(489);
+      height: vwDesktop(308);
+      border-radius: vwDesktop(20);
+      box-shadow: vwDesktop(-8) vwDesktop(8) vwDesktop(8) vwDesktop(-4)rgba(85, 87, 90, 0.3);
+      }
+      .logo {
+        max-width: vwMobile(200);
+        margin-top: vwMobile(20);
+        @media (min-width: $desktop) {
+        max-width: vwDesktop(261);
+        margin-top: vwDesktop(40);
+        }
+      }
+      .leftTitle {
+        @apply font-title text-fontGray;
+        font-size: vwMobile(30);
+        line-height: vwMobile(25);
+        margin-top: vwMobile(10);
+        @media (min-width: $desktop) {
+        font-size: vwDesktop(83.81);
+        line-height: vwDesktop(77.32);
+        margin-top: vwDesktop(10);
+        }
+      }
+      .leftCTAWrapper {
+        width: 100%;
+        max-width: vwMobile(205);
+        @media (min-width: $desktop) {
+        max-width: vwDesktop(305);
+        }
+        .buttonWrapper {
+          margin-top: vwMobile(25);
+          padding: vwMobile(8) 0;
+          border-width: vwMobile(2);
+          border-style: solid;
+          @media (min-width: $desktop) {
+          margin-top: vwDesktop(45);
+          border-width: vwDesktop(2);
+          padding: vwDesktop(8) 0;
+          }
+          @apply flex  justify-center items-center;
+        }
+      }
+    }
+    .leftBlueBox {
+      @apply bg-blue absolute top-[50%] translate-y-[-50%] rotate-[8deg];
+      z-index: 1;
+      width: vwMobile(280);
+      height: vwMobile(177);
+      border-radius: vwMobile(20);
+      box-shadow: vwMobile(-8) vwMobile(8) vwMobile(8) vwMobile(-4)rgba(85, 87, 90, 0.3);
+      @media (min-width: $desktop) {
+      width: vwDesktop(489);
+      height: vwDesktop(306);
+      border-radius: vwDesktop(20);
+      box-shadow: vwDesktop(-8) vwDesktop(8) vwDesktop(8) vwDesktop(-4)
+        rgba(85, 87, 90, 0.2);
+      }
+    }
+    .leftGreenBox {
+      @apply bg-green absolute top-[50%] translate-y-[-50%] rotate-[-8deg];
+      width: vwMobile(280);
+      height: vwMobile(177);
+      border-radius: vwMobile(20);
+      box-shadow: vwMobile(-8) vwMobile(8) vwMobile(8) vwMobile(-4)rgba(85, 87, 90, 0.2);
+      z-index: 1;
+      @media (min-width: $desktop) {
+      width: vwDesktop(489);
+      height: vwDesktop(306);
+      border-radius: vwDesktop(20);
+      box-shadow: vwDesktop(-8) vwDesktop(8) vwDesktop(8) vwDesktop(-4)
+        rgba(85, 87, 90, 0.2);
+      }
+    }
+  }
+  .rightWrapper {
+    width: 100%;
+    @apply flex flex-col items-center justify-center;
+  }
+}

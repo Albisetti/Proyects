@@ -1,0 +1,96 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.wrapper {
+  @apply bg-white relative;
+  padding: 0;
+
+  @media (min-width: $desktop) {
+    padding: 0 vwDesktop(40);
+  }
+}
+
+.content {
+  @apply flex flex-col items-center;
+  padding: 0 vwMobile(10);
+
+  @media (min-width: $desktop) {
+    padding: 0 vwDesktop(115);
+  }
+}
+
+.heading {
+  @media (min-width: $desktop) {
+    padding-top: vwDesktop(60);
+  }
+}
+
+.orderOnlineButtonMobile {
+  @apply text-center;
+  margin-top: vwMobile(20);
+
+  & > span {
+    @apply block;
+    padding: vwMobile(8) vwMobile(80);
+    font-size: vwMobile(16);
+    line-height: 1;
+  }
+}
+
+.locationGrid {
+  @apply grid grid-cols-2 w-full;
+  margin-top: vwMobile(20);
+  margin-bottom: vwMobile(20);
+  column-gap: vwMobile(10);
+
+  @media (min-width: $desktop) {
+    @apply grid-cols-4;
+    margin-top: vwDesktop(130);
+    margin-bottom: vwDesktop(65);
+    column-gap: vwDesktop(44);
+  }
+}
+
+.imageTopRight {
+  @apply absolute h-auto rotate-[30deg] hidden;
+
+  @media (min-width: $desktop) {
+    @apply block;
+    width: vwDesktop(205);
+    top: vwDesktop(90);
+    right: vwDesktop(30);
+  }
+}
+
+.imageBottomRight {
+  @apply absolute h-auto hidden;
+
+  @media (min-width: $desktop) {
+    @apply block;
+    width: vwDesktop(490);
+    bottom: vwDesktop(60);
+    right: vwDesktop(-40);
+  }
+}
+
+.imageBottomRightMobile {
+  @apply absolute h-auto max-w-none;
+  width: vwMobile(350);
+  bottom: vwMobile(50);
+  right: vwMobile(-175);
+
+  @media (min-width: $desktop) {
+    @apply hidden;
+  }
+}
+
+.gray {
+  @apply absolute top-0 left-0 w-full h-full hidden;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.grayIsVisible {
+  @apply block;
+}

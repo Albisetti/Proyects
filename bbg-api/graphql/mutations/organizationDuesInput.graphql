@@ -1,0 +1,40 @@
+input OrganizationDueInput {
+    annual_dues: Float @rules(apply: ["sometimes"])
+    prorated_amount: Float
+    year: Int @rules(apply: ["sometimes"])
+
+    organization: OrganizationDueConnect
+}
+
+input UpdateOrganizationDueInput {
+    id: ID
+    annual_dues: Float @rules(apply: ["sometimes"])
+    prorated_amount: Float
+    year: Int @rules(apply: ["sometimes"])
+}
+
+input UpsertOrganizationDueInput {
+    id: ID
+    annual_dues: Float @rules(apply: ["sometimes"])
+    prorated_amount: Float
+    year: Int @rules(apply: ["sometimes"])
+}
+
+input OrganizationDueConnect {
+    connect: ID @rules(apply: ["required","exists:organizations,id"])
+}
+
+input OrganizationDuePaymentConnect {
+    connect: ID @rules(apply: ["required","exists:organization_dues,id"])
+}
+
+input OrganizationDueCreateRelation {
+    create: [OrganizationDueInput]
+}
+
+input OrganizationDueUpdateRelation {
+    create: [OrganizationDueInput]
+    update: [UpdateOrganizationDueInput]
+    upsert: [UpsertOrganizationDueInput]
+    delete: ID
+}

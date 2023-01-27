@@ -1,0 +1,17 @@
+type OrganizationDue {
+    id: ID
+    organization: Organizations @belongsTo
+    annual_dues: Float
+    prorated_amount: Float
+    year: Int
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+
+    duePayments: [OrganizationDuePayment]  @hasMany(type: connection)
+    totalPayed: Float @method
+    dueLeft: Float @method
+    totalPayedQuarter(quarter:Int, year:Int): Float @method
+    dueLeftQuarter(quarter:Int, year:Int): Float @method
+}

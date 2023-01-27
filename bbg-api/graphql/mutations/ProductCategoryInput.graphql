@@ -1,0 +1,13 @@
+input ProductCategoryInput {
+    name: String! @rules(apply: ["required"])
+}
+
+input UpdateProductCategoryInput {
+    id: ID
+    name: String @rules(apply: ["sometimes"])
+}
+
+input ProductCategoryBelongsTo {
+    upsert: UpdateProductCategoryInput
+    connect: ID
+}

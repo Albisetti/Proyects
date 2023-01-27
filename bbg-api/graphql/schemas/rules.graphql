@@ -1,0 +1,21 @@
+enum RuleType
+{
+    REBATE @enum(value: "rebate")
+    VOLUME @enum(value: "volume")
+}
+
+type Rule {
+    id: ID
+    rule_type: RuleType
+    trigger: DateTime
+    condition: String
+    effective: DateTime
+    program_id: Int
+    programs: [Programs]! @hasMany(type: CONNECTION)
+    address_id: Int
+    address: Address @hasMany(type: CONNECTION)
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime!
+    updated_at: DateTime
+}

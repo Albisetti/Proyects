@@ -1,0 +1,246 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.leftSection {
+  @apply items-center justify-center bg-steel h-full bg-left-bottom bg-no-repeat bg-cover;
+  background-image: url('/lines-horizontal-bg.svg');
+
+  min-width: vwDesktop(465);
+
+  display: none;
+  @media (min-width: $tablet) {
+    display: flex;
+  }
+
+  .content {
+    @apply flex items-center justify-center relative;
+    width: vwDesktop(350);
+  }
+  img {
+    @apply absolute;
+    transform: translateX(vwDesktop(-50));
+    height: vwDesktop(530);
+    width: vwDesktop(236);
+  }
+  .buildingFloors {
+    height: vwDesktop(530);
+    @apply cursor-pointer relative;
+
+    .line {
+      @apply absolute transition-all duration-500;
+      transform: translateX(vwDesktop(20)) translateY(-50%);
+      margin-right: vwDesktop(13);
+      width: vwDesktop(50);
+      height: 2px;
+    }
+    p {
+      @apply font-monserrat hover:underline decoration-1 absolute transition-all duration-500;
+      transform: translateX(vwDesktop(80)) translateY(40%);
+      font-size: vwDesktop(16);
+      line-height: vwDesktop(16);
+      width: vwDesktop(100);
+    }
+  }
+}
+
+.rightSection {
+  @apply flex items-center justify-center transition-all duration-1000;
+  width: 100%;
+
+  height: vwMobile(320);
+  padding-left: vwMobile(20);
+  padding-right: vwMobile(20);
+  @media (min-width: $tablet) {
+    padding: unset;
+    height: vwDesktop(630);
+  }
+
+  .content {
+    @apply flex h-full flex-col items-start justify-between;
+
+    width: 100%;
+    @media (min-width: $tablet) {
+      width: vwDesktop(780);
+    }
+
+    .bottomDescription {
+      @apply w-full h-full flex flex-col justify-between;
+      margin-top: vwDesktop(40);
+
+      .bottomSelections {
+        @apply flex justify-between w-full;
+        .panoramicButton {
+          @apply items-center justify-center bg-navyBlue no-underline cursor-pointer;
+          height: vwDesktop(55);
+          width: vwDesktop(205);
+          transition: all 2s;
+
+          display: none;
+          @media (min-width: $tablet) {
+            display: flex;
+          }
+
+          p {
+            @apply uppercase font-tenorSans text-gold;
+            font-size: vwDesktop(16);
+            line-height: vwDesktop(21.2);
+            margin-left: vwDesktop(15);
+            transition: all 2s;
+          }
+          svg {
+            transition: all 2s;
+            path {
+              transition: all 2s;
+            }
+          }
+        }
+
+        .panoramicButton:hover {
+          transition: all 2s;
+          @apply bg-gold;
+          svg {
+            transition: all 2s;
+            path:first-child {
+              @apply fill-navyBlue stroke-navyBlue;
+            }
+            path {
+              transition: all 2s;
+              @apply fill-navyBlue;
+            }
+          }
+          p {
+            transition: all 2s;
+            @apply text-navyBlue;
+          }
+        }
+
+        .downloadButton {
+          @apply flex items-center no-underline decoration-navyBlue hover:underline;
+
+          @media (min-width: $tablet) {
+            width: vwDesktop(182);
+          }
+
+          p {
+            @apply font-tenorSans text-navyBlue uppercase;
+
+            font-size: vwMobile(14);
+            line-height: vwMobile(14);
+            margin-left: vwMobile(11);
+            @media (min-width: $tablet) {
+              font-size: vwDesktop(16);
+              line-height: vwDesktop(18.72);
+              margin-left: vwDesktop(11);
+            }
+          }
+          img {
+            width: vwMobile(16);
+            @media (min-width: $tablet) {
+              width: vwDesktop(14);
+            }
+          }
+        }
+        .leftSelections {
+          @apply flex justify-between;
+
+          @media (min-width: $tablet) {
+            width: vwDesktop(455);
+          }
+        }
+      }
+    }
+
+    .floorPlans {
+      @apply w-full;
+    }
+    ul {
+      padding: 0;
+
+      margin: vwMobile(20) vwMobile(10);
+      @media (min-width: $tablet) {
+        margin: 0;
+      }
+      li {
+        position: relative;
+        p {
+          @apply text-darkBlue font-monserrat;
+
+          font-size: vwMobile(18);
+          line-height: vwMobile(23.85);
+          margin-left: vwMobile(10);
+          @media (min-width: $tablet) {
+            font-size: vwDesktop(18);
+            line-height: vwDesktop(23.85);
+            margin-left: vwDesktop(13);
+          }
+        }
+      }
+      li::marker {
+        content: '';
+      }
+      li::before {
+        content: '•';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: vwMobile(18);
+        @media (min-width: $tablet) {
+          font-size: unset;
+        }
+      }
+    }
+
+    h2 {
+      @apply font-tenorSans text-navyBlue uppercase;
+
+      font-size: vwMobile(16);
+      line-height: vwMobile(16);
+      @media (min-width: $tablet) {
+        font-size: vwDesktop(24);
+        line-height: vwDesktop(28.08);
+      }
+    }
+  }
+}
+
+.simpleLinkContainer {
+  @apply cursor-pointer w-fit;
+
+  max-width: vwMobile(120);
+  @media (min-width: $tablet) {
+    max-width: vwDesktop(220);
+  }
+  .simpleLinkText {
+    @apply font-tenorSans text-navyBlue uppercase no-underline w-fit;
+
+    font-size: vwMobile(14);
+    line-height: vwMobile(16);
+    padding-right: vwMobile(6);
+    @media (min-width: $tablet) {
+      font-size: vwDesktop(16);
+      line-height: vwDesktop(21.2);
+      padding-right: vwDesktop(25);
+    }
+  }
+
+  .simpleLinkArrow {
+    @apply self-end;
+    transition: transform 300ms, ease 300ms;
+
+    margin-top: vwMobile(4);
+    width: vwMobile(42);
+    @media (min-width: $tablet) {
+      margin-top: vwDesktop(5);
+      width: vwDesktop(72);
+    }
+  }
+}
+
+.simpleLinkContainer:hover {
+  .simpleLinkArrow {
+    transition: transform 500ms, ease 500ms;
+    transform: translateX(vwDesktop(50));
+  }
+}

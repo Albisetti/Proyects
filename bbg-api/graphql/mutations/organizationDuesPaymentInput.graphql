@@ -1,0 +1,25 @@
+input OrganizationDuePaymentInput {
+    due: OrganizationDuePaymentConnect
+    amount: Float
+    payment_time: DateTime
+    payment_quarter: Int @rules(apply:["min:1","max:4"])
+    payment_year: Int
+    status: DuePaymentType
+    created_by: Int
+    updated_by: Int
+}
+
+input OrganizationDuePaymentRelationUpdateInput {
+    id: ID
+    due: OrganizationDuePaymentConnect
+    amount: Float
+    payment_time: DateTime
+    payment_quarter: Int @rules(apply:["min:1","max:4"])
+    payment_year: Int
+    created_by: Int
+    updated_by: Int
+}
+
+input ClaimHasOneRelation {
+    create: OrganizationDuePaymentInput
+}

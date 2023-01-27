@@ -1,0 +1,187 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.heroContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: vwDesktop(62);
+
+  padding-bottom: vwMobileSecondary(80);
+  @media (min-width: $desktop) {
+    padding-bottom: vwDesktop(95);
+  }
+
+  .mainTitle {
+    z-index: 1;
+
+    margin-top: vwMobileSecondary(330);
+    max-width: vwMobileSecondary(260);
+    @media (min-width: $desktop) {
+      margin-top: 0;
+      max-width: vwDesktop(772);
+    }
+  }
+}
+
+.sideImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 0;
+
+  background-image: url('/images/our-story-page/side-img-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  right: vwMobileSecondary(-37);
+  top: vwMobileSecondary(-103);
+  width: vwMobileSecondary(314);
+  height: vwMobileSecondary(406);
+  transform: rotate(-14deg) scale(0.9);
+  @media (min-width: $desktop) {
+    right: vwDesktop(-12);
+    top: vwDesktop(58);
+    width: vwDesktop(314);
+    height: vwDesktop(406);
+    transform: rotate(14deg);
+  }
+
+  .sideImage {
+    position: relative;
+    object-fit: cover;
+    z-index: 0;
+
+    left: vwMobileSecondary(3);
+    width: vwMobileSecondary(280);
+    height: vwMobileSecondary(373);
+    @media (min-width: $desktop) {
+      left: vwDesktop(3);
+      width: vwDesktop(280);
+      height: vwDesktop(373);
+    }
+  }
+  .sideTapeImage {
+    position: absolute;
+
+    top: vwMobileSecondary(-16);
+    width: vwMobileSecondary(95);
+    height: vwMobileSecondary(57);
+    transform: rotate(-14deg);
+    @media (min-width: $desktop) {
+      top: vwDesktop(-16);
+      width: vwDesktop(95);
+      height: vwDesktop(57);
+    }
+  }
+  .sideBeansImage {
+    position: absolute;
+
+    width: vwMobileSecondary(166);
+    height: vwMobileSecondary(139);
+    left: vwMobileSecondary(-187);
+    bottom: vwMobileSecondary(44);
+    transform: scaleX(-1) rotate(-70deg);
+    @media (min-width: $desktop) {
+      width: vwDesktop(166);
+      height: vwDesktop(139);
+      left: unset;
+      right: vwDesktop(10);
+      bottom: vwDesktop(-120);
+      transform: scaleX(1) rotate(-14deg);
+    }
+  }
+}
+
+.frameSectionDiv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: vwMobileSecondary(80);
+
+  padding-left: vwMobileSecondary(40);
+  padding-right: vwMobileSecondary(20);
+  @media (min-width: $desktop) {
+    justify-content: flex-end;
+    margin-top: vwDesktop(112);
+    margin-bottom: vwDesktop(318);
+    padding-left: 0;
+    padding-right: vwDesktop(195);
+  }
+
+  .bookMobile {
+    position: absolute;
+    transform: rotate(14deg) scale(0.95);
+    left: vwMobileSecondary(190);
+
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  .frameImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: vwDesktop(70);
+    left: vwDesktop(-5);
+    width: vwDesktop(697);
+    height: vwDesktop(567);
+    transform: rotate(-7deg) scale(1.4);
+
+    @media (min-width: $desktop) {
+      transform: rotate(-7deg) scale(1);
+    }
+
+    .frameImageBG {
+      position: absolute;
+      z-index: 1;
+    }
+    .frameImage {
+      position: relative;
+      width: vwDesktop(600);
+      height: vwDesktop(433);
+      object-fit: cover;
+      z-index: 0;
+    }
+  }
+
+  .frameTextDiv {
+    margin-top: vwMobileSecondary(300);
+    @media (min-width: $desktop) {
+      margin-top: 0;
+      max-width: vwDesktop(488);
+    }
+
+    .frameTitle {
+      font-size: vwMobileSecondary(70);
+      line-height: vwMobileSecondary(70);
+      text-align: left;
+      font-weight: 400;
+      margin-bottom: vwMobileSecondary(32);
+
+      @media (min-width: $desktop) {
+        text-align: center;
+        font-size: vwDesktop(88);
+        line-height: vwDesktop(88);
+        margin-bottom: vwDesktop(44);
+      }
+    }
+    .frameText {
+      text-align: left;
+      @media (min-width: $desktop) {
+        text-align: center;
+        padding: vwDesktop(13) 0;
+        border-top: vwDesktop(2) solid $fontGray;
+        border-bottom: vwDesktop(2) solid $fontGray;
+      }
+    }
+  }
+}

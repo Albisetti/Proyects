@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../public/fonts/MyriadPro-Regular.woff2') format('woff2'),
+    url('../public/fonts/MyriadPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Almarose';
+  src: url('../public/fonts/Almarose-Regular.woff2') format('woff2'),
+    url('../public/fonts/Almarose-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Almarose';
+  src: url('../public/fonts/Almarose-Medium.woff2') format('woff2'),
+    url('../public/fonts/Almarose-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Almarose';
+  src: url('../public/fonts/Almarose-Semibold.woff2') format('woff2'),
+    url('../public/fonts/Almarose-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Almarose';
+  src: url('../public/fonts/Almarose-Bold.woff2') format('woff2'),
+    url('../public/fonts/Almarose-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url('../public/fonts/Sentinel-Medium.woff2') format('woff2'),
+    url('../public/fonts/Sentinel-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url('../public/fonts/Sentinel-Bold.woff2') format('woff2'),
+    url('../public/fonts/Sentinel-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wingdings 3';
+  src: url('../public/fonts/Wingdings3.woff2') format('woff2'),
+    url('../public/fonts/Wingdings3.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

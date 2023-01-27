@@ -1,0 +1,39 @@
+.form-control {
+  @apply w-full;
+
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='number'],
+  input[type='url'],
+  input[type='search'],
+  input[type='tel'],
+  select,
+  textarea {
+    @apply appearance-none bg-white  font-montserrat text-[1rem] font-bold leading-[1.5rem] text-darkGray;
+    @apply border-[0.5px]  border-darkGray focus:ring-0;
+    @apply w-full max-w-full rounded-none px-4 py-3;
+  }
+
+  span {
+    @apply hidden;
+  }
+
+  &.invalid {
+    input[type='text'],
+    input[type='password'],
+    input[type='email'],
+    input[type='number'],
+    input[type='url'],
+    input[type='search'],
+    input[type='tel'],
+    select,
+    textarea {
+      @apply border-red text-red placeholder-black/40 focus:border-red;
+    }
+
+    span {
+      @apply mt-2 block font-montserrat text-[0.75rem] font-bold leading-none text-red;
+    }
+  }
+}

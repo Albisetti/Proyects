@@ -1,0 +1,53 @@
+@import '../styles/styles/spacing.scss';
+@import '../styles/styles/breakpoints.scss';
+@import '../styles/styles/typography.scss';
+@import '../styles/styles/colors.scss';
+
+.cookieBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $blue;
+  width: 100%;
+  padding: vwDesktop(32);
+  padding-left: vwDesktop(140);
+}
+
+.cookieBarMessage {
+  max-width: vwDesktop(700);
+  p {
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(22);
+    text-align: left;
+    color: white;
+    @apply font-bodyReg;
+  }
+}
+
+.cookieBarActions {
+  display: flex;
+
+  button,
+  a {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: vwDesktop(10) vwDesktop(20);
+    color: white;
+    margin: vwDesktop(14);
+    letter-spacing: 1px;
+    font-size: vwDesktop(16);
+    @apply font-bodyReg font-bold;
+  }
+  button {
+    background-color: $orange;
+  }
+  a {
+    background-color: $green;
+  }
+}

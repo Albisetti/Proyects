@@ -1,0 +1,19 @@
+enum DuePaymentType {
+    OPEN @enum(value: "open")
+    PAID @enum(value: "paid")
+}
+
+type OrganizationDuePayment {
+    id: ID
+    due: OrganizationDue @belongsTo
+    amount: Float
+    payment_time: DateTime
+    payment_quarter: Int @rules(apply:["min:1","max:4"])
+    payment_year: Int
+    status: DuePaymentType
+    claim: Claims  @belongsTo
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}

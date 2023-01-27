@@ -1,0 +1,23 @@
+input RuleInput{
+    rule_type: RuleType
+    condition: String
+    trigger: DateTime
+    effective: DateTime
+    program_id: Int @rules(apply: ["required","exists:programs,id"])
+    product: ProductInputRelation
+    address: AddressInputRelation
+}
+
+input UpdateRuleInput{
+    id: ID
+    input: RuleInput
+}
+
+input RuleRelation{
+    update: [UpdateRuleInput]
+    create: [RuleInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}

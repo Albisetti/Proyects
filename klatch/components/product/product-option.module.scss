@@ -1,0 +1,210 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.subtitle {
+  text-align: left;
+  color: $blue;
+  @apply font-bodyReg font-bold;
+
+  font-size: vwMobile(12);
+  line-height: vwMobile(13);
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(12);
+    line-height: vwDesktop(14);
+  }
+}
+
+.sizeOptionsDiv {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: vwDesktop(52);
+
+  .sizeOptionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: vwDesktop(24);
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    img {
+      margin-bottom: vwDesktop(7);
+    }
+    .sizeOptionSmall {
+      width: vwDesktop(29);
+      height: vwDesktop(49);
+    }
+    .sizeOptionMedium {
+      width: vwDesktop(36);
+      height: vwDesktop(61);
+    }
+    .sizeOptionLarge {
+      width: vwDesktop(45);
+      height: vwDesktop(76);
+    }
+
+    p {
+      font-size: vwMobile(12);
+      font-weight: vwMobile(14);
+      @apply font-bodyReg font-bold;
+
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(12);
+        line-height: vwDesktop(14);
+      }
+    }
+  }
+  .sizeOptionContainer:hover {
+    transform: scale(1.05);
+  }
+  .sizeOptionContainer:active {
+    transform: scale(0.95);
+  }
+}
+
+.frequencyDiv {
+  display: flex;
+  width: fit-content;
+  margin-bottom: vwDesktop(26);
+
+  margin-top: vwMobile(7);
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(7);
+  }
+
+  .frequencyBlock:last-child {
+    border-right: vwDesktop(2) solid $blue;
+  }
+  .frequencyBlock {
+    border: vwDesktop(2) solid $blue;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    padding: vwMobile(6) vwMobile(8);
+    width: vwMobile(68);
+    height: vwMobile(42);
+    @media (min-width: $desktop) {
+      padding: vwDesktop(6) vwDesktop(8);
+      width: vwDesktop(72);
+      height: vwDesktop(47);
+    }
+
+    p {
+      text-transform: capitalize;
+      @apply font-bodyReg font-bold;
+
+      font-size: vwMobile(12);
+      line-height: vwMobile(14);
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(12);
+        line-height: vwDesktop(14);
+      }
+
+      &.selected {
+        color: white;
+      }
+    }
+
+    .saveValue {
+      text-transform: none;
+      font-size: vwDesktop(7);
+      line-height: vwDesktop(7);
+      color: $blue;
+      @apply font-bodyReg font-bold;
+
+      &.selected {
+        color: white;
+      }
+    }
+
+    &.selected {
+      background-color: $blue;
+    }
+  }
+}
+
+.quantityPickerDiv {
+  width: vwDesktop(120);
+  height: vwDesktop(28);
+  border: vwDesktop(3) solid $blue;
+  margin-right: vwDesktop(30);
+  margin-top: vwDesktop(7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .quantityButton,
+  p {
+    font-size: vwDesktop(12);
+    line-height: vwDesktop(12);
+    @apply font-bodyReg font-bold;
+  }
+
+  .quantityButton {
+    text-align: center;
+    width: vwDesktop(50);
+    cursor: pointer;
+    @apply select-none;
+  }
+}
+
+.optionSelect {
+  background-color: transparent;
+  outline: none;
+  padding-left: vwDesktop(10);
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  color: $fontGray;
+  @apply font-bodyReg font-bold;
+
+  background-image: url('/images/no-to-delete/product-hero-dropdown-arrow-blue.svg');
+  background-size: vwMobile(13) vwMobile(8);
+  background-position: vwMobile(250);
+  background-repeat: no-repeat;
+
+  border: vwMobile(2) solid $blue;
+  margin: vwMobile(10) 0;
+  font-size: vwMobile(14);
+  line-height: vwMobile(15);
+  width: 100%;
+  height: vwMobile(32);
+  text-align: center;
+  text-transform: capitalize;
+  @media (min-width: $desktop) {
+    border: vwDesktop(2) solid $blue;
+    margin-top: vwDesktop(7);
+    margin-bottom: 0;
+    font-size: vwDesktop(10);
+    line-height: vwDesktop(12);
+    width: vwDesktop(120);
+    height: vwDesktop(28);
+    text-align: left;
+
+    background-size: vwDesktop(13) vwDesktop(6);
+    background-position: vwDesktop(93);
+  }
+
+  option {
+    font-size: vwMobile(16);
+    line-height: vwMobile(20);
+    text-transform: capitalize;
+    color: $fontGray;
+    @apply font-bodyReg font-bold;
+
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(16);
+      line-height: vwDesktop(24);
+    }
+  }
+}
+
+.grindOptionSelect::-ms-expand {
+  display: none;
+}

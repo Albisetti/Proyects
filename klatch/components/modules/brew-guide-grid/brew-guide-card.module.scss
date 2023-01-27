@@ -1,0 +1,107 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.cardWrapper {
+  @apply relative;
+  margin-bottom: vwMobile(10);
+
+  @media (min-width: $desktop) {
+    margin-bottom: vwDesktop(28);
+  }
+}
+
+.imageWrapper {
+  @apply static transition-all duration-300 rotate-0;
+
+  .image {
+    margin-top: vwMobile(5);
+    margin-bottom: vwMobile(10);
+
+    .actualImage {
+      padding: vwMobile(5) vwMobile(5);
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      object-fit: cover;
+      object-position: 50% 33%;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    .image {
+      margin-top: vwDesktop(20);
+      margin-bottom: vwDesktop(60);
+
+      .actualImage {
+        padding: vwDesktop(18) vwDesktop(18);
+      }
+    }
+  }
+}
+
+.hasMouseOver {
+  @apply cursor-pointer transition-all duration-300 rotate-[10deg];
+}
+
+.cardTitle {
+  margin-top: vwMobile(5);
+  font-size: vwMobile(11) !important;
+  line-height: vwMobile(12) !important;
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(15);
+    font-size: vwDesktop(24) !important;
+    line-height: vwDesktop(28.57) !important;
+  }
+}
+
+.decorationFirst,
+.decorationLast {
+  @apply hidden absolute;
+
+  & > span {
+    font-size: vwDesktop(40);
+    line-height: 1;
+  }
+
+  & > img {
+    @apply h-auto;
+  }
+
+  @media (min-width: $desktop) {
+    @apply flex;
+  }
+}
+.decorationFirst {
+  @apply items-center;
+  top: vwDesktop(-130);
+  left: vwDesktop(-50);
+
+  & > span {
+    max-width: 8ch;
+    margin-right: vwDesktop(-5);
+  }
+
+  & > img {
+    @apply rotate-[10.2deg];
+    width: vwDesktop(70);
+  }
+}
+.decorationLast {
+  @apply items-end;
+  top: vwDesktop(35);
+  left: calc(100% + vwDesktop(5));
+
+  & > span {
+    width: max-content;
+    max-width: 12ch;
+    margin-left: vwDesktop(12);
+    margin-bottom: vwDesktop(12);
+  }
+
+  img {
+    width: vwDesktop(75);
+    max-width: vwDesktop(75);
+  }
+}

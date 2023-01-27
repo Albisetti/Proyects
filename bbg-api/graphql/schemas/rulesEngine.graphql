@@ -1,0 +1,60 @@
+# Conversion revenue
+type ConversionRevenueQuarter {
+    displayName: String!
+    quarter: Int!
+    start: DateTime!
+    end: DateTime!
+    total: Float!
+}
+
+type ConversionRevenueYearly {
+    year: Int!
+    total: Float!
+}
+
+type ConversionRevenueResponse {
+    quarterly: [ConversionRevenueQuarter!]!
+    yearTotal: ConversionRevenueYearly!
+    program: Programs
+}
+
+input ConversionRevenueInput {
+    program_id: ID
+    year: Int
+}
+
+# Conversion payments due
+input PaymentsDueInput {
+    program_id: ID!
+}
+
+type ConversionPaymentDue {
+    conversion: Conversion!
+    program: Programs!
+
+    due_date: DateTime
+    payment_owed: String
+    note: String
+}
+
+type PaymentsDueResponse {
+    conversionPaymentDue: [ConversionPaymentDue!]
+}
+
+# Increased Rebates Earned
+input IncreasedRebatesEarnedInput {
+    program_id: ID!
+}
+
+type IncreasedRebateIncreaseByZoning {
+	residential: Int!
+	multi_unit: Int!
+	commercial: Int!
+}
+
+type IncreasedRebateEarned {
+    conversion: Conversion!
+	program: Programs!
+	increase: IncreasedRebateIncreaseByZoning!
+	date_achieved: String!
+}

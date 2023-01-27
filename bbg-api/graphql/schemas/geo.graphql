@@ -1,0 +1,24 @@
+enum Country {
+    CANADA @enum(value: "CA")
+    US @enum(value: "US")
+}
+
+type State {
+    id: ID
+    name: String
+    iso_code: String
+    country: Country
+    cities: [City] @belongsToMany(type: CONNECTION, edgeType: "CustomCityEdge")
+}
+
+type City {
+    id: ID
+    name: String
+    state: State @belongsTo
+}
+
+type CustomCityEdge {
+    cursor: String
+    node: City
+    meta: String
+}

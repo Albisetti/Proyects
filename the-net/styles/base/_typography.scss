@@ -1,0 +1,83 @@
+@tailwind base;
+
+@layer base {
+  html {
+    @apply bg-pageText text-[10px];
+  }
+
+  html,
+  body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-pageBG text-pageText font-sans;
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+
+  /* Images */
+  figure {
+    @apply relative m-0;
+  }
+
+  /* Misc. */
+  hr {
+    @apply my-60 mx-0 border-0 h-1 bg-pageText;
+  }
+
+  ::-moz-selection {
+    @apply bg-pageText text-pageBG;
+  }
+  ::selection {
+    @apply bg-pageText text-pageBG;
+  }
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+/* Focus Adjust */
+a,
+button,
+input,
+textarea,
+select,
+details {
+  &:focus {
+    outline: 1px dashed var(--pageText);
+    outline-offset: 2px;
+
+    .is-inverted & {
+      outline-color: var(--pageBG);
+    }
+
+    body:not(.is-tabbing) & {
+      outline: none;
+    }
+  }
+}
+
+figure {
+  .rc & {
+    &:not(:last-child) {
+      @apply mb-24;
+    }
+  }
+}
+
+hr {
+  &:last-child {
+    @apply mb-0;
+  }
+}

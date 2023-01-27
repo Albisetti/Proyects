@@ -1,0 +1,16 @@
+input ClaimPeriodsBelongsTo{
+    upsert: UpdateClaimPeriodInput
+}
+
+input ClaimPeriodInput {
+    quarter: Int @rules(apply:["min:1","max:4"])
+    year: Int
+    archived_at: DateTime
+}
+
+input UpdateClaimPeriodInput {
+    id: ID
+    quarter: Int @rules(apply:["min:1","max:4"])
+    year: Int
+    archived_at: DateTime
+}

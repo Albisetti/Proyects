@@ -1,0 +1,182 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collectionToggleContainer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  margin-bottom: vwMobile(30);
+  width: vwMobile(340);
+  @media (min-width: $desktop) {
+    align-items: flex-start;
+    width: unset;
+    margin-bottom: vwDesktop(50);
+  }
+
+  .collectionsFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: vwMobile(340);
+    @media (min-width: $desktop) {
+      width: unset;
+    }
+  }
+
+  p {
+    color: $orange;
+    @apply font-bold;
+
+    font-size: vwMobile(14);
+    line-height: vwMobile(14);
+    margin-bottom: vwMobile(15);
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(14);
+      line-height: vwDesktop(14);
+      margin-bottom: vwDesktop(7);
+    }
+  }
+  .collectionToggleBlock {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    @apply font-bodyReg;
+
+    width: vwMobile(85);
+    height: vwMobile(44);
+
+    /* Simulate border using box-shadow */
+    box-shadow: vwMobile(1) 0 0 0 $orange, 0 vwMobile(1) 0 0 $orange,
+      vwMobile(1) vwMobile(1) 0 0 $orange, vwMobile(1) 0 0 0 $orange inset,
+      0 vwMobile(1) 0 0 $orange inset;
+
+    @media (min-width: $desktop) {
+      width: vwDesktop(160);
+      height: vwDesktop(40);
+
+      box-shadow: vwDesktop(1) 0 0 0 $orange, 0 vwDesktop(1) 0 0 $orange,
+        vwDesktop(1) vwDesktop(1) 0 0 $orange, vwDesktop(1) 0 0 0 $orange inset,
+        0 vwDesktop(1) 0 0 $orange inset;
+    }
+
+    &.selected {
+      background-color: $orange;
+
+      p {
+        color: white;
+        @apply font-bold;
+      }
+    }
+
+    p {
+      margin: 0;
+      color: $fontGray;
+      font-size: vwMobile(14);
+      line-height: vwMobile(14);
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(14);
+        line-height: vwDesktop(14);
+        @apply font-bold;
+      }
+    }
+  }
+}
+
+.collectionDisplay {
+  width: 100%;
+
+  @media (min-width: $desktop) {
+    padding: vwDesktop(40) 0;
+    border-top: vwDesktop(2) solid $fontGray;
+  }
+
+  h1 {
+    padding: 0 vwMobile(50);
+    margin-bottom: vwMobile(20);
+    @media (min-width: $desktop) {
+      padding: 0;
+      margin-bottom: vwDesktop(30);
+    }
+  }
+  .collectionDescription {
+    padding: 0 vwMobile(50);
+    font-size: vwMobile(16);
+    line-height: vwMobile(16);
+    @media (min-width: $desktop) {
+      padding: 0;
+      font-size: vwDesktop(22);
+      line-height: vwDesktop(22);
+    }
+  }
+
+  .collectionProducts {
+    padding: 0 vwDesktop(230);
+    margin-top: vwDesktop(70);
+    flex-wrap: wrap;
+
+    display: none;
+    @media (min-width: $desktop) {
+      display: flex;
+    }
+
+    .productWrapper {
+      position: relative;
+      min-width: 28%;
+      margin-bottom: vwDesktop(40);
+    }
+  }
+
+  .collectionProductsMobile {
+    @media (min-width: $desktop) {
+      display: none;
+    }
+
+    div {
+      max-width: none;
+    }
+
+    .productWrapper {
+      width: vwMobile(340);
+
+      a {
+        margin-bottom: vwMobile(50);
+      }
+      img {
+        transform: scale(1.8);
+      }
+    }
+  }
+}
+
+.textAnnotation {
+  position: absolute;
+  top: vwDesktop(-30);
+  right: vwDesktop(-24);
+  z-index: 10;
+  display: flex;
+
+  p {
+    max-width: vwDesktop(100);
+    font-size: vwDesktop(27);
+    line-height: vwDesktop(27);
+    @apply font-title;
+  }
+  .arrowImg {
+    position: relative;
+    top: vwDesktop(42);
+    left: vwDesktop(20);
+    transform: rotate(165deg);
+    object-fit: none;
+  }
+}

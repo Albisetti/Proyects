@@ -1,0 +1,22 @@
+
+type SubContractors{
+    id: ID
+    organizations: Organizations @belongsToMany(type: CONNECTION)
+    company_name: String
+    contact_name: String
+    email: String
+    office_number: String
+    office_number_ext: String
+    mobile_number: String
+    state: State @hasOne
+    city:String
+    address: String
+    address2: String
+    zip_postal: String
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+    archived_by: Int
+    archived_at: DateTime
+}

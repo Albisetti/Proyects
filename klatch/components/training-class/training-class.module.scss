@@ -1,0 +1,208 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: vwMobile(40);
+  @media (min-width: $desktop) {
+    padding-bottom: vwDesktop(77);
+  }
+}
+
+.contentContainer {
+  z-index: 1;
+
+  padding: vwMobile(25);
+  padding-top: vwMobile(230);
+
+  margin-bottom: vwMobile(40);
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(164);
+    margin-left: vwDesktop(160);
+    margin-bottom: vwDesktop(264);
+    padding: 0;
+  }
+
+  .mainTitle {
+    font-weight: 400;
+    text-align: left;
+
+    font-size: vwMobile(60);
+    line-height: vwMobile(60);
+    margin-bottom: vwMobile(35);
+    @media (min-width: $desktop) {
+      max-width: vwDesktop(430);
+      font-size: vwDesktop(88);
+      line-height: vwDesktop(88);
+      margin-bottom: vwDesktop(44);
+    }
+  }
+
+  .description {
+    margin-bottom: vwMobile(30);
+    @media (min-width: $desktop) {
+      max-width: vwDesktop(455);
+      margin-bottom: vwDesktop(58);
+    }
+
+    p {
+      font-size: vwMobile(16);
+      line-height: vwMobile(18);
+      text-align: left;
+
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(18);
+        line-height: vwDesktop(21);
+      }
+    }
+  }
+}
+
+.bottomDisclaimer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  .bottomDisclaimerText {
+    padding: 0 vwMobile(20);
+    font-size: vwMobile(16);
+    line-height: vwMobile(18);
+    margin-bottom: vwMobile(10);
+    @media (min-width: $desktop) {
+      padding: 0;
+      width: vwDesktop(630);
+      font-size: vwDesktop(24);
+      line-height: vwDesktop(28);
+      margin-bottom: vwDesktop(24);
+    }
+  }
+  .bottomDisclaimerSignature {
+    font-weight: 400;
+
+    font-size: vwMobile(45);
+    line-height: vwMobile(45);
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(72);
+      line-height: vwDesktop(71);
+    }
+  }
+}
+
+.clipboardImage {
+  position: absolute;
+  width: vwDesktop(589);
+  height: vwDesktop(962);
+  right: vwDesktop(100);
+  top: vwDesktop(80);
+  transform: rotate(-20deg);
+  z-index: 0;
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.tapeImage {
+  position: absolute;
+  width: vwDesktop(140);
+  height: vwDesktop(105);
+  right: vwDesktop(190);
+  top: vwDesktop(515);
+  transform: rotate(-18deg);
+  z-index: 2;
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.beanCupImage {
+  position: absolute;
+  width: vwDesktop(519);
+  height: vwDesktop(527);
+  z-index: 0;
+
+  top: vwMobile(55);
+  left: vwMobile(-30);
+  transform: scale(1.8);
+  @media (min-width: $desktop) {
+    top: vwDesktop(687);
+    left: unset;
+    right: vwDesktop(432);
+    transform: scale(1);
+  }
+}
+
+.firstPolaroid {
+  position: absolute;
+  z-index: 2;
+
+  top: vwMobile(20);
+  right: vwMobile(80);
+  transform: rotate(-5deg);
+  @media (min-width: $desktop) {
+    top: vwDesktop(298);
+    right: vwDesktop(324);
+    transform: rotate(5deg);
+  }
+
+  .playIcon {
+    @apply absolute block top-[45%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer left-1/2 text-white transition-all duration-200 hover:scale-110;
+    width: vwDesktop(48);
+
+    display: none;
+    @media (min-width: $desktop) {
+      display: block;
+    }
+  }
+}
+.secondPolaroid {
+  position: absolute;
+  z-index: 1;
+
+  top: vwMobile(73);
+  right: vwMobile(10);
+  transform: rotate(3deg);
+  @media (min-width: $desktop) {
+    top: vwDesktop(560);
+    right: vwDesktop(121);
+    transform: rotate(-3deg);
+  }
+}
+
+.imageWrapper {
+  @apply static transition-all duration-300 rotate-0;
+
+  width: vwMobile(120);
+  @media (min-width: $desktop) {
+    width: vwDesktop(289);
+  }
+
+  .image {
+    margin-bottom: vwDesktop(44);
+
+    .actualImage {
+      padding: vwDesktop(18) vwDesktop(18);
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      object-fit: cover;
+      object-position: 50% 33%;
+    }
+
+    .imageCaption {
+      @apply uppercase;
+      font-size: vwDesktop(40);
+      line-height: vwDesktop(38.57);
+      margin-bottom: vwDesktop(20);
+      margin-top: vwDesktop(-10);
+    }
+  }
+}

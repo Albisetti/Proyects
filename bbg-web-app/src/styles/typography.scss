@@ -1,0 +1,16 @@
+@layer base {
+    h1,
+    .h1 {
+        @apply text-secondary font-bold text-xl font-title ;
+    }
+    h2,
+    .h2 {
+        @apply text-secondary font-bold text-lg;
+    }
+    h3,
+    .h3 {
+        @apply text-30 leading-36;
+    }
+
+
+}

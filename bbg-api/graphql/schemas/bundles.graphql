@@ -1,0 +1,20 @@
+type Bundles {
+    id: ID
+    organization: Organizations @belongsTo
+    name: String
+    created_by: Int
+    updated_by: Int
+    created_at: Date
+    updated_at: Date
+
+    products: [Product] @hasMany(type: connection relation:"products")
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+
+    uniquePrograms: Int! @method
+}
+
+type BundleProductPivot {
+    product_quantity: Int
+}

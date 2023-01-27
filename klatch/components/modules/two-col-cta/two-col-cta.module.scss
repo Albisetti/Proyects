@@ -1,0 +1,351 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.twoColWrapper {
+  display: flex;  
+  flex-direction: column-reverse;
+  background-color: $lightGray;
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 vwDesktop(40);
+  }
+
+  .ctaWrapper {
+    width: vwMobile(340);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 vwMobile(10);
+    @media (min-width: $desktop) {
+      align-items: center;
+      justify-content: center;
+      padding: vwDesktop(50) 0;
+    }
+  }
+}
+
+.twoColReverseWrapper {  //When flow is right to left, Images are on right and TextCTA on left.
+  display: flex;  
+  flex-direction: column;
+  background-color: $white;
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 vwDesktop(40);
+  }
+
+  .ctaWrapper {
+    width: vwMobile(340);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 vwMobile(10);
+    @media (min-width: $desktop) {
+      align-items: center;
+      justify-content: center;
+      padding: vwDesktop(50) 0;
+    }
+  }
+}
+
+// Product Animal Starts - Switch Case 1
+
+.productAnimalWrapper {
+  @apply relative;
+  min-height: vwMobile(305);
+  @media (min-width: $desktop) {
+  @apply w-full flex items-center justify-center relative;
+    min-height: auto;
+  }
+}
+
+.imagesWrapper {
+  @apply relative  flex flex-col top-0;
+  max-width: vwMobile(320);
+  width: 100%;
+  @media (min-width: $desktop) {
+  @apply absolute  flex flex-col top-0;
+  max-width: vwDesktop(468);
+  width: 100%;
+  }
+}
+
+.firstImageShadow {
+  filter: drop-shadow(
+    vwMobile(-9) vwMobile(3) vwMobile(6) rgba(85, 87, 90, 0.3)
+  );
+  @media (min-width: $desktop) {
+  filter: drop-shadow(
+    vwDesktop(-9) vwDesktop(3) vwDesktop(6) rgba(85, 87, 90, 0.3)
+  );
+  }
+}
+.firstImageWrapper {
+  display: inline-block;
+  position: relative;
+  width: vwMobile(300);
+  height: vwMobile(300);
+  background: white;
+  box-sizing: border-box;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  @media (min-width: $desktop) {
+  width: vwDesktop(490);
+  height: vwDesktop(490);
+  background: white;
+  box-sizing: border-box;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+}
+.productAnimalfirstImage {
+  position: absolute;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  top: vwMobile(15);
+  left: vwMobile(15);
+  width: vwMobile(270);
+  height: vwMobile(270);
+  @media (min-width: $desktop) {
+  top: vwDesktop(20);
+  left: vwDesktop(20);
+  width: vwDesktop(450);
+  height: vwDesktop(450);
+  }
+}
+
+.productAnimalsecondImage {
+  position: absolute;
+  width: vwMobile(138);
+  top: vwMobile(30);
+  left: vwMobile(20);
+  @media (min-width: $desktop) {
+  width: vwDesktop(238);
+  height: vwDesktop(268);
+  top: vwDesktop(30);
+  left: vwDesktop(20);
+  }
+}
+
+.productAnimalthirdImage {
+  position: absolute;
+  width: vwMobile(130);
+  top: vwMobile(42);
+  left: 50%;
+  transform: translateX(-50%);
+  @media (min-width: $desktop) {
+  width: vwDesktop(217);
+  height: vwDesktop(370);
+  top: vwDesktop(62);
+  left: 50%;
+  transform: translateX(-50%);
+  }
+}
+.productAnimalfourthImage {
+  position: absolute;
+  width: vwMobile(75);
+  top: vwMobile(25);
+  right: vwMobile(60);
+  @media (min-width: $desktop) {
+  width: vwDesktop(75);
+  top: vwDesktop(45);
+  right: vwDesktop(90);
+  }
+}
+.annotation {
+  position: absolute;
+  @apply font-title;
+  top: vwMobile(5);
+  right: vwMobile(-14);
+  font-size: vwMobile(22.57);
+  line-height: vwMobile(22.57);
+  @media (min-width: $desktop) {
+  top: vwDesktop(15);
+  right: vwDesktop(0);
+  font-size: vwDesktop(28.57);
+  line-height: vwDesktop(28.57);
+
+  }
+}
+
+// Product Animal Ends
+
+//Product Coffee Starts - Switch Case 2
+
+.leftImageWrapper {
+  max-width: vwMobile(220);
+  right: vwMobile(-5);
+  @apply rotate-[-9.634deg];
+  @media (min-width: $desktop) {
+  max-width: vwDesktop(310);
+  right: vwDesktop(63);
+  @apply rotate-[-9.634deg];
+  }
+
+  .leftImage {
+    margin-top: vwMobile(15);
+    @media (min-width: $desktop) {
+    margin-top: vwDesktop(25);
+    }
+    .leftActualImage {
+      padding: 0 vwMobile(10);
+      @media (min-width: $desktop) {
+      padding: 0 vwDesktop(15);
+      }
+    }
+
+    .leftImageCaption {
+      font-size: vwMobile(18.57);
+      line-height: vwMobile(18.57);
+      margin-bottom: vwMobile(15);
+      margin-top: vwMobile(10);
+      @media (min-width: $desktop) {
+      font-size: vwDesktop(38.57);
+      line-height: vwDesktop(38.57);
+      margin-bottom: vwDesktop(40);
+      margin-top: vwDesktop(10);
+      }
+    }
+  }
+}
+
+.productCoffeeImagesWrapper {
+  @apply flex flex-col relative;
+  max-width: vwDesktop(468);
+  width: 100%;
+  @media (min-width: $desktop) {
+  @apply flex flex-col top-0;
+  position: unset;
+  max-width: vwDesktop(468);
+  width: 100%;
+  }
+}
+
+.productCoffeesecondImage {
+  position: relative;
+  z-index: 2;
+  min-width: vwMobile(300);
+  margin-top: vwMobile(120);
+  @apply rotate-[-24.981deg];
+  left: vwMobile(-50);
+  @media (min-width: $desktop) {
+  position: absolute;
+  min-width: vwDesktop(410);
+  max-width: vwDesktop(410);
+  bottom: vwDesktop(40);
+  @apply rotate-[-24.981deg];
+  left: vwDesktop(-12);
+  }
+}
+
+.productCoffeethirdImage {
+  position: absolute;
+  min-width: vwMobile(180);
+  @apply rotate-[24.981deg];
+  left: vwMobile(-20);
+  z-index: 1;
+  top: vwMobile(-20);
+  @media (min-width: $desktop) {
+    width: vwDesktop(200);
+    min-width: vwDesktop(200);
+    left: vwDesktop(100);
+    z-index: 1;
+    top: vwDesktop(60);
+  }
+}
+.productCoffeefourthImage {
+  position: absolute;
+  width: vwMobile(75);
+  top: vwMobile(250);
+  right: vwMobile(-180);
+  @media (min-width: $desktop) {
+  width: vwDesktop(75);
+  top: vwDesktop(50);
+  right: vwDesktop(110);
+  }
+}
+
+//Product Coffee Ends
+
+//Product People Starts - Switch Case 3
+
+.productPeopleWrapper {
+  @apply relative;
+  padding: 0 vwMobile(30);
+  @media (min-width: $desktop) {
+  @apply w-full flex items-center justify-center relative p-0;
+  }
+}
+
+.productPeopleLeftImageWrapper {
+  @apply relative;
+  @media (min-width: $desktop) {
+  @apply absolute;
+  max-width: vwDesktop(286);
+  left: vwDesktop(60);
+  @apply rotate-[-9.616deg];
+  }
+
+  .productPeopleLeftImage {
+    margin-top: vwDesktop(25);
+    .productPeopleLeftActualImage {
+      padding: 0 vwDesktop(15);
+    }
+
+    .productPeopleLeftImageCaption {
+      font-size: vwDesktop(38.57);
+      line-height: vwDesktop(38.57);
+      margin-bottom: vwDesktop(40);
+      margin-top: vwDesktop(10);
+    }
+  }
+}
+
+.productPeopleRightImageWrapper {
+  @apply hidden;
+  @media (min-width: $desktop) {
+  @apply block;
+  max-width: vwDesktop(286);
+  right: vwDesktop(170);
+  top: vwDesktop(45);
+  @apply rotate-[-335.551deg];
+  }
+
+  .productPeopleRightImage {
+    margin-top: vwDesktop(25);
+    .productPeopleRightActualImage {
+      padding: 0 vwDesktop(15);
+    }
+
+    .productPeopleRightImageCaption {
+      font-size: vwDesktop(38.57);
+      line-height: vwDesktop(38.57);
+      margin-bottom: vwDesktop(40);
+      margin-top: vwDesktop(10);
+    }
+  }
+}
+
+.productPeopleImagesWrapper {
+  @apply flex flex-col top-0;
+  max-width: vwDesktop(468);
+  width: 100%;
+}
+
+.productPeopleSecondImage {
+  @apply hidden;
+  @media (min-width: $desktop) {
+  @apply block;
+  position: absolute;
+  width: 100%;
+  max-width: vwDesktop(340);
+  bottom: vwDesktop(50);
+  right: vwDesktop(-40);
+  z-index: 2;
+  }
+}
+
+//Product People Ends

@@ -1,0 +1,101 @@
+name: Deploy master API
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy master API
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout master branch
+      uses: actions/checkout@v2
+      with:
+        ref: master
+    - name: Environment variables
+      run: |
+        echo "APP_NAME=\"${{ secrets.APP_NAME }}\"" >> .env
+        echo "APP_ENV=${{ secrets.STAGING_APP_ENV }}" >> .env
+        echo "APP_KEY=base64:c5L7KcbEqeht21TN4zUiQawCxQPOtfQ4RqgE/eZmk1o=" >> .env
+        echo "APP_DEBUG=${{ secrets.STAGING_APP_DEBUG }}" >> .env
+        echo "APP_URL=${{ secrets.STAGING_APP_URL }}" >> .env
+        echo "WEB_URL=${{ secrets.WEB_URL }}" >> .env
+        echo "APP_TIMEZONE=UTC" >> .env
+        echo "LOG_CHANNEL=stack" >> .env
+        echo "DB_CONNECTION=mysql" >> .env
+        echo "DB_HOST=${{ secrets.STAGING_DB_HOST }}" >> .env
+        echo "DB_PORT=3306" >> .env
+        echo "LIGHTHOUSE_CACHE_ENABLE=false" >> .env
+        echo "DB_DATABASE=${{ secrets.STAGING_DB_DATABASE }}" >> .env
+        echo "DB_USERNAME=${{ secrets.STAGING_DB_USERNAME }}" >> .env
+        echo "DB_PASSWORD=\"${{ secrets.STAGING_DB_PASSWORD }}\"" >> .env
+        echo "SCOUT_DRIVER=meilisearch" >> .env
+        echo "MEILISEARCH_HOST=\"http://localhost:7700\"" >> .env
+        echo "SCOUT_QUEUE=true" >> .env
+        echo "TELESCOPE_ENABLED=false" >> .env
+        echo "CLOCKWORK_ENABLE=false" >> .env
+        echo "MAIL_MAILER=smtp" >> .env
+        echo "MAIL_HOST=smtp.sendgrid.net" >> .env
+        echo "MAIL_PORT=587" >> .env
+        echo "MAIL_USERNAME=apikey" >> .env
+        echo "MAIL_PASSWORD=${{ secrets.SENDGRID_API_KEY }}" >> .env
+        echo "SENTRY_LARAVEL_DSN=${{ secrets.STAGING_SENTRY_DSN }}" >> .env
+        echo "SENTRY_ENVIRONMENT=Live" >> .env
+        echo "WORDPRESS_GRAPHQL_ENDPOINT=${{ secrets.STAGING_WORDPRESS_GRAPHQL_ENDPOINT }}" >> .env
+        echo "WORDPRESS_USERNAME=\"${{ secrets.STAGING_WORDPRESS_GRAPHQL_USERNAME }}\"" >> .env
+        echo "WORDPRESS_PASSWORD=\"${{ secrets.STAGING_WORDPRESS_GRAPHQL_PASSWORD }}\"" >> .env
+        echo "ANALYTICS_VIEW=\"${{ secrets.GOOGLE_ANALYTICS_VIEW }}\"" >> .env
+        echo "GRAPHQL_PLAYGROUND_ENABLED=false" >> .env
+        echo "ADMIN_EMAIL_FROM=${{ secrets.EMAIL_FROM }}" >> .env
+    - name: Setup
+      run: |
+        composer install -n --prefer-dist
+    - name: Migration
+      run: |
+        php artisan migrate
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.STAGING_SSH_KEY }}
+        known_hosts: ${{ secrets.STAGING_SSH_FINGERPRINT }}
+        if_key_exists: fail
+    - name: Deployment
+      run: |
+        zip -r dist.zip .
+        rsync dist.zip bbg@${{ secrets.STAGING_EC2_URL }}:${{ secrets.STAGING_REMOTE_PATH }}/dist.zip
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "unzip -o ${{ secrets.STAGING_REMOTE_PATH }}/dist.zip -d ${{ secrets.STAGING_REMOTE_PATH }}"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "rm ${{ secrets.STAGING_REMOTE_PATH }}/dist.zip"
+#    - name: Set storage permissions
+#      run: |
+#        ssh bbg@${{ secrets.STAGING_EC2_URL }} "sudo chgrp -R www-data ${{ secrets.STAGING_REMOTE_PATH }}/storage && sudo chmod -R g+w ${{ secrets.STAGING_REMOTE_PATH }}/storage"
+    - name: Flush, Import and Curl
+      run: |
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\Houses' && php artisan scout:import 'App\Models\Houses'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\Bundles' && php artisan scout:import 'App\Models\Bundles'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\Claims' && php artisan scout:import 'App\Models\Claims'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\Organizations' && php artisan scout:import 'App\Models\Organizations'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\ProductCategories' && php artisan scout:import 'App\Models\ProductCategories'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\Products' && php artisan scout:import 'App\Models\Products'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\SubContractors' && php artisan scout:import 'App\Models\SubContractors'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\SubDivision' && php artisan scout:import 'App\Models\SubContractors'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "cd /home/bbg/api/bbg-api/ && php artisan scout:flush 'App\Models\User' && php artisan scout:import 'App\Models\User'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/organizations/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"hasActionRequireRebate\",\"hasReadiedRebate\",\"hasCompletedRebate\",\"organization_type\",\"participatingPrograms\",\"CanadaApproved\",\"USApproved\",\"approvedStates\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/programs/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"id\",\"valid_region_type\",\"iso_codes\",\"claimable\",\"available_specific_member_only\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/sub_divisions/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organization_id\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/sub_contractors/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organizations\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/bundles/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organization_id\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/users/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"type\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/houses/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organization_id\",\"subdivision_organization_id\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/products/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"id\",\"programIds\",\"customization_id\"]'"
+        ssh bbg@${{ secrets.STAGING_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/programs/settings/sortable-attributes' --header 'Content-Type: application/json' --data-raw '[\"name\"]'"
+    - name: Slack
+      uses: 8398a7/action-slack@v3
+      with:
+        job_name: Deploy master API
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      if: always()

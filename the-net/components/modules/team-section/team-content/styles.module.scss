@@ -1,0 +1,31 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.teamTitle {
+  @apply text-navyBlue font-glamourn font-normal;
+
+  font-size: vwMobile(32);
+  line-height: vwMobile(35);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(32);
+    line-height: vwDesktop(35.2);
+    max-width: vwDesktop(250);
+  }
+}
+
+.teamSubtitle {
+  @apply text-copy font-monserrat;
+
+  font-weight: 400;
+  font-size: vwMobile(14);
+  line-height: vwMobile(24);
+  @media (min-width: $tablet) {
+    font-weight: 300;
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(23.85);
+    max-width: vwDesktop(546);
+    margin-top: vwDesktop(14);
+  }
+}

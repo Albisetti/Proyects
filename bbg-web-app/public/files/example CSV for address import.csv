@@ -1,0 +1,4 @@
+address,address2,city,state,zip_postal,lot_number,confirmed_occupancy,model,project_number
+360  Some Road,block 2,Arlington,IL,60004,244,6/17/2021,Modern,CU-122
+408  Fake Street,block 3,Windsor,MI,48813,270,6/18/2021,Victorian,CU-123
+89 Street Avenue,Unit 75,Dayton,OH,45377,310,6/18/2021,Victorian,CU-155

@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'ITC Franklin Gothic Std';
+  src: url('../public/fonts/ITCFranklinGothicStd-Book.woff2') format('woff2'),
+    url('../public/fonts/ITCFranklinGothicStd-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Franklin Gothic Std Bk Cd';
+  src: url('../public/fonts/ITCFranklinGothicStd-BkCd.woff2') format('woff2'),
+    url('../public/fonts/ITCFranklinGothicStd-BkCd.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Franklin Gothic Demi';
+  src: url('../public/fonts/ITCFranklinGothicStd-Demi.woff2') format('woff2'),
+    url('../public/fonts/ITCFranklinGothicStd-Demi.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../public/fonts/MyriadPro-Regular.woff2') format('woff2'),
+    url('../public/fonts/MyriadPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sun Valley';
+  src: url('../public/fonts/SunValley.woff2') format('woff2'),
+    url('../public/fonts/SunValley.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

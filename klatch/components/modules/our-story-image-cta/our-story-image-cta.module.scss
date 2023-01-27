@@ -1,0 +1,127 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.sectionContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: $green;
+  z-index: 0;
+
+  padding-top: vwMobileSecondary(35);
+  padding-bottom: vwMobileSecondary(220);
+  margin-bottom: vwMobileSecondary(235);
+  @media (min-width: $desktop) {
+    padding-top: vwDesktop(54);
+    padding-bottom: 0;
+    justify-content: flex-end;
+    min-height: vwDesktop(510);
+    margin-bottom: 0;
+  }
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $desktop) {
+    margin-right: vwDesktop(177);
+  }
+
+  .ctaTitle {
+    font-weight: 400;
+    color: white;
+
+    font-size: vwMobileSecondary(55);
+    line-height: vwMobileSecondary(55);
+    margin-bottom: vwMobileSecondary(32);
+    @media (min-width: $desktop) {
+      max-width: vwDesktop(533);
+      font-size: vwDesktop(88);
+      line-height: vwDesktop(88);
+      margin-bottom: vwDesktop(37);
+    }
+  }
+
+  .ctaTextContainer {
+    display: flex;
+    justify-content: center;
+
+    border: none;
+    @media (min-width: $desktop) {
+      width: vwDesktop(450);
+      border-top: vwDesktop(2) solid white;
+      border-bottom: vwDesktop(2) solid white;
+      padding: vwDesktop(13) 0;
+    }
+
+    p {
+      color: white;
+      @apply font-bodyReg;
+
+      max-width: vwMobileSecondary(300);
+      font-size: vwMobileSecondary(14);
+      line-height: vwMobileSecondary(15);
+      @media (min-width: $desktop) {
+        max-width: vwDesktop(353);
+        font-size: vwDesktop(18);
+        line-height: vwDesktop(21);
+      }
+    }
+  }
+
+  a {
+    margin-top: vwDesktop(70);
+
+    padding: vwMobileSecondary(8) 0;
+    width: vwMobileSecondary(300);
+    @media (min-width: $desktop) {
+      padding: vwDesktop(8) 0;
+      width: vwDesktop(450);
+    }
+
+    span {
+      font-size: vwMobileSecondary(20);
+      line-height: vwMobileSecondary(22);
+
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(24);
+        line-height: vwDesktop(29);
+      }
+    }
+  }
+}
+
+.leftTopImage {
+  position: absolute;
+  top: vwMobileSecondary(378);
+  left: vwMobileSecondary(73);
+  width: vwDesktop(463);
+  height: vwDesktop(374);
+  transform: scale(2.5) rotate(-6deg);
+
+  @media (min-width: $desktop) {
+    top: vwDesktop(-38);
+    left: vwDesktop(-62);
+    transform: rotate(-6deg);
+  }
+}
+
+.leftBottomImage {
+  position: absolute;
+  top: vwMobileSecondary(511);
+  left: vwMobileSecondary(72);
+  width: vwDesktop(468);
+  height: vwDesktop(384);
+  transform: scale(2.6) rotate(11deg);
+
+  @media (min-width: $desktop) {
+    top: vwDesktop(156);
+    left: vwDesktop(-25);
+    width: vwDesktop(568);
+    transform: rotate(13deg);
+  }
+}

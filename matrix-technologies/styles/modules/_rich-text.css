@@ -1,0 +1,27 @@
+.rc--rich-text {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-montserrat;
+  }
+
+  p {
+    a {
+      @apply text-black;
+    }
+  }
+
+  p + p,
+  :is(ol, ul, menu) + p,
+  :is(ol, ul, menu) + .rich-text-image,
+  :is(h1, h2, h3, h4, h5, h6) + :is(p, ol, ul, menu) {
+    @apply mt-[1em] sm:mt-[2em];
+  }
+
+  .rich-text-image + :is(h1, h2, h3, h4, h5, h6) {
+    @apply mt-[1em];
+  }
+}

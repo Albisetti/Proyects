@@ -1,0 +1,72 @@
+@import '../../styles/custom-styles/typography.scss';
+@import '../../styles/custom-styles/breakpoints.scss';
+@import '../../styles/custom-styles/spacing.scss';
+@import '../../styles/custom-styles/colors.scss';
+
+.header {
+  @apply fixed flex top-0 inset-x-0 z-[100] bg-transparent pointer-events-none justify-center;
+
+  width: 100vw;
+  @media (min-width: $tablet) {
+    width: calc(100vw - 18px);
+  }
+}
+
+.headerContent {
+  @apply flex items-center;
+  max-width: vwDesktop(1440);
+
+  padding-top: vwMobile(10);
+  padding-bottom: vwMobile(20);
+  @media (min-width: $tablet) {
+    padding-top: vwDesktop(28);
+    padding-bottom: vwDesktop(28);
+  }
+}
+
+.logoImage {
+  position: relative;
+
+  width: vwMobile(60);
+  height: vwMobile(60);
+  @media (min-width: $tablet) {
+    width: vwDesktop(50);
+    height: vwDesktop(50);
+  }
+
+  img {
+    @apply absolute w-full h-full;
+    transition: opacity 0.7s;
+  }
+}
+
+.bgA {
+  @apply bg-wheat;
+}
+
+.lineTopLeft {
+  transform: translateY(5);
+}
+
+.muteButton {
+  position: absolute;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+
+  width: vwMobile(32);
+  height: vwMobile(32);
+  margin-left: vwMobile(80);
+  @media (min-width: $tablet) {
+    width: vwDesktop(32);
+    height: vwDesktop(32);
+    margin-left: vwDesktop(120);
+  }
+
+  img {
+    object-fit: contain;
+  }
+}

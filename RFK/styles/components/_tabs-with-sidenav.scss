@@ -1,0 +1,15 @@
+.block-content-tabs-with-sidenav {
+  strong {
+    @apply text-deepBlueLight text-[18px] leading-[22px] font-almarose font-bold;
+  }
+  p {
+    @apply text-deepBlueLight text-[16px] leading-[20px] font-almarose font-medium mb-[10px];
+
+    a {
+      @apply !leading-[26px] hover:!underline hover:!opacity-100;
+    }
+  }
+  a {
+    @apply text-poolBlue text-[16px] leading-[20px] font-almarose font-medium;
+  }
+}

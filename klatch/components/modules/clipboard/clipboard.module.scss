@@ -1,0 +1,205 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.clipboardWrapper{
+    position: relative;
+    height: vwMobile(800);
+    @media (min-width: $desktop) {
+      height: vwDesktop(1000);
+    }
+}
+
+.clipboardImageLeft{
+  @apply rotate-[-20deg];
+  position: absolute;
+  width: vwMobile(400);
+  top: vwMobile(-600);
+  @media (min-width: $desktop) {
+    position: absolute;
+    z-index: 0;
+    top: vwDesktop(0);
+    left: vwDesktop(10);
+    width: vwDesktop(785);
+  }
+}
+
+.clipboardImageRight{
+  @apply rotate-[20deg];
+  position: absolute;
+  top: vwMobile(-580);
+  left: vwMobile(50);
+  width: vwMobile(400);
+  z-index: 0;
+  @media (min-width: $desktop) {
+    position: absolute;
+    z-index: 0;
+    top: vwDesktop(0);
+    left: vwMobile(0);
+    width: vwDesktop(746);
+  }
+
+}
+
+.firstImageLeft{
+  visibility: hidden;
+  @media (min-width: $desktop) {
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
+    width: vwDesktop(700);
+    top: vwDesktop(120);
+    left: vwDesktop(23);
+  }
+}
+
+.firstImageRight{
+  visibility: hidden;
+  @media (min-width: $desktop) {
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
+    width: vwDesktop(700);
+    top: vwDesktop(96);
+    left: vwDesktop(-20);
+  }
+}
+
+.secondImage{
+  visibility: hidden;
+  @media (min-width: $desktop) {
+    visibility: visible;
+    position: absolute;
+    z-index: 2;
+    width: vwDesktop(700);
+    top: vwDesktop(96);
+    left: vwDesktop(-20);
+  }
+}
+
+.secondImagePolaroidWrapper {
+  position: absolute;
+  max-width: vwDesktop(425);
+  left: vwDesktop(260);
+  top: vwDesktop(178);
+  clip-path: polygon(0 0, 51% 0, 100% 8%, 100% 80%, 100% 99%, 0 100%, 0% 80%, 0% 20%);
+  z-index: 2;
+  @apply rotate-[-28.913deg];
+
+  .polaroidImage {
+    margin-top: vwDesktop(25);
+    .actualImage {
+      padding: 0 vwDesktop(15);
+    }
+
+    .imageCaption {
+      font-size: vwDesktop(28.57);
+      line-height: vwDesktop(28.57);
+      margin-bottom: vwDesktop(40);
+      margin-top: vwDesktop(10);
+    }
+  }
+}
+
+.leftImagePolaroidWrapper {
+  position: absolute;
+  z-index: 2;
+  @apply rotate-[-12deg];
+
+  width: vwMobile(160);
+  left: vwMobile(70);
+  top: vwMobile(-330);
+
+  .leftPolaroidImage {
+    margin-top: vwMobile(12);
+    .leftActualImage {
+        padding: 0 vwMobile(8);
+    }
+
+    .leftImageCaption {
+      font-size: vwMobile(28.57);
+      line-height: vwMobile(28.57);
+      margin-bottom: vwMobile(18);
+      margin-top: vwMobile(5);
+    }
+  }
+  @media (min-width: $desktop) {
+    width: auto;
+    max-width: vwDesktop(425);
+    left: vwDesktop(70);
+    top: vwDesktop(500);
+
+    .leftPolaroidImage {
+      margin-top: vwDesktop(25);
+      .leftActualImage {
+        padding: 0 vwDesktop(15);
+      }
+
+      .leftImageCaption {
+        font-size: vwDesktop(28.57);
+        line-height: vwDesktop(28.57);
+        margin-bottom: vwDesktop(40);
+        margin-top: vwDesktop(10);
+      }
+    }
+  }
+}
+
+.leftImage {
+    position: absolute;
+    z-index: 2;
+    width: vwDesktop(748);
+    top: vwDesktop(500);
+    left: vwDesktop(-230);
+}
+
+.overlayingText{
+  position: absolute;
+  z-index: 3;
+  @apply rotate-[18deg];
+
+  width: vwMobile(238);
+  top: vwMobile(-480);
+  left: vwMobile(151);
+
+  h1{
+    font-size: vwMobile(15);
+    line-height: vwMobile(38.75);
+    margin-bottom: vwMobile(10);
+    margin-right: vwMobile(40);
+    font-weight: bold;
+  }
+
+  ul{
+    width: vwMobile(180);
+    font-size: vwMobile(10);
+    margin-left: vwMobile(5);
+  }
+
+
+
+  @media (min-width: $desktop) {
+    @apply rotate-[4deg];
+    width: vwDesktop(268);
+    top: vwDesktop(220);
+    left: vwDesktop(230);
+
+    h1{
+      font-size: vwDesktop(36);
+      line-height: vwDesktop(38.75);
+      margin-right: auto;
+      margin-bottom: vwDesktop(40);
+      font-weight: bold;
+    }
+  
+    ul{
+      padding-left: vwDesktop(20);
+      width: vwDesktop(300);
+      font-size: vwDesktop(12);
+      margin-left: auto;
+    }
+  }
+
+
+}

@@ -1,0 +1,59 @@
+supplier_pivot,SupplierName,Primary Contact,Email,Phone,NOTES,Type
+2000,ABC Supply,Fred Patten,fred.patten@abcsupply.com,null,null,Supplier
+2002,ADVANCED Interiors,Sandy Main,sandy@ainteriors.net,null,null,Manufacturer
+2003,Amerian Bath Group (Aquatic/Aker Maax/Clarion/Praxis),Jonathan Burke,jmburke@burkeagency.com,616-217-1399,null,Manufacturer
+2004,Bradford White,Jonathan Burke,jmburke@burkeagency.com,616-217-1399,null,Manufacturer
+2006,Carter Lumber,Emma May,Emay@carterlumber.com,null,null,Supplier
+2007,CHI Overhead Doors,Mark Sand,msand@chiohd.com,null,null,Manufacturer
+2009,Eaton/Cutler Hammer Electrical,Danny Radke,EatonBuilderRebates@eaton.com/dannypradke@Eaton.com,null,null,Manufacturer
+2010,Elkay,Mitch Whittington - mitchell.whittington@elkay.com,trademgmt@elkay.com/christen.allen@elkay.com,770-631-2196,Invoices to Mitch-1/14/20,Manufacturer
+2011,Ferguson (Proflow),Brad Kozel,brad.koel@ferguson.com,null,null,Supplier
+2013,Glass Concepts,Scott & Lori Gugino,scott@glassconceptsinc.com,null,null,Manufacturer
+2014,Gypsum Supply,Tara Jones,tjones@gypsum-supply.com,null,null,Supplier
+2019,Kichler,John Minkowski,John@johnthomassales.com,null,null,Manufacturer
+2020,Kwikset/Weiser/Baldwin,Bob Simpson,Bob.Simpson@spectrumhhi.com,null,null,Manufacturer
+2021,LP-Louisiana Pacific,Chris Mastrodonato, Chris.Mastrodonato@lpcorp.com,null,null,Supplier
+2022,Lumbermens,Mark Kooistra,markk@lumbermens-inc.com,null,null,Supplier
+2025,O'Leary,John Oleary,johno@olearypaint.com,null,null,Manufacturer
+2026,Organized Living,Stephanie Kollstedt,skollstedt@organizedliving.com,null,null,Manufacturer
+2027,Kingspan/Pactiv,Greg Schneids,Greg.schneids@gmail.com,null,null,Manufacturer
+2029,Rubbermaid,Heather Randol,rmd-builder-rebates@newellco.com/ heather.randol@newellco.com,null,null,Manufacturer
+2032,Trac Pipe,Jonathan Burke,jmburke@burkeagency.com,616-217-1399,null,Manufacturer
+2034,Trex,Jeff Ruddick,JRUDDICK@trex.com,null,null,Manufacturer
+2036,Williams Distributing,Kent Poll,kpoll@wmsdist.com,null,null,Supplier
+2037,Wimsatt,Shawn Dolata,smdolata@wimsattdirect.com,null,Clayton left to CT. Larry retired 11/19,Supplier
+2038,Zeeland Lumber,Rob Grothuis,Robg@zeelandlumber.com,null,null,Supplier
+2079,Tyvek,Brian,Brians@monsma.com,null,null,Manufacturer
+2085,Masterbrands,Chad Larson,Chad.Larson@ncrfhq.com,null,null,Manufacturer
+2086,Gerrit's,Curt Geers,Curt@gerritsappliances.com,null,null,Supplier
+2087,Mohawk,Scott,null,null,null,Manufacturer
+2089,Moen,Wendy Bloch,wendy.bloch@fbgpg.com,null,null,Manufacturer
+2091,Sherwin-Williams,Nick Show,Nick.A.Show@sherwin.com,null,null,Manufacturer
+2094,Jeld-Wen,null,null,null,null,Supplier
+2096,Heatilator,Natasha Nguyen,Rebates@hearthnhome.com,null,null,Manufacturer
+2101,Air Vent,null,null,null,null,Manufacturer
+2105,"Stone Pro, LLC",Jim Rapa,Jimrapa@stoneprollc.com,null,null,Manufacturer
+2109,Royal,Luke Reed,Luke.Reed@royalbuildingproducts.com,null,null,Manufacturer
+2112,True Wrap,Darryl Triewieler,Daryl@truenorthsales.com,null,null,Manufacturer
+2114,Delta Breeze,Mike Ostrowski,moski@lozuaway.com,null,null,Manufacturer
+2115,Simpson Strong-Tie,Jerry Tuggle,jtuggle@strongtie.com,null,null,Manufacturer
+2118,Tapco Group/Boral,Shane Busta,shane.busta@boral.com,null,null,Manufacturer
+2119,Beacon Roofing Supply,Craig Bates/ Amy Crawley,cbates@becn.com/ amy.crawley@alliedbuilding.com,null,null,Supplier
+2122,Reese,Susan Ragan,Sragan@reesewholesale.com,null,null,Supplier
+2123,Honeywell,Andy Smith,andy.m.smith@honeywell.com,null,null,Manufacturer
+2124,Hardie,Kyle Evans - kyle.evans@jameshardie.com,jacob.burnell@jameshardie.com,null,null,Manufacturer
+2126,FBM,null,null,null,null,Supplier
+2128,Pentair Myers,Spencer Lucas,spencer.lucas@pentair.com,null,null,Manufacturer
+2129,"Carrier Corporation (Carrier, Bryant, Comfortmaker, Day & Night, & Heil)",Anthony Frizzell,anthony.frizzell@carrier.com,null,null,Manufacturer
+2134,Rehau Construction LLC,Andrew Csoke,andrew.csoke@rehau.com,630-415-9040,null,Manufacturer
+2135,Honeywell Home,Paul Badalucco/ Amy,paul.badalucco@resideo.com,null,null,Manufacturer
+2136,InSinkErator,John Burke,jmburke@burkeagency.com,616-217-1399,null,Manufacturer
+2138,"EPS Security, Inc.",Russell Cross,null,616-459-0284,null,Manufacturer
+2139,Melinda Brody & Co.,Ben Marks,ben.marks@melindabrody.com,404-234-4059,null,Manufacturer
+2140,AHF Products,null,null,855-243-2521,null,Supplier
+2141,Eclipse Capital Group,Frank Bromley,fb@eclipsecaptialgroup.com,800-509-3552,null,Manufacturer
+2142,Emser Tile,Wendy Williams,wendywilliams@emser.com,323-650-2000,null,Manufacturer
+2144,New Home Sales+,Roland Nairnsey,roland@newhomesalesplus,561-236-2400,null,Manufacturer
+2145,"Huntsman Building Solutions (Demilec, Icynene, & Lapolla)",Douglas Brady,null,888-224-1533,null,Manufacturer
+2146,Johnstone Supply,Rob Peoples,rpeoples@jswmi.com,231-777-2727 x1115,null,Supplier
+2147,Barrette Outdoor Living,Kirk Evanov,null,null,null,Manufacturer

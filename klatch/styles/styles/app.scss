@@ -1,0 +1,71 @@
+@import './easing.scss';
+@import './typography.scss';
+@import './breakpoints.scss';
+@import './colors.scss';
+@import './slick.scss';
+
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+
+h4,
+.h4 {
+  @include h4;
+}
+
+h5,
+.h5 {
+  @include h5;
+}
+
+p,
+.p {
+  @include paragraph;
+}
+
+p.alt,
+.pAlt {
+  @include paragraphAlt;
+}
+
+p.condensed,
+.pCondensed {
+  @include paragraphCondensed;
+}
+
+ul,
+.ul,
+ol,
+.ol {
+  @include list;
+}
+
+.caption {
+  @include caption;
+}
+
+a {
+  @include link;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+}

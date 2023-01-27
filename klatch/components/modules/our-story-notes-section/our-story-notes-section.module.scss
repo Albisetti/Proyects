@@ -1,0 +1,196 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.sectionContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 0;
+
+  width: vwDesktop(1440);
+  background-color: $orange;
+
+  padding-top: vwMobileSecondary(40);
+  padding-bottom: vwMobileSecondary(300);
+  margin-bottom: vwMobileSecondary(185);
+  @media (min-width: $desktop) {
+    padding: 0;
+    height: vwDesktop(700);
+    margin-bottom: 0;
+  }
+
+  .mainTitle {
+    font-weight: 400;
+    color: white;
+    z-index: 5;
+
+    width: vwMobileSecondary(240);
+    font-size: vwMobileSecondary(55);
+    line-height: vwMobileSecondary(55);
+    margin-bottom: vwMobileSecondary(30);
+    @media (min-width: $desktop) {
+      width: vwDesktop(376);
+      font-size: vwDesktop(88);
+      line-height: vwDesktop(88);
+      margin-bottom: 0;
+    }
+  }
+  .textContentContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: vwDesktop(38);
+    border: none;
+
+    @media (min-width: $desktop) {
+      width: vwDesktop(450);
+      padding: vwDesktop(13) 0;
+      border-top: vwDesktop(2) solid white;
+      border-bottom: vwDesktop(2) solid white;
+    }
+
+    p {
+      color: white;
+      z-index: 5;
+
+      max-width: vwMobileSecondary(320);
+      @media (min-width: $desktop) {
+        max-width: vwDesktop(407);
+      }
+    }
+  }
+}
+
+.noteImage {
+  position: absolute;
+  z-index: 0;
+
+  width: vwMobileSecondary(277);
+  height: vwMobileSecondary(358);
+  @media (min-width: $desktop) {
+    width: vwDesktop(434);
+    height: vwDesktop(676);
+  }
+}
+.backgroundNoteImage {
+  top: vwMobileSecondary(321);
+  left: vwMobileSecondary(-35);
+  transform: rotate(26deg);
+
+  @media (min-width: $desktop) {
+    top: vwDesktop(46);
+    left: vwDesktop(-20);
+    transform: rotate(31deg);
+  }
+}
+.foregroundNoteImage {
+  top: vwMobileSecondary(290);
+  left: vwMobileSecondary(-30);
+  transform: rotate(12deg);
+
+  @media (min-width: $desktop) {
+    top: vwDesktop(-51);
+    left: vwDesktop(22);
+    transform: rotate(17deg);
+  }
+}
+
+.pencilImage {
+  position: absolute;
+  width: vwDesktop(494);
+  height: vwDesktop(46);
+  transform: scale(1.9) rotate(-37deg);
+  z-index: 1;
+
+  top: vwMobileSecondary(520);
+  left: vwMobileSecondary(110);
+  @media (min-width: $desktop) {
+    top: vwDesktop(407);
+    left: vwDesktop(41);
+    transform: rotate(-37deg);
+  }
+}
+
+.notesTextContainer {
+  position: absolute;
+  width: vwDesktop(306);
+  transform: scale(2) rotate(12deg);
+
+  top: vwMobileSecondary(365);
+  left: vwMobileSecondary(75);
+  @media (min-width: $desktop) {
+    top: vwDesktop(38);
+    left: vwDesktop(150);
+    transform: rotate(17deg);
+  }
+
+  .notesTitle,
+  p {
+    text-align: left;
+    font-weight: 400;
+    @apply font-title select-none;
+  }
+  .notesTitle {
+    font-size: vwDesktop(48);
+    line-height: vwDesktop(39);
+    margin-bottom: vwDesktop(50);
+  }
+  p {
+    font-size: vwDesktop(30);
+    line-height: vwDesktop(48);
+  }
+}
+
+.polaroidImage {
+  position: absolute;
+  box-shadow: vwDesktop(-6) vwDesktop(6) vwDesktop(6) rgba(0, 0, 0, 0.2);
+  width: vwDesktop(396);
+  height: vwDesktop(298);
+  border: vwDesktop(10) solid white;
+  object-fit: cover;
+  background-color: white;
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+.firstPolaroidImage {
+  top: vwDesktop(-78);
+  right: vwDesktop(30);
+  transform: rotate(10deg);
+  z-index: 1;
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+.secondPolaroidImage {
+  top: vwDesktop(-250);
+  right: vwDesktop(-16);
+  transform: rotate(-10deg);
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.bookImage {
+  position: absolute;
+  right: vwDesktop(-380);
+  bottom: vwDesktop(-112);
+  width: vwDesktop(807);
+  height: vwDesktop(644);
+  transform: rotate(17deg);
+  z-index: 2;
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}

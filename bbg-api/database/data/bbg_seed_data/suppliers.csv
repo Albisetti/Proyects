@@ -1,0 +1,101 @@
+supplier_pivot,SupplierName,Primary Contact,Email,Phone,NOTES
+2000,ABC Supply,Fred Patten,fred.patten@abcsupply.com,null,null
+2002,ADVANCED Interiors,Sandy Main,sandy@ainteriors.net,null,null
+2003,Aquatic/Aker Maax/Clarion/Praxis,Jonathan Burke,jmburke@burkeagency.com,616-217-1399,null
+2004,Bradford White,Jonathan Burke,jmburke@burkeagency.com,616-217-1399,null
+2005,Broan,Nathan,nathan.arendt@broan-nutone.com,null,null
+2006,Carter,Emma May,Emay@carterlumber.com,null,null
+2007,CHI Overhead Doors,Mark Sand,msand@chiohd.com,null,null
+2008,Delta,Jonathan Burke,jmburke@burkeagency.com,null,null
+2009,Eaton/Cutler Hammer Electrical,Danny Radke,EatonBuilderRebates@eaton.com/dannypradke@Eaton.com,null,null
+2010,Elkay ,Mitch Whittington - mitchell.whittington@elkay.com,trademgmt@elkay.com/christen.allen@elkay.com,770-631-2196,Invoices to Mitch-1/14/20
+2011,Ferguson,Brad Kozel,brad.koel@ferguson.com,null,null
+2012,Fypon,null,null,null,null
+2013,Glass Concepts,Scott & Lori Gugino,scott@glassconceptsinc.com,null,null
+2014,Gypsum Supply,Tara Jones,tjones@gypsum-supply.com,null,null
+2015,Home Acres/V-Line,Roger Pedersen,rpedersen@wmsdist.com,null,null
+2016,Ilumigreen,Chris Bienick,Chris@ilumigreen.com,null,null
+2017,ITW,Mark VandenBosch,markv@zeelandlumber.com,null,null
+2018,J & N,null,null,null,null
+2019,Kichler,John Minkowski,John@johnthomassales.com,null,null
+2020,Kwikset/Weiser/Baldwin,Bob Simpson,Bob.Simpson@spectrumhhi.com,null,null
+2021,LP-Louisiana Pacific, Chris Mastrodonato, Chris.Mastrodonato@lpcorp.com,null,null
+2022,Lumbermens,Mark Kooistra,markk@lumbermens-inc.com,null,null
+2023,Milliken,null,null,null,null
+2024,MKD,null,mfitch@mkdkitchens.com,null,null
+2025,O'Leary ,John Oleary,johno@olearypaint.com,null,null
+2026,Organized Living,Stephanie Kollstedt,skollstedt@organizedliving.com,null,null
+2027,Kingspan/Pactiv,Greg Schneids,Greg.schneids@gmail.com,null,null
+2028,Proflow,null,null,null,null
+2029,Rubbermaid,Heather Randol,rmd-builder-rebates@newellco.com/ heather.randol@newellco.com,null,null
+2030,Sears,null,null,null,null
+2031,Shoemaker,Dan Shoemaker,dans@shoemakerhvac.com,null,null
+2032,Trac Pipe,Jonathan Burke,jmburke@burkeagency.com,616-217-1399,null
+2033,Trane,Melissa Foley,"MelissaFoley@irco.com, CC: lee.hager@munchsupply.com & jason.lewis@irco.com",null,null
+2034,Trex,Jeff Ruddick,JRUDDICK@trex.com,null,null
+2035,WasteKing Disposals,Khrystyna Skabyk,SFBuilder_Finance@moen.com,null,new email submission 6/29/20
+2036,Williams,Kent Poll,kpoll@wmsdist.com,null,null
+2037,Wimsatt,Shawn Dolata,smdolata@wimsattdirect.com,null,Clayton left to CT. Larry retired 11/19
+2038,Zeeland Lumber,Rob Grothuis,Robg@zeelandlumber.com,null,null
+2039,Zurn,Patrick Tanner,pmtanner@balfrey-johnston.com,null,null
+2079,Tyvek,Brian,Brians@monsma.com,null,null
+2080,Boral,null,null,null,null
+2081,Fox Brothers,Craig Bates,cbates@becn..com,null,null
+2082,Fypon,null,null,null,null
+2083,Norcraft,Karen Junkans,Karen.Junkans@ncfthq.com,null,null
+2084,Mid Continental,Mark Derry,Mark.Derry@ncfthq.com,null,null
+2085,Masterbrands,Chad Larson,Chad.Larson@ncrfhq.com,null,null
+2086,Gerrit's,Curt Geers,Curt@gerritsappliances.com,null,null
+2087,Mohawk,Scott,null,null,null
+2088,Toto,null,null,null,null
+2089,Moen,Wendy Bloch,wendy.bloch@fbgpg.com,null,null
+2090,Guardian,null,null,null,null
+2091,Sherwin-Williams,Nick Show,Nick.A.Show@sherwin.com,null,null
+2092,Cooper Lighting,null,null,null,null
+2093,Demilec,Tim Comstock/ Allen Lenartz,Tcomstock@Icynene-lapolla.com/ Alenartz@icynene-lapolla.com,612-961-6967,Allen - 616-485-2317 (FORMERLY ICYNENE/LAPOLLA)
+2094,Jeld-Wen,null,null,null,null
+2095,Plastpro,null,null,null,null
+2096,Heatilator,Natasha Nguyen,Rebates@hearthnhome.com,null,null
+2097,Convoy Building Supply,null,null,null,null
+2098,OTHER Supplier,null,null,null,null
+2100,ABC Supply,Fred Patten,Fred.Patten@abcsupply.com,null,null
+2101,Air Vent,null,null,null,null
+2105,"Stone Pro, LLC",Jim Rapa,Jimrapa@stoneprollc.com,null,null
+2106,J & N,null,null,null,null
+2107,J & N,null,null,null,null
+2109,Royal,Luke Reed,Luke.Reed@royalbuildingproducts.com,null,null
+2111,L&W Supply,Bernard Fredal,Ben.Fredal@lwsupply.com,null,null
+2112,True Wrap,Darryl Triewieler,Daryl@truenorthsales.com,null,null
+2113,True North,Darryl Triewieler,daryl@truenorthsales.com,null,null
+2114,Delta Breeze,Mike Ostrowski,moski@lozuaway.com,null,null
+2115,Simpson Strong-Tie,Jerry Tuggle,jtuggle@strongtie.com,null,null
+2118,Tapco Group/Boral,Shane Busta,shane.busta@boral.com,null,null
+2119,Beacon Roofing Supply,Craig Bates/ Amy Crawley,cbates@becn.com/ amy.crawley@alliedbuilding.com,null,null
+2120,DRM,Kevin Reed,Kevin@duker-reilly.com,null,null
+2121,Uponor,Jonathan Burke,jmburke@burkeagency.com,null,null
+2122,Reese,Susan Ragan,Sragan@reesewholesale.com,null,null
+2123,Honeywell,Andy Smith,andy.m.smith@honeywell.com,null,null
+2124,Hardie,Kyle Evans - kyle.evans@jameshardie.com,jacob.burnell@jameshardie.com,null,null
+2125,Cedar Siding,Joe Robinson,jrobinson@cedarsidinginc.com,null,null
+2126,FBM,null,null,null,null
+2127,Dimplex NA,Kent Poll,kpoll@wmsdist.com,null,null
+2128,Pentair Myers,Spencer Lucas,spencer.lucas@pentair.com,null,null
+2129,Carrier Corporation,Anthony Frizzell,anthony.frizzell@carrier.com,null,null
+2130,Heil Heating & Cooling,A Carrier Corp company,null,null,null
+2131,Bryant Heating & Cooling,A Carrier Corp company,null,null,null
+2132,Comfortmaker A/C & Heating,A Carrier Corp company,null,null,null
+2133,Tempstar Heating & Cooling,A Carrier Corp company,null,null,null
+2134,Rehau Construction LLC,Andrew Csoke,andrew.csoke@rehau.com,630-415-9040,null
+2135,Honeywell Home,Paul Badalucco/ Amy,paul.badalucco@resideo.com,null,null
+2136,InSinkErator,John Burke,jmburke@burkeagency.com,616-217-1399,null
+2137,Day & Night Heating & Cooling,A Carrier Corp company,null,null,null
+2138,"EPS Security, Inc.",Russell Cross,null,616-459-0284,null
+2139,Melinda Brody & Co.,Ben Marks,ben.marks@melindabrody.com,404-234-4059,null
+2140,AHF Products,null,null,855-243-2521,null
+2141,Eclipse Capital Group,Frank Bromley,fb@eclipsecaptialgroup.com,800-509-3552,null
+2142,Emser Tile,Wendy Williams,wendywilliams@emser.com,323-650-2000,null
+2143,Lindsay Windows,David Bernat,drb@guarext.com,630-935-3428,null
+2144,New Home Sales+,Roland Nairnsey,roland@newhomesalesplus,561-236-2400,null
+2145,Huntsman Building Solutions,Douglas Brady,null,888-224-1533,null
+2146,Johnstone Supply,Rob Peoples,rpeoples@jswmi.com,231-777-2727 x1115,null
+2147,Barrette Outdoor Living,Kirk Evanov,null,null,null

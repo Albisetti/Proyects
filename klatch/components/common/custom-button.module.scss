@@ -1,0 +1,27 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.buttonWrapper {
+  @apply flex items-center justify-center transition-all duration-300;
+  @apply font-bodyBold font-semibold cursor-pointer;
+
+  margin-top: vwMobile(20);
+  margin-bottom: vwMobile(0);
+  padding: vwMobile(10) 0;
+  border-width: vwMobile(2);
+  border-style: solid;
+
+  font-size: vwMobile(17);
+  line-height: vwMobile(17.8);
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(65);
+    border-width: vwDesktop(2);
+    margin-bottom: vwDesktop(10);
+    padding: vwDesktop(8) 0;
+    font-size: vwDesktop(24);
+    line-height: vwDesktop(28.8);
+  }
+}

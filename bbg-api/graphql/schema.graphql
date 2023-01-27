@@ -1,0 +1,339 @@
+#import schemas/*.graphql
+#import mutations/*.graphql
+#import queries/*.graphql
+
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+scalar DateTimeUtc @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTimeUtc")
+
+"Can be used as an argument to upload files using https://github.com/jaydenseric/graphql-multipart-request-spec"
+scalar Upload @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+
+type Query {
+    whoAmI: WhoAmIResult @guard
+
+    users(
+        user_type: [UserType]
+        orderBy: [OrderByClause!] @orderBy
+    ): [User!]! @paginate(type: "connection" builder: "App\\GraphQL\\Queries\\Users")
+    user(id: ID! @eq): User @find
+
+    searchTerritoryManagers(search: String): [User!]! @paginate(type: "connection" model: "App\\Models\\User" builder: "App\\GraphQL\\Queries\\SearchTerritoryManagers")
+    searchAdministrators(search: String): [User!]! @paginate(type: "connection" model: "App\\Models\\User" builder: "App\\GraphQL\\Queries\\SearchAdministrators")
+
+	conversionRevenue(input: ConversionRevenueInput @spread): ConversionRevenueResponse!
+	paymentsDue(input: PaymentsDueInput @spread): PaymentsDueResponse!
+	increasedRebatesEarned(input: IncreasedRebatesEarnedInput @spread): [IncreasedRebateEarned!]
+
+    address(id: ID! @eq): Address @find(model: "App\\Models\\Addresses")
+    addresses: [Address!]! @paginate(type: "connection" model: "App\\Models\\Addresses")
+
+    state(id: ID! @eq): State @find
+    states: [State!]! @paginate(type: "connection")
+
+    city(id: ID! @eq): City @find(model: "App\\Models\\City")
+    cities: [City!]! @paginate(type: "connection" model: "App\\Models\\City")
+
+    subcontractor(id: ID! @eq): SubContractors @find  @guard
+    subcontractors(orderBy: _ @orderBy(columns: ["updated_at", "created_at"])): [SubContractors!]! @paginate(type: "connection" model: "App\\Models\\SubContractors"  builder: "App\\GraphQL\\Queries\\Subcontractors")  @guard
+    searchSubcontractors(search: String): [SubContractors!]! @paginate(type: "connection" model: "App\\Models\\SubContractors"  builder: "App\\GraphQL\\Queries\\SearchSubcontractors")  @guard
+
+    organization(id: ID! @eq): Organizations @find
+    organizations(
+        organization_type: [OrganizationType]
+        orderBy: [OrderByClause!] @orderBy
+    ): [Organizations!]! @paginate(type: "connection" builder: "App\\GraphQL\\Queries\\Organizations") @guard
+    organizationsWithRebate(
+        status: [RebateReportStatus]
+        orderBy: [OrderByClause!] @orderBy
+    ): [Organizations!]! @paginate(type: "connection" builder: "App\\GraphQL\\Queries\\OrganizationsWithRebate") @guard
+    searchOrganizations(
+        search: String
+        organization_type: [OrganizationType]
+    ): [Organizations!]! @paginate(type: "connection" model: "App\\Models\\Organizations" builder: "App\\GraphQL\\Queries\\SearchOrganizations") @guard
+    searchOrganizationsWithRebate(
+        search: String
+        status: [RebateReportStatus]
+    ): [Organizations!]! @paginate(type: "connection" model: "App\\Models\\Organizations" builder: "App\\GraphQL\\Queries\\SearchOrganizationsWithRebate") @guard
+    searchOrganizationAvailablePrograms(id: ID! @eq search:String excludeUsedProgram:Boolean): [Programs]  @paginate(type: "connection" model: "App\\Models\\Programs" builder: "App\\GraphQL\\Queries\\SearchOrganizationAvailablePrograms")
+
+    searchEligibleBuilder(
+        search: String!
+        program_id: ID! @rules(apply: ["required","exists:programs,id"])
+    ): [Organizations] @paginate(type: "connection" model: "App\\Models\\Organizations" builder: "App\\GraphQL\\Queries\\SearchEligibleBuilder")
+
+    """
+    program(id: ID! @eq orderBy: [OrderByClause!] @orderBy): Programs @find
+    """
+
+    program(id: ID @eq): Programs @find(model: "App\\Models\\Programs")
+    programs(orderBy: [OrderByClause!] @orderBy programType: [ProgramType]): [Programs!]!  @paginate(type: "connection" model: "App\\Models\\Programs" builder: "App\\GraphQL\\Queries\\Programs")
+    searchPrograms(search: String): [Programs!] @paginate(type: "connection" model: "App\\Models\\Programs" builder: "App\\GraphQL\\Queries\\SearchPrograms")
+    searchClaimablePrograms(search: String): [Programs!] @paginate(type: "connection" model: "App\\Models\\Programs" builder: "App\\GraphQL\\Queries\\SearchClaimablePrograms")
+
+    programCompany(id: ID @eq): ProgramCompanies @find(model: "App\\Models\\programCompanies")
+    programCompanies(orderBy: [OrderByClause!] @orderBy): [ProgramCompanies!]!  @paginate(type: "connection" model: "App\\Models\\programCompanies")
+    searchProgramCompanies(search: String @search): [ProgramCompanies!]! @paginate(type: "connection" model: "App\\Models\\programCompanies")
+
+    product(id: ID @eq): Product @find(model: "App\\Models\\Products")
+    products(orderBy: [OrderByClause!] @orderBy): [Product!]!  @paginate(type: "connection" model: "App\\Models\\Products")
+    searchProducts(search: String @search): [Product!]! @softDeletes @paginate(type: "connection" model: "App\\Models\\Products")
+
+    SearchOrganizationProducts(id: ID search: String trashedProducts: Boolean): [Product] @paginate(type: "connection" model: "App\\Models\\Products" builder: "App\\GraphQL\\Queries\\SearchOrganizationProducts") @guard
+
+    productCategory(id: ID @eq): ProductCategories @find(model: "App\\Models\\ProductCategories")
+    productCategories(orderBy: [OrderByClause!] @orderBy): [ProductCategories!]!  @paginate(type: "connection" model: "App\\Models\\ProductCategories")
+    searchProductCategories(search: String @search): [ProductCategories!]! @paginate(type: "connection" model: "App\\Models\\ProductCategories")
+
+    productsPerBundle(builderId: ID bundleId: ID! orderBy: [OrderByClause!] @orderBy): [Product!]! @paginate(type: "connection" model: "App\\Models\\Products" builder: "App\\GraphQL\\Queries\\ProductsPerBundle")
+    productsPerProgram(builderId: ID programId: ID! orderBy: [OrderByClause!] @orderBy): [Product!]! @paginate(type: "connection" model: "App\\Models\\Products" builder: "App\\GraphQL\\Queries\\ProductsPerProgram")
+
+    ProductsFromOrganization( org_id:ID!@rules(apply: ["required","exists:organizations,id"])): [RebateReportsHousesProductsFlatten]
+
+    bundle(id: ID @eq): Bundles @find(model: "App\\Models\\Bundles")
+    bundles(orderBy: [OrderByClause!] @orderBy): [Bundles!]!  @paginate(type: "connection" model: "App\\Models\\Bundles" builder: "App\\GraphQL\\Queries\\Bundles") @guard
+    bundlesPerBuilder(orgId:ID!, orderBy: [OrderByClause!] @orderBy): [Bundles!]!  @paginate(type: "connection" model: "App\\Models\\Bundles") @guard
+    searchBundles(search: String): [Bundles!]! @paginate(type: "connection" model: "App\\Models\\Bundles" builder: "App\\GraphQL\\Queries\\SearchBundles") @guard
+    searchBundlesPerBuilder(orgId:ID, search: String): [Bundles!]! @paginate(type: "connection" model: "App\\Models\\Bundles" builder: "App\\GraphQL\\Queries\\SearchBundlesPerBuilder") @guard
+
+    ConversionFlatPayment(id: ID @eq): ConversionFlatPayment @find(model: "App\\Models\\ConversionFlatPayment")
+    ConversionFlatPayments(orderBy: [OrderByClause!] @orderBy): [ConversionFlatPayment!]!  @paginate(type: "connection" model: "App\\Models\\ConversionFlatPayment")
+
+    ConversionFlatPercent(id: ID @eq): ConversionFlatPercent @find(model: "App\\Models\\ConversionFlatPercent")
+    ConversionFlatPercents(orderBy: [OrderByClause!] @orderBy): [ConversionFlatPercent!]!  @paginate(type: "connection" model: "App\\Models\\ConversionFlatPercent")
+
+    ConversionTieredPercent(id: ID @eq): ConversionTieredPercent @find(model: "App\\Models\\ConversionTieredPercent")
+    ConversionTieredPercents(orderBy: [OrderByClause!] @orderBy): [ConversionTieredPercent!]!  @paginate(type: "connection" model: "App\\Models\\ConversionTieredPercent")
+
+    ConversionByActivity(id: ID @eq): ConversionByActivity @find(model: "App\\Models\\ConversionByActivity")
+    ConversionByActivities(orderBy: [OrderByClause!] @orderBy): [ConversionByActivity!]!  @paginate(type: "connection" model: "App\\Models\\ConversionByActivity")
+
+    ConversionPayment(id: ID @eq): ConversionPayment @find(model: "App\\Models\\ConversionPayment")
+    ConversionPayments(orderBy: [OrderByClause!] @orderBy): [ConversionPayment!]!  @paginate(type: "connection" model: "App\\Models\\ConversionPayment")
+
+    house(id: ID @eq): House @find(model: "App\\Models\\Houses")
+    houses(orderBy: [OrderByClause!] @orderBy): [House!]  @paginate(type: "connection" model: "App\\Models\\Houses" builder: "App\\GraphQL\\Queries\\Houses")
+    searchHouses(search: String): [House!] @paginate(type: "connection" model: "App\\Models\\Houses" builder: "App\\GraphQL\\Queries\\SearchHouses")
+
+    subdivision(id: ID! @eq): SubDivision @find
+    subdivisionWithData(id: ID! @rules(apply: ["required","exists:sub_divisions,id"])): SubDivisionWithData
+    subdivisions(orderBy: [OrderByClause!] @orderBy): [SubDivision!]!  @paginate(type: "connection" model: "App\\Models\\SubDivision" builder: "App\\GraphQL\\Queries\\Subdivisions")
+    subdivisionsPerBuilder(orderBy: [OrderByClause!] @orderBy orgId:ID): [SubDivision!]!  @paginate(type: "connection" model: "App\\Models\\SubDivision" builder: "App\\GraphQL\\Queries\\SubdivisionsPerBuilder")
+    activeSubdivisions(orderBy: [OrderByClause!] @orderBy): [SubDivision!]!  @paginate(type: "connection" model: "App\\Models\\SubDivision" builder: "App\\GraphQL\\Queries\\ActiveSubdivision")
+    activeSubdivisionsPerBuilder(orgId:ID! orderBy: [OrderByClause!] @orderBy): [SubDivision!]!  @paginate(type: "connection" model: "App\\Models\\SubDivision" builder: "App\\GraphQL\\Queries\\ActiveSubdivisionPerBuilder")
+    searchSubdivisions(search: String): [SubDivision!]! @paginate(type: "connection" model: "App\\Models\\SubDivision" builder: "App\\GraphQL\\Queries\\SearchSubdivisions")
+    searchSubdivisionsPerBuilder(orgId:ID! search: String!): [SubDivision!]! @paginate(type: "connection" model: "App\\Models\\SubDivision" builder: "App\\GraphQL\\Queries\\SearchSubdivisionsPerBuilder")
+
+    property(id: ID! @eq): Property @find
+    properties(orderBy: [OrderByClause!] @orderBy): [Property!]!  @paginate(type: "connection" model: "App\\Models\\Property")
+
+    invoice(id: ID @eq): Invoice @find(model: "App\\Models\\Invoice")
+    invoices(orderBy: [OrderByClause!] @orderBy): [Invoice!]!  @paginate(type: "connection" model: "App\\Models\\Invoice")
+
+    claim(id: ID @eq): Claims @find(model: "App\\Models\\Claims")
+    volumeClaims(program_id: ID product_id:ID): volumeClaims
+    claims(orderBy: [OrderByClause!] @orderBy): [Claims!]!  @paginate(type: "connection" model: "App\\Models\\Claims")
+    recentClaimPerProgram: [Claims]  @paginate(type: "connection" model: "App\\Models\\Claims"  builder: "App\\GraphQL\\Queries\\RecentClaimPerProgram")
+    searchClaims(search: String @search): [Claims!]! @paginate(type: "connection" model: "App\\Models\\Claims")
+    calculateClaimTotal(quarter: Int,year:Int,orgId:ID): calculateClaimTotal
+    claimsPerStatus(
+        status: [ClaimStatus]
+        claim_type: ClaimType
+        orderBy: [OrderByClause!] @orderBy
+    ): [Claims] @paginate(type: "connection" builder: "App\\GraphQL\\Queries\\ClaimsPerStatus")
+
+    distinctClaimReportPeriod: [ClaimReportPeriodList]
+    distinctReportPeriodForCloseClaims: [ClaimReportPeriodList]
+    getOldestOpenClaimPeriod: ClaimReportPeriodList
+    getPeriodsListFromClaims(ids:[ID]): [ClaimReportDateList]
+    claimsForPeriod( year: Int! quarter: Int! @rules(apply: ["required","min:1","max:4"]) ): [Claims!]! @paginate(type: "connection" model: "App\\Models\\Claims" builder: "App\\GraphQL\\Queries\\ClaimsForPeriod")
+    claimsForReportPeriod( year: Int! quarter: Int! @rules(apply: ["required","min:1","max:4"]) ): [Claims!]! @paginate(type: "connection" model: "App\\Models\\Claims" builder: "App\\GraphQL\\Queries\\ClaimsForReportPeriod")
+
+    buildersWithClaimsDuringOldestUnclosedReportPeriod: claimPeriod
+    BuildersWithClaimDuringReportPeriod( year: Int! quarter: Int! @rules(apply: ["required","min:1","max:4"]) ): [Organizations]
+
+    dispute(id: ID @eq): Disputes @find(model: "App\\Models\\Disputes")
+    disputes(orderBy: [OrderByClause!] @orderBy): [Disputes!]!  @paginate(type: "connection" model: "App\\Models\\Disputes" builder: "App\\GraphQL\\Queries\\Disputes") @guard
+
+    rebateReport(id: ID @eq): RebateReports @find(model: "App\\Models\\RebateReports")
+    rebateReports(orderBy: [OrderByClause!] @orderBy): [RebateReports!]!  @paginate(type: "connection" model: "App\\Models\\RebateReports" builder: "App\\GraphQL\\Queries\\RebateReports")
+    rebateReportsWhereProductAreInDateRange(startDate: Date! endDate: Date!): [RebateReports!]!  @paginate(type: "connection" model: "App\\Models\\RebateReports" builder: "App\\GraphQL\\Queries\\RebateReportsWhereProductAreInDateRange")
+
+    ProductClaimsTemplateClaims(programId: ID! @rules(apply: ["required","exists:products,id"])): ProductAndClaims @paginate(type: "connection" builder: "App\\GraphQL\\Queries\\ProductClaimsTemplateClaims")
+
+    getPropertyForBatchCorrection( orgId: ID!, productId: ID!, startDate: Date, endDate: Date ): [HousesPerSubdivision]
+
+    userNotifications(orderBy: [OrderByClause!] @orderBy  includeRead: Boolean): [SystemMessage]   @paginate(type: "connection" model: "App\\Models\\SystemMessage" builder: "App\\GraphQL\\Queries\\UserNotifications") @guard
+
+    actionNeededRebate: RebateCountAggregated @guard
+    readiedRebatesCount: RebateCountAggregated @guard
+
+    sumCurrentlyOpenClaim( builderIds:[ID], programIds:[ID], productIds:[ID], regionIds:[ID], territoryManagerIds:[ID] ): claimSum
+    sumCloseClaim( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderIds:[ID], programIds:[ID], productIds:[ID], regionIds:[ID], territoryManagerIds:[ID] ): claimSum
+    claimChartReport( year:Int!, quarter: Int! @rules(apply:["min:1","max:4"]), builderIds:[ID], programIds:[ID], productIds:[ID], regionIds:[ID], territoryManagerIds:[ID] ): claimChartReport
+
+    claimReportByBuilder( builderIds:[ID], programIds:[ID], productIds:[ID], regionIds:[ID], territoryManagerIds:[ID] ): [Organizations]
+    claimReportByProgram( builderIds:[ID], programIds:[ID], productIds:[ID], regionIds:[ID], territoryManagerIds:[ID] ): [Programs]
+    claimReportByProduct( builderIds:[ID], programIds:[ID], productIds:[ID], regionIds:[ID], territoryManagerIds:[ID] ): [Product]
+    claimReportByTM( builderIds:[ID], programIds:[ID], productIds:[ID], regionIds:[ID], territoryManagerIds:[ID] ): [User]
+    googleAnalyticsData: String
+
+    factoryClaimsCsv: String @guard
+    allocationCsv(quarter:Int @rules(apply:["min:1","max:4"]), year:Int): String @guard
+}
+
+type Mutation {
+    login(
+        email: String! @rules(apply: ["required"])
+        password: String! @rules(apply: ["required"])
+    ): UserLoginResponse
+
+    forgotPassword(
+        email: String!
+		requestingForAnother: Boolean
+    ): ForgotPasswordResponse!
+    isEmailAddressAvailable(email: String!): IsEmailAddressAvailableResponse
+
+	confirmAccountRequest(forgotCode: String!, newPassword: String!): ResetPasswordRequestResponse!
+	resetPasswordRequest(forgotCode: String!, newPassword: String!): ResetPasswordRequestResponse!
+    impersonate(id: ID): ImpersonateResult @guard
+    stopImpersonating(id: ID): StopImpersonatingResult @guard
+
+    createUser(images: [mediaInput!], input: UserInput! @spread): User! @createWithMedia(model: "App\\Models\\User", fileModel: "App\\Models\\ProgramFiles")
+    updateUser(images: [mediaInput!], id: ID!, input: UserInput! @spread): User! @update(model: "App\\Models\\User")
+	updateUserImage(id: ID!, image: [Upload]): User
+
+    deleteUser(id: [ID]!): [User!] @delete
+    sendUserInvite(id: ID!): UserResetPassword
+    resetUserPassword(id: ID!): UserSendInvite
+
+    createAddress(input: AddressInput! @spread): Address! @create(model: "App\\Models\\Addresses")
+    createAddressFromCSV(file: Upload!): [Address!]
+    updateAddress(id: ID!, input: AddressInput! @spread): Address! @update(model: "App\\Models\\Addresses")
+    deleteAddress(id: [ID!]!): [Address!]! @delete(model: "App\\Models\\Addresses")
+
+    createState(input: CreateStateInput! @spread): State! @create(model: "App\\Models\\State")
+    updateState(id: ID!, input: StateInput! @spread): State! @update(model: "App\\Models\\State")
+    deleteState(id: [ID]!): [State!]! @delete
+
+    createCity(input: CityInput! @spread): City! @create(model: "App\\Models\\City")
+    updateCity(id: ID!, input: CityInput! @spread): City! @update(model: "App\\Models\\City")
+    deleteCity(id: [ID!]!): [City!]! @delete
+
+    createOrganization(input: CreateOrganizationInput @spread): Organizations @create(model: "App\\Models\\Organizations")
+    updateOrganization(id: ID, input: UpdateOrganizationInput @spread): Organizations @update(model: "App\\Models\\Organizations")
+    massUpdateOrganization(organizations:[UpsertOrganizationRelationInput]): [Organizations]
+    updateOrganizationProgramOverwrites(id: ID, input: [CustomProductPivot]): Organizations
+    deleteOrganization(id: ID!): Organizations @delete(model: "App\\Models\\Organizations")
+
+    createOrganizationDue(input: OrganizationDueInput @spread): OrganizationDue @create(model: "App\\Models\\OrganizationDues")
+    updateOrganizationDue(id: ID, input: OrganizationDueInput @spread): OrganizationDue @update(model: "App\\Models\\OrganizationDues")
+    deleteOrganizationDue(id: ID!): OrganizationDue @delete(model: "App\\Models\\OrganizationDues")
+
+    createOrganizationDuePayment(input: OrganizationDuePaymentInput @spread): OrganizationDuePayment @create(model: "App\\Models\\OrganizationDuePayments")
+    updateOrganizationDuePayment(id: ID, input: OrganizationDuePaymentInput @spread): OrganizationDuePayment @update(model: "App\\Models\\OrganizationDuePayments")
+    deleteOrganizationDuePayment(id: ID!): OrganizationDue @delete(model: "App\\Models\\OrganizationDuePayments")
+
+    createRule(input: RuleInput! @spread): Rule! @create(model: "App\\Models\\Rules")
+    updateRule(id: ID!, input: RuleInput! @spread): Rule! @update(model: "App\\Models\\Rules")
+    deleteRule(id: [ID]!): Rule! @delete
+
+    createProgram(files: [Upload!], input: CreateProgramInput! @spread): Programs! @createWithFiles(model: "App\\Models\\Programs", fileModel: "App\\Models\\ProgramFiles")
+    updateProgram(files: [Upload!], id: ID!, input: ProgramInput @spread): Programs! @updateWithFiles(model: "App\\Models\\Programs", fileModel: "App\\Models\\ProgramFiles")
+    deleteProgram(id: ID!): Programs @delete(model: "App\\Models\\Programs")
+        deleteProgramFiles(id: [ID!]!): ProgramFiles @delete(model: "App\\Models\\ProgramFiles")
+
+    createProduct(input: CreateProductInput! @spread): Product @create(model: "App\\Models\\Products")
+    updateProduct(id: ID!, input: ProductInput @spread): Product @update(model: "App\\Models\\Products")
+    deleteProduct(id: ID!): Product @delete(model: "App\\Models\\Products")
+        deleteProductImages(id: [ID!]!): ProductImages
+
+    createBundle(input: BundleInput! @spread): Bundles! @create(model: "App\\Models\\Bundles")
+    updateBundle(id: ID!, input: BundleInput @spread): Bundles! @update(model: "App\\Models\\Bundles")
+    deleteBundle(id: ID!): Boolean @delete(model: "App\\Models\\Bundles") """TODO: Cannot delete or update a parent row: a foreign key constraint fails """
+
+    createProperty(input: PropertyInput! @spread): Property! @create
+    updateProperty(id: ID!, input: UpdatePropertyInput! @spread): Property! @update
+    deleteProperty(id: ID!): Boolean! @delete
+
+    createSubdivision(input: CreateSubDivisionInput! @spread): SubDivision! @create
+    updateSubdivision(id: ID!, input: SubDivisionInput! @spread): SubDivision! @update
+    deleteSubdivision(id: ID!): House @delete
+
+    createHouse(files: [Upload!], input: CreateHouseInput! @spread): House! @createWithFiles(model: "App\\Models\\Houses", fileModel: "App\\Models\\HouseFiles")
+    createHouseFromCSV(file: Upload! propertyType: PropertyType! subdivisionId: Int! @rules(apply: ["required","exists:sub_divisions,id"]) organizationId: ID!  @rules(apply: ["required","exists:organizations,id"]) ): [House!]
+    updateHouse(files: [Upload!], id: ID!, input: HouseInput! @spread): House! @updateWithFiles(model: "App\\Models\\Houses", fileModel: "App\\Models\\HouseFiles")
+    updateHouses(houses: [UpdateHouseInput] @spread): [House]
+    deleteHouse(id: [ID!]!): [House!]! @delete(model: "App\\Models\\Houses")
+        deleteHouseFile(id: ID!): HouseFiles! @delete(model: "App\\Models\\HouseFiles")
+
+    createSubcontractor(input: CreateSubContractorInput! @spread): SubContractors! @create(model: "App\\Models\\SubContractors")  @guard
+    updateSubcontractor(id: ID!, input: SubContractorInput! @spread): SubContractors @update(model: "App\\Models\\SubContractors")  @guard
+    deleteSubcontractor(id: ID!): SubContractors @delete(model: "App\\Models\\SubContractors")  @guard
+
+    createClaim(files: [Upload!],input: ClaimInput! @spread): Claims
+    updateClaim(files: [Upload!], id: ID!,input: ClaimInput! @spread): Claims @update
+    deleteClaim(id: [ID!]!): [Claims!]! @delete
+        deleteClaimFile(id: [ID!]!): [ClaimFiles!]! @delete
+
+    calculateClaimAllocation(id: ID!, closing:Boolean): Claims
+    calculateIndividualBuilderClaimAllocation(id: ID!, builderId: ID!, closing:Boolean): Claims
+
+    submitAllReadyBuilderToClaim(id: ID): Claims
+    approveReadyToCloseClaims( org_id:ID!, quarter:Int!, year:Int! ): Organizations
+    closeClaimPeriod( quarter:Int!, year:Int! ): [Claims]
+
+    createDispute(input: CreateDisputeInput! @spread): Disputes! @create(model: "App\\Models\\Disputes")
+    updateDispute(id: ID!, input: DisputeInput @spread): Disputes! @update(model: "App\\Models\\Disputes")
+
+    batchCreateDispute(disputes: [CreateDisputeInput] @spread): [Disputes]
+    batchUpdateDispute(disputes: [UpdateDisputeInput] @spread): [Disputes]
+    batchUpsertDispute(disputes: [UpdateDisputeInput] @spread): [Disputes]
+
+    deleteDispute(id: ID!): Disputes @delete(model: "App\\Models\\Disputes")
+
+    createInvoice(input: InvoiceInput! @spread): Invoice! @create
+    updateInvoice(id: ID!, input: InvoiceInput @spread): Invoice! @update
+
+    createRebateReport(input: CreateRebateReportInput @spread): RebateReports @create(model: "App\\Models\\RebateReports")
+    createRebateReportAndMassAssign(input: CreateRebateReportAndMassAssignInput @spread): RebateReports
+    updateRebateReport(id: ID!, input: RebateReportInput @spread): RebateReportAndRefusedChanges
+    updateRebateReportAndMassAssign(id: ID!, input: RebateReportAndMassAssignInput @spread): MassUpdateRebateReports
+    RemoveProductFromRebateReportHouse( reportId: ID! @rules(apply: ["required","exists:rebateReports,id"]), input: [RemoveProductFromRebateReportHouseInput!]! ): RebateReports
+
+    prepareRebate(
+        updateReport: UpdateRebateReportInput!
+        updateHouses: [UpdateHouseInput]
+    ): RebateReportAndRefusedChanges
+
+    batchCorrection(
+        rebates: [ID],
+        input: batchCorrectionInput!
+    ): [RebateReportsHousesProducts]
+
+    changeRebateReportStatus( rebateReport_id: ID! house_id: ID! status: RebateReportStatus ): RebateReportsAndError
+
+    createConversionFlatPayment(input: ConversionFlatPaymentInput! @spread): ConversionFlatPayment! @create(model: "App\\Models\\ConversionFlatPayment")
+    createConversionFlatPercent(input: ConversionFlatPercentInput! @spread): ConversionFlatPercent! @create(model: "App\\Models\\ConversionFlatPercent")
+    createConversionTieredPercent(input: ConversionTieredPercentInput! @spread): ConversionTieredPercent! @create(model: "App\\Models\\ConversionTieredPercent")
+    createConversionByActivity(input: CreateConversionByActivityInput! @spread): ConversionByActivity! @create(model: "App\\Models\\ConversionByActivity")
+    createConversionPayment(input: ConversionPaymentInput! @spread): ConversionPayment! @create(model: "App\\Models\\ConversionPayment")
+
+    updateConversionFlatPayment(id: ID!, input: ConversionFlatPaymentInput! @spread): ConversionFlatPayment! @update(model: "App\\Models\\ConversionFlatPayment")
+    updateConversionFlatPercent(id: ID!, input: ConversionFlatPercentInput! @spread): ConversionFlatPercent! @update(model: "App\\Models\\ConversionFlatPercent")
+    updateConversionTieredPercent(id: ID!, input: ConversionTieredPercentInput! @spread): ConversionTieredPercent! @update(model: "App\\Models\\ConversionTieredPercent")
+    updateConversionByActivity(id: ID!, input: ConversionByActivityInput! @spread): ConversionByActivity! @update(model: "App\\Models\\ConversionByActivity")
+    updateConversionPayment(id: ID!, input: ConversionPaymentInput! @spread): ConversionPayment! @update(model: "App\\Models\\ConversionPayment")
+
+    deleteConversionFlatPayment(id: ID!): ConversionFlatPayment! @delete(model: "App\\Models\\ConversionFlatPayment")
+    deleteConversionFlatPercent(id: ID!): ConversionFlatPercent! @delete(model: "App\\Models\\ConversionFlatPercent")
+    deleteConversionTieredPercent(id: ID!): ConversionTieredPercent! @delete(model: "App\\Models\\ConversionTieredPercent")
+    deleteConversionByActivity(id: ID!): ConversionByActivity! @delete(model: "App\\Models\\ConversionByActivity")
+    deleteConversionPayment(id: ID!): ConversionPayment! @delete(model: "App\\Models\\ConversionPayment")
+
+    notificationRead(id: ID!): SystemMessage @guard
+}

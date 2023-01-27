@@ -1,0 +1,111 @@
+input ProductInput{
+    bbg_product_code: String @rules(apply: ["sometimes","min:1","max:254","string"])
+    name: String @rules(apply: ["sometimes","min:1","max:254"])
+    category: ProductCategoryBelongsTo @rules(apply: ["sometimes"])
+    require_quantity_reporting: Boolean
+    minimum_unit: Int
+    description: String
+    product_line: String
+
+    programs: ProductProgramSync
+    rebate_amount_type: rebate_amount_type
+    residential_rebate_amount: Float
+    multi_unit_rebate_amount: Float
+    commercial_rebate_amount: Float
+
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+
+    customization_id: ID
+    organizationOverwrites: CustomProductsRelation
+
+    cust_bbg_residential_amount: Float
+    cust_builder_residential_amount: Float
+    cust_bbg_multi_unit_amount: Float
+    cust_builder_multi_unit_amount: Float
+    cust_bbg_commercial_amount: Float
+    cust_builder_commercial_amount: Float
+}
+
+input ProductImagesInput{
+    disconnect: [ID]
+}
+
+input CreateProductInput{
+    bbg_product_code: String @rules(apply: ["required","min:1","max:254","string"])
+    name: String! @rules(apply: ["required","min:2","max:254"])
+    category: ProductCategoryBelongsTo!
+    require_quantity_reporting: Boolean
+    minimum_unit: Int
+    description: String
+    product_line: String
+    programs: ProductProgramSync
+    rebate_amount_type: rebate_amount_type
+    residential_rebate_amount: Float
+    multi_unit_rebate_amount: Float
+    commercial_rebate_amount: Float
+
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+
+    customization_id: ID
+    organizationOverwrites: CustomProductsRelation
+
+    cust_bbg_residential_amount: Float
+    cust_builder_residential_amount: Float
+    cust_bbg_multi_unit_amount: Float
+    cust_builder_multi_unit_amount: Float
+    cust_bbg_commercial_amount: Float
+    cust_builder_commercial_amount: Float
+}
+
+input UpdateProductInput{
+    id: ID @rules(apply: ["required","exists:products,id"])
+    bbg_product_code: String @rules(apply: ["required","min:1","max:254","string"])
+    name: String @rules(apply: ["required","min:2","max:254"])
+    category: ProductCategoryBelongsTo
+    quantity: Float @rules(apply: ["min:1","max:1000"])
+    description: String
+    product_line: String
+
+    programs: ProductProgramSync
+    rebate_amount_type: rebate_amount_type
+    residential_rebate_amount: Float
+    multi_unit_rebate_amount: Float
+    commercial_rebate_amount: Float
+
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+
+    customization_id: ID
+    organizationOverwrites: CustomProductsRelation
+
+    cust_bbg_residential_amount: Float
+    cust_builder_residential_amount: Float
+    cust_bbg_multi_unit_amount: Float
+    cust_builder_multi_unit_amount: Float
+    cust_bbg_commercial_amount: Float
+    cust_builder_commercial_amount: Float
+}
+
+input ProgramProductInput{
+    connect: [ID]
+    create: CreateProductInput
+    """  update: UpdateProductInput <--- not required updateProduct Mutation can do this for us """
+    disconnect: [ID]
+}
+
+input ProductInputRelation {
+    update: [UpdateProductInput]
+    create: [CreateProductInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input ProductInputRelationCreateConnection {
+    connect: [ID]
+    sync: [ID]
+    syncWithoutDetaching: [ID]
+}

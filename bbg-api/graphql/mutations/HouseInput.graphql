@@ -1,0 +1,99 @@
+input CreateHouseInput {
+    property_type: PropertyType
+    project_number: String @rules(apply: ["max: 30"])
+    model: String @rules(apply: ["max: 40"])
+    square_footage: Float
+    expected_completion_date: Date
+    status: HouseStatus
+    organization_id: Int
+    address: String
+    address2: String
+    zip_postal: String
+    lot_number: String
+    city: String
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+    """TODO: purchase_order_id relation"""
+    products: ProductInputRelation
+    """invoices: InvoiceRelation! TODO: relation"""
+    purchase_order_id: Int
+    confirmed_occupancy: Date
+}
+
+input HouseInput {
+    property_type: PropertyType
+    project_number: String @rules(apply: ["max: 30"])
+    model: String @rules(apply: ["max: 40"])
+    square_footage: Float
+    expected_completion_date: DateTime
+    status: HouseStatus
+    organization_id: Int
+    address: String
+    address2: String
+    zip_postal: String
+    lot_number: String
+    city: String
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+    """TODO: purchase_order_id relation"""
+    products: ProductInputRelation
+    """invoices: InvoiceRelation! TODO: relation"""
+    purchase_order_id: Int
+    confirmed_occupancy: Date
+
+    subdivision: SubDivisionInputBelongsToMany
+}
+
+input HouseNoRelationInput {
+    property_type: PropertyType
+    project_number: String @rules(apply: ["max: 30"])
+    model: String @rules(apply: ["max: 40"])
+    square_footage: Float
+    expected_completion_date: DateTime
+    status: HouseStatus
+    organization_id: Int
+    address: String
+    address2: String
+    zip_postal: String
+    lot_number: String
+    city: String
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+    purchase_order_id: Int
+    confirmed_occupancy: Date
+}
+
+input UpsertHouseInput {
+    id: ID
+    property_type: PropertyType
+    project_number: String @rules(apply: ["max: 30"])
+    model: String @rules(apply: ["max: 40"])
+    square_footage: Float
+    expected_completion_date: DateTime
+    status: HouseStatus
+    organization_id: Int
+    address: String
+    address2: String
+    zip_postal: String
+    lot_number: String
+    city: String
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+    """TODO: purchase_order_id relation"""
+    products: ProductInputRelation
+    """invoices: InvoiceRelation! TODO: relation"""
+    purchase_order_id: Int
+    confirmed_occupancy: Date
+
+    subdivision: SubDivisionInputBelongsToMany
+}
+
+input UpdateHouseInput {
+    id: ID
+    input: HouseNoRelationInput
+}
+
+input HousesRelation {
+    update: [UpdateHouseInput]
+    create: [CreateHouseInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}

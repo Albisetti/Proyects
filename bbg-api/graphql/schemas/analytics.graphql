@@ -1,0 +1,10 @@
+type DashboardReportingResponse {
+	currentProjectedRebate: Float
+	filteredRebate: Float
+}
+
+type ProjectedRebate {
+    projectedTotal: Float
+    programs: [Programs]
+    conversions: [Conversion]
+}

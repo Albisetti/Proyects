@@ -1,0 +1,114 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.sectionWrapper {
+  padding-top: vwDesktop(60);
+
+  .mainSubtitle {
+    margin-top: vwDesktop(30);
+    margin-bottom: vwDesktop(50);
+
+    display: none;
+    @media (min-width: $desktop) {
+      display: block;
+    }
+  }
+}
+
+.productsContainer {
+  justify-content: center;
+  padding: 0 vwDesktop(135);
+  width: 100%;
+  margin-bottom: vwDesktop(50);
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.productsContainerMobile {
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.productDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: vwMobile(220);
+  padding-top: vwMobile(40);
+  margin-top: vwMobile(40);
+  margin-bottom: vwMobile(30);
+  @media (min-width: $desktop) {
+    max-width: unset;
+    height: vwDesktop(400);
+    margin: 0 vwDesktop(25);
+    padding: 0;
+  }
+
+  .productTitle {
+    @apply font-bold;
+
+    font-size: vwMobile(14);
+    line-height: vwMobile(16);
+    margin-top: vwMobile(50);
+    margin-bottom: vwMobile(10);
+    max-width: vwMobile(200);
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(16);
+      line-height: vwDesktop(18);
+      margin-top: 0;
+      margin-bottom: vwDesktop(7);
+    }
+  }
+  .titleAltFont {
+    max-width: vwDesktop(300);
+    font-size: vwDesktop(22);
+    line-height: vwDesktop(22);
+    margin-bottom: vwDesktop(14);
+    font-weight: 400;
+    @apply font-title;
+  }
+  .productDescription p {
+    font-size: vwMobile(13);
+    line-height: vwMobile(13);
+    margin-bottom: vwMobile(7);
+    @media (min-width: $desktop) {
+      white-space: nowrap;
+      font-size: vwDesktop(14);
+      line-height: vwDesktop(14);
+      margin-bottom: vwDesktop(7);
+    }
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+
+    width: vwMobile(150);
+    height: vwMobile(30);
+    font-size: vwMobile(14);
+    line-height: vwMobile(14);
+    @media (min-width: $desktop) {
+      padding: vwDesktop(10) vwDesktop(25);
+      min-width: vwDesktop(160);
+      width: fit-content;
+      min-height: vwDesktop(30);
+      height: fit-content;
+      font-size: vwDesktop(16);
+      line-height: vwDesktop(16);
+    }
+  }
+  img {
+    transform: scale(1.4);
+    @media (min-width: $desktop) {
+      transform: scale(1);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.cartButton {
+  background-color: $orange;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  position: inherit;
+  z-index: inherit;
+  letter-spacing: 0;
+
+  width: vwMobile(286);
+  height: vwMobile(38);
+  margin-top: vwMobile(20);
+  border: vwMobile(2) solid $orange;
+  @media (min-width: $desktop) {
+    width: vwDesktop(272);
+    height: vwDesktop(48);
+    margin-top: vwDesktop(46);
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(22);
+    border: vwDesktop(2) solid $orange;
+  }
+
+  p {
+    color: white;
+    @apply font-bold;
+  }
+}
+.cartButton:not(:disabled):hover {
+  background-color: white;
+  p {
+    color: $orange;
+  }
+}
+
+.cartButton:disabled {
+  background-color: gray;
+  cursor: default;
+
+  border: vwMobile(2) solid gray;
+  @media (min-width: $desktop) {
+    border: vwDesktop(2) solid gray;
+  }
+}
+
+.cartButtonMobileFixed {
+  @media (max-width: $desktop) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    margin-top: 0;
+    width: vwMobile(340);
+    height: vwMobile(48);
+    font-size: vwMobile(16);
+    line-height: vwMobile(18);
+    letter-spacing: vwMobile(1);
+  }
+}

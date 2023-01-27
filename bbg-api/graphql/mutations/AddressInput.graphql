@@ -1,0 +1,22 @@
+input AddressInput{
+    address: String
+    address2: String
+    zip_postal: String
+    lot_number: String
+    city: String
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+}
+
+input UpdateAddressInput{
+    id: ID
+    input: AddressInput
+}
+
+input AddressRelation{
+    update: [UpdateAddressInput]
+    create: [AddressInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}

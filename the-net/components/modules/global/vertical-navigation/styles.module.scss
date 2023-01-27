@@ -1,0 +1,117 @@
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.elemHidden {
+  position: absolute;
+  left: -999em;
+}
+
+.buildingPlaceholder {
+  @apply flex flex-row justify-center;
+}
+
+.building {
+  @apply absolute pointer-events-none;
+  width: vwDesktop(1070);
+  height: 350vh;
+  top: 50vh;
+
+  display: none;
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}
+
+.buildingSkyparkTransition {
+  transition: top 9s, height 9s;
+}
+
+.buildingSkyparkTransitioned {
+  top: 120vh;
+  height: 280vh;
+}
+
+.buildingImage {
+  @apply bg-cover bg-no-repeat;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: vwDesktop(700);
+  background-size: vwDesktop(960) 100%;
+  z-index: -1;
+}
+
+.sidenav {
+  @apply flex fixed pointer-events-none justify-start;
+  top: 0;
+  width: vwDesktop(1440);
+
+  display: none;
+  @media (min-width: $tablet) {
+    display: block;
+  }
+
+  .container {
+    @apply flex flex-col justify-center items-center bg-transparent pointer-events-auto;
+    top: 0;
+    left: 0;
+    width: vwDesktop(64);
+    height: 100vh;
+    margin-left: vwDesktop(85);
+    margin-top: vwDesktop(40);
+  }
+}
+
+.separatorLine {
+  @apply bg-white;
+  height: vwDesktop(50);
+  width: vwDesktop(1);
+}
+
+.unselectedCircle {
+  @apply border-white rounded-full;
+  position: absolute;
+  border-width: vwDesktop(1);
+  height: vwDesktop(10);
+  width: vwDesktop(10);
+  transition: transform 0.3s, border-color 0.7s, opacity 0.7s;
+}
+
+.iconContainer {
+  max-width: vwDesktop(60);
+  min-width: vwDesktop(60);
+  height: vwDesktop(43);
+  margin: vwDesktop(5) 0;
+  cursor: pointer;
+  @apply flex justify-center items-center;
+}
+
+.icon {
+  @apply absolute transition-opacity opacity-100 duration-700 z-0;
+}
+
+.blueIcon {
+  @apply transition-opacity opacity-0 duration-700 z-0;
+  position: absolute;
+}
+
+.icons {
+  margin-top: vwDesktop(8);
+  margin-bottom: vwDesktop(8);
+}
+
+.containerTransition {
+  transition: transform 2s, opacity 1.7s;
+  opacity: 1;
+}
+.containerHidden {
+  opacity: 0 !important;
+}
+.containerTransformDown {
+  transform: translateY(-30px);
+}
+.containerTransformUp {
+  transform: translateY(30px);
+}

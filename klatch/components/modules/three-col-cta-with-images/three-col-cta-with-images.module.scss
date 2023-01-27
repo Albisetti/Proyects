@@ -1,0 +1,231 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.wrapper {
+  position: relative;
+
+  padding-top: vwMobile(30);
+  @media (min-width: $desktop) {
+    padding-top: vwDesktop(60);
+  }
+}
+
+.container {
+  justify-content: space-between;
+  padding: 0 vwDesktop(155);
+  padding-bottom: vwDesktop(70);
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.productPlan {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 vwMobile(25);
+  flex-direction: column;
+  z-index: 1;
+
+  padding-bottom: vwMobile(80);
+  @media (min-width: $desktop) {
+    display: unset;
+    justify-content: unset;
+    align-items: unset;
+    padding: unset;
+    flex-direction: unset;
+    padding-bottom: unset;
+  }
+
+  .productTitleContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: vwMobile(200);
+    height: vwMobile(300);
+    left: vwMobile(44);
+    margin-bottom: vwMobile(25);
+    @media (min-width: $desktop) {
+      width: vwDesktop(350);
+      height: vwDesktop(350);
+      left: unset;
+      margin-bottom: 0;
+    }
+  }
+  .productTitleBG {
+    position: absolute;
+    background-color: white;
+    transform: rotate(45deg);
+    box-shadow: vwDesktop(0) vwDesktop(7) vwDesktop(7) rgba(0, 0, 0, 0.3);
+    z-index: 0;
+
+    width: vwMobile(210);
+    height: vwMobile(210);
+    @media (min-width: $desktop) {
+      width: vwDesktop(248);
+      height: vwDesktop(248);
+    }
+  }
+  .productTitleBorder {
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 0;
+
+    width: vwMobile(190);
+    height: vwMobile(190);
+    border: vwMobile(13) solid;
+    @media (min-width: $desktop) {
+      width: vwDesktop(220);
+      height: vwDesktop(220);
+      border: vwDesktop(15) solid;
+    }
+
+    &.borderOrange {
+      border-color: $orange;
+    }
+    &.borderGreen {
+      border-color: $green;
+    }
+    &.borderBlue {
+      border-color: $blue;
+    }
+  }
+  .productTitleText {
+    z-index: 1;
+
+    margin-bottom: vwMobile(28);
+    @media (min-width: $desktop) {
+      margin-bottom: vwDesktop(26);
+    }
+
+    h2 {
+      font-weight: 400;
+
+      font-size: vwMobile(40);
+      line-height: vwMobile(40);
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(46);
+        line-height: vwDesktop(42);
+        max-width: vwDesktop(222);
+      }
+    }
+  }
+
+  .productDescription {
+    margin-left: vwDesktop(36);
+    padding-right: vwDesktop(36);
+    z-index: 1;
+    text-align: center;
+    font-size: vwMobile(13);
+    line-height: vwMobile(15);
+
+    margin-bottom: vwMobile(30);
+    @media (min-width: $desktop) {
+      text-align: left;
+      margin-top: vwDesktop(38);
+      margin-left: 0;
+      margin-bottom: 0;
+      padding-right: 0;
+      max-width: vwDesktop(280);
+      font-size: vwDesktop(18);
+      line-height: vwDesktop(21);
+    }
+  }
+  .productDescription:not(.giftDescription) {
+    overflow: hidden;
+
+    max-height: vwMobile(60);
+    @media (min-width: $desktop) {
+      max-height: vwDesktop(84);
+    }
+  }
+
+  .readMoreButton {
+    @apply font-bodyBold mx-auto;
+
+    padding: vwMobile(5) vwMobile(15);
+    font-size: vwMobile(14);
+    @media (min-width: $desktop) {
+      margin-top: vwDesktop(50);
+      margin-bottom: 0;
+      margin-left: 0;
+      width: vwDesktop(120);
+      height: vwDesktop(36);
+      font-size: vwDesktop(16);
+      padding: 0;
+    }
+  }
+}
+
+.productContentSpacing {
+  @media (min-width: $desktop) {
+    padding-left: vwDesktop(40);
+  }
+}
+
+.carouselMobile {
+  @media (min-width: $desktop) {
+    display: none !important;
+  }
+}
+
+.carouselDotWrapper {
+  position: relative !important;
+  bottom: vwMobile(60) !important;
+
+  li {
+    button::before {
+      left: vwMobile(5) !important;
+      opacity: 1 !important;
+      width: vwMobile(11) !important;
+      height: vwMobile(11) !important;
+      border: vwMobile(2) solid $orange !important;
+      color: transparent !important;
+    }
+  }
+}
+
+.ctaImageModal {
+  @apply fixed top-0 right-0 w-full h-full;
+  @apply bg-white flex items-center justify-center;
+  @apply transition-all duration-300;
+
+  &.open {
+    @apply z-[999] opacity-100;
+  }
+
+  &.closed {
+    @apply z-[-999] opacity-0;
+  }
+}
+
+.ctaImage {
+  @apply w-auto h-[80%] max-w-full max-h-full;
+
+  @media (min-width: $desktop) {
+    @apply w-auto h-[90%] max-w-full max-h-full;
+  }
+}
+
+.close {
+  @apply absolute top-0 right-0 h-auto text-fontGray hover:text-pageText cursor-pointer;
+  width: vwMobile(24);
+  margin-top: vwMobile(20);
+  margin-right: vwMobile(15);
+
+  * {
+    fill: currentColor;
+  }
+
+  @media (min-width: $desktop) {
+    width: vwDesktop(24);
+    margin-top: vwDesktop(20);
+    margin-right: vwDesktop(20);
+  }
+}

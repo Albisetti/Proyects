@@ -1,0 +1,32 @@
+input InvoiceInput{
+
+#    organization_id: Int @rules(apply: ["required","exists:organizations,id"])
+#    address_id: Int @rules(apply: ["required","exists:addresses,id"])
+#    address: AddressInputRelation! @spread
+#    program_id: Int @rules(apply: ["required","exists:program,id"])
+#    rule_id: Int @rules(apply: ["required","exists:rules,id"])
+#    builder_id: Int @rules(apply: ["required","exists:builder,id"])
+    house_id: Int @rules(apply: ["required","exists:houses,id"])
+    status: InvoiceStatus
+    discount_percentage: Float
+    discount_amount: Float
+    invoice_total: Float
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+input UpdateInvoiceInput{
+    id: ID
+    input: SubContractorInput
+}
+
+input InvoiceRelation{
+    update: [UpdateInvoiceInput]
+    create: [InvoiceInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}

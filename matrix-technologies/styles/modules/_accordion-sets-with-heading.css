@@ -1,0 +1,26 @@
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+}
+
+summary::after {
+  content: '+';
+  font-size: 3rem;
+  line-height: 1;
+  padding-left: 0.5rem;
+  margin-left: auto;
+}
+
+details[open] summary::after {
+  content: '-';
+}
+
+details:last-child {
+  border-top: none !important;
+}

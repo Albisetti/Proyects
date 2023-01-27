@@ -1,0 +1,66 @@
+type OrganizationsFlat {
+    id: ID
+    organization_type: OrganizationType
+    name: String
+    abbreviation: String
+    code: String
+    phone_number: String
+    state: State
+    city:String
+    address: String
+    address2: String
+    zip_postal: String
+    previousEarnedToDate:Float
+    notes: String
+    member_tier: MemberTier
+    created_at: DateTime
+    updated_at: DateTime
+
+    rebateReports: [RebateReportsFlat]
+}
+
+type RebateReportsFlat {
+    id: ID
+
+    NeedActionHousesWithCoAndAddress: [RebateReportsHousesProductsFlattenArray!]
+    ReadiedHouses: [RebateReportsHousesProductsFlattenArray!]
+    NeedActionHousesMissingAddressCount: Int
+    NeedActionHousesMissingCoCount: Int
+}
+
+type RebateReportsHousesProductsFlattenArray {
+    model: House
+    pivots: [RebateReportsHousesProductsPivotFlat]
+}
+
+type HouseFlat {
+    id: ID
+    project_number: String
+    model: String
+    address: String
+    address2: String
+    lot_number: String
+    confirmed_occupancy: Date
+}
+
+type RebateReportsHousesProductsPivotFlat {
+    id: ID
+    product_quantity: Int
+    houseProgramCount: Int
+    requireFieldStatusPerHouse: rebateRequireFieldStatusPerHouse
+    products: [ProductFlat]
+}
+
+type ProductFlat {
+
+    id: ID
+    bbg_product_code: String
+    name: String
+    require_quantity_reporting: Boolean
+    minimum_unit: Int
+
+    category: ProductCategories
+
+    #programs
+    programs: [ProgramFlat]
+}

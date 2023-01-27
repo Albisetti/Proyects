@@ -1,0 +1,71 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.mainContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: vwMobile(300);
+  padding-bottom: vwMobile(70);
+  max-width: vwMobile(300);
+  @media (min-width: $desktop) {
+    min-width: vwDesktop(470);
+    max-width: vwDesktop(470);
+    padding: 0;
+    justify-content: center;
+  }
+  .mainContentTitleMarginH1 {
+    margin-bottom: vwMobile(15);
+    @media (min-width: $desktop) {
+      margin-bottom: vwDesktop(85);
+    }
+  }
+  .mainContentTitleMarginH2 {
+    margin-bottom: vwMobile(15);
+    @media (min-width: $desktop) {
+      margin-bottom: vwDesktop(40);
+    }
+  }
+}
+
+.subtitleWrapper {
+  @apply border-fontGray;
+  margin-top: vwMobile(15);
+  @media (min-width: $desktop) {
+    @apply border-t border-b m-0;
+  }
+}
+
+.subTitleText {
+  padding: 0;
+  @media (min-width: $desktop) {
+    padding: vwDesktop(10) 0;
+  }
+
+  p {
+    margin-top: vwMobile(15);
+    @media (min-width: $desktop) {
+      margin-top: vwDesktop(15);
+    }
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+}
+
+.buttonWrapper {
+  margin-top: vwDesktop(65);
+  margin-bottom: vwDesktop(10);
+  padding: vwDesktop(10);
+  @apply flex items-center justify-center;
+}
+
+.buttonText {
+  font-size: vwDesktop(24);
+  line-height: vwDesktop(28.8);
+  @apply font-bodyBold text-white font-semibold;
+}

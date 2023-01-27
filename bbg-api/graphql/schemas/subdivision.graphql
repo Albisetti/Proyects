@@ -1,0 +1,25 @@
+type SubDivision {
+    id: ID
+    name: String
+    property: Property @hasOne
+    houses: [House] @hasMany(type: CONNECTION)
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+
+    organization: Organizations @hasOne
+}
+
+type SubDivisionData {
+    residential_number: Int
+    multiUnit_number: Int
+    commercial_number: Int
+    rebate_inProgress_number: Int
+    rebate_rebated_number: Int
+}
+
+type SubDivisionWithData {
+    data: SubDivisionData
+    subdivision: SubDivision
+}

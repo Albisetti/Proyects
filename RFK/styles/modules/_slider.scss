@@ -1,0 +1,38 @@
+/* target all bullets */
+
+.announcement-custom-pagination,
+.announcement-custom-pagination-mobile {
+  text-align: center;
+  align-items: center;
+  display: flex;
+
+  @media screen and (min-width: 940px) {
+    text-align: left;
+    transform: none;
+  }
+  .swiper-pagination-bullet {
+    background: slategray !important;
+    display: block;
+    width: 10px;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 4px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #1870b8 !important;
+    opacity: 1;
+  }
+}
+
+.swiper-slides-width-fit {
+  .swiper-slide {
+    width: fit-content;
+  }
+}
+
+.swiper-wrapper-align-end {
+  .swiper-wrapper {
+    align-items: flex-end;
+  }
+}

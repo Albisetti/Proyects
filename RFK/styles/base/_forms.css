@@ -1,0 +1,12 @@
+::-webkit-input-placeholder {
+  @apply text-coolGray;
+}
+::-moz-placeholder {
+  @apply text-coolGray;
+}
+:-ms-input-placeholder {
+  @apply text-coolGray;
+}
+:-moz-placeholder {
+  @apply text-coolGray;
+}

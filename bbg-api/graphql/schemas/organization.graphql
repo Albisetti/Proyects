@@ -1,0 +1,124 @@
+enum OrganizationType {
+    BUILDERS @enum(value: "builders")
+    BBG @enum(value: "bbg")
+    MANUFACTURERS @enum(value: "manufacturers")
+    DISTRIBUTERS @enum(value: "distributers")
+    SUPPLIERS @enum(value: "suppliers")
+}
+
+enum MemberTier {
+    NONE @enum(value: "none")
+    FOUNDER @enum(value: "founder")
+    Tier_1 @enum(value: "Tier 1")
+    Tier_2 @enum(value: "Tier 2")
+    Tier_3 @enum(value: "Tier 3")
+}
+
+type Organizations {
+    id: ID
+    organization_type: OrganizationType
+    name: String
+    abbreviation: String
+    code: String
+    phone_number: String
+    approved_states: [State!] @belongsToMany(type: CONNECTION)
+    state: State @hasOne
+    city:String
+    address: String
+    address2: String
+    zip_postal: String
+    previousEarnedToDate:Float
+    notes: String
+    member_tier: MemberTier
+    subcontractors: [SubContractors] @hasMany(type: CONNECTION)
+    dues: OrganizationDue @hasMany(type: CONNECTION)
+    thisYearsDue: OrganizationDue @method
+    annualDue(year:Int): OrganizationDue @method
+    created_at: DateTime
+    updated_at: DateTime
+
+    programs: [Programs!] @belongsToMany(type: CONNECTION)
+    programParticipantsPivot: ProgramparticipantsPivot @rename(attribute: "pivot")
+
+    availablePrograms: [Programs!] @paginate(type: "connection" model: "App\\Models\\User" builder: "App\\Models\\Organizations@availablePrograms")
+
+    supplyingPrograms: [Programs!] @belongsToMany(type: CONNECTION)
+
+    customProducts: [Product!] @belongsToMany(type: CONNECTION)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+    customProductsPivot: organizationCustomProductPivot @rename(attribute: "pivot")
+
+    subdivisions: [SubDivision] @hasMany(type: CONNECTION)
+
+    rebateReports: [RebateReports] @hasMany(type: CONNECTION)
+
+    customization: [Product!] @belongsToMany(type: CONNECTION)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+
+    bundles: [Bundles!] @hasMany(type: CONNECTION)
+
+    territoryManagers: [User!] @belongsToMany(type: CONNECTION)
+    users: [User!] @belongsToMany(type: CONNECTION)
+
+    contact_first_name: String
+    contact_last_name: String
+    contact_title: String
+    contact_email: String
+    contact_office_phone: String
+    contact_office_phone_ext: String
+    contact_mobile_phone: String
+
+    volumeClaimsBuilderRebatesPivot: volumeClaimsBuilderRebatesPivot @rename(attribute: "pivot")
+
+    calculateClaimTotal(quarter:Int, year:Int): calculateClaimTotal @method
+    projectedRevenue: ProjectedRebate @method
+
+    openClaimsSum( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): claimSum @method
+    lastCloseClaim( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): Claims @method
+
+    getUsedOpenProductList: [usedProduct] @method
+
+    ActionRequiredRebatesCount:RebateCountAggregated @method
+    ReadiedRebatesCount:RebateCountAggregated @method
+
+    calculateYearRangeClaimTotal(last: Int): reportClaimTotalWithPrograms @method
+    membershipValue: reportClaimTotalWithPrograms @method
+}
+
+type calculateClaimTotal {
+    factoryRebate: Float
+    volumeRebate: Float
+    duePayment: Float
+    total: Float
+}
+
+type reportClaimTotalWithPrograms {
+    total:Float
+    programsAllocation: [Programs]
+}
+
+type volumeClaimsBuilderRebatesPivot {
+    id: ID
+    builder_id: ID
+    volumeClaim_id: ID
+    rebate_earned: Float
+    rebate_adjusted: Float
+    builder_allocation: Float
+    total_allocation: Float
+    note: String
+    created_by: ID
+    updated_by: ID
+    created_at: DateTime
+    updated_at: DateTime
+    approved_by: ID
+    approved_at: DateTime
+}
+
+type usedProduct {
+    product: Product
+    claims: [Claims]
+}

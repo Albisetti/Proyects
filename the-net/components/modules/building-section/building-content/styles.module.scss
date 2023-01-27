@@ -1,0 +1,52 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.buildingTitle {
+  @apply text-navyBlue font-glamourn;
+  font-weight: 400;
+
+  font-size: vwMobile(50);
+  line-height: vwMobile(55);
+  text-align: center;
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(56);
+    line-height: vwDesktop(61.6);
+    max-width: vwDesktop(250);
+    text-align: unset;
+  }
+}
+
+.buildingSubtitle {
+  @apply text-copy font-monserrat font-light;
+
+  font-size: vwMobile(18);
+  line-height: vwMobile(24);
+  margin-top: vwMobile(20);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(23.85);
+    max-width: vwDesktop(385);
+    margin-top: vwDesktop(35);
+  }
+}
+
+.buildingLinks {
+  float: right;
+  margin-right: vwMobile(10);
+  margin-top: vwMobile(60);
+  max-width: vwMobile(140);
+  @media (min-width: $tablet) {
+    float: unset;
+    margin-right: unset;
+    margin-top: vwDesktop(60);
+    max-width: unset;
+  }
+}
+
+.buildingContentContainer {
+  @media (min-width: $tablet) {
+    max-width: vwDesktop(415);
+  }
+}

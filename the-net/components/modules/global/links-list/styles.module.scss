@@ -1,0 +1,30 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.linkItem {
+  &:not(:last-child) {
+    margin-bottom: vwMobile(30);
+    @media (min-width: $tablet) {
+      margin-bottom: vwDesktop(40);
+    }
+  }
+}
+
+.linkItemAmenities {
+  @apply cursor-pointer w-full border-steel;
+
+  @media (min-width: $tablet) {
+    width: vwDesktop(440);
+  }
+
+  &:not(:last-child) {
+    border-bottom-width: vwDesktop(1);
+    margin-bottom: vwDesktop(8);
+  }
+}
+
+.linkItemsContainer {
+  margin-top: vwDesktop(50);
+}

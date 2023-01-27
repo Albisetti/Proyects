@@ -1,0 +1,31 @@
+input BundleInput{
+    name: String
+    organization: OrganizationInputBelongsTo
+    products: BundleProductsSync
+}
+
+input UpdateBundleInput{
+    id: ID
+    input: BundleInput
+}
+
+input BundleRelation{
+    update: [UpdateBundleInput]
+    create: [BundleInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input BundleProductsSync {
+    """connect:[ProductProgramSyncInput!]"""
+    sync:[BundleProductsSyncInput]
+    syncWithoutDetaching:[BundleProductsSyncInput]
+    disconnect: [ID]
+}
+
+input BundleProductsSyncInput {
+    id: ID
+    product_quantity: Int
+}

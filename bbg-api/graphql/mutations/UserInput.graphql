@@ -1,0 +1,119 @@
+input CreateUserInput{
+    type: UserType
+     password: String @hash
+    first_name: String
+    last_name: String
+    title: String
+    email: String
+    office_phone: String
+    office_phone_ext: String
+    mobile_phone: String
+    require_user_account: Boolean
+
+    userAttribute: UserAttributeRelation
+    address: AddressRelation
+
+    organizations: UserOrganizationsRelationConnections
+}
+
+input UpdateUserFullInput{
+    id: ID!
+    type: UserType
+     password: String @hash
+    first_name: String
+    last_name: String
+    title: String
+    email: String
+    office_phone: String
+    office_phone_ext: String
+    mobile_phone: String
+    require_user_account: Boolean
+    disabled: Boolean
+
+    userAttribute: UserAttributeRelation
+    address: AddressRelation
+
+    organizations: UserOrganizationsRelationConnections
+}
+
+input UserInput {
+    type: UserType
+     password: String @hash
+    first_name: String
+    last_name: String
+    title: String
+    email: String @rules(
+        apply: ["unique:users,email"],
+        messages: [
+            {
+                rule:"unique"
+                message: "Email is already in use"
+            }
+        ]
+    )
+    office_phone: String
+    office_phone_ext: String
+    mobile_phone: String
+    require_user_account: Boolean
+    disabled: Boolean
+
+    userAttribute: UserAttributeRelation
+    address: String
+    address2: String
+    zip_postal: String
+    city: String
+    state_id: ID @rules(apply: ["exists:states,id"])
+    organizations: UserOrganizationsRelationConnections
+    managedStates: UserStatesBelongsToMany
+}
+
+input UserStatesBelongsToMany {
+    connect: [ID]
+    sync: [ID]
+}
+
+input UpdateUserInput {
+    id: ID!
+    input: UserInput
+}
+
+input UserRelation {
+    update: [UpdateUserInput]
+    create: [CreateUserInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input UserAttributeRelation {
+    create: UserAttributeInput
+    update: UpdateUserAttributeInput
+    delete: ID
+}
+
+input UserAttributeInput {
+    user: UserInput @spread
+    role: roleInput @spread
+    user_settings: String!
+}
+
+input UpdateUserAttributeInput {
+    id: UserAttributeInput
+    input: UserAttributeInput
+}
+
+input roleInput{
+    name: String
+}
+
+input UserOrganizationsRelationConnections{
+    sync: [ID]
+    syncWithoutDetaching: [ID]
+    disconnect: [ID]
+}
+
+type ResetPasswordRequestResponse {
+	token: String
+	user: User
+}

@@ -1,0 +1,16 @@
+input RebateProgramInput {
+    program_type: ProgramType!
+    program_name: String! @rules(apply: ["required","min:1","max:256","string"])
+    internal_description: String! @rules(apply: ["required","string","max:500"])
+    builder_description_short: String! @rules(apply: ["required","string","max:100"])
+    builder_description: String! @rules(apply: ["required","string"])
+    organization_id: Int! @rules(apply: ["required","exists:organizations,id"])
+    external_link: String @rules(apply: ["string"])
+    program_rule_id: Int
+    address: AddressInputRelation! @spread
+    states: String!
+    program_unit: ProgramUnit
+    products: ProductInputRelation!
+    proof_points: [Int]
+    min_threshold: Int
+}

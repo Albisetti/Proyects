@@ -1,0 +1,28 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+
+
+.roastHeroWrapper {
+  background-color: $blue;
+  .heading {
+    color:$white;
+    padding: vwMobile(30) vwMobile(50);
+    @media (min-width: $desktop) {
+    padding: vwDesktop(62) 0 0 0;
+    }
+  }
+  .text {
+    @include h5;
+    color:$white;
+    padding: vwMobile(0) vwMobile(50) vwMobile(20) vwMobile(50);
+    @media (min-width: $desktop) {
+    padding:0;
+    margin: vwDesktop(30) 0 0 0;
+    }
+  }
+}
+
+

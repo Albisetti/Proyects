@@ -1,0 +1,251 @@
+pivotID,BBG Code,ProductName,Category,Active
+2000,5227,HardiePlank,Siding,FALSE
+2000,5228,HardieBacker,Siding,FALSE
+2000,5231,CertainTeed Shingles,Roofing,FALSE
+2000,5357,Mitten Siding,Siding,FALSE
+2000,5358,Aluminum,Siding,FALSE
+2000,5367,Siding-Royal,Siding,FALSE
+2000,5372,Air Vent-ShingleVent II,Roofing,FALSE
+2000,5382,Siding-Royal EP,Siding,FALSE
+2002,5493,Wellborn Cabinets,Cabinets,TRUE
+2002,5280,Granite,Solid Surface,FALSE
+2002,5281,Quartz,Solid Surface,FALSE
+2002,5282,Silestone Quartz,Solid Surface,FALSE
+2002,5296,Flooring,Flooring,TRUE
+2002,5404,Counter Tops,Solid Surface,TRUE
+2003,5269,Baths & Showers,Plumbing,TRUE
+2004,5261,Water Heater,Plumbing,TRUE
+2004,5466,Tankless Water Heater,Plumbing,TRUE
+2006,5233,Vinyl Windows,Windows,TRUE
+2006,5234,Wood Windows,Windows,TRUE
+2006,5235,Steel Doors,Doors,TRUE
+2006,5236,Fiberglass Doors,Doors,TRUE
+2006,5331,Lumber,Lumber,FALSE
+2006,5332,Trusses,Trusses,FALSE
+2006,5414,Trim,Trim,TRUE
+2007,5241,Series 2000,Garage Doors/Openers,TRUE
+2007,5242,Series 5300-5800,Garage Doors/Openers,TRUE
+2007,5243,Commercial Series OHD,Garage Doors/Openers,FALSE
+2009,5523,AL Dimmer,Electrical,TRUE
+2009,5524,GFCI Nightlight,Electrical,TRUE
+2009,5525,Patrol Night Light,Electrical,TRUE
+2009,5526,RF Devices (Switches/Receptacles/Wallplates),Electrical,TRUE
+2009,5244,Standard Loadcenters CH or BR,Electrical,TRUE
+2009,5245,Surge Protector CHSPMAX / CHSPULTRA,Electrical,FALSE
+2009,5246,Surge Protector CHSP 3-Way,Electrical,FALSE
+2009,5247,Generator-Manual,Electrical,FALSE
+2009,5248,Generator-Natural Gas/ Automatic,Electrical,FALSE
+2009,5249,Standard Toggles & Receptacles,Electrical,TRUE
+2009,5250,Decorator Switches & Receptacles,Electrical,TRUE
+2009,5251,"USB & Dimmer Receptacles, occupany sensors",Electrical,TRUE
+2009,5252,Connected Home Products /Aspire RF,Low-Voltage Products,FALSE
+2009,5253,Commercial Equipment,Electrical,FALSE
+2009,5424,Surge Breaker,Electrical,FALSE
+2010,5481,Crosstown/Lustertone/Pursuit/Iconix/Perfect Drain,Plumbing,TRUE
+2010,5264,Dayton Premium/Elite Sink,Plumbing,TRUE
+2010,5265,Dayton Sink,Plumbing,TRUE
+2010,5266,DXUH Series,Plumbing,TRUE
+2010,5412,Quartz Classic & Luxe Sink,Plumbing,TRUE
+2010,5413,Explore Fine Fireclay Sink,Plumbing,TRUE
+2011,5298,GE Appliances,Appliances,FALSE
+2011,5343,Toilets & Lavatories,Plumbing,FALSE
+2011,5345,Faucets,Plumbing,FALSE
+2011,5346,Lighting,Lighting,FALSE
+2011,5347,Plumbing Supplies,Plumbing,FALSE
+2011,5348,Appliances,Appliances,FALSE
+2013,5286,Shower Doors,Plumbing,TRUE
+2013,5287,Mirrors,Plumbing,TRUE
+2013,5288,Installed Rubbermaid Closets,Plumbing,TRUE
+2013,5405,Installed Organized Living Closets,Plumbing,FALSE
+2014,5491,Drywall - Multi-Family Units,Drywall,FALSE
+2014,5500,Drywall - non-Michigan,Drywall,FALSE
+2014,5270,Foam Insulation,Insulation,TRUE
+2014,5271,Drywall,Drywall,TRUE
+2014,5350,BATT Insulation (not Foam),Insulation,TRUE
+2014,5379,Ceiling Tiles,Drywall,FALSE
+2014,5380,Steel Studs,Drywall,FALSE
+2019,5294,Decorative Lighting,Lighting,TRUE
+2019,5399,LED/Wafer Lighting,Lighting,TRUE
+2020,5285,Locks,Door Hardware,TRUE
+2021,5487,Lap S Smooth,Siding,TRUE
+2021,5488,WeatherLogic,Lumber,TRUE
+2021,5489,3 OSB Usages,Lumber,TRUE
+2021,5496,Strand Shakes,Siding,TRUE
+2021,5497,ExpertFinish Lap Strand,Siding,TRUE
+2021,5498,ExpertFinish Trim Strand,Trim,TRUE
+2021,5499,ExpertFinish Soffit,Siding,TRUE
+2021,5521,TechShield,Lumber,TRUE
+2021,5224,Floor Joists,Lumber,TRUE
+2021,5225,Primed Lap Strand (SmartSide),Siding,TRUE
+2021,5226,Primed Trim  Strand (SmartTrim),Siding,TRUE
+2021,5393,Legacy Flooring,Flooring,TRUE
+2021,5394,LSL Studs,Lumber,TRUE
+2021,5409,TN 350 Flooring,Lumber,TRUE
+2021,5410,Soffit,Siding,TRUE
+2021,5411,Fiber Shakes,Siding,FALSE
+2022,5284,Laminate Countertop,Solid Surface,TRUE
+2025,5295,Paint,Paint,FALSE
+2026,5522,Closet Selector Upgrade,Storage/Closets,TRUE
+2026,5289,Wire Shelving,Storage/Closets,TRUE
+2026,5290,Freedom Rail/Select/Classica Upgrades,Storage/Closets,TRUE
+2026,5397,Updraded Closet,Storage/Closets,FALSE
+2027,5478,Kooltherm K9 Insulation Board,Exerior Products,TRUE
+2027,5229,House Wrap,Exerior Products,TRUE
+2027,5230,Board,Exerior Products,TRUE
+2027,5391,Flashing,Exerior Products,TRUE
+2029,5291,Wire Shelving,Storage/Closets,TRUE
+2029,5292,Freedom Rail,Storage/Closets,FALSE
+2032,5260,Flexible Gas Pipe,Plumbing Accessories,TRUE
+2034,5495,Railing,Decking,TRUE
+2034,5297,Decking - Select,Decking,TRUE
+2034,5356,Decking - Transcend,Decking,TRUE
+2034,5446,Decking - Naturals,Decking,TRUE
+2036,5255,Heatilator Fireplaces,Fireplaces,TRUE
+2036,5279,Masterbrands/Smart/River Run Cabinets,Cabinets,TRUE
+2037,5504,CertainTeed Restoration Millwork Trim,Trim,TRUE
+2037,5238,Siding-Royal,Siding,TRUE
+2037,5239,Aluminum,Siding,TRUE
+2037,5400,Hardie Backer,Siding,FALSE
+2037,5401,Hardie Plank,Siding,FALSE
+2037,5402,Air Vent-ShingleVent II,Roofing,TRUE
+2037,5408,Certainteed Shingles,Roofing,TRUE
+2038,5221,Rough Lumber,Lumber,TRUE
+2038,5222,Trusses,Trusses,TRUE
+2079,5333,House Wrap/ Tape,Exerior Products,TRUE
+2079,5437,Full System,Exerior Products,TRUE
+2079,5438,Protec Roofing,Roofing,TRUE
+2085,5339,Cabinets,Cabinets,TRUE
+2085,5340,Homecrest Cabinets,Cabinets,FALSE
+2085,5415,Homecrest Cabinets,Cabinets,FALSE
+2085,5416,Mid Continent Cabinets,Cabinets,FALSE
+2086,5341,Appliances,Appliances,TRUE
+2087,5539,Carpet Only,Flooring,TRUE
+2087,5540,Hardsurface Only,Flooring,TRUE
+2087,5342,Flooring-Hard Surface & Carpet Combined,Flooring,TRUE
+2089,5267,1/3 HP Model,Plumbing,TRUE
+2089,5268,1/2 HP Model,Plumbing,TRUE
+2089,5349,Faucets - CANADA,Plumbing,FALSE
+2089,5403,Faucets,Plumbing,TRUE
+2089,5467,Faucets,Plumbing,TRUE
+2091,5353,Paint,Paint,TRUE
+2094,5359,Interior Doors,Doors,TRUE
+2094,5360,Windows,Windows,TRUE
+2094,5361,Wood Windows,Windows,FALSE
+2094,5362,Steel Doors,Doors,FALSE
+2094,5363,Entry Doors,Doors,TRUE
+2096,5365,Fireplaces,Fireplaces,FALSE
+2096,5447,Electric Fireplace,Roofing,TRUE
+2105,5377,Stone,Stone,TRUE
+2109,5378,Royal/ EP,Siding,TRUE
+2112,5384,House Wrap-Installed,Housewrap,FALSE
+2114,5386,Exhaust Fans,HVAC,TRUE
+2115,5387,Connectors Only,Steel Connectors/Fastners,TRUE
+2115,5388,Connectors & Strong-Wall,Steel Connectors/Fastners,TRUE
+2119,5530,Atrium Windows,Windows,TRUE
+2119,5531,CertainTeed Shingles,Roofing,TRUE
+2119,5532,OC Shingles,Roofing,TRUE
+2119,5534,Air Vent-ShingleVent II,Roofing,TRUE
+2119,5535,CertainTeed Restoration Millwork Trim,Trim,TRUE
+2119,5536,Siding-EP / Royal,Siding,TRUE
+2119,5537,Vinyl Windows,Windows,TRUE
+2119,5538,Wood Windows,Windows,TRUE
+2119,5336,Aluminum,Windows,TRUE
+2122,5406,Air Vent- Shingle Vent II,Roofing,TRUE
+2122,5407,CertainTeed Shingles,Roofing,TRUE
+2123,5482,T10 Pro Smart Thermostat w/sensor,HVAC,FALSE
+2123,5483,T10 Pro Smart Thermostat,HVAC,TRUE
+2123,5518,T6 Pro Smart Thermostat,HVAC,TRUE
+2123,5519,T6 Programmable Thermostat,HVAC,TRUE
+2123,5520,T4 Programmable Thermostat,HVAC,TRUE
+2123,5527,F200 Media Air Cleaner,HVAC,TRUE
+2123,5417,Wifi Thermostat,HVAC,FALSE
+2123,5418,Non-Wifi Thermostat,HVAC,FALSE
+2123,5419,Humidifier,HVAC,TRUE
+2123,5420,Zoning System,HVAC,TRUE
+2123,5421,F300 Electronic Air Cleaner,HVAC,TRUE
+2123,5422,F100 Media Air Cleaner,HVAC,TRUE
+2123,5423,UV 2400 with AirBRIGHT,HVAC,TRUE
+2124,5494,FY21 Trim,Siding,TRUE
+2124,5541,Primed Plank - (5.25-6.25-7.25-8.25-9.25-12),Siding,TRUE
+2124,5542,Primed Trim 4/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),Siding,TRUE
+2124,5543,Primed Trim 5/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),Siding,TRUE
+2124,5425,Primed Siding: 1700 Sqft (Tier A),Siding,FALSE
+2124,5426,Primed Siding: 2800 Sqft (Tier B),Siding,FALSE
+2124,5427,Primed Siding: 3800 Sqft (Tier C),Siding,FALSE
+2124,5428,Color Plus Siding: 1700 Sq ft (Tier A),Siding,FALSE
+2124,5429,Color Plus Siding: 2800 Sqft (Tier B),Siding,FALSE
+2124,5430,Color Plus Siding: 3800 Sqft (Tier C),Siding,FALSE
+2124,5431,Primed Siding & Trim: 1700 Sq Ft (Tier A),Siding,FALSE
+2124,5432,Primed Siding & Trim: 2800 Sq Ft (Tier B),Siding,FALSE
+2124,5433,Primed Siding & Trim: 3800 Sqft (Tier C),Siding,FALSE
+2124,5434,Color Plus Siding & Trim: 1700 Sqft (Tier A),Siding,FALSE
+2124,5435,Color Plus Siding & Trim: 2800 Sqft (Tier B),Siding,FALSE
+2124,5436,Color Plus Siding & Trim: 3800 Sqft (Tier C),Siding,FALSE
+2124,5439,"1/4\ Backer Board: 100sqft+""",Siding,TRUE
+2124,5544,Primed Panel  - (4/8-4/9-4/10),Siding,TRUE
+2124,5545,Primed Soffit V/NV - (12-16-24-4/8),Siding,TRUE
+2124,5546,Primed Shingles- (Straight Edge/Staggered Edge),Siding,TRUE
+2124,5547,Color Plus Plank - (5.25-6.25-7.25-8.25-9.25-12),Siding,TRUE
+2124,5548,Color Plus Trim 4/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),Siding,TRUE
+2124,5549,Color Plus Trim 5/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),Siding,TRUE
+2124,5550,Color Plus Panel  - (4/8-4/9-4/10),Siding,TRUE
+2124,5551,Color Plus  Soffit V/NV - (12-16-24-4/8),Siding,TRUE
+2124,5552,Color Plus Shingles- (Straight Edge/Staggered Edge),Siding,TRUE
+2126,5445,Drywall,Drywall,TRUE
+2128,5448,MSCI Series Sump Pump,Sump Pumps,TRUE
+2128,5449,MDC Series Sump Pump,Sump Pumps,TRUE
+2128,5450,MS33V Series Sump Pump,Sump Pumps,TRUE
+2128,5451,MS33PV Series Sump Pump,Sump Pumps,TRUE
+2128,5452,MCI033 Series Sump Pump,Sump Pumps,TRUE
+2128,5453,Myers SRM4 - 4/10HP Sewage Pumps,Sump Pumps,TRUE
+2128,5454,Myers MSKV50 - 1/2HP Sewage Pumps,Sump Pumps,TRUE
+2129,5505,Zoning System,HVAC,TRUE
+2129,5506,Infinity Air Purifier,HVAC,TRUE
+2129,5507,Humidifier,HVAC,TRUE
+2129,5508,Heat or Energy Ventilator,HVAC,TRUE
+2129,5509,Infinity Evolution Control,HVAC,TRUE
+2129,5510,Ecobee Thermostat,HVAC,TRUE
+2129,5511,Ductless Unit,HVAC,TRUE
+2129,5455,Furnace & AC,HVAC,TRUE
+2129,5456,A/C,HVAC,FALSE
+2134,5465,PEX Pipes & Everloc Fittings,Plumbing Accessories,TRUE
+2135,5469,Hybrid Security Panel,Low-Voltage Products,TRUE
+2135,5470,VISTA-15P Security Panel,Low-Voltage Products,FALSE
+2135,5471,VISTA-20P Security Panel,Low-Voltage Products,FALSE
+2135,5472,"7\ Graphic Home Control Touchscreen""",Low-Voltage Products,TRUE
+2135,5473,Camera,Low-Voltage Products,TRUE
+2135,5474,IPCAM-WO Outdoor IP Camera,Low-Voltage Products,FALSE
+2135,5475,VAM/VAM-W VISTA Auto Module,Low-Voltage Products,FALSE
+2135,5476,L5200 LYNX Security Panel,Low-Voltage Products,FALSE
+2135,5477,Video  Doorbell,Low-Voltage Products,TRUE
+2135,5468,Self Contained Security & Home Control,Low-Voltage Products,TRUE
+2136,5484,Badger 1&5 Disposal,Disposals,TRUE
+2136,5485,PRO Series Disposal,Disposals,TRUE
+2136,5486,Hot Water Tank,Disposals,TRUE
+2138,5501,Lyric Control Panel,Low-Voltage Products,FALSE
+2138,5502,Skybell WiFi Video Doorbell,Low-Voltage Products,FALSE
+2139,5512,Mystery Shopper Svc,Mystry Shopper,TRUE
+2140,5513,Flooring - Hard Surfaces,Flooring,TRUE
+2141,5514,Financial/Lending Service,Financial Lending Services,TRUE
+2142,5515,Flooring,Flooring,TRUE
+2144,5517,New Home Sales Training,Sales Training,TRUE
+2145,5528,Icynene - Foam Insulation,Insulation,TRUE
+2145,5529,LaPolla - Foam Insulation,Insulation,TRUE
+2145,5355,Demilec - Foam Insulation,Insulation,TRUE
+2146,5553,Google Nest Cam Indoor,Low-Voltage Products,TRUE
+2146,5554,Google Nest Cam Indoor IQ,Low-Voltage Products,TRUE
+2146,5555,Google Nest Cam Outdoor,Low-Voltage Products,TRUE
+2146,5556,Google Nest Hello (Doorbell),Low-Voltage Products,TRUE
+2146,5557,Google Nest Home Wifi Point,Low-Voltage Products,TRUE
+2146,5558,Google Nest Home Wifi Router,Low-Voltage Products,TRUE
+2146,5559,Google Nest Home Wifi Router+1 Point,Low-Voltage Products,TRUE
+2146,5560,Google Nest Home Wifi Router+2 Point,Low-Voltage Products,TRUE
+2146,5561,Google Nest Hub,Low-Voltage Products,TRUE
+2146,5562,Google Nest Hub Max,Low-Voltage Products,TRUE
+2146,5563,Google Nest Learning Thermostat,Low-Voltage Products,TRUE
+2146,5564,Google Nest Mini (speaker),Low-Voltage Products,TRUE
+2146,5565,Google Nest Protect (battery),Low-Voltage Products,TRUE
+2146,5566,Google Nest Protect (hardwired),Low-Voltage Products,TRUE
+2146,5567,Google Nest Temperature Sensor,Low-Voltage Products,TRUE
+2147,5568,RDI Railing,Railing,TRUE
+2147,5569,Xpanse Fencing,Fencing,TRUE

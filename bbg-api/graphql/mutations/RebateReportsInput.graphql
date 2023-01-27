@@ -1,0 +1,121 @@
+enum RebateReportStatus {
+    ACTION_REQUIRED @enum(value: "action required")
+    REBATE_READY @enum(value: "rebate ready")
+    COMPLETED @enum(value: "completed")
+}
+
+input CreateRebateReportInput {
+    name: String
+    organization: OrganizationInputBelongsTo
+    houses: RebateReportsHousesProductsRelation
+}
+
+input UpdateRebateReportInput {
+    id: ID
+    input: RebateReportInput @spread
+}
+
+input CreateRebateReportAndMassAssignInput {
+    name: String
+    organization: OrganizationInputBelongsTo
+    houses: [ Int ] @rules(apply: ["exists:houses,id"])
+    products: [ RebateReportInputProductInput ]
+}
+
+input RebateReportAndMassAssignInput {
+    name: String
+    organization: OrganizationInputBelongsTo
+    houses: [ Int ] @rules(apply: ["exists:houses,id"])
+    products: [ RebateReportInputProductInput ]
+}
+
+input RebateReportInputProductInput {
+    id: Int  @rules(apply: ["exists:products,id"])
+    quantity: Int
+}
+
+input RebateReportInput {
+    name: String
+    organization: OrganizationInputBelongsTo
+    houses: RebateReportHouseRelation
+}
+
+input RebateReportHouseRelation {
+    sync:[RebateReportsHousesProductsInput]
+    syncWithoutDetaching:[RebateReportsHousesProductsInput]
+    upsert:[UpsertHouseInput]
+    disconnect: [ ID ]  @rules(apply: ["exists:houses,id"])
+}
+
+input RebateReportHouseRelationInput {
+    """ID of the house or RebateReport to relate too"""
+    id: ID
+
+    status: RebateReportStatus
+
+    input: HouseInput
+
+    products: RebateReportHouseProductRelation
+
+    created_by: Int
+    updated_by: Int
+}
+
+input RebateReportHouseProductRelation {
+    sync:[RebateReportHouseProductRelationInput]
+    syncWithoutDetaching:[RebateReportHouseProductRelationInput]
+    disconnect: [ ID ]  @rules(apply: ["exists:products,id"])
+}
+
+input RebateReportHouseProductRelationInput {
+    """ID of the product or RebateReportHouse Pivot Record to relate too"""
+    id: ID
+
+    quantity: Int
+
+    serial_number: String
+    model_number: String
+    brand: String
+    date_of_purchase: Date
+    date_of_installation: Date
+
+    """Subcontractors"""
+    distributor: Int
+
+    created_by: Int
+    updated_by: Int
+}
+
+input RemoveProductFromRebateReportHouseInput {
+    house_id: ID! @rules(apply: ["required","exists:houses,id"])
+    product_ids: [ID!]! @rules(apply: ["required","exists:products,id"])
+}
+
+input RebateReportsHousesProductsRelation {
+    sync: [RebateReportsHousesProductsInput]
+    syncWithoutDetaching: [RebateReportsHousesProductsInput]
+    disconnect: [ID]
+}
+
+input RebateReportsHousesProductsInput {
+
+    """House ID"""
+    id: ID
+    product_id: Int @rules(apply: ["sometimes","exists:products,id"])
+
+    status: RebateReportStatus
+
+    product_quantity: Int
+
+    product_serial_number: String
+    product_model_number: String
+    product_brand: String
+
+    product_date_of_purchase: DateTimeUtc
+    product_date_of_installation: DateTimeUtc
+
+    subcontractor_provider_id: Int  @rules(apply: ["exists:sub_contractors,id"])
+
+    created_by: Int
+    updated_by: Int
+}

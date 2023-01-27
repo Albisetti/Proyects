@@ -1,0 +1,126 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+
+.wrapper{
+    @apply grid grid-cols-1;
+    @media (min-width: $desktop) {
+        margin-top: vwDesktop(30);
+        margin-left: vwDesktop(166);
+        height: vwDesktop(700);
+        @apply grid grid-cols-2 space-x-0;
+    }
+}
+
+.heading{
+    margin-top: vwMobile(300);
+    margin-left: vwMobile(30);
+    font-size: vwMobile(46);
+    line-height: vwMobile(52);
+    width: vwMobile(280);
+    text-align: center;
+    @media (min-width: $desktop) {
+        margin-top: vwDesktop(120);
+        width: vwDesktop(454);
+        font-size: vwDesktop(72);
+        line-height: vwDesktop(72);
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+.text {
+    @apply order-last;
+    margin-top: vwMobile(30);
+    margin-left: vwMobile(30);
+    margin-bottom: vwMobile(70);
+    width: vwMobile(280);
+    text-align: center;
+    @media (min-width: $desktop) {
+        @apply order-first;
+        margin-left: vwMobile(0);
+        margin-top: vwDesktop(60);
+        width: vwDesktop(454);
+        text-align: left;
+    }
+}
+
+.imagesContainer{
+    @apply order-first;
+    @media (min-width: $desktop) {
+        @apply order-last;
+        margin-top: 0;
+    }
+    position: relative;
+    margin-top: vwMobile(30);
+}
+
+.firstImage{
+    position: absolute;
+    @apply rotate-[-352.837deg];
+    width: vwMobile(290);
+    top: vwMobile(18);
+    left: vwMobile(105);
+    @media (min-width: $desktop) {
+        width: vwDesktop(523);
+        top: vwDesktop(40);
+        right: vwDesktop(64);
+        left: auto;
+    }
+}
+
+.secondImage{
+    position: absolute;
+    width: vwMobile(290);
+    top: vwMobile(88);
+    left: vwMobile(66);
+    @media (min-width: $desktop) {
+        @apply rotate-[-6.467deg];
+        width: vwDesktop(523);
+        top: vwDesktop(193);
+        right: vwDesktop(132);
+        left: auto;
+    }
+}
+
+.firstBackground{
+    position: absolute;
+    @apply rotate-[-352.837deg];
+    width: vwMobile(322);
+    left: vwMobile(90);
+    @media (min-width: $desktop) {
+        width: vwDesktop(584);
+        top: vwDesktop(8);
+        right: vwDesktop(30);
+        left: auto;
+    }
+}
+
+.secondBackground{
+    position: absolute;
+    width: vwMobile(322);
+    left: vwMobile(50);
+    top: vwMobile(70);
+    @media (min-width: $desktop) {
+        @apply rotate-[-6.467deg];
+        width: vwDesktop(584);
+        top: vwDesktop(160);
+        right: vwDesktop(100);
+        left: auto;
+    }   
+}
+
+.thirdImage{
+    position: absolute;
+    width: vwMobile(70);
+    top: vwMobile(200);
+    left: vwMobile(28);
+    @media (min-width: $desktop) {
+        top: vwDesktop(60);
+        right: vwDesktop(580);
+        left: auto;
+        width: vwDesktop(132);
+    }
+}

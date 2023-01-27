@@ -1,0 +1,22 @@
+{
+  "name": "BBG-API GraphQL API Schema",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Localhost GraphQL": {
+        "url": "https://bbg.developer89.cloud:9014/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      },
+      "Development GraphQL": {
+        "url": "https://bbgapi.webworkinprogress.com/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

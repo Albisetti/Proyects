@@ -1,0 +1,70 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.wrapper {
+  @apply bg-lightGray relative;
+}
+
+.content {
+  padding: vwMobile(30) 0 vwMobile(40);
+
+  @media (min-width: $desktop) {
+    padding: vwDesktop(50) vwDesktop(80) vwDesktop(90);
+  }
+}
+
+.heading {
+  @apply font-normal mx-auto;
+  max-width: 8ch;
+  font-size: vwMobile(48);
+  line-height: vwMobile(50);
+
+  @media (min-width: $desktop) {
+    max-width: unset;
+    font-size: vwDesktop(120);
+    line-height: vwDesktop(120);
+  }
+}
+
+.paragraph {
+  @apply mx-auto;
+  max-width: 35ch;
+  margin-top: vwMobile(20);
+  font-size: vwMobile(14);
+  line-height: vwMobile(18);
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(50);
+    font-size: vwDesktop(24);
+    line-height: vwDesktop(28);
+  }
+}
+
+.instructorGrid {
+  @media (min-width: $desktop) {
+    @apply grid grid-cols-4;
+    gap: vwDesktop(42.5);
+    margin-top: vwDesktop(60);
+  }
+}
+
+.instructorCarousel {
+  margin-top: vwMobile(30);
+}
+
+.instructorCarouselDotWrapper {
+  margin-top: vwMobile(30) !important;
+}
+
+.cherries {
+  @apply absolute h-auto;
+  width: vwMobile(125);
+  top: vwMobile(-50);
+  left: vwMobile(-25);
+
+  @media (min-width: $desktop) {
+    @apply hidden;
+  }
+}

@@ -1,0 +1,50 @@
+name: Deploy demo rebate web app
+
+on:
+  push:
+    branches: [ demo ]
+
+jobs:
+  deploy:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    name: Deploy demo rebate web app
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.DEMO_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.DEMO_AWS_SECRET_ACCESS_KEY }}
+    steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: '14'
+        - run: npm install
+        - name: environment Variables
+          run: |
+            echo "REACT_APP_GRAPHQL_ENDPOINT=${{secrets.DEMO_REACT_APP_GRAPHQL_ENDPOINT}}" >> .env.production.local
+            echo "REACT_APP_CMS_GRAPHQL_ENDPOINT=${{secrets.DEMO_REACT_APP_CMS_GRAPHQL_ENDPOINT}}" >> .env.production.local
+            echo "REACT_APP_CSV_DOWNLOAD_URL=${{secrets.DEMO_CSV_DOWNLOAD_URL}}" >> .env.production.local
+            echo "REACT_APP_LOGO_IMG_PATH=${{secrets.DEMO_LOGO_IMG_PATH}}" >> .env.production.local
+            echo "REACT_APP_FAVICON_PATH=${{secrets.DEMO_REACT_APP_FAVICON_PATH}}" >> .env.production.local
+            echo "REACT_APP_TITLE=${{secrets.DEMO_TITLE}}" >> .env.production.local
+        - run: npm run build
+        - name: Deploy
+          uses: reggionick/s3-deploy@v3
+          with:
+            folder: build
+            bucket: ${{ secrets.DEMO_S3_BUCKET }}
+            bucket-region: ${{ secrets.DEMO_S3_BUCKET_REGION }}
+            dist-id: ${{ secrets.DEMO_CLOUDFRONT_DISTRIBUTION_ID }}
+            invalidation: /
+            delete-removed: true
+            no-cache: true
+        - name: Slack
+          uses: 8398a7/action-slack@v3
+          with:
+            job_name: Deploy demo rebate web app
+            status: ${{ job.status }}
+            fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          if: always()

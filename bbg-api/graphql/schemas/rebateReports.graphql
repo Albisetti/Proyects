@@ -1,0 +1,339 @@
+type RebateReports {
+    id: ID
+    name: String
+    organization: Organizations @belongsTo
+
+    """use pivot field to get extra relation fields (notes, claim_products) """
+    houses: [rebateReportThreeWayHouseRelation!] @threeWayBelongsToMany(type: connection)
+    NeedActionHouses: [rebateReportThreeWayHouseRelation!] @threeWayBelongsToMany(type: connection)
+    NeedActionHousesWithCoAndAddress: [rebateReportThreeWayHouseRelation!] @threeWayBelongsToMany(type: connection)
+    NeedActionHousesMissingAddressCount: Int @method
+    NeedActionHousesMissingCoCount: Int @method
+    ReadiedHouses: [rebateReportThreeWayHouseRelation!] @threeWayBelongsToMany(type: connection)
+    CompletedHouses: [rebateReportThreeWayHouseRelation!] @threeWayBelongsToMany(type: connection)
+
+    products: [rebateReportThreeWayProductRelation!] @threeWayBelongsToMany(type: connection)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+
+    """Pivot Fields for RebateReports and Houses relationship, only usable from house{rebateReports(){}}"""
+    RebateReportsHousesPivot: RebateReportsHousesProducts @model(class:"App\\Models\\RebateReportsHousesProducts") @rename(attribute: "pivot")
+
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type RebateReportAndRefusedChanges {
+    rebateReport: RebateReports
+    refusedChanges: [RebateReportRefusedChanges]
+}
+
+type RebateReportRefusedChanges {
+    house_id: ID
+    product_id: ID
+    reason: String
+}
+
+type MassUpdateRebateReports {
+    report: RebateReports
+    refusedChanges: [MassUpdateRebateReportsRefusedChangesIds]
+}
+
+type MassUpdateRebateReportsRefusedChanges{
+    house: House
+    product: Product
+}
+
+type MassUpdateRebateReportsRefusedChangesIds{
+    house: ID
+    product: ID
+}
+
+type RebateReportsAndAssignment {
+    report: RebateReports
+}
+
+type RebateReportsHousesAndProductShortForm {
+    house_id: Int
+    products: [RebateReportsProductShortForm!]
+}
+
+type RebateReportsProductShortForm {
+    product: Product
+    qty: Int
+}
+
+type RebateReportHousePivot {
+    """ID of the relation between the rebate Report and House"""
+    id: ID
+
+    status: RebateReportStatus
+    readyForClaim: Boolean @method
+    products: [Product!] @belongsToMany(type: connection)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type RebateReportHouseProductPivot {
+    """ID of the relation between the rebateReports_houses and products"""
+    id: ID
+
+    quantity: Int
+
+    serial_number: String
+    model_number: String
+    brand: String
+
+    distributor_id: Int
+    distributor: SubContractors @belongsTo(model: "App\\Models\\SubContractors")
+
+    date_of_purchase: DateTime
+    date_of_installation: DateTime
+
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type RebateReportClaimPivot {
+    id: ID
+
+    rebate_earned: Float
+    rebate_adjusted: Float
+    builder_allocation: Float
+    total_allocation: Float
+    note: String
+
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+
+    approved_by: ID
+    approved_at: DateTime
+}
+
+type RebateReportsHousesProductsFlatten {
+    id: ID
+
+    rebateReport_id: ID
+#    rebateReports: RebateReports @belongsTo
+    houseProgramCount: Int @method
+
+    rebate_status: RebateReportStatus
+
+    product_quantity: Int
+
+    product_serial_number: String
+    product_model_number: String
+    product_brand: String
+
+    product_date_of_purchase: DateTime
+    product_date_of_installation: DateTime
+
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+
+    #product fields
+    product_id: ID
+#    category: ProductCategories @belongsTo
+    bbg_product_code: String
+    product_name: String
+    require_quantity_reporting: Boolean
+    minimum_unit: Int
+    product_description: String
+    product_line: String
+    product_created_at: DateTime
+    product_updated_at: DateTime
+    product_deleted_at: DateTime
+
+#    images: [ProductImages] @hasMany(type: connection relation:"productImages")
+
+#    programs: [Programs] @belongsToMany(type: connection)
+#    programPivot: ProgramProductsPivot @rename(attribute: "pivot")
+
+    rebate_amount_type: rebate_amount_type
+    residential_rebate_amount: Float
+    multi_unit_rebate_amount: Float
+    commercial_rebate_amount: Float
+
+    #houses fields
+    house_id: ID
+    property_type: PropertyType
+    project_number: String
+    model: String
+    square_footage: Float
+    expected_completion_date: Date
+    house_status: HouseStatus
+    house_address: String
+    house_address2: String
+    house_zip_postal: String
+    lot_number: String
+    house_city: String
+    house_state_id: ID
+#    state: State @hasOne
+    purchase_order_id: Int
+    confirmed_occupancy: Date
+    house_created_at: DateTime
+    house_updated_at: DateTime
+    house_deleted_at: DateTime
+#    subdivision: SubDivision @belongsTo
+    house_subdivision_id: ID
+
+    #subdivision
+    subdivision_name: String
+
+    #product category
+    product_categories_id:ID
+    product_categories_name:String
+
+    #subcontractor fields
+    subcontractor_id: ID
+    company_name: String
+
+    #methods
+    claimed: Boolean
+    relatedToClaim: Boolean
+    isModifiable: Boolean
+
+    #programs
+    programs: [ProgramFlat]
+}
+
+type ProgramFlat {
+
+    program_id: ID
+    id: ID
+
+    program_name: String
+    name: String
+    program_internal_description: String
+    program_builder_description: String
+    program_builder_description_short: String
+
+    lot_and_address_requirement: ProgramAddressRequirement
+
+    require_certificate_occupancy: Boolean
+    require_brand: Boolean
+    require_serial_number: Boolean
+    require_model_number: Boolean
+    require_date_of_installation: Boolean
+    require_date_of_purchase: Boolean
+    require_distributor: Boolean
+
+    is_flat_rebate: Boolean
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+}
+
+type RebateReportsHousesProducts {
+
+    """Pivot ID"""
+    id: ID
+
+    readyForClaim: Boolean @method
+    requireFieldStatus: rebateRequireFieldStatus @method
+    requireFieldStatusPerHouse: [rebateRequireFieldStatusPerHouse] @method
+
+    rebateReport_id: ID
+    rebateReports: RebateReports @belongsTo
+    house_id: ID
+    houses: House @belongsTo
+    houseProgramCount: Int @method
+    product_id: ID
+    products: Product @belongsTo @softDeletes
+
+    status: RebateReportStatus
+
+    product_quantity: Int
+
+    product_serial_number: String
+    product_model_number: String
+    product_brand: String
+
+    product_date_of_purchase: DateTime
+    product_date_of_installation: DateTime
+
+    subcontractorProvider: SubContractors @belongsTo(model: "App\\Models\\SubContractors")
+
+    claims: [Claims!] @belongsToMany(type: connection model:"App\\Models\\Claims")
+    claimed: Boolean @method
+    relatedToClaim: Boolean @method
+    isModifiable: Boolean @method
+    claimPivot: RebateReportClaimPivot @rename(attribute: "pivot")
+
+    claimPeriod: rebateClaimPeriod @method
+
+    dispute: Disputes @hasOne(model: "App\\Models\\Disputes")
+    disputed: Boolean @method
+
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type rebateReportThreeWayHouseRelation {
+    model: House
+    pivots: [RebateReportsHousesProducts]
+}
+
+type rebateReportThreeWayProductRelation {
+    model: Product
+    pivots: [RebateReportsHousesProducts]
+}
+
+type rebateReportThreeWayRebateRelation {
+    model: RebateReports
+    pivots: [RebateReportsHousesProducts]
+}
+
+type rebateRequireFieldStatusPerHouse {
+    house_id: ID
+    address: String
+    certificate_occupancy_correct: Boolean
+    brand_correct: Boolean
+    serial_number_correct: Boolean
+    model_number_correct: Boolean
+    date_of_installation_correct: Boolean
+    date_of_purchase_correct: Boolean
+    distributor_correct: Boolean
+}
+
+type rebateRequireFieldStatus {
+    certificate_occupancy_correct: Boolean
+    brand_correct: Boolean
+    serial_number_correct: Boolean
+    model_number_correct: Boolean
+    date_of_installation_correct: Boolean
+    date_of_purchase_correct: Boolean
+    distributor_correct: Boolean
+}
+
+type RebateCountAggregated {
+    rebateCount: Int
+    subdivisionCount: Int
+}
+
+type rebateClaimPeriod {
+    claimStartDate: DateTime
+    claimEndDate: DateTime
+    reportQuarter: Int
+    reportYear: Int
+}
+
+
+type RebateReportsAndError{
+    rebateReport: RebateReports
+    errors: [String]
+}

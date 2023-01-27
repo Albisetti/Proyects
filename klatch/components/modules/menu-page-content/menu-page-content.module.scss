@@ -1,0 +1,262 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.contentWrapper {
+  position: relative;
+
+  @media (min-width: $desktop) {
+    padding: 0 vwDesktop(158);
+    padding-bottom: vwDesktop(88);
+  }
+
+  .mainTitle {
+    margin-top: vwDesktop(85);
+    margin-bottom: vwDesktop(88);
+  }
+  * {
+    z-index: 1;
+  }
+}
+
+.mobilePadding {
+  position: relative;
+
+  padding: 0 vwMobile(28);
+  @media (min-width: $desktop) {
+    padding: 0;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: vwDesktop(16);
+
+  flex-direction: column;
+  @media (min-width: $desktop) {
+    flex-direction: row;
+  }
+
+  a {
+    margin-top: 0;
+
+    margin-bottom: vwMobile(15);
+    @media (min-width: $desktop) {
+      width: vwDesktop(552);
+      margin-bottom: vwDesktop(42);
+    }
+  }
+}
+
+.categoriesContainer {
+  position: relative;
+
+  .categoryTitle {
+    font-size: vwDesktop(17);
+    line-height: vwDesktop(21);
+    margin-bottom: vwDesktop(10);
+    text-align: left;
+    @apply font-bold;
+
+    display: none;
+    @media (min-width: $desktop) {
+      display: block;
+    }
+  }
+
+  .categoryBlocks {
+    display: flex;
+
+    margin-bottom: vwMobile(20);
+    @media (min-width: $desktop) {
+      margin-bottom: vwDesktop(65);
+    }
+
+    .categoryBlock {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      border: vwMobile(1) solid $blue;
+      border-right: none;
+      transition: background-color 0.3s;
+
+      margin-top: vwMobile(6);
+      height: vwMobile(42);
+      @media (min-width: $desktop) {
+        margin-top: 0;
+        height: vwDesktop(48);
+        border: vwDesktop(2) solid $blue;
+        border-right: none;
+      }
+
+      &.selected {
+        background-color: $blue;
+
+        p {
+          color: white;
+          @apply font-bold;
+        }
+      }
+    }
+    .categoryBlock:last-child {
+      border-right: vwMobile(1) solid $blue;
+      @media (min-width: $desktop) {
+        border-right: vwDesktop(2) solid $blue;
+      }
+    }
+  }
+}
+
+.subCategoriesContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: vwMobile(16);
+  @media (min-width: $desktop) {
+    position: absolute;
+    bottom: vwDesktop(-42);
+    align-items: unset;
+    flex-wrap: unset;
+    row-gap: unset;
+  }
+
+  .subCategory {
+    cursor: pointer;
+    margin: 0 vwDesktop(22);
+
+    &.selected {
+      color: $orange;
+      @apply font-bold;
+    }
+  }
+}
+
+.coffeesDisplay {
+  padding: 0 vwMobile(10);
+
+  @media (min-width: $desktop) {
+    padding: 0;
+  }
+
+  .coffeeDisplayTitle {
+    font-weight: 400;
+
+    margin-bottom: vwMobile(20);
+    @media (min-width: $desktop) {
+      margin-bottom: vwDesktop(66);
+    }
+  }
+
+  .coffeeProductsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 vwDesktop(35);
+    justify-content: flex-start;
+
+    .coffeeProduct {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-bottom: vwMobile(16);
+      width: 50%;
+      @media (min-width: $desktop) {
+        width: 25%;
+        height: vwDesktop(344);
+        margin-bottom: 0;
+      }
+
+      .coffeeImageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f6f6f7;
+
+        width: vwMobile(140);
+        height: vwMobile(140);
+        box-shadow: vwMobile(3) vwMobile(3) vwMobile(2) rgba(0, 0, 0, 0.17);
+        @media (min-width: $desktop) {
+          width: vwDesktop(224);
+          height: vwDesktop(224);
+          box-shadow: vwDesktop(-6) vwDesktop(6) vwDesktop(6)
+            rgba(0, 0, 0, 0.17);
+        }
+
+        .centerDiv {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #e5e6e7;
+
+          width: vwMobile(125);
+          height: vwMobile(125);
+          @media (min-width: $desktop) {
+            width: vwDesktop(204);
+            height: vwDesktop(204);
+          }
+        }
+        .coffeeImage {
+          position: absolute;
+          width: inherit;
+          height: inherit;
+          object-fit: contain;
+        }
+        .defaultCoffeeImage {
+          position: relative;
+
+          width: vwMobile(64);
+          height: vwMobile(64);
+          @media (min-width: $desktop) {
+            width: vwDesktop(96);
+            height: vwDesktop(96);
+          }
+        }
+      }
+      .coffeeName {
+        cursor: pointer;
+        @apply font-bold;
+
+        margin-top: vwMobile(12);
+        @media (min-width: $desktop) {
+          margin-top: vwDesktop(16);
+        }
+      }
+    }
+  }
+}
+
+.bgImageLeft {
+  position: absolute;
+  left: vwDesktop(-74);
+  top: vwDesktop(418);
+  z-index: 0;
+  width: vwDesktop(284);
+  height: vwDesktop(276);
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.bgImageRight {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: vwDesktop(303);
+  height: vwDesktop(387);
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}

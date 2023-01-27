@@ -1,0 +1,31 @@
+input PropertyInput{
+    name: String! @rules(apply: ["required","min:5","max:100","unique:properties,name"])
+    created_by: Int
+    updated_by: Int
+    organizations: OrganizationInputBelongsToMany
+    """subdivisions with house didn't work"""
+    subdivisions: SubDivisionRelation
+}
+
+input UpdatePropertyInput{
+    name: String @rules(apply: ["sometimes","min:5","max:100","unique:properties,name"])
+    created_by: Int
+    updated_by: Int
+    organizations: OrganizationInputBelongsToMany
+    """subdivisions with house didn't work"""
+    subdivisions: SubDivisionRelation
+}
+
+input UpdateProperty{
+    id: ID! @rules(apply: ["required","exists:properties,id"])
+    input: PropertyInput
+}
+
+input PropertyRelation{
+    update: [UpdateProperty!]
+    create: [PropertyInput!]
+    connect: [ID!]
+    sync: [ID!]
+    disconnect: [ID!]
+    delete: [ID!]
+}

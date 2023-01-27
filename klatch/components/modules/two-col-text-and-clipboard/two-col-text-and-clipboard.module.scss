@@ -1,0 +1,250 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.wrapper {
+    margin-top: vwDesktop(30);
+    @media (min-width: $desktop) {
+      @apply grid grid-cols-2 space-x-0
+    }
+}
+
+.leftWrapper {
+  @media (min-width: $desktop) {
+    margin-left: vwDesktop(130);
+  }
+}
+
+.textWrapper * {
+    text-align: left;
+}
+
+.heading {
+  margin-bottom: vwMobile(10);
+  margin-top: vwMobile(10);
+  margin-left: vwMobile(28);
+  font-size: vwMobile(56);
+  @media (min-width: $desktop) {
+    margin-bottom: vwDesktop(50);
+    margin-top: vwDesktop(200);
+    margin-left: vwDesktop(127);
+    font-size: 5rem;
+    line-height: 1;
+  }
+}
+
+.text {
+  max-width: vwMobile(280);
+  margin-left: vwMobile(28);
+  font-size: vwMobile(12);
+  p{
+    line-height: vwMobile(18);
+    margin-top: vwMobile(20);
+  }
+
+  ul {
+    line-height: vwMobile(20);
+    margin-left: vwMobile(-15);
+    margin-top: vwMobile(10);
+    li{
+      font-size: vwMobile(12);
+    }
+  }
+  @media (min-width: $desktop) {
+    max-width: vwDesktop(453);
+    margin-left: vwDesktop(130);
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+
+    p{
+      margin-top: auto;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  
+    ul {
+      margin-left: auto;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      margin-top: auto;
+      li{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    }
+  }
+}
+
+.selectWrapper {
+  margin-top: vwMobile(70);
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(50);
+    margin-left: vwDesktop(110);
+    max-width: vwDesktop(400);
+    margin-bottom: vwDesktop(-30);
+  }
+}
+
+.grindOptionSelect {
+  margin-top: vwMobile(25);
+  margin-left: vwMobile(20);
+  width: vwMobile(295);
+  height: vwMobile(28);
+  border: vwMobile(2) solid $blue;
+  outline: none;
+  padding-left: vwMobile(0);
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  font-size: vwMobile(10);
+  line-height: vwMobile(12);
+  color: $fontGray;
+  text-align-last: center;
+  @apply font-bodyReg font-bold;
+
+  background-image: url('/images/no-to-delete/product-hero-dropdown-arrow-blue.svg');
+  background-size: vwMobile(310) vwMobile(6);
+  background-position: vwMobile(120);
+  background-repeat: no-repeat;
+
+  option {
+    font-size: vwMobile(16);
+    color: $fontGray;
+    @apply font-bodyReg font-bold;
+  }
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(4);
+    margin-left: vwDesktop(20);
+    width: vwDesktop(145);
+    height: vwDesktop(28);
+    border: vwDesktop(2) solid $blue;
+    outline: none;
+    padding-left: vwDesktop(10);
+  
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  
+    font-size: vwDesktop(10);
+    line-height: vwDesktop(12);
+    color: $fontGray;
+    text-align-last: left;
+    @apply font-bodyReg font-bold;
+  
+    background-image: url('/images/no-to-delete/product-hero-dropdown-arrow-blue.svg');
+    background-size: vwDesktop(13) vwDesktop(6);
+    background-position: vwDesktop(120);
+    background-repeat: no-repeat;
+  
+    option {
+      font-size: vwDesktop(16);
+      color: $fontGray;
+      @apply font-bodyReg font-bold;
+    }
+  }
+  }
+
+  .firstLabel {
+    @apply font-bodyReg font-bold;
+    position: absolute;
+    color: $blue;
+    font-size: vwMobile(12);
+    margin-top: vwMobile(10);
+    left: vwMobile(20);
+    @media (min-width: $desktop) {
+      position: inherit;
+      margin-left: vwDesktop(20);
+      margin-top: vwDesktop(30);
+      color: $blue;
+      font-size: vwDesktop(12);
+      line-height: vwDesktop(14);
+    }
+  }
+  
+  .secondLabel {
+    @apply font-bodyReg font-bold;
+    position: absolute;
+    color: $blue;
+    font-size: vwMobile(12);
+    left: vwMobile(20);
+    margin-top: vwMobile(62);
+    @media (min-width: $desktop) {
+      position: inherit;
+      margin-left: vwDesktop(140);
+      margin-top: vwDesktop(30);
+      color: $blue;
+      font-size: vwDesktop(12);
+      line-height: vwDesktop(14);
+      @apply font-bodyReg font-bold;
+    }
+  }
+
+  .secondGroupLabel {
+    @apply font-bodyReg font-bold;
+    position: absolute;
+    color: $blue;
+    font-size: vwMobile(12);
+    left: vwMobile(20);
+    margin-top: vwMobile(63);
+    @media (min-width: $desktop) {
+      position: inherit;
+      margin-left: vwDesktop(113);
+      margin-top: vwDesktop(30);
+      color: $blue;
+      font-size: vwDesktop(12);
+      line-height: vwDesktop(14);
+      @apply font-bodyReg font-bold;
+    }
+  }
+
+  .secondLabelWrapper {
+      margin-top: vwDesktop(12);
+  }
+  
+.cta {
+  width: vwMobile(295);
+  margin-left: vwMobile(20);
+  @media (min-width: $desktop) {
+    max-width: vwDesktop(312);
+    margin-left: vwDesktop(130);
+  }
+}
+
+.ctaText *{
+  font-size: vwMobile(18);
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(18);
+    text-transform: uppercase;
+  }
+}
+
+.clipboard > div{
+  display: none;  
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.firstMobileImage{
+  display: block;
+  position: absolute;
+  top: vwMobile(170);
+  left: vwMobile(160);
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.secondMobileImage{
+  display: block;
+  position: absolute;
+  top: vwMobile(330);
+  right: vwMobile(190);
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+type Property {
+    id: ID!
+    name: String!
+    organizations: [Organizations!] @belongsToMany(type: CONNECTION)
+    subdivisions: [SubDivision!] @hasMany(type: CONNECTION)
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime!
+    updated_at: DateTime
+}

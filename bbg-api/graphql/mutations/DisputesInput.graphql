@@ -1,0 +1,52 @@
+"""created_by may need to be revisited"""
+
+input DisputeInput {
+    organization_id: Int @rules(apply: ["exists:organizations,id"])
+    rebateReport: DisputeRelation
+    claim: DisputeRelation
+    status: DisputeStatus
+    note: String
+    new_product_quantity: Int
+    new_rebate_earned: Float
+    new_rebate_adjusted: Float
+    created_by: Int
+}
+
+input CreateDisputeInput {
+    organization_id: Int @rules(apply: ["exists:organizations,id"])
+    rebateReport: DisputeRelation
+    claim: DisputeRelation
+    status: DisputeStatus
+    note: String
+    new_product_quantity: Int
+    new_rebate_earned: Float
+    new_rebate_adjusted: Float
+    created_by: Int
+}
+
+input DisputesInputRelation{
+    update: [UpdateDisputeInput]
+    create: [CreateDisputeInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input UpdateDisputeInput {
+    id: ID @rules(apply: ["sometimes","exists:disputes,id"])
+    organization_id: Int @rules(apply: ["exists:organizations,id"])
+    rebateReport: DisputeRelation
+    claim: DisputeRelation
+    status: DisputeStatus
+    updated_by: Int
+    note: String
+    new_product_quantity: Int
+    new_rebate_earned: Float
+    new_rebate_adjusted: Float
+    created_by: Int
+}
+
+input DisputeRelation {
+    connect: ID
+}

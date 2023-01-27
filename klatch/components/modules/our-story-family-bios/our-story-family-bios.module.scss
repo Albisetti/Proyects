@@ -1,0 +1,146 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.sectionContainer {
+  background-color: $fontGray;
+
+  padding-top: vwMobile(30);
+  padding-bottom: vwMobile(50);
+  @media (min-width: $desktop) {
+    padding-top: vwDesktop(45);
+    padding-bottom: vwDesktop(122);
+  }
+
+  .mainTitle {
+    color: white;
+
+    font-size: vwMobile(50);
+    line-height: vwMobile(50);
+    margin-bottom: vwMobile(40);
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(122);
+      line-height: vwDesktop(123);
+      margin-bottom: vwDesktop(116);
+    }
+  }
+}
+
+.polaroidsSection {
+  justify-content: center;
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.polaroidsSectionMobile {
+  justify-content: center;
+
+  display: block;
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.memberDiv {
+  padding: 0 vwMobile(25);
+  @media (min-width: $desktop) {
+    padding: 0;
+    margin: 0 vwDesktop(24);
+    width: vwDesktop(290);
+  }
+
+  .polaroidContainer {
+    background-color: #fffdf6;
+    margin-bottom: vwDesktop(50);
+    box-shadow: vwDesktop(-6) vwDesktop(6) vwDesktop(7) rgba(0, 0, 0, 0.3);
+
+    width: 100%;
+    height: vwMobile(330);
+    padding: vwMobile(13) vwMobile(12);
+    @media (min-width: $desktop) {
+      width: vwDesktop(290);
+      height: vwDesktop(348);
+      padding: vwDesktop(28) vwDesktop(15);
+    }
+
+    .polaroidImage {
+      object-fit: cover;
+
+      @media (min-width: $desktop) {
+        width: vwDesktop(254);
+        height: vwDesktop(259);
+      }
+    }
+  }
+
+  .memberTextContainer {
+    @media (min-width: $desktop) {
+      min-height: vwDesktop(530);
+    }
+
+    .memberName {
+      text-align: left;
+      font-weight: 400;
+      color: white;
+
+      font-size: vwMobile(50);
+      line-height: vwMobile(50);
+      margin-bottom: vwMobile(30);
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(54);
+        line-height: vwDesktop(71);
+        margin-bottom: vwDesktop(28);
+      }
+    }
+    .memberDescription {
+      text-align: left;
+      letter-spacing: vwDesktop(0.5);
+      color: white;
+
+      font-size: vwMobile(14);
+      line-height: vwMobile(18);
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(18);
+        line-height: vwDesktop(24);
+      }
+
+      &.closed {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: vwMobile(90);
+        @media (min-width: $desktop) {
+          display: block;
+          -webkit-box-orient: unset;
+          -webkit-line-clamp: unset;
+          text-overflow: unset;
+          overflow: unset;
+          max-height: unset;
+        }
+      }
+    }
+    .readMoreButton {
+      cursor: pointer;
+      color: white;
+      font-size: vwMobile(14);
+      line-height: vwMobile(18);
+      margin-top: vwMobile(25);
+      width: fit-content;
+      @apply font-bodyBold;
+
+      @media (min-width: $desktop) {
+        display: none;
+      }
+    }
+  }
+}
+
+.dotWrapper {
+  margin-top: vwMobile(50);
+}

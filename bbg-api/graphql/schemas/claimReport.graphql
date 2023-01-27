@@ -1,0 +1,27 @@
+type claimChartReport{
+    currentOpenClaims: claimSum
+    periodCloseClaims: claimSum
+    yearCloseClaims: claimSum
+    allCloseClaimsTotal: reportClaimTotalWithPrograms
+}
+
+type claimSum{
+    volumeTotal: Float
+    factoryTotal: Float
+    contributingPrograms: [Programs]
+    previousResults: previousResultsSum
+}
+
+type previousResultsSum{
+    year:Int
+    quarter:Int
+    volumeTotal: Float
+    factoryTotal: Float
+    contributingPrograms: [Programs]
+}
+
+type claimTotalPerBuilder{
+    builder: Organizations
+    openTotal: Float
+    lastCloseClaimTotal: Float
+}

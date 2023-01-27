@@ -1,0 +1,33 @@
+enum InvoiceStatus {
+    PAID @enum(value: "paid")
+    PROCESSING @enum(value: "processing")
+    CANCELLED @enum(value: "cancelled")
+    REFUND @enum(value: "refund")
+}
+
+type InvoiceItem
+{
+    id: ID
+    invoice_id: Int
+    invoice: Invoice
+    product_id: Int
+    product: Product
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type Invoice
+{
+    id: ID
+    organization_id: Int
+    organization: Organizations @hasOne
+    address_id: Int
+    address: Address
+    program_id: Int
+    program: Programs
+    rule_id: Int
+    rule: Rule
+    house_id: Int
+    house: House @hasOne
+    items: [InvoiceItem]! @hasMany(type: CONNECTION)
+}

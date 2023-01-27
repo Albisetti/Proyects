@@ -1,0 +1,78 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.locationContentContainer {
+  width: 100%;
+  margin-right: vwDesktop(230);
+
+  .locationDivisor {
+    display: flex;
+
+    flex-direction: column;
+    @media (min-width: $tablet) {
+      flex-direction: row;
+    }
+
+    .locationDiv {
+      margin-top: vwMobile(32);
+      @media (min-width: $tablet) {
+        margin-top: 0;
+        width: vwDesktop(388);
+      }
+    }
+    .locationDivFirst {
+      @media (min-width: $tablet) {
+        width: vwDesktop(388);
+        margin-right: vwDesktop(120);
+      }
+    }
+  }
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-right: vwMobile(10);
+  margin-top: vwMobile(20);
+  @media (min-width: $tablet) {
+    margin-top: vwDesktop(10);
+    max-width: vwDesktop(400);
+  }
+
+  div {
+    max-width: vwMobile(140);
+    text-align: right;
+    @media (min-width: $tablet) {
+      max-width: vwDesktop(140);
+      text-align: unset;
+    }
+  }
+}
+
+.title {
+  @apply text-navyBlue font-glamourn font-normal;
+
+  font-size: vwMobile(32);
+  line-height: vwMobile(36);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(32);
+    line-height: vwDesktop(35.2);
+  }
+}
+
+.descriptionText {
+  @apply text-copy font-monserrat font-normal;
+
+  font-size: vwMobile(18);
+  margin-top: vwMobile(10);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(23.85);
+    max-width: vwDesktop(360);
+    min-height: vwDesktop(75);
+    margin-top: vwDesktop(18);
+  }
+}

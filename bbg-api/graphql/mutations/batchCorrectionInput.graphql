@@ -1,0 +1,11 @@
+enum batchCorrectionAction {
+    REMOVE
+    CHANGE_QTY
+    REPLACE
+}
+
+input batchCorrectionInput {
+    action: batchCorrectionAction!
+    qty: Int @rules(apply: ["min:1"])
+    newProduct: ID @rules(apply:["exists:products,id"])
+}

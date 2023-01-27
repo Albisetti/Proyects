@@ -1,0 +1,52 @@
+input SubContractorInput{
+    company_name: String
+    contact_name: String
+    email: String
+    office_number: String
+    office_number_ext: String @rules(apply: ["max:4"])
+    mobile_number: String
+    organizations:  OrganizationInputBelongsToManyUpdate
+    """state: StateRelation!"""
+    state_id: Int @rules(apply: ["exists:states,id"])
+    city: String!
+    address: String
+    address2: String
+    zip_postal: String
+}
+
+input CreateSubContractorInput{
+    company_name: String!
+    contact_name: String!
+    email: String
+    office_number: String
+    office_number_ext: String @rules(apply: ["max:4"])
+    mobile_number: String
+    organizations:  OrganizationInputBelongsToMany!
+    """state: StateRelation!"""
+    state_id: Int @rules(apply: ["exists:states,id"])
+    city: String!
+    address: String!
+    address2: String
+    zip_postal: String
+}
+
+input UpdateSubContractorInput{
+    id: ID
+    input: SubContractorInput
+}
+
+input SubContractorRelation{
+    update: [UpdateSubContractorInput]
+    create: [SubContractorInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input CreateSubContractorRelation{
+    update: [UpdateSubContractorInput]
+    create: [SubContractorInput]
+    connect: [ID]
+    sync: [ID]
+}

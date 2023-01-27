@@ -1,0 +1,173 @@
+@import "./colors.scss";
+@import "./spacing.scss";
+@import "./breakpoints.scss";
+@import "./typography.scss";
+
+#onetrust-banner-sdk {
+  box-shadow:  0 0 vwMobile(5) vwMobile(1) rgba(0,0,0,0.1)!important;
+  @media (min-width: $desktop) {
+    max-width: vwDesktop(407) !important;
+    right:0!important;
+    bottom:0!important;
+    box-shadow:  0 0 vwDesktop(5) vwDesktop(1) rgba(0,0,0,0.1)!important;
+  }
+}
+#onetrust-banner-sdk.otFloatingFlat:focus {
+  outline: none !important;
+  border: none !important;
+}
+#onetrust-banner-sdk:focus {
+  outline: none;
+  border: none !important;
+}
+
+.ot-sdk-row {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: vwMobile(5) $spacingMobile1 !important;
+  @media (min-width: $desktop) {
+    padding: vwDesktop(5) $spacingDesktop1 !important;
+  }
+}
+
+.ot-sdk-eight {
+  width: 95% !important;
+}
+
+.ot-sdk-container {
+  position: relative !important;
+}
+
+.banner-close-btn-container {
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute !important;
+  cursor: pointer !important;
+  right: vwDesktop(5) !important;
+}
+
+#onetrust-banner-sdk .ot-close-icon {
+  height: vwMobile(38) !important;
+  width: vwMobile(25) !important;
+  background-image: url("/images/icon-x.svg") !important;
+  @media (min-width: $desktop) {
+    height: vwDesktop(38) !important;
+    width: vwDesktop(25) !important;
+  }
+}
+
+#onetrust-button-group-parent {
+  width: 100% !important;
+}
+
+#onetrust-button-group {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  @media (min-width: $tablet) {
+    margin: 0 0 0 vwMobile(10) !important;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 0 $spacingDesktop0 0px !important;
+  }
+}
+
+@mixin paragraphImportant {
+  font-family: GT America !important;
+  font-style: normal !important;
+  font-weight: bold !important;
+  font-size: vwMobile(16) !important;
+  line-height: 150% !important;
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(16) !important;
+  }
+}
+
+#onetrust-policy {
+  @media (max-width: $mobile) {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+#onetrust-policy-title {
+  color: $burgundy !important;
+  @include paragraphImportant();
+}
+
+#onetrust-button-group-parent {
+  margin: 0 !important;
+  padding: $spacingMobile1 0 !important;
+
+  @media (min-width: $tablet) {
+    padding: vwMobile(10) 0 !important;
+  }
+  @media (min-width: $desktop) {
+    padding: $spacingDesktop0 0 !important;
+  }
+}
+
+#onetrust-policy-text {
+  color: $black !important;
+  margin-top: vwMobile(4) !important;
+  @include paragraphImportant();
+  font-weight: 400 !important;
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(4) !important;
+  }
+}
+
+#onetrust-accept-btn-handler {
+  margin: $spacingMobile0 0 0 -$spacingMobile1 !important;
+  padding: 0 0 vwMobile(4) 0 !important;
+  max-width: max-content !important;
+  min-width: max-content !important;
+  border-bottom: 1px solid $burgundy !important;
+
+  @include paragraphImportant();
+  text-align: start !important;
+  font-weight: 400 !important;
+  color: $burgundy !important;
+  @media (min-width: $desktop) {
+    margin: $spacingDesktop0 0 0 $spacingDesktop1 !important;
+    padding: 0 0 vwDesktop(4) 0 !important;
+  }
+}
+button#onetrust-accept-btn-handler:hover {
+  text-decoration: none !important;
+  color: $burgundy !important;
+}
+button#onetrust-pc-btn-handler:hover {
+  text-decoration: none !important;
+  color: #1a1919 !important;
+}
+button:hover {
+  background-color: none;
+  color: none;
+}
+#onetrust-pc-btn-handler {
+  border: none !important;
+  margin: $spacingMobile0 0 0 -$spacingMobile1 !important;
+  color: $black !important;
+  max-width: max-content !important;
+  min-width: max-content !important;
+  text-align: end !important;
+  padding: 0 0 vwMobile(4) 0 !important;
+  @include paragraphImportant();
+  font-weight: 400 !important;
+  @media (min-width: $desktop) {
+    margin: $spacingDesktop0 0 0 vwDesktop(73)!important;
+    padding: 0!important;
+  }
+}
+
+#ot-sdk-btn-floating {
+  display: none !important;
+}

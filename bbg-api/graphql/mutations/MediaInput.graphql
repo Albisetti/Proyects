@@ -1,0 +1,18 @@
+enum MediaCropMethod {
+    CROP_TOP_LEFT @enum(value: "crop-top-left")
+    CROP_TOP @enum(value: "crop-top")
+    CROP_TOP_RIGHT @enum(value: "crop-top-right")
+    CROP_LEFT @enum(value: "crop-left")
+    CROP_CENTER @enum(value: "crop-center")
+    CROP_RIGHT @enum(value: "crop-right")
+    CROP_BOTTOM_LEFT @enum(value: "crop-bottom-left")
+    CROP_BOTTOM @enum(value: "crop-bottom")
+    CROP_BOTTOM_RIGHT @enum(value: "crop-bottom-right")
+}
+
+input mediaInput {
+    upload: Upload!
+    maximumWidth: Int
+    maximumHeight: Int
+    cropMethod: MediaCropMethod
+}

@@ -1,0 +1,121 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.productsSliderMainDiv {
+  position: relative;
+
+  padding-bottom: vwMobileSecondary(40);
+  @media (min-width: $desktop) {
+    padding-bottom: vwDesktop(75);
+  }
+
+  h2 {
+    font-weight: 400;
+
+    font-size: vwMobileSecondary(25);
+    line-height: vwMobileSecondary(25);
+    margin-bottom: vwMobileSecondary(30);
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(72);
+      line-height: vwDesktop(72);
+      margin-bottom: vwDesktop(70);
+    }
+  }
+}
+
+.arrowsContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+
+    width: vwMobileSecondary(46);
+    height: vwMobileSecondary(34);
+    @media (min-width: $desktop) {
+      width: vwDesktop(46);
+      height: vwDesktop(34);
+    }
+  }
+  .arrow:hover {
+    opacity: 1;
+  }
+  .arrowLeft {
+    left: vwDesktop(70);
+    background-image: url('/images/no-to-delete/product-slider-arrowleft.png');
+  }
+  .arrowRight {
+    right: vwDesktop(70);
+    background-image: url('/images/no-to-delete/product-slider-arrowright.png');
+  }
+}
+
+.sliderContainer {
+  padding: 0 vwMobileSecondary(68);
+  height: vwMobileSecondary(170);
+  @media (min-width: $desktop) {
+    height: auto;
+    padding: 0 vwDesktop(158);
+  }
+}
+
+.productContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: vwMobileSecondary(241);
+  height: vwMobileSecondary(170);
+  margin: auto;
+  transform: scale(0.7);
+  transition: transform 0.3s;
+
+  @media (min-width: $desktop) {
+    width: vwDesktop(241);
+    height: vwDesktop(270);
+    transform: scale(1);
+  }
+
+  .productBgPhoto {
+    position: absolute;
+    width: vwMobileSecondary(241);
+    height: vwMobileSecondary(235);
+    transition: transform 0.3s;
+
+    @media (min-width: $desktop) {
+      width: vwDesktop(241);
+      height: vwDesktop(235);
+    }
+  }
+  .productPhoto {
+    position: absolute;
+    width: vwMobileSecondary(128);
+    height: vwMobileSecondary(220);
+    transition: transform 0.3s;
+
+    @media (min-width: $desktop) {
+      width: vwDesktop(128);
+      height: vwDesktop(220);
+    }
+  }
+}
+.productContainer:hover {
+  @media (min-width: $desktop) {
+    transform: scale(1.05);
+
+    .productPhoto {
+      transform: scale(1.1) rotate(-10deg);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.videoPlayer {
+  aspect-ratio: 16/9;
+}
+
+.videoPlayerWrapper {
+  @apply flex-auto;
+  max-width: 90vw;
+  max-height: 90vh;
+
+  padding: 0;
+  @media (min-width: $desktop) {
+    padding: 0 vwDesktop(150);
+  }
+}
+
+.videoWrapper {
+  @apply fixed mx-auto flex items-center justify-center top-0 left-0 z-[9999] h-full min-h-screen bg-fontGray;
+  width: 100%;
+}
+
+.closeIconWrapper {
+  @apply absolute inline-flex items-center justify-center text-white hover:text-lightGray cursor-pointer  z-[3] transition-all transform;
+
+  top: vwMobileSecondary(10);
+  right: vwMobileSecondary(5);
+  @media (min-width: $desktop) {
+    top: vwDesktop(6);
+    width: vwDesktop(36);
+    height: vwDesktop(36);
+    right: vwDesktop(6);
+  }
+}

@@ -1,0 +1,23 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.container {
+  margin-left: vwDesktop(80);
+  margin-right: vwDesktop(80);
+  @apply flex h-[100vh] items-center;
+
+  padding-top: vwMobile(30);
+  @media (min-width: $mobile) {
+    padding-top: unset;
+    justify-content: center;
+  }
+}
+
+.content {
+  width: 100%;
+  @media (min-width: $tablet) {
+    margin-left: vwDesktop(840);
+  }
+}

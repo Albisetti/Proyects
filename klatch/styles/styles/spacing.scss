@@ -1,0 +1,18 @@
+@import "./breakpoints.scss";
+
+$spacingMobile0: vwMobile(10);
+$spacingMobile1: vwMobile(20);
+$spacingMobile2: vwMobile(40);
+$spacingMobile3: vwMobile(80);
+$spacingMobile4: vwMobile(120);
+$spacingMobile5: vwMobile(160);
+$spacingMobile6: vwMobile(200);
+
+$spacingDesktop0: vwDesktop(10);
+$spacingDesktop1: vwDesktop(20);
+$spacingDesktop2: vwDesktop(40);
+$spacingDesktop3: vwDesktop(80);
+$spacingDesktop4: vwDesktop(120);
+$spacingDesktop5: vwDesktop(160);
+$spacingDesktop6: vwDesktop(200);
+$spacingDesktop7: vwDesktop(223);

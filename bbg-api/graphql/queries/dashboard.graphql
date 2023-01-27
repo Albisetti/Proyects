@@ -1,0 +1,21 @@
+extend type Query {
+	# General
+	dashboardReporting: DashboardReportingResponse
+
+	# Admin & executives
+	buildersWithoutBundles: [Organizations]! @paginate(type: "connection" builder: "App\\GraphQL\\Queries\\BuildersWithoutBundles")
+	latestTerritoryManager: User
+
+    upcomingConversionPayments: [Conversion]
+    conversionPaymentsPastDue: [Conversion]
+	relevantConversions: [Conversion]
+	recentIncreasedRebatesByActivity: [ConversionByActivity]
+
+	totalRevenue: Float!
+	reportingPeriodRevenue(current: Boolean): Float!
+	projectedRevenue: Float!
+
+	# Builders
+	lifetimeBBGRebates: Float
+	recentlyAdoptedPrograms: [ProgramParticipationResponse]
+}

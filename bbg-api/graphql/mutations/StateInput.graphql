@@ -1,0 +1,32 @@
+input CreateStateInput{
+    name: String!
+    iso_code: String!
+    country: Country!
+}
+
+input StateInput{
+    name: String
+    iso_code: String
+    country: Country
+}
+
+input UpdateStateInput{
+    id: ID
+    input: StateInput
+}
+
+input StateRelation{
+    update: [UpdateStateInput]
+    create: [StateInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input StateSync{
+    connect: [ID]
+    sync: [ID]
+    syncWithoutDetaching: [ID]
+    disconnect: [ID]
+}

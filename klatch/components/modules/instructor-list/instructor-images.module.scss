@@ -1,0 +1,160 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.cardColor,
+.polaroid,
+.paperclip {
+  @apply absolute h-auto;
+}
+.cardColor {
+  max-width: unset;
+  width: vwMobile(300);
+
+  @media (min-width: $desktop) {
+    width: vwDesktop(325);
+  }
+}
+.polaroid {
+  width: vwMobile(220);
+
+  @media (min-width: $desktop) {
+    width: vwDesktop(245);
+  }
+}
+.paperclip {
+  width: vwMobile(40);
+
+  @media (min-width: $desktop) {
+    width: vwDesktop(40);
+  }
+}
+
+.cardBlue {
+  & > .cardColor {
+    @apply rotate-[-1deg];
+    left: vwMobile(-20);
+    top: vwMobile(5);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(-20);
+      top: vwDesktop(5);
+    }
+  }
+  & > .polaroid {
+    @apply rotate-[4deg];
+    left: vwMobile(20);
+    top: vwMobile(35);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(20);
+      top: vwDesktop(35);
+    }
+  }
+  & > .paperclip {
+    @apply rotate-[-3deg];
+    left: vwMobile(95);
+    top: vwMobile(4);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(95);
+      top: vwDesktop(4);
+    }
+  }
+}
+
+.cardGreen {
+  & > .cardColor {
+    @apply rotate-[2deg];
+    left: vwMobile(-22);
+    top: vwMobile(10);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(-22);
+      top: vwDesktop(10);
+    }
+  }
+  & > .polaroid {
+    @apply rotate-[-7deg];
+    left: vwMobile(5);
+    top: vwMobile(20);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(5);
+      top: vwDesktop(20);
+    }
+  }
+  & > .paperclip {
+    @apply rotate-[-1deg];
+    left: vwMobile(55);
+    top: vwMobile(7);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(55);
+      top: vwDesktop(7);
+    }
+  }
+}
+
+.cardOrange {
+  & > .cardColor {
+    @apply rotate-[2deg];
+    left: vwMobile(-20);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(-20);
+    }
+  }
+  & > .polaroid {
+    @apply rotate-[-4deg];
+    top: vwMobile(20);
+    left: vwMobile(10);
+
+    @media (min-width: $desktop) {
+      top: vwDesktop(20);
+      left: vwDesktop(10);
+    }
+  }
+  & > .paperclip {
+    @apply rotate-[2deg];
+    top: vwMobile(0);
+    left: vwMobile(170);
+
+    @media (min-width: $desktop) {
+      top: vwDesktop(0);
+      left: vwDesktop(170);
+    }
+  }
+}
+
+.cardRed {
+  & > .cardColor {
+    @apply rotate-[-4deg];
+    left: vwMobile(-20);
+
+    @media (min-width: $desktop) {
+      left: vwDesktop(-20);
+    }
+  }
+  & > .polaroid {
+    @apply rotate-[-8deg];
+    top: vwMobile(20);
+    left: vwMobile(10);
+
+    @media (min-width: $desktop) {
+      top: vwDesktop(20);
+      left: vwDesktop(10);
+    }
+  }
+  & > .paperclip {
+    @apply rotate-[-5deg];
+    top: vwMobile(-5);
+    left: vwMobile(175);
+
+    @media (min-width: $desktop) {
+      top: vwDesktop(-5);
+      left: vwDesktop(175);
+    }
+  }
+}

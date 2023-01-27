@@ -1,0 +1,61 @@
+@tailwind base;
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-montserrat;
+  }
+}
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply scroll-mt-[35px] lg:scroll-mt-[75px];
+}
+
+html,
+body {
+  @apply scroll-smooth;
+
+  &.is-loading,
+  &.is-loading * {
+    @apply !cursor-wait;
+  }
+}
+
+.no-scroll {
+  @apply h-screen overflow-y-hidden;
+}
+
+.px-combined {
+  @apply px-[28px] xl:px-[83px];
+}
+.pl-combined {
+  @apply pl-[28px] xl:pl-[83px];
+}
+.pr-combined {
+  @apply pr-[28px] xl:pr-[83px];
+}
+
+.px-edge {
+  @apply px-[28px] xl:px-[42px];
+}
+.pl-edge {
+  @apply pl-[28px] xl:pl-[42px];
+}
+.pr-edge {
+  @apply pr-[28px] xl:pr-[42px];
+}
+
+.px-content {
+  @apply px-0 xl:px-[41px];
+}
+.pl-content {
+  @apply pl-0 xl:pl-[41px];
+}
+.pr-content {
+  @apply pr-0 xl:pr-[41px];
+}

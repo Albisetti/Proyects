@@ -1,0 +1,58 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.headerNavigation {
+  @apply flex self-end justify-center w-3/5;
+  & > ul {
+    @apply flex flex-row list-none;
+    column-gap: vwDesktop(46);
+  }
+}
+.headerLink {
+  @apply flex items-end relative;
+
+  & > a,
+  & > span {
+    @apply font-bodyReg text-fontGray;
+    line-height: vwDesktop(18);
+    font-size: vwDesktop(18);
+  }
+  & > a {
+    @apply hover:text-pageText;
+  }
+  & > span {
+    @apply cursor-pointer;
+  }
+}
+
+.isDropdownOpen {
+  & > .headerDropdown {
+    display: flex;
+  }
+}
+
+.headerDropdown {
+  @apply absolute z-10 left-0 pl-0 items-center;
+  display: none;
+  height: vwDesktop(60);
+  bottom: vwDesktop(-81);
+  column-gap: vwDesktop(46);
+}
+
+.headerDropdownLink {
+  @apply inline-block w-max;
+
+  & > a {
+    @apply font-bodyReg text-fontGray hover:text-pageText;
+    line-height: vwDesktop(18);
+    font-size: vwDesktop(18);
+  }
+}
+
+.isActive {
+  & > a {
+    @apply text-orange font-bold;
+  }
+}

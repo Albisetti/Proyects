@@ -1,0 +1,18 @@
+input CityInput{
+    name: String
+    state_id:Int @rules(apply: ["sometimes","exists:states,id"])
+}
+
+input UpdateCityInput{
+    id: ID
+    input: CityInput
+}
+
+input CityRelation{
+    update: [UpdateCityInput]
+    create: [CityInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}

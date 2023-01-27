@@ -1,0 +1,24 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.videoContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: vwDesktop(45);
+  padding-bottom: vwDesktop(92);
+
+  .mainTitle {
+    font-weight: 400;
+
+    max-width: vwMobileSecondary(280);
+    font-size: vwMobileSecondary(55);
+    line-height: vwMobileSecondary(55);
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(88);
+      line-height: vwDesktop(88);
+    }
+  }
+}

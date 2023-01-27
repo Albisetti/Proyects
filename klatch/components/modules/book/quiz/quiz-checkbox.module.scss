@@ -1,0 +1,105 @@
+@import '../../../../styles/styles/spacing.scss';
+@import '../../../../styles/styles/breakpoints.scss';
+@import '../../../../styles/styles/typography.scss';
+@import '../../../../styles/styles/colors.scss';
+
+.formGroup {
+  display: flex;
+  align-items: center;
+}
+
+.formGroup input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.formGroup label {
+  position: relative;
+  cursor: pointer;
+}
+
+.label {
+  @apply font-bodyReg text-fontGray;
+  font-size: vwMobile(10);
+  line-height: vwMobile(12.31);
+  margin-left: vwMobile(15);
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(11.93);
+    line-height: vwDesktop(14.31);
+    margin-left: vwDesktop(15);
+  }
+}
+
+.formGroup label:before {
+  content: '';
+  background: inherit;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  border: 1px solid $fontGray;
+  padding: 10px;
+  @media (min-width: $desktop) {
+    width: vwDesktop(20);
+    height: vwDesktop(20);
+    background-size: vwDesktop(20);
+    border: vwDesktop(2) solid $fontGray;
+    padding: vwDesktop(10);
+    margin-right: vwDesktop(5);
+  }
+  -webkit-appearance: none;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
+.formGroup input:checked + label:before {
+  content: '';
+  background: none;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  border: 1px solid $fontGray;
+  padding: 10px;
+  @media (min-width: $desktop) {
+    width: vwDesktop(20);
+    height: vwDesktop(20);
+    background-size: vwDesktop(20);
+    border: vwDesktop(2) solid $fontGray;
+    padding: vwDesktop(10);
+    margin-right: vwDesktop(5);
+  }
+  -webkit-appearance: none;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
+.formGroup input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: -11px;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  background: url('/images/no-to-delete/checkbox/checked.svg') no-repeat center;
+  background-size: 50px;
+  @media (min-width: $desktop) {
+    top: vwDesktop(-12);
+    left: vwDesktop(-10.5);
+    width: vwDesktop(50);
+    height: vwDesktop(50);
+    background-size: vwDesktop(50);
+  }
+}

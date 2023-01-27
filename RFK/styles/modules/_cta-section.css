@@ -1,0 +1,33 @@
+details.cta-section summary::-webkit-details-marker {
+  display: none;
+}
+
+details.cta-section summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+details.cta-section summary::after {
+  @apply text-deepBlueLight font-bold;
+  content: '+';
+  font-size: 32px;
+  line-height: 1;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-top: -8px;
+}
+
+details.cta-section[open] summary::after {
+  content: '-';
+}
+
+.btn--cta {
+  @apply py-[8px] px-[30px];
+
+  div span {
+    @apply text-[14px] md:text-[16px];
+  }
+}

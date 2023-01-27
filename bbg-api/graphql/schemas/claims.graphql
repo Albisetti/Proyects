@@ -1,0 +1,166 @@
+enum ClaimType {
+    FACTORY @enum(value: "factory")
+    VOLUME @enum(value: "volume")
+}
+
+enum ClaimReportPeriod {
+    QUARTERLY @enum(value: "quarter")
+    YEARLY @enum(value: "yearly")
+}
+
+enum ClaimStatus {
+    OPEN @enum(value: "open")
+    READY @enum(value: "ready")
+    SUBMITTED @enum(value: "submitted")
+    DISPUTED @enum(value: "disputed")
+    READYTOCLOSE @enum(value: "ready to close")
+    CLOSE @enum(value: "close")
+}
+
+type ClaimFiles {
+    id: ID
+    path: String
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type volumeClaims {
+    currentClaim: Claims
+    lastClosedClaim: Claims
+}
+
+type Claims {
+    """TBD"""
+    id: ID
+    is_template: Boolean
+    claim_type: ClaimType
+    name: String
+    status: ClaimStatus
+    report_period: String @method
+    report_year: Int
+    report_quarter: Int
+    claim_start_date: DateTime
+    claim_end_date: DateTime
+    total_payment_rebate: Float """Not in factory/product claim"""
+    report_total: Float
+
+    supplier_report: ClaimFiles @hasMany(type: connection relation:"claimFiles")
+    disputes: [Disputes] @hasMany(type: connection)
+
+    disputesCount: disputesCount @method
+
+    totalDisputesCount: Int @method
+    openDisputesCount: Int @method
+    closeDisputesCount: Int @method
+
+    """TODO: pivot has extra fields? to remove?!"""
+    program: Programs @belongsTo
+    claim_template: claim_template @morphTo
+
+    buildersWithOpenRebateBeforeEndDateOld( excludeActionRequired: Boolean ): [Organizations] @method
+    buildersWithOpenRebateBeforeEndDate( excludeActionRequired: Boolean ): [OrganizationsFlat] @method
+
+    rebateReports: [RebateReportsHousesProducts] @belongsToMany(type: connection model:"App\\Models\\RebateReportsHousesProducts")
+    """use pivot field to get extra relation fields"""
+    rebateReportPivot: RebateReportClaimPivot @rename(attribute: "pivot")
+    houseProductsForBuilder(orgId: ID): [RebateReportsHousesProducts] @paginate(type: "connection" builder: "App\\Models\\Claims@houseProductsForBuilder")
+
+    volumeClaimsBuilderRebates: [Organizations] @belongsToMany(type: connection)
+    volumeClaimsBuilderRebatesPivot: volumeClaimsBuilderRebatesPivot
+
+#    getPropertiesOfOrgFromLastClaim( org_id: Int! ): Int @method
+    allManufacturersAndSuppliersNotes: [String] @method
+    calculateCurrentTotal: rebateTotals @method
+    propertyUnitCount: propertyUnitCount @method
+
+    created_by: Int
+    updated_by: Int
+    deleted_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+
+    readyToClose: Boolean @method
+}
+
+type rebateTotals {
+    total: Float
+    builderTotals: [BuilderTotals]
+}
+
+type BuilderTotals {
+    builder_id: ID
+    name: String
+    builder_tier: MemberTier
+    disputed: Boolean
+    builder_allocation: Float
+    rebatesId: [ID]
+    disputesId: [ID]
+    total: Float
+    note: [String]
+    rebate_earned: Float
+    rebate_adjusted: Float
+}
+
+type propertyUnitCount {
+    type: String
+    count: Int
+}
+
+type ClaimPivot {
+    created_at: Date
+    updated_at: Date
+    note: String
+    ClaimProducts: [ClaimProducts] @hasMany(type: connection)
+}
+
+type ClaimProducts {
+    id: ID
+    product_id: Int
+    Product: Product @hasOne
+    note: String
+    quantity: Int
+}
+
+type ClaimPeriods {
+    id: ID
+    quarter: Int
+    year: Int
+
+    readyForClose: Boolean @method
+
+    claims: [Claims] @hasMany(type: connection)
+
+    archived_by: User
+    archived_at: DateTime
+}
+
+union claim_template = ProductsPrograms | OrganizationCustomProduct
+enum claim_template_product_type {
+    OrganizationCustomProduct @enum(value:"App\\Models\\OrganizationCustomProduct")
+    ProgramProductsPivot @enum(value:"App\\Models\\ProductsPrograms")
+}
+
+type ClaimReportPeriodList {
+    quarter: Int
+    year: Int
+    report_period: String
+}
+
+type ClaimReportDateTimeList {
+    claim_start_date: DateTime
+    claim_end_date: DateTime
+}
+
+type ClaimReportDateList {
+    claim_start_date: Date
+    claim_end_date: Date
+}
+
+type disputesCount {
+    totalDisputesCount:Int
+    openDisputesCount:Int
+    closeDisputesCount:Int
+}

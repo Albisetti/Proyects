@@ -1,0 +1,103 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.wrapper {
+  padding: 0;
+
+  @media (min-width: $desktop) {
+    padding: 0 vwDesktop(10);
+  }
+}
+
+.content {
+  @apply flex flex-col items-center;
+  padding: 0 vwMobile(10);
+
+  @media (min-width: $desktop) {
+    padding: 0 vwDesktop(115);
+  }
+}
+
+.title {
+  margin-top: vwMobile(20);
+  font-size: vwMobile(52);
+  line-height: vwMobile(56);
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(120);
+    line-height: vwDesktop(120);
+  }
+}
+
+.descriptionMobile,
+.descriptionDesktop {
+  margin-top: vwMobile(15);
+  font-size: vwMobile(12);
+  line-height: vwMobile(14);
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(48);
+    font-size: vwDesktop(24);
+    line-height: vwDesktop(28.46);
+  }
+}
+
+.descriptionMobile {
+  @media (min-width: $desktop) {
+    @apply hidden;
+  }
+}
+.descriptionDesktop {
+  @apply hidden;
+  @media (min-width: $desktop) {
+    @apply block;
+  }
+}
+
+.brewGuideGrid {
+  @apply grid grid-cols-3 w-full;
+  margin-top: vwMobile(25);
+  column-gap: vwMobile(5);
+  margin-bottom: vwMobile(30);
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(140);
+    column-gap: vwDesktop(44);
+    margin-bottom: vwDesktop(100);
+  }
+}
+
+.bottomLeftImage {
+  @apply absolute h-auto hidden;
+
+  @media (min-width: $desktop) {
+    @apply block;
+    width: vwDesktop(680);
+    bottom: vwDesktop(-140);
+    right: vwDesktop(130);
+  }
+}
+
+.bottomRightImage {
+  @apply absolute h-auto rotate-[27deg] hidden;
+
+  @media (min-width: $desktop) {
+    @apply block;
+    width: vwDesktop(800);
+    bottom: vwDesktop(-670);
+    right: vwDesktop(-410);
+  }
+}
+
+.bottomRightImageMobile {
+  @apply absolute h-auto max-w-none;
+  width: vwMobile(375);
+  bottom: vwMobile(-100);
+  right: vwMobile(-150);
+
+  @media (min-width: $desktop) {
+    @apply hidden;
+  }
+}

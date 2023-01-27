@@ -1,0 +1,251 @@
+BBG Code,ProductName,Category,supplier_pivot,Active
+5227,HardiePlank,Siding,2000,FALSE
+5228,HardieBacker,Siding,2000,FALSE
+5231,CertainTeed Shingles,Roofing,2000,FALSE
+5357,Mitten Siding,Siding,2000,FALSE
+5358,Aluminum,Siding,2000,FALSE
+5367,Siding-Royal,Siding,2000,FALSE
+5372,Air Vent-ShingleVent II,Roofing,2000,FALSE
+5382,Siding-Royal EP,Siding,2000,FALSE
+5493,Wellborn Cabinets,Cabinets,2002,TRUE
+5280,Granite,,2002,FALSE
+5281,Quartz,,2002,FALSE
+5282,Silestone Quartz,,2002,FALSE
+5296,Flooring,,2002,TRUE
+5404,Counter Tops,,2002,TRUE
+5269,Baths & Showers,,2003,TRUE
+5261,Water Heater,,2004,TRUE
+5466,Tankless Water Heater,,2004,TRUE
+5233,Vinyl Windows,,2006,TRUE
+5234,Wood Windows,,2006,TRUE
+5235,Steel Doors,,2006,TRUE
+5236,Fiberglass Doors,,2006,TRUE
+5331,Lumber,,2006,FALSE
+5332,Trusses,,2006,FALSE
+5414,Trim,,2006,TRUE
+5241,Series 2000,,2007,TRUE
+5242,Series 5300-5800,,2007,TRUE
+5243,Commercial Series OHD,,2007,FALSE
+5523,AL Dimmer,,2009,TRUE
+5524,GFCI Nightlight,,2009,TRUE
+5525,Patrol Night Light,,2009,TRUE
+5526,RF Devices (Switches/Receptacles/Wallplates),,2009,TRUE
+5244,Standard Loadcenters CH or BR,,2009,TRUE
+5245,Surge Protector CHSPMAX / CHSPULTRA,,2009,FALSE
+5246,Surge Protector CHSP 3-Way,,2009,FALSE
+5247,Generator-Manual,,2009,FALSE
+5248,Generator-Natural Gas/ Automatic,,2009,FALSE
+5249,Standard Toggles & Receptacles,,2009,TRUE
+5250,Decorator Switches & Receptacles,,2009,TRUE
+5251,"USB & Dimmer Receptacles, occupany sensors",,2009,TRUE
+5252,Connected Home Products /Aspire RF,,2009,FALSE
+5253,Commercial Equipment,,2009,FALSE
+5424,Surge Breaker,,2009,FALSE
+5481,Crosstown/Lustertone/Pursuit/Iconix/Perfect Drain,,2010,TRUE
+5264,Dayton Premium/Elite Sink,,2010,TRUE
+5265,Dayton Sink,,2010,TRUE
+5266,DXUH Series,,2010,TRUE
+5412,Quartz Classic & Luxe Sink,,2010,TRUE
+5413,Explore Fine Fireclay Sink,,2010,TRUE
+5298,GE Appliances,,2011,FALSE
+5343,Toilets & Lavatories,,2011,FALSE
+5345,Faucets,,2011,FALSE
+5346,Lighting,,2011,FALSE
+5347,Plumbing Supplies,,2011,FALSE
+5348,Appliances,,2011,FALSE
+5286,Shower Doors,,2013,TRUE
+5287,Mirrors,,2013,TRUE
+5288,Installed Rubbermaid Closets,,2013,TRUE
+5405,Installed Organized Living Closets,,2013,FALSE
+5491,Drywall - Multi-Family Units,,2014,FALSE
+5500,Drywall - non-Michigan,,2014,FALSE
+5270,Foam Insulation,,2014,TRUE
+5271,Drywall,,2014,TRUE
+5350,BATT Insulation (not Foam),,2014,TRUE
+5379,Ceiling Tiles,,2014,FALSE
+5380,Steel Studs,,2014,FALSE
+5294,Decorative Lighting,,2019,TRUE
+5399,LED/Wafer Lighting,,2019,TRUE
+5285,Locks,,2020,TRUE
+5487,Lap S Smooth,,2021,TRUE
+5488,WeatherLogic,,2021,TRUE
+5489,3 OSB Usages,,2021,TRUE
+5496,Strand Shakes,,2021,TRUE
+5497,ExpertFinish Lap Strand,,2021,TRUE
+5498,ExpertFinish Trim Strand,,2021,TRUE
+5499,ExpertFinish Soffit,,2021,TRUE
+5521,TechShield,,2021,TRUE
+5224,Floor Joists,,2021,TRUE
+5225,Primed Lap Strand (SmartSide),,2021,TRUE
+5226,Primed Trim  Strand (SmartTrim),,2021,TRUE
+5393,Legacy Flooring,,2021,TRUE
+5394,LSL Studs,,2021,TRUE
+5409,TN 350 Flooring,,2021,TRUE
+5410,Soffit,,2021,TRUE
+5411,Fiber Shakes,,2021,FALSE
+5284,Laminate Countertop,,2022,TRUE
+5295,Paint,,2025,FALSE
+5522,Closet Selector Upgrade,,2026,TRUE
+5289,Wire Shelving,,2026,TRUE
+5290,Freedom Rail/Select/Classica Upgrades,,2026,TRUE
+5397,Updraded Closet,,2026,FALSE
+5478,Kooltherm K9 Insulation Board,,2027,TRUE
+5229,House Wrap,,2027,TRUE
+5230,Board,,2027,TRUE
+5391,Flashing,,2027,TRUE
+5291,Wire Shelving,,2029,TRUE
+5292,Freedom Rail,,2029,FALSE
+5260,Flexible Gas Pipe,,2032,TRUE
+5495,Railing,,2034,TRUE
+5297,Decking - Select,,2034,TRUE
+5356,Decking - Transcend,,2034,TRUE
+5446,Decking - Naturals,,2034,TRUE
+5255,Heatilator Fireplaces,,2036,TRUE
+5279,Masterbrands/Smart/River Run Cabinets,,2036,TRUE
+5504,CertainTeed Restoration Millwork Trim,,2037,TRUE
+5238,Siding-Royal,,2037,TRUE
+5239,Aluminum,,2037,TRUE
+5400,Hardie Backer,,2037,FALSE
+5401,Hardie Plank,,2037,FALSE
+5402,Air Vent-ShingleVent II,,2037,TRUE
+5408,Certainteed Shingles,,2037,TRUE
+5221,Rough Lumber,,2038,TRUE
+5222,Trusses,,2038,TRUE
+5333,House Wrap/ Tape,,2079,TRUE
+5437,Full System,,2079,TRUE
+5438,Protec Roofing,,2079,TRUE
+5339,Cabinets,,2085,TRUE
+5340,Homecrest Cabinets,,2085,FALSE
+5415,Homecrest Cabinets,,2085,FALSE
+5416,Mid Continent Cabinets,,2085,FALSE
+5341,Appliances,,2086,TRUE
+5539,Carpet Only,,2087,TRUE
+5540,Hardsurface Only,,2087,TRUE
+5342,Flooring-Hard Surface & Carpet Combined,,2087,TRUE
+5267,1/3 HP Model,,2089,TRUE
+5268,1/2 HP Model,,2089,TRUE
+5349,Faucets - CANADA,,2089,FALSE
+5403,Faucets,,2089,TRUE
+5467,Faucets,,2089,TRUE
+5353,Paint,,2091,TRUE
+5359,Interior Doors,,2094,TRUE
+5360,Windows,,2094,TRUE
+5361,Wood Windows,,2094,FALSE
+5362,Steel Doors,,2094,FALSE
+5363,Entry Doors,,2094,TRUE
+5365,Fireplaces,,2096,FALSE
+5447,Electric Fireplace,,2096,TRUE
+5377,Stone,,2105,TRUE
+5378,Royal/ EP,,2109,TRUE
+5384,House Wrap-Installed,,2112,FALSE
+5386,Exhaust Fans,,2114,TRUE
+5387,Connectors Only,,2115,TRUE
+5388,Connectors & Strong-Wall,,2115,TRUE
+5530,Atrium Windows,,2119,TRUE
+5531,CertainTeed Shingles,,2119,TRUE
+5532,OC Shingles,,2119,TRUE
+5534,Air Vent-ShingleVent II,,2119,TRUE
+5535,CertainTeed Restoration Millwork Trim,,2119,TRUE
+5536,Siding-EP / Royal,,2119,TRUE
+5537,Vinyl Windows,,2119,TRUE
+5538,Wood Windows,,2119,TRUE
+5336,Aluminum,,2119,TRUE
+5406,Air Vent- Shingle Vent II,,2122,TRUE
+5407,CertainTeed Shingles,,2122,TRUE
+5482,T10 Pro Smart Thermostat w/sensor,,2123,FALSE
+5483,T10 Pro Smart Thermostat,,2123,TRUE
+5518,T6 Pro Smart Thermostat,,2123,TRUE
+5519,T6 Programmable Thermostat,,2123,TRUE
+5520,T4 Programmable Thermostat,,2123,TRUE
+5527,F200 Media Air Cleaner,,2123,TRUE
+5417,Wifi Thermostat,,2123,FALSE
+5418,Non-Wifi Thermostat,,2123,FALSE
+5419,Humidifier,,2123,TRUE
+5420,Zoning System,,2123,TRUE
+5421,F300 Electronic Air Cleaner,,2123,TRUE
+5422,F100 Media Air Cleaner,,2123,TRUE
+5423,UV 2400 with AirBRIGHT,,2123,TRUE
+5494,FY21 Trim,,2124,TRUE
+5541,Primed Plank - (5.25-6.25-7.25-8.25-9.25-12),,2124,TRUE
+5542,Primed Trim 4/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),,2124,TRUE
+5543,Primed Trim 5/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),,2124,TRUE
+5425,Primed Siding: 1700 Sqft (Tier A),,2124,FALSE
+5426,Primed Siding: 2800 Sqft (Tier B),,2124,FALSE
+5427,Primed Siding: 3800 Sqft (Tier C),,2124,FALSE
+5428,Color Plus Siding: 1700 Sq ft (Tier A),,2124,FALSE
+5429,Color Plus Siding: 2800 Sqft (Tier B),,2124,FALSE
+5430,Color Plus Siding: 3800 Sqft (Tier C),,2124,FALSE
+5431,Primed Siding & Trim: 1700 Sq Ft (Tier A),,2124,FALSE
+5432,Primed Siding & Trim: 2800 Sq Ft (Tier B),,2124,FALSE
+5433,Primed Siding & Trim: 3800 Sqft (Tier C),,2124,FALSE
+5434,Color Plus Siding & Trim: 1700 Sqft (Tier A),,2124,FALSE
+5435,Color Plus Siding & Trim: 2800 Sqft (Tier B),,2124,FALSE
+5436,Color Plus Siding & Trim: 3800 Sqft (Tier C),,2124,FALSE
+5439,"1/4\ Backer Board: 100sqft+""",,2124,TRUE
+5544,Primed Panel  - (4/8-4/9-4/10),,2124,TRUE
+5545,Primed Soffit V/NV - (12-16-24-4/8),,2124,TRUE
+5546,Primed Shingles- (Straight Edge/Staggered Edge),,2124,TRUE
+5547,Color Plus Plank - (5.25-6.25-7.25-8.25-9.25-12),,2124,TRUE
+5548,Color Plus Trim 4/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),,2124,TRUE
+5549,Color Plus Trim 5/4 - (2.5-3.5-4.5-5.5-7.25-9.25-11.25),,2124,TRUE
+5550,Color Plus Panel  - (4/8-4/9-4/10),,2124,TRUE
+5551,Color Plus  Soffit V/NV - (12-16-24-4/8),,2124,TRUE
+5552,Color Plus Shingles- (Straight Edge/Staggered Edge),,2124,TRUE
+5445,Drywall,,2126,TRUE
+5448,MSCI Series Sump Pump,,2128,TRUE
+5449,MDC Series Sump Pump,,2128,TRUE
+5450,MS33V Series Sump Pump,,2128,TRUE
+5451,MS33PV Series Sump Pump,,2128,TRUE
+5452,MCI033 Series Sump Pump,,2128,TRUE
+5453,Myers SRM4 - 4/10HP Sewage Pumps,,2128,TRUE
+5454,Myers MSKV50 - 1/2HP Sewage Pumps,,2128,TRUE
+5505,Zoning System,,2129,TRUE
+5506,Infinity Air Purifier,,2129,TRUE
+5507,Humidifier,,2129,TRUE
+5508,Heat or Energy Ventilator,,2129,TRUE
+5509,Infinity Evolution Control,,2129,TRUE
+5510,Ecobee Thermostat,,2129,TRUE
+5511,Ductless Unit,,2129,TRUE
+5455,Furnace & AC,,2129,TRUE
+5456,A/C,,2129,FALSE
+5465,PEX Pipes & Everloc Fittings,,2134,TRUE
+5469,Hybrid Security Panel,,2135,TRUE
+5470,VISTA-15P Security Panel,,2135,FALSE
+5471,VISTA-20P Security Panel,,2135,FALSE
+5472,"7\ Graphic Home Control Touchscreen""",,2135,TRUE
+5473,Camera,,2135,TRUE
+5474,IPCAM-WO Outdoor IP Camera,,2135,FALSE
+5475,VAM/VAM-W VISTA Auto Module,,2135,FALSE
+5476,L5200 LYNX Security Panel,,2135,FALSE
+5477,Video  Doorbell,,2135,TRUE
+5468,Self Contained Security & Home Control,,2135,TRUE
+5484,Badger 1&5 Disposal,,2136,TRUE
+5485,PRO Series Disposal,,2136,TRUE
+5486,Hot Water Tank,,2136,TRUE
+5501,Lyric Control Panel,,2138,FALSE
+5502,Skybell WiFi Video Doorbell,,2138,FALSE
+5512,Mystery Shopper Svc,,2139,TRUE
+5513,Flooring - Hard Surfaces,,2140,TRUE
+5514,Financial/Lending Service,,2141,TRUE
+5515,Flooring,,2142,TRUE
+5517,New Home Sales Training,,2144,TRUE
+5528,Icynene - Foam Insulation,,2145,TRUE
+5529,LaPolla - Foam Insulation,,2145,TRUE
+5355,Demilec - Foam Insulation,,2145,TRUE
+5553,Google Nest Cam Indoor,,2146,TRUE
+5554,Google Nest Cam Indoor IQ,,2146,TRUE
+5555,Google Nest Cam Outdoor,,2146,TRUE
+5556,Google Nest Hello (Doorbell),,2146,TRUE
+5557,Google Nest Home Wifi Point,,2146,TRUE
+5558,Google Nest Home Wifi Router,,2146,TRUE
+5559,Google Nest Home Wifi Router+1 Point,,2146,TRUE
+5560,Google Nest Home Wifi Router+2 Point,,2146,TRUE
+5561,Google Nest Hub,,2146,TRUE
+5562,Google Nest Hub Max,,2146,TRUE
+5563,Google Nest Learning Thermostat,,2146,TRUE
+5564,Google Nest Mini (speaker),,2146,TRUE
+5565,Google Nest Protect (battery),,2146,TRUE
+5566,Google Nest Protect (hardwired),,2146,TRUE
+5567,Google Nest Temperature Sensor,,2146,TRUE
+5568,RDI Railing,,2147,TRUE
+5569,Xpanse Fencing,,2147,TRUE

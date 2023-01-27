@@ -1,0 +1,216 @@
+enum ProgramType {
+    FACTORY @enum(value: "factory")
+    VOLUME @enum(value: "volume")
+}
+
+enum ProgramUnit {
+    PER_UNIT @enum(value: "Per Unit")
+    PER_INSTALL_UNIT @enum(value: "Per Install Unit")
+}
+
+enum ProgramAddressRequirement {
+    ADDRESS_ONLY @enum(value: "Address Only")
+    ADDRESS_OR_LOT @enum(value: "Address Or Lot")
+    ADDRESS_OR_LOT_WITH_SUBDIVISION @enum(value: "Address Or Lot With Subdivision")
+}
+
+enum ValidRegion {
+    US @enum(value: "US")
+    US_AND_CA @enum(value: "US And CA")
+    CA @enum(value: "CA")
+    CUSTOM @enum(value: "Custom")
+}
+
+enum productMinimumUnitRequirement {
+    NO @enum(value: "No")
+    SAME_FOR_ALL @enum(value: "Same For All")
+    CUSTOM @enum(value: "Custom")
+}
+
+    enum rebate_amount_type {
+    PERCENTAGE @enum(value: "percentage")
+    AMOUNT @enum(value: "amount")
+    TIER @enum(value: "tier")
+}
+
+enum overwrite_amount_type {
+    DEFAULT @enum(value: "default")
+    AMOUNT @enum(value: "amount")
+}
+
+enum GlobalRebateType {
+    SAME @enum(value: "Same")
+    DIFFERENT @enum(value: "Different")
+}
+
+type RequiredProofPoints{
+    id: ID
+    proof_name: String
+    active: String
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type Programs
+{
+    id: ID
+    type: ProgramType
+    name: String
+    start_date: Date
+    end_date: Date
+
+    company: Organizations @belongsTo
+
+    available_specific_member_only: Boolean
+
+    all_builder_report_quantity: Boolean
+    bbg_rebate_unit: ProgramUnit
+
+    lot_and_address_requirement: ProgramAddressRequirement
+
+    require_certificate_occupancy: Boolean
+    require_brand: Boolean
+    require_serial_number: Boolean
+    require_model_number: Boolean
+    require_date_of_installation: Boolean
+    require_date_of_purchase: Boolean
+    require_distributor: Boolean
+
+    internal_description: String
+    builder_description: String
+    builder_description_short: String
+    learn_more_url: String
+
+    organizations: [Organizations!] @belongsToMany(type: CONNECTION)
+
+    participants: [Organizations!] @belongsToMany(type: CONNECTION)
+    participantPivot: ProgramparticipantsPivot @rename(attribute: "pivot")
+
+    possibleRegionParticipants: [Organizations] @method(name:"possibleRegionParticipants")
+
+    valid_region_type: ValidRegion
+    regions: [State!] @belongsToMany(type: CONNECTION)
+
+    product_minimum_unit_requirement: productMinimumUnitRequirement
+    global_product_minimum_unit: Int
+    global_bbg_rebate_type:GlobalRebateType
+    global_product_rebate_amount_type: rebate_amount_type
+    global_product_residential_rebate_amount: Float
+    global_product_multi_unit_rebate_amount: Float
+    global_product_commercial_rebate_amount: Float
+    volume_bbg_rebate: Float
+
+    is_flat_rebate: Boolean
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+
+    products: [Product] @belongsToMany(type: CONNECTION)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+    productsForOrganization(organization_id: ID): [Product] @paginate(type: "connection" model: "App\\Models\\Products" builder: "App\\Models\\Programs@productsForOrganization")
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+    productPivot: ProgramProductsPivot @rename(attribute: "pivot")
+
+    organizationCustomProducts: [Product] @belongsToMany(type: CONNECTION)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+
+    organizationCustomProductsPivot: organizationCustomProductPivot @rename(attribute: "pivot")
+
+    allClaimTemplateProducts: [Product] @paginate(type: "connection" model: "App\\Models\\Products" builder: "App\\Models\\Programs@allClaimTemplateProducts")
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+
+    files: ProgramFiles @hasMany(type: connection relation:"programsFiles")
+
+    created_by: Int
+    updated_by: Int
+
+    conversionFlatPayment: ConversionFlatPayment @hasMany(type: connection)
+    conversionFlatPercent: ConversionFlatPercent @hasMany(type: connection)
+    conversionTieredPercent: ConversionTieredPercent @hasMany(type: connection)
+    conversionByActivity: ConversionByActivity @hasMany(type: connection)
+
+    claims(orderBy: [OrderByClause!] @orderBy): [Claims] @hasMany(type: connection)
+    openClaimsSum( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): claimSum @method
+    lastCloseClaim( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): Claims @method
+
+    contributedTotal: Float
+}
+
+type ProgramParticipationResponse {
+	program: Programs
+	organization: Organizations
+}
+
+type ProgramFiles {
+    id: ID
+    path: String
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type ProgramparticipantsPivot {
+    id: ID!
+    overwrite_amount_type: overwrite_amount_type
+    residential_rebate_overwrite: Float
+    multi_unit_rebate_overwrite: Float
+    commercial_rebate_overwrite: Float
+    volume_bbg_rebate: Float
+    flat_builder_overwrite: Float
+    flat_bbg_overwrite: Float
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type ProductsPrograms {
+    id: ID
+    program_id: ID
+    program: Programs @belongsTo
+    product_id: ID
+    product: Product @belongsTo
+    rebate_amount_type: rebate_amount_type
+    residential_rebate_amount: Float
+    multi_unit_rebate_amount: Float
+    commercial_rebate_amount: Float
+    volume_bbg_rebate: Float
+    multi_reporting: Boolean
+    claimTemplateExist: Boolean @method
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type ProgramProductsPivot {
+    id: ID
+    program_id: ID
+    program: Programs @belongsTo
+    product_id: ID
+    product: Product @belongsTo
+    rebate_amount_type: rebate_amount_type
+    residential_rebate_amount: Float
+    multi_unit_rebate_amount: Float
+    commercial_rebate_amount: Float
+    volume_bbg_rebate: Float
+#    flat_builder_overwrite: Float
+#    flat_bbg_overwrite: Float
+    multi_reporting: Boolean
+    claimTemplateExist: Boolean @method
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type ProgramCompanies {
+    id: ID
+    name: String
+
+    programs: [Programs] @hasMany(type: connection)
+}

@@ -1,0 +1,275 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.wrapper {
+  @apply relative;
+
+  &.wrapperFirst {
+    z-index: 4;
+    @apply rotate-[-8.08deg];
+    @media (min-width: $desktop) {
+    @apply rotate-[-8.08deg];
+    }
+  }
+  &.wrapperSecond {
+    z-index: 3;
+    @apply rotate-[-8.08deg];
+    @media (min-width: $desktop) {
+    @apply rotate-[11.08deg];
+    }
+  }
+  &.wrapperThird {
+    z-index: 2;
+    @apply rotate-[-8.08deg];
+    @media (min-width: $desktop) {
+    @apply rotate-[-11.08deg];
+    }
+  }
+
+  .stickyNotesWrapper {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: vwMobile(200);
+    height: vwMobile(200);
+    @media (min-width: $desktop) {
+    width: vwDesktop(225);
+    height: vwDesktop(225);
+    }
+
+    &.notesBlue {
+      background-image: url('/images/no-to-delete/sticky-notes/blueNotes.png');
+    }
+    &.firstNote {
+      margin: 0 auto;
+      @media (min-width: $desktop) {
+      margin: vwDesktop(20) 0 0 vwDesktop(120);
+      }
+    }
+    &.notesGreen {
+      background-image: url('/images/no-to-delete/sticky-notes/greenNotes.png');
+    }
+    &.secondNote {
+      margin: 0 auto;;
+      @media (min-width: $desktop) {
+      margin-left: vwDesktop(15);
+      margin-top: vwDesktop(-40);
+      }
+    }
+    &.notesOrange {
+      background-image: url('/images/no-to-delete/sticky-notes/orangeNotes.png');
+    }
+    &.thirdNote {
+      margin: 0 auto;
+      @media (min-width: $desktop) {
+      margin: vwDesktop(-50) auto 0 auto;
+      }
+    }
+
+    .notesContentWrapper {
+      @apply flex flex-col relative;
+      padding: vwMobile(15) 0 vwMobile(15) vwMobile(15);
+      @media (min-width: $desktop) {
+      padding: vwDesktop(15) 0 vwDesktop(15) vwDesktop(15);
+      }
+      height: 95%;
+      .content {
+        @apply flex flex-col;
+        .propLeft {
+          @apply absolute;
+          left: vwMobile(5);
+          width: vwMobile(25);
+          top:vwMobile(5);
+          @media (min-width: $desktop) {
+          left: vwDesktop(15);
+          width: vwDesktop(25);
+          }
+        }
+        .propRight {
+          @apply absolute;
+          right: vwMobile(10);
+          top: vwMobile(5);
+          width: vwMobile(25);
+          @media (min-width: $desktop) {
+          right: vwDesktop(15);
+          top: vwDesktop(40);
+          width: vwDesktop(25);
+          }
+        }
+        .text1 {
+          margin-top: vwMobile(10);
+          margin-left: vwMobile(5);
+          @apply  text-fontGray;
+          @media (min-width: $desktop) {
+          margin-top: vwDesktop(25);
+          margin-left: vwDesktop(18);
+          @apply rotate-[1deg] text-fontGray;
+          }
+          
+          .title {
+            font-size: vwMobile(42);
+            line-height: vwMobile(42);
+            @apply font-title text-left;
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(38);
+            line-height: vwDesktop(38);
+            }
+          }
+          .text {
+            @apply font-title text-left;
+            font-size: vwMobile(22);
+            line-height: vwMobile(22.57);
+            margin-top: vwMobile(10);
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(26);
+            margin:0;
+            line-height: vwDesktop(28.57);
+            }
+          }
+        }
+        .text2 {
+          margin-top: vwMobile(10);
+          margin-left: vwMobile(5);
+          @apply  text-fontGray;
+          @media (min-width: $desktop) {
+          margin-top: vwDesktop(25);
+          margin-left: vwDesktop(18);
+          @apply rotate-[1deg] text-fontGray;
+          }
+          
+          .title {
+            font-size: vwMobile(42);
+            line-height: vwMobile(42);
+            @apply font-title text-left;
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(38);
+            line-height: vwDesktop(38);
+            }
+          }
+          .text {
+            @apply font-title text-left;
+            font-size: vwMobile(22);
+            line-height: vwMobile(22.57);
+            margin-top: vwMobile(10);
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(26);
+            margin:0;
+            line-height: vwDesktop(28.57);
+            }
+          }
+        }
+      }
+      .generalContent {
+        @apply flex items-end h-full;
+        .star {
+          @apply absolute;
+          top: vwMobile(40);
+          left: vwMobile(25);
+          width: vwMobile(20);
+          @media (min-width: $desktop) {
+          top: vwDesktop(40);
+          left: vwDesktop(25);
+          width: vwDesktop(20);
+          }
+        }
+        .heart {
+          @apply absolute rotate-[-15deg];
+          left: vwMobile(80);
+          top: vwMobile(50);
+          width: vwMobile(70);
+          @media (min-width: $desktop) {
+          left: vwDesktop(80);
+          top: vwDesktop(50);
+          width: vwDesktop(70);
+          }
+        }
+        .generalText {
+          @apply  text-fontGray;
+          margin-left: vwMobile(5);
+          margin-bottom: vwMobile(10);
+          @media (min-width: $desktop) {
+          @apply rotate-[-5deg];
+          margin-left: vwDesktop(18);
+          margin-bottom: vwDesktop(10);
+          }
+          .title {
+            font-size: vwMobile(42);
+            line-height: vwMobile(42);
+            @apply font-title text-left;
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(38);
+            line-height: vwDesktop(38);
+            }
+          }
+          .text {
+            @apply font-title text-left whitespace-pre-line;
+            font-size: vwMobile(22);
+            line-height: vwMobile(22.57);
+            margin-top: vwMobile(10);
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(26);
+            margin:0;
+            line-height: vwDesktop(28.57);
+            }
+          }
+        }
+      }
+      .roastContent {
+        @apply flex items-end h-full;
+        .diamondWrapper {
+          @apply flex items-center;
+          margin-top: vwMobile(18);
+          gap:vwMobile(15);
+          @media (min-width: $desktop) {
+          margin-top: vwDesktop(18);
+          gap:vwDesktop(15);
+          }
+          .diamond {
+            width: vwMobile(20);
+            @media (min-width: $desktop) {
+            width: vwDesktop(20);
+            }
+          }
+          .diamondFilled {
+            width: vwMobile(20);
+            @media (min-width: $desktop) {
+            width: vwDesktop(20);
+            }
+          }
+        }
+        
+        .roastText {
+          @apply  text-fontGray;
+          margin-left: vwMobile(5);
+          margin-bottom: vwMobile(10);
+          @media (min-width: $desktop) {
+          @apply rotate-[-5deg];
+          margin-left: vwDesktop(18);
+          margin-bottom: vwDesktop(10);
+          }
+          .title {
+            font-size: vwMobile(42);
+            line-height: vwMobile(42);
+            @apply font-title text-left;
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(38);
+            line-height: vwDesktop(38);
+            }
+          }
+          .text {
+            @apply font-title text-left whitespace-pre-line;
+            font-size: vwMobile(22);
+            line-height: vwMobile(22.57);
+            margin-top: vwMobile(10);
+            @media (min-width: $desktop) {
+            font-size: vwDesktop(26);
+            margin:0;
+            line-height: vwDesktop(28.57);
+            }
+          }
+        }
+      }
+    }
+  }
+}

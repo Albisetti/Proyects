@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Admin",
+        "modules": ["login","create","update","delete","view",
+            "create_subcontractors","edit_subcontractors","update_subcontractors","delete_subcontractors",
+            "create_manufacturer","edit_manufacturer","update_manufacturer","delete_manufacturer",
+            "create_suppliers","edit_suppliers","update_suppliers","delete_suppliers",
+            "create_distributor","edit_distributor","update_distributor","delete_distributor"
+        ]
+    },
+    {
+        "name": "Executive",
+        "modules": ["create","update","view","create_subcontractors"]
+    },
+    {
+        "name": "Builders",
+        "modules": ["view","create_subcontractors"]
+    },
+    {
+        "name": "TerritoryManagers",
+        "modules": ["view","create_subcontractors"]
+    },
+    {
+        "name": "Manufacturers",
+        "modules": ["view"]
+    },
+    {
+        "name": "Suppliers",
+        "modules": ["view"]
+    },
+    {
+        "name": "Contractors",
+        "modules": ["view"]
+    },
+    {
+        "name": "SubContractors",
+        "modules": ["view"]
+    }
+]

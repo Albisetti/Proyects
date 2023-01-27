@@ -1,0 +1,146 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.itemWrapper {
+  @apply relative;
+  padding: 0 vwMobile(40);
+
+  @media (min-width: $desktop) {
+    padding-top: vwDesktop(600);
+    padding-bottom: vwDesktop(90);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.itemImage {
+  @apply h-auto absolute max-w-none;
+}
+
+.baristaImage {
+  display: none !important;
+
+  @media (min-width: $desktop) {
+    display: block !important;
+    top: vwDesktop(-420);
+    left: vwDesktop(-170);
+    width: vwDesktop(500);
+  }
+}
+.latteArtImage {
+  display: none !important;
+
+  @media (min-width: $desktop) {
+    display: block !important;
+    top: vwDesktop(-140);
+    left: vwDesktop(-210);
+    width: vwDesktop(780);
+  }
+}
+.sensoryImage {
+  display: none !important;
+
+  @media (min-width: $desktop) {
+    display: block !important;
+    top: vwDesktop(-180);
+    left: vwDesktop(-40);
+    width: vwDesktop(490);
+  }
+}
+
+.baristaImageMobile {
+  top: vwMobile(30);
+  right: 0;
+  width: vwMobile(105);
+
+  @media (min-width: $desktop) {
+    @apply hidden;
+  }
+}
+
+.latteArtImageMobile {
+  top: vwMobile(30);
+  right: 0;
+  width: vwMobile(115);
+
+  @media (min-width: $desktop) {
+    @apply hidden;
+  }
+}
+
+.sensoryImageMobile {
+  top: vwMobile(15);
+  right: 0;
+  width: vwMobile(95);
+
+  @media (min-width: $desktop) {
+    @apply hidden;
+  }
+}
+
+.itemName {
+  @apply text-white font-normal text-left;
+  max-width: 10ch;
+  min-height: vwMobile(120);
+  font-size: vwMobile(48);
+  line-height: 1;
+
+  @media (min-width: $desktop) {
+    min-height: vwDesktop(155);
+    font-size: vwDesktop(60);
+    line-height: 1;
+  }
+}
+
+.itemDescAndBtnWrapper {
+  @apply flex flex-col justify-between relative z-10;
+  min-height: vwMobile(200);
+
+  @media (min-width: $desktop) {
+    min-height: vwDesktop(210);
+  }
+}
+
+.noItems p,
+.itemDescription {
+  @apply text-white font-normal text-left;
+  font-size: vwMobile(14);
+  line-height: vwMobile(18);
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(24.5);
+  }
+}
+
+.itemDescription {
+  max-width: 24ch;
+
+  @media (min-width: $desktop) {
+    max-width: unset;
+  }
+}
+
+.itemButton {
+  @apply block;
+  padding: vwMobile(8) vwMobile(15);
+
+  & > span {
+    @apply inline-block font-normal;
+    width: auto;
+    font-weight: normal !important;
+    font-size: vwMobile(18) !important;
+    line-height: 1 !important;
+  }
+
+  @media (min-width: $desktop) {
+    @apply inline;
+    padding: vwDesktop(8) vwDesktop(15);
+
+    & > span {
+      font-size: vwDesktop(18) !important;
+    }
+  }
+}

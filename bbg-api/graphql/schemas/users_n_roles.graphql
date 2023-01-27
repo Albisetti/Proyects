@@ -1,0 +1,111 @@
+enum UserType {
+    ADMIN @enum(value: "admin")
+    BUILDERS @enum(value: "builders")
+    MEMBERS @enum(value: "members")
+    EXECUTIVE @enum(value: "executive")
+    TERRITORY_MANAGER @enum(value: "territory_managers")
+    MANUFACTURER @enum(value: "manufacturer")
+    SUPPLIER @enum(value: "suppliers")
+    COSUPPLIER @enum(value: "cosupplier")
+    CONTRACTOR @enum(value: "contractor")
+    SUBCONTRACTOR @enum(value: "subcontractor")
+    DISTRIBUTOR @enum(value: "distributor")
+}
+
+enum BuilderUserType {
+    BUILDERS @enum(value: "builders")
+    MEMBERS @enum(value: "members")
+    EXECUTIVE @enum(value: "executive")
+}
+
+type Role {
+    id: ID
+    name: String
+    capabilities: [String]
+}
+
+type User {
+    id: ID
+    type: UserType
+    userAttribute: UserAttribute @hasOne
+    first_name: String
+    last_name: String
+    fullName: String @method
+    title: String
+    email: String
+    office_phone: String
+    office_phone_ext: String
+    mobile_phone: String
+	email_verified_at: DateTime
+    created_at: DateTime
+    updated_at: DateTime
+    require_user_account: Boolean
+    disabled: Boolean
+
+    address: String
+    address2: String
+    zip_postal: String
+    city: String
+    state: State @hasOne
+
+    media: [Media]
+    userImage: String @method
+
+    role: Role @belongsTo
+    managedOrganizations: [Organizations] @hasMany(type: CONNECTION)
+    organizations: [Organizations] @hasMany(type: CONNECTION)
+    managedStates: [State] @belongsToMany(type: CONNECTION)
+
+    managedOrganizationsActionRequiredRebatesCount: RebateCountAggregated @method
+    managedOrganizationsReadiedRebatesCount: RebateCountAggregated @method
+
+    openClaimsSum( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): claimSum @method
+    lastCloseClaim( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): Claims @method
+
+    projectedRevenue: ProjectedRebate @method
+
+    topBuilders(top:Int): [Organizations] @method
+}
+
+type ImpersonateResult {
+    user: User
+    token: String
+    impersonator: User
+}
+
+type StopImpersonatingResult {
+    user: User
+    token: String
+}
+
+type UserAttribute {
+    id: ID
+    user: User @belongsTo
+    role: Role @belongsTo
+    user_settings: String
+}
+
+type IsEmailAddressAvailableResponse {
+    exists: Boolean!
+    existing_account_type: UserType
+}
+
+type ForgotPasswordResponse {
+    success: Boolean!
+    message: String!
+}
+
+type UserResetPassword {
+    results: Boolean
+    user: User
+}
+
+type UserSendInvite {
+    results: Boolean
+    user: User
+}
+
+type WhoAmIResult {
+    user: User
+    impersonator: User
+}

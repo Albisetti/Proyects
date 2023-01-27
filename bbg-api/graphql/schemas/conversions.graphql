@@ -1,0 +1,133 @@
+union Conversion = ConversionFlatPayment | ConversionFlatPercent | ConversionTieredPercent | ConversionByActivity
+
+enum ConversionTimeRange {
+    YEAR @enum(value:"year")
+    QUARTER @enum(value:"quarter")
+    MONTH @enum(value:"month")
+    ALL @enum(value:"all")
+}
+
+type ConversionFlatPayment {
+    id: Int
+    name: String
+    program: Programs @belongsTo
+    amount: Float
+    bonus_amount: Float
+    anticipated_payment_date: DateTime
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+
+    payment: [ConversionPayment!] @morphMany(type: connection)
+}
+
+type ConversionFlatPercent {
+    id: Int
+    name: String
+    program: Programs @belongsTo
+    anticipated_payment_date: DateTime
+    bonus_percent: Float
+    max_amount: Float
+    spend_time_range: ConversionTimeRange
+    clock_start: DateTime
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+
+    payment: [ConversionPayment!] @morphMany(type: connection)
+}
+
+type ConversionTieredPercent {
+    id: Int
+    name: String
+    program: Programs @belongsTo
+    anticipated_payment_date: DateTime
+    tiers: [ConversionTieredPercentTier!] @hasMany(type: connection)
+    max_amount: Float
+    valid_period: ConversionTimeRange
+    clock_start: DateTime
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+
+    payment: [ConversionPayment!] @morphMany(type: connection)
+}
+
+type ConversionTieredPercentTier {
+    id: Int
+    bonus_amount: Float
+    spend_exceed: Float
+    note: String
+
+    """There should be no need to use the following"""
+    conversion: ConversionTieredPercent @belongsTo
+}
+
+enum ConversionActivityUnit {
+    MONEY @enum(value:"money")
+    PRODUCT @enum(value:"product")
+    PROPERTY @enum(value:"property")
+}
+
+enum ConversionActivityType {
+    FLAT_AMOUNT @enum(value:"flat amount")
+    REBATE_PERCENT_INCREASE @enum(value:,"rebate percent increase")
+    REBATE_PERCENT_INCREASE_PER_UNIT @enum(value:"rebate percent increase per unit")
+    REBATE_AMOUNT_INCREASE_PER_UNIT @enum(value:"rebate amount increase per unit")
+}
+
+enum ConversionActivityProduct {
+    ALL @enum(value:"all")
+    SPECIFICS @enum(value:"specifics")
+}
+
+type ConversionByActivity {
+    id: Int
+    name: String
+    program: Programs @belongsTo
+    measure_unit: ConversionActivityUnit
+    trigger_amount: Float
+    bonus_name: String
+    bonus_type: ConversionActivityType
+    bonus_amount: Float
+    residential_bonus_amount: Float
+    multi_unit_bonus_amount: Float
+    commercial_bonus_amount: Float
+    qualifiedAt: DateTime! @method
+    product_included: ConversionActivityProduct
+    products: [Product!] @hasMany(type: connection)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+}
+
+type ConversionByActivityPivot {
+    new_rebate_amount: Float
+    residential_bonus_amount: Float
+    multi_unit_bonus_amount: Float
+    commercial_bonus_amount: Float
+}
+
+type ConversionPayment {
+    id: Int
+    conversion: Conversion @morphTo
+    amount: Float
+    payment_date: DateTime
+    note: String
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+}

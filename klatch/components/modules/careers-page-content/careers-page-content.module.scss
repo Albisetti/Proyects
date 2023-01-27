@@ -1,0 +1,152 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: vwDesktop(50);
+
+  .mainTitle {
+    margin-top: vwMobile(20);
+    margin-bottom: vwMobile(30);
+    @media (min-width: $desktop) {
+      margin-top: vwDesktop(40);
+      margin-bottom: vwDesktop(60);
+    }
+  }
+}
+
+.openingsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .openingsTitle {
+    color: $orange;
+    @apply font-bold;
+
+    font-size: vwMobile(18);
+    line-height: vwMobile(21);
+    margin-bottom: vwMobile(10);
+    @media (min-width: $desktop) {
+      font-size: vwDesktop(22);
+      line-height: vwDesktop(24);
+      margin-bottom: vwDesktop(10);
+    }
+  }
+
+  .openingsDiv {
+    display: flex;
+
+    margin-bottom: vwMobile(15);
+    @media (min-width: $desktop) {
+      margin-bottom: vwDesktop(40);
+    }
+
+    .openingsTitleBlock {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      flex: 1;
+      height: vwMobile(40);
+      border: vwMobile(1) solid $orange;
+      border-right: none;
+      @media (min-width: $desktop) {
+        flex: unset;
+        padding: 0 vwDesktop(20);
+        min-width: vwDesktop(200);
+        height: vwDesktop(48);
+        border: vwDesktop(2) solid $orange;
+        border-right: none;
+      }
+
+      &.selected {
+        background-color: $orange;
+
+        p {
+          color: white;
+          @apply font-bold;
+        }
+      }
+    }
+    .openingsTitleBlock:last-child {
+      border-right: vwMobile(1) solid $orange;
+      @media (min-width: $desktop) {
+        border-right: vwDesktop(2) solid $orange;
+      }
+    }
+  }
+}
+
+.openingDescription {
+  text-align: left;
+  font-size: vwMobile(16);
+  padding: 0 vwMobile(30);
+  min-height: vwMobile(150);
+  line-height: vwMobile(24);
+  margin-bottom: vwMobile(20);
+  @media (min-width: $desktop) {
+    text-align: center;
+    font-size: unset;
+    padding: 0 vwDesktop(300);
+    min-height: vwDesktop(56);
+    line-height: vwDesktop(28);
+    margin-bottom: vwDesktop(50);
+  }
+}
+
+.emailButtonWrapper {
+  a {
+    margin: 0;
+
+    width: vwMobile(240);
+    height: vwMobile(40);
+    @media (min-width: $desktop) {
+      width: unset;
+      height: unset;
+      padding: vwDesktop(5) vwDesktop(50);
+    }
+  }
+}
+
+.topSpacing {
+  height: vwMobile(30);
+  @media (min-width: $desktop) {
+    height: vwDesktop(140);
+  }
+}
+
+.bgSideImage {
+  position: absolute;
+  left: vwDesktop(-186);
+  top: vwDesktop(62);
+  width: vwDesktop(500);
+  height: vwDesktop(741);
+  transform: scale(0.5) rotate(17deg);
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.bgSideImageCoffee {
+  position: absolute;
+  right: vwDesktop(-252);
+  top: vwDesktop(-71);
+  width: vwDesktop(584);
+  height: vwDesktop(669);
+  transform: scale(0.7);
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}

@@ -1,0 +1,23 @@
+enum DisputeStatus {
+    OPEN @enum(value: "open")
+    CLOSE @enum(value: "close")
+}
+
+type Disputes {
+    id: ID
+    status: DisputeStatus
+    note: String
+    new_product_quantity: Int
+    new_rebate_earned: Float
+    new_rebate_adjusted: Float
+    new_builder_allocation: Float
+    new_total_allocation: Float
+    created_by: Int
+    updated_by: Int
+    created_at:DateTime
+    updated_at:DateTime
+
+    organization: Organizations @belongsTo(model:"App\\Models\\Organizations")
+    claim: Claims @belongsTo(model:"App\\Models\\Claims")
+    rebateReport: RebateReportsHousesProducts @belongsTo(model:"App\\Models\\RebateReportsHousesProducts")
+}

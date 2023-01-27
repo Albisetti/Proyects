@@ -1,0 +1,14 @@
+type Media {
+	id: Int
+	file_name: String
+	disk: String
+	conversion_disk: String
+	name: String
+	mime_type: String
+	size: Int
+
+	created_at: DateTime
+	updated_at: DateTime
+}
+
+

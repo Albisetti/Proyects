@@ -1,0 +1,103 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.floorTitle {
+  @apply text-navyBlue font-glamourn;
+  font-weight: 400;
+
+  font-size: vwMobile(32);
+  line-height: vwMobile(35);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(32);
+    line-height: vwDesktop(35.2);
+    max-width: vwDesktop(203);
+  }
+}
+
+.floorSubtitle {
+  @apply text-copy font-monserrat;
+  font-weight: 300;
+
+  font-size: vwMobile(16);
+  line-height: vwMobile(21);
+  margin-top: vwMobile(15);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(16);
+    line-height: vwDesktop(21.2);
+    max-width: vwDesktop(386);
+    margin-top: vwDesktop(15);
+  }
+}
+
+.floorList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  float: right;
+  margin-right: vwMobile(35);
+  margin-top: vwMobile(20);
+  @media (min-width: $tablet) {
+    margin-top: vwDesktop(53);
+    margin-right: unset;
+    float: unset;
+  }
+
+  li {
+    @apply text-copy font-monserrat;
+    font-weight: 400;
+    transition: all 0.3s;
+
+    width: vwMobile(180);
+    font-size: vwMobile(18);
+    margin-bottom: vwMobile(20);
+    @media (min-width: $tablet) {
+      width: unset;
+      font-size: vwDesktop(18);
+      margin-bottom: vwDesktop(41);
+    }
+
+    .horizontalLineContainer {
+      @apply flex justify-end;
+      height: 1px;
+
+      width: vwMobile(60);
+      @media (min-width: $tablet) {
+        width: vwDesktop(91);
+      }
+
+      .horizontalLine {
+        @apply bg-copy;
+        width: 48%;
+        height: 100%;
+        transition: all 0.3s;
+      }
+    }
+    .floorText {
+      @apply flex flex-row items-center;
+    }
+
+    p {
+      margin-left: vwDesktop(32);
+    }
+  }
+
+  li:hover {
+    @apply text-gold font-monserrat cursor-pointer;
+
+    .horizontalLineContainer {
+      height: 2px;
+    }
+
+    p {
+      @apply font-semibold;
+    }
+
+    .horizontalLine {
+      @apply bg-gold font-semibold;
+      width: 100%;
+    }
+  }
+}

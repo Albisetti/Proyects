@@ -1,0 +1,10 @@
+@layer components {
+    .input-error {
+      @apply border-brickRed text-brickRed placeholder-brickRed placeholder-opacity-40  focus:ring-brickRed focus:border-brickRed;
+    }
+    
+    .input-no-error{
+      @apply border-gray-300  text-secondary  focus:ring-secondary focus:border-secondary;
+    }
+  
+  }

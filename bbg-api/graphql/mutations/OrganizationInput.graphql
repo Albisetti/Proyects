@@ -1,0 +1,199 @@
+input OrganizationInputID {
+    id: Int @rules(apply: ["exists:organizations,id"])
+}
+
+input CreateOrganizationInput{
+    organization_type: OrganizationType
+    name: String
+    abbreviation: String
+    code: String
+    phone_number: String
+    approved_states: StateSync
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+    city:String
+    address: String
+    address2: String
+    zip_postal: String
+    previousEarnedToDate:Float
+    notes: String @rules(apply: ["max: 50000"])
+    member_tier: MemberTier
+    subcontractors: SubContractorRelation
+    dues: OrganizationDueCreateRelation
+
+    users: OrganizationUserRelation
+    territoryManagers: OrganizationTerritoryManagerRelation @belongsToMany(model: "App\\Models\\User")
+
+    supplyingPrograms: supplyingProgramsRelationCreate
+
+    contact_first_name: String
+    contact_last_name: String
+    contact_title: String
+    contact_email: String
+    contact_office_phone: String
+    contact_office_phone_ext: String
+    contact_mobile_phone: String
+}
+
+"""@validator(class: "App\\GraphQL\\Validators\\OrganizationInputValidator") breaks"""
+input UpdateOrganizationInput {
+    organization_type: OrganizationType @spread
+    name: String @rules(apply: ["sometimes","string","min:5","max: 100"])
+    abbreviation: String @rules(apply: ["sometimes"])
+    code: String @rules(apply: ["sometimes"])
+    phone_number: String @rules(apply: ["sometimes"])
+    approved_states: StateSync
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+    city:String
+    address: String
+    address2: String
+    zip_postal: String
+    previousEarnedToDate:Float
+    notes: String @rules(apply: ["max: 50000"])
+    member_tier: MemberTier
+    subcontractors: SubContractorRelation @spread
+    dues: OrganizationDueUpdateRelation
+
+    users: OrganizationUserRelation
+    territoryManagers: OrganizationTerritoryManagerRelation @belongsToMany(model: "App\\Models\\User")
+
+    programs: ParticipantsProgramsRelation
+    customProducts: CustomProductsRelation
+
+    supplyingPrograms: supplyingProgramsRelationUpdate
+
+    contact_first_name: String
+    contact_last_name: String
+    contact_title: String
+    contact_email: String
+    contact_office_phone: String
+    contact_office_phone_ext: String
+    contact_mobile_phone: String
+}
+
+input UpsertOrganizationRelationInput {
+    id: ID
+    organization_type: OrganizationType @spread
+    name: String @rules(apply: ["sometimes","string","min:5","max: 100"])
+    abbreviation: String @rules(apply: ["sometimes"])
+    code: String @rules(apply: ["sometimes"])
+    phone_number: String @rules(apply: ["sometimes"])
+    approved_states: StateSync
+    state_id: Int @rules(apply: ["sometimes","exists:states,id"])
+    city:String
+    address: String
+    address2: String
+    zip_postal: String
+    previousEarnedToDate:Float
+    notes: String @rules(apply: ["max: 50000"])
+    member_tier: MemberTier
+    subcontractors: SubContractorRelation @spread
+    dues: OrganizationDueUpdateRelation
+
+    users: OrganizationUserRelation
+    territoryManagers: OrganizationTerritoryManagerRelation @belongsToMany(model: "App\\Models\\User")
+
+    programs: ParticipantsProgramsRelation
+    customProducts: CustomProductsRelation
+
+    supplyingPrograms: supplyingProgramsRelationUpdate
+
+    contact_first_name: String
+    contact_last_name: String
+    contact_title: String
+    contact_email: String
+    contact_office_phone: String
+    contact_office_phone_ext: String
+    contact_mobile_phone: String
+}
+
+input OrganizationInputBelongsTo {
+    """update: UpdateOrganizationInput
+    create: CreateOrganizationInput"""
+    connect: ID @rules(apply: ["sometimes","exists:organizations,id"])
+}
+
+input OrganizationInputBelongsToMany {
+    """update: [UpdateOrganizationInput!]"""
+    create: [CreateOrganizationInput]
+    connect: [ID]
+    sync: [ID]
+}
+
+input OrganizationInputBelongsToManyUpdate {
+    """update: [UpdateOrganizationInput!]"""
+    create: [CreateOrganizationInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+}
+
+input OrganizationInputBelongsToManySync {
+    connect: [ID]
+    sync: [ID]
+    syncWithoutDetaching: [ID]
+    disconnect: [ID]
+}
+
+input supplyingProgramsRelationCreate {
+    connect: ID
+}
+input supplyingProgramsRelationUpdate {
+    connect: ID
+    disconnect: ID
+}
+
+input OrganizationUserRelation{
+    update: [UpdateUserFullInput]
+    create: [CreateUserInput]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+"""TODO: Needs different validation on ID compare to OrganizationUserRelation"""
+input OrganizationTerritoryManagerRelation{
+    sync: [ID]@rules(apply: ["exists:users,id"])
+    syncWithoutDetaching: [ID]@rules(apply: ["exists:users,id"])
+    disconnect: [ID]@rules(apply: ["exists:users,id"])
+}
+
+input ParticipantsProgramsRelation {
+    """Use syncWithoutDetaching instead of connect"""
+    sync: [ParticipantsProgramsPivot]
+    syncWithoutDetaching: [ParticipantsProgramsPivot]
+    upsert: [ UpsertOrganizationRelationInput ]
+    disconnect: [ID]
+}
+
+input CustomProductsRelation {
+    """Use syncWithoutDetaching instead of connect"""
+    sync: [CustomProductPivot]
+    syncWithoutDetaching: [CustomProductPivot]
+    disconnect: [ID]
+}
+
+input ParticipantsProgramsPivot {
+    id: ID
+    overwrite_amount_type: overwrite_amount_type
+    residential_rebate_overwrite: Float
+    multi_unit_rebate_overwrite: Float
+    commercial_rebate_overwrite: Float
+    volume_bbg_rebate: Float
+    flat_builder_overwrite: Float
+    flat_bbg_overwrite: Float
+    created_by: Int
+    updated_by: Int
+}
+
+input CustomProductPivot {
+    id: ID
+    program_id: ID @rules(apply: ["sometimes","exists:programs,id"])
+    overwrite_amount_type: overwrite_amount_type
+    residential_rebate_overwrite: Float
+    multi_unit_rebate_overwrite: Float
+    commercial_rebate_overwrite: Float
+    volume_bbg_rebate: Float
+    flat_builder_overwrite: Float
+    flat_bbg_overwrite: Float
+    created_by: Int
+    updated_by: Int
+}

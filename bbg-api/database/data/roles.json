@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "admin"
+    },
+    {
+        "id": 2,
+        "name": "executive"
+    },
+    {
+        "id": 3,
+        "name": "territory_managers"
+    },
+    {
+        "id": 4,
+        "name": "builders"
+    },
+    {
+        "id": 5,
+        "name": "manufacturer"
+    },
+    {
+        "id": 6,
+        "name": "suppliers"
+    },
+    {
+        "id": 7,
+        "name": "cosupplier"
+    },
+    {
+        "id": 8,
+        "name": "contractor"
+    },
+    {
+        "id": 9,
+        "name": "subcontractor"
+    },
+    {
+        "id": 10,
+        "name": "distributor"
+    },
+    {
+        "id": 11,
+        "name": "members"
+    }
+]

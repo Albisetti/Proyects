@@ -1,0 +1,78 @@
+@import '../../styles/custom-styles/typography.scss';
+@import '../../styles/custom-styles/breakpoints.scss';
+@import '../../styles/custom-styles/spacing.scss';
+@import '../../styles/custom-styles/colors.scss';
+
+.menuButtonContainer {
+  margin-left: vwMobile(190);
+  pointer-events: all;
+
+  @media (min-width: $tablet) {
+    margin-left: vwDesktop(1150);
+  }
+}
+.menuButton {
+  @apply relative;
+
+  height: vwMobile(21);
+  width: vwMobile(40);
+  @media (min-width: $tablet) {
+    height: vwDesktop(21);
+    width: vwDesktop(40);
+  }
+}
+
+.menuButtonLine {
+  width: vwMobile(22.6);
+  height: vwMobile(1);
+  @media (min-width: $tablet) {
+    width: vwDesktop(22.6);
+    height: vwDesktop1080p(1.5);
+  }
+}
+
+.lineTopLeft {
+  top: vwMobile(3.5);
+  left: vwMobile(-1);
+  @media (min-width: $tablet) {
+    top: vwDesktop1080p(5);
+    left: vwDesktop1080p(-1.5);
+  }
+}
+
+.lineTopRight {
+  top: vwMobile(3.5);
+  right: vwMobile(-1);
+  @media (min-width: $tablet) {
+    top: vwDesktop1080p(5);
+    right: vwDesktop1080p(-1.5);
+  }
+}
+
+.lineBottomLeft {
+  bottom: vwMobile(6);
+  left: vwMobile(-1);
+  @media (min-width: $tablet) {
+    bottom: vwDesktop1080p(8);
+    left: vwDesktop1080p(-1.5);
+  }
+}
+
+.lineBottomRight {
+  bottom: vwMobile(6);
+  right: vwMobile(-1);
+  @media (min-width: $tablet) {
+    bottom: vwDesktop1080p(8);
+    right: vwDesktop1080p(-1.5);
+  }
+}
+
+.menuText {
+  @apply font-tenorSans uppercase text-navyBlue;
+  font-size: vwMobile(12);
+  letter-spacing: vwMobile(1);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(16);
+    letter-spacing: vwDesktop(1.6);
+  }
+}

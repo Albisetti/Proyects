@@ -1,0 +1,245 @@
+@import './breakpoints.scss';
+
+@mixin h1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: vwMobile(50);
+  line-height: 122.5%;
+  @apply font-title text-fontGray text-center whitespace-pre-line;
+
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(120);
+    line-height: vwDesktop(120);
+  }
+  // @media (orientation: landscape) and (max-width: $tablet) {
+  //   font-size: vwDesktop(72);
+  //   line-height: 120%;
+  // }
+}
+
+@mixin h2 {
+  font-size: vwMobile(52);
+  line-height: 120%;
+  @apply font-title text-fontGray text-center whitespace-pre-line;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(88);
+    line-height: vwDesktop(88);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(54);
+  // }
+}
+
+@mixin h3 {
+  font-family: Tiempos Fine;
+  font-style: normal;
+  font-weight: normal;
+  font-size: vwMobile(24);
+  line-height: 133%;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(42);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(42);
+  // }
+}
+
+@mixin h4 {
+  font-family: Tiempos Fine;
+  font-style: normal;
+  font-weight: normal;
+  font-size: vwMobile(18);
+  line-height: 133%;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(32);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(32);
+  // }
+}
+
+@mixin h5 {
+  font-family: ITC Franklin Gothic Std;
+  font-style: normal;
+  font-weight: normal;
+  font-size: vwMobile(12);
+  line-height: vwMobile(14);
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(24);
+    line-height: vwMobile(28.22);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(24);
+  // }
+}
+
+@mixin paragraph {
+  font-family: ITC Franklin Gothic Std;
+  font-style: normal;
+  font-weight: normal;
+  font-size: vwMobile(13);
+  line-height: vwMobile(14);
+  @apply font-bodyReg text-fontGray text-center whitespace-pre-line;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(21);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(16);
+  // }
+}
+
+@mixin paragraphAlt {
+  font-style: normal;
+  font-weight: normal;
+  font-family: ITC Franklin Gothic Std;
+  font-size: vwMobile(14);
+  line-height: 134%;
+  @apply font-bodyReg text-fontGray text-center whitespace-pre-line;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(30);
+    line-height: vwDesktop(36);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(16);
+  // }
+}
+
+@mixin paragraphCondensed {
+  font-style: normal;
+  font-weight: normal;
+  font-family: ITC Franklin Gothic Std Bk Cd;
+  font-size: vwMobile(16);
+  line-height: 134%;
+  @apply text-fontGray text-center whitespace-pre-line;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(30);
+    line-height: vwDesktop(36);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(16);
+  // }
+}
+
+@mixin list {
+  font-family: ITC Franklin Gothic Std;
+  font-style: normal;
+  font-weight: normal;
+  font-size: vwMobile(16);
+  @apply font-bodyReg text-fontGray;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(18);
+    line-height: vwDesktop(21);
+  }
+  // @media (orientation: landscape) and (max-width: $desktop) {
+  //   font-size: vwDesktop(16);
+  // }
+}
+
+@mixin link {
+  @include paragraph;
+
+  text-decoration: none;
+  color: $burgundy;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin animatedLink {
+  text-decoration: none;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--link-color);
+  }
+
+  &:hover:after {
+    background-color: var(--link-hover-color);
+    animation-name: underliner;
+    animation-duration: 700ms;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  }
+}
+
+@keyframes underliner {
+  0% {
+    transform-origin: bottom right;
+    transform: scaleX(1);
+  }
+  25% {
+    transform-origin: bottom right;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: bottom left;
+    transform: scaleX(0);
+  }
+  100% {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+  }
+}
+
+@mixin caption {
+  font-family: GT America;
+  font-style: normal;
+  font-weight: bold;
+  font-size: vwMobile(14);
+  line-height: 130%;
+  text-transform: uppercase;
+  font-feature-settings: 'liga' off;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(14);
+  }
+  @media (orientation: landscape) and (max-width: $desktop) {
+    font-size: vwDesktop(14);
+  }
+}
+
+@mixin tag {
+  font-family: GT America;
+  font-style: normal;
+  font-weight: normal;
+  font-size: vwMobile(12);
+  line-height: 130%;
+  letter-spacing: vwMobile(2);
+  text-transform: uppercase;
+  font-feature-settings: 'liga' off;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(12);
+    letter-spacing: vwDesktop(2);
+  }
+  @media (orientation: landscape) and (max-width: $desktop) {
+    font-size: vwDesktop(12);
+    letter-spacing: vwDesktop(2);
+  }
+}

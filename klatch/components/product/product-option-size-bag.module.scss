@@ -1,0 +1,32 @@
+@import '../../styles/styles/breakpoints.scss';
+
+.sizeOptionSmall {
+  width: vwMobile(29);
+  height: vwMobile(49);
+  transform: scale(0.65);
+  @media (min-width: $desktop) {
+    width: vwDesktop(29);
+    height: vwDesktop(49);
+    transform: scale(1);
+  }
+}
+.sizeOptionMedium {
+  width: vwMobile(36);
+  height: vwMobile(61);
+  transform: scale(0.65);
+  @media (min-width: $desktop) {
+    width: vwDesktop(36);
+    height: vwDesktop(61);
+    transform: scale(1);
+  }
+}
+.sizeOptionLarge {
+  width: vwMobile(45);
+  height: vwMobile(76);
+  transform: scale(0.65);
+  @media (min-width: $desktop) {
+    width: vwDesktop(45);
+    height: vwDesktop(76);
+    transform: scale(1);
+  }
+}

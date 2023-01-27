@@ -1,0 +1,104 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.card {
+  padding: 0 vwMobile(30);
+
+  @media (min-width: $desktop) {
+    padding: 0;
+  }
+}
+
+.imageWrapper {
+  @apply w-full;
+
+  .image {
+    margin-top: vwMobile(10);
+
+    .actualImage {
+      padding: vwMobile(10) vwMobile(10);
+      width: 100%;
+      object-fit: cover;
+      object-position: 50% 33%;
+    }
+
+    .imageCaption {
+      font-size: vwMobile(26);
+      line-height: vwMobile(28);
+      margin-top: vwMobile(-6);
+      margin-bottom: vwMobile(15);
+    }
+  }
+
+  @media (min-width: $desktop) {
+    .image {
+      margin-top: vwDesktop(10);
+
+      .actualImage {
+        padding: vwDesktop(10) vwDesktop(10);
+      }
+
+      .imageCaption {
+        font-size: vwDesktop(38);
+        line-height: vwDesktop(38);
+        margin-top: vwDesktop(-10);
+        margin-bottom: vwDesktop(15);
+      }
+    }
+  }
+}
+
+.cardHeader {
+  @apply relative;
+  height: vwMobile(350);
+
+  @media (min-width: $desktop) {
+    height: vwDesktop(400);
+  }
+}
+
+.cardBody {
+  @apply flex flex-col justify-between;
+  min-height: vwMobile(160);
+  margin-top: vwMobile(25);
+
+  .description {
+    @apply text-left;
+    font-size: vwMobile(14);
+    line-height: vwMobile(20);
+  }
+
+  .learnMoreLink {
+    @apply block;
+    padding: vwMobile(8) vwMobile(15);
+
+    & > span {
+      @apply font-normal;
+      width: auto;
+      font-weight: normal !important;
+      font-size: vwMobile(18) !important;
+      line-height: 1 !important;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    min-height: vwDesktop(170);
+    margin-top: vwDesktop(25);
+
+    .description {
+      font-size: vwDesktop(17.14);
+      line-height: vwDesktop(20.57);
+    }
+
+    .learnMoreLink {
+      @apply inline-block;
+      padding: vwDesktop(8) vwDesktop(15);
+
+      & > span {
+        font-size: vwDesktop(18) !important;
+      }
+    }
+  }
+}

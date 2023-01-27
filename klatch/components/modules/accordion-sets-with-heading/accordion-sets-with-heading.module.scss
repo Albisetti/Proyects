@@ -1,0 +1,138 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.wrapper {
+  @apply relative;
+}
+
+.container {
+  padding: 0 vwMobile(10);
+
+  @media (min-width: $desktop) {
+    padding: 0 vwDesktop(115);
+  }
+}
+
+.coffeeBeans {
+  @apply absolute h-auto rotate-[30deg] hidden;
+
+  @media (min-width: $desktop) {
+    @apply block;
+    width: vwDesktop(205);
+    top: vwDesktop(90);
+    right: vwDesktop(30);
+  }
+}
+
+.heading {
+  @apply font-normal;
+
+  margin-top: vwMobile(10);
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(40);
+  }
+}
+
+.accordionListWrapper {
+  margin-top: vwMobile(20);
+  margin-bottom: vwMobile(20);
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(130);
+    margin-bottom: vwDesktop(80);
+  }
+}
+
+.listTitle {
+  @apply font-bodyReg font-semibold text-fontGray text-left;
+  margin-top: vwMobile(30);
+  margin-bottom: vwMobile(8);
+  font-size: vwMobile(20);
+  line-height: vwMobile(22);
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(80);
+    margin-bottom: vwDesktop(10);
+    font-size: vwDesktop(38);
+    line-height: vwDesktop(40);
+  }
+}
+
+.accordionWrapper {
+  @apply font-bodyReg border-t-2 border-b-2 border-fontGray;
+  padding: vwMobile(5) 0;
+
+  &:not(:last-child) {
+    border-bottom: none;
+  }
+
+  @media (min-width: $desktop) {
+    padding: vwDesktop(10) 0;
+  }
+}
+
+.accordionTitle::-webkit-details-marker {
+  display: none;
+}
+
+.accordionTitle {
+  @apply text-fontGray font-semibold list-none cursor-pointer flex items-center;
+  font-size: vwMobile(14);
+  line-height: vwMobile(16);
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(24);
+    line-height: vwDesktop(26);
+  }
+}
+
+.accordionTitle::after {
+  content: '+';
+  font-size: vwMobile(26);
+  line-height: 1;
+  padding-left: vwMobile(14);
+  margin-left: auto;
+
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(36);
+    line-height: 1;
+    padding-left: vwDesktop(14);
+  }
+}
+
+.accordionWrapper[open] .accordionTitle::after {
+  content: '-';
+}
+
+.accordionContent {
+  @apply font-bodyReg text-fontGray;
+  margin-top: vwMobile(10);
+
+  p {
+    @apply text-left;
+  }
+
+  p:not(:only-child) {
+    margin-top: vwMobile(5);
+
+    @media (min-width: $desktop) {
+      margin-top: vwDesktop(5);
+    }
+  }
+
+  b,
+  strong {
+    @apply font-semibold;
+  }
+
+  a {
+    @apply underline;
+  }
+
+  @media (min-width: $desktop) {
+    margin-top: vwDesktop(10);
+  }
+}

@@ -1,0 +1,26 @@
+html {
+  &.is-loading,
+  &.is-loading * {
+    @apply cursor-wait !important;
+  }
+}
+
+body {
+  @apply flex flex-col bg-white;
+}
+
+.section {
+  @apply relative px-16 py-48 sm:p-32 md:py-64 lg:py-80 border-b;
+
+  &--content {
+    @apply mx-auto;
+  }
+}
+
+.main-layout {
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+  max-width: 1920px;
+  margin: auto;
+}

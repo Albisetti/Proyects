@@ -1,0 +1,13 @@
+type claimPeriod {
+    error: String
+    year: Int
+    quarter: Int
+    report_period: String
+    uncloseBuilders: [Organizations]
+    closeBuilders: [closeBuildersPeriod]
+}
+
+type closeBuildersPeriod {
+    builder:Organizations
+    total:calculateClaimTotal
+}

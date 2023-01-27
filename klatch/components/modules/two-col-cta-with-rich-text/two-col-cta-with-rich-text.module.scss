@@ -1,0 +1,102 @@
+  @import '../../../styles/styles/spacing.scss';
+  @import '../../../styles/styles/breakpoints.scss';
+  @import '../../../styles/styles/typography.scss';
+  @import '../../../styles/styles/colors.scss';
+
+.twoColWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: $lightGray;
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 vwDesktop(40);
+  }
+
+  .ctaWrapper {
+    width: vwMobile(340);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 vwMobile(10);
+    @media (min-width: $desktop) {
+      align-items: center;
+      justify-content: center;
+      padding: vwDesktop(50) 0;
+    }
+  }
+}
+
+.twoColReverseWrapper {
+  //When flow is right to left, Images are on right and TextCTA on left.
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 vwDesktop(40);
+  }
+
+  .ctaWrapper {
+    width: vwMobile(340);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 vwMobile(10);
+    @media (min-width: $desktop) {
+      align-items: center;
+      justify-content: center;
+      padding: vwDesktop(50) 0;
+    }
+  }
+}
+
+.polaroidWrapper {
+  @apply relative;
+  min-height: vwMobile(305);
+  @media (min-width: $desktop) {
+    @apply w-full flex items-center justify-center relative;
+    min-height: auto;
+  }
+}
+
+.leftImageWrapper {
+  max-width: vwMobile(270);
+  top: vwMobile(30);
+  right: vwMobile(15);
+  @apply rotate-[-9.634deg];
+
+  @media (min-width: $desktop) {
+    max-width: vwDesktop(450);
+    top: vwDesktop(125);
+    right: vwDesktop(50);
+    @apply rotate-[-9.634deg];
+  }
+
+  .leftImage {
+    margin-top: vwMobile(15);
+    @media (min-width: $desktop) {
+      margin-top: vwDesktop(25);
+    }
+    .leftActualImage {
+      padding: 0 vwMobile(10);
+      @media (min-width: $desktop) {
+        padding: 0 vwDesktop(15);
+      }
+    }
+
+    .leftImageCaption {
+      font-size: vwMobile(18.57);
+      line-height: vwMobile(18.57);
+      margin-bottom: vwMobile(15);
+      margin-top: vwMobile(10);
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(38.57);
+        line-height: vwDesktop(38.57);
+        margin-bottom: vwDesktop(40);
+        margin-top: vwDesktop(10);
+      }
+    }
+  }
+}

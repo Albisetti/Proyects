@@ -1,0 +1,142 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.wrapper{
+    position: relative;
+    height: vwDesktop(1807);
+}
+
+.blockContent{
+    position: absolute;
+    h1 {
+        font-size: vwDesktop(72);
+        line-height: vwDesktop(72);
+        color: $white;
+        text-align: left;
+        margin-left: vwDesktop(75);
+        margin-top: vwDesktop(25);
+        margin-bottom: vwDesktop(40);
+        width: vwDesktop(413);
+    }
+    p {
+        color: $white;
+        text-align: left;
+        margin-left: vwDesktop(75);
+        width: vwDesktop(505);
+        font-size: vwDesktop(18);
+        line-height: vwDesktop(21);
+    }
+}
+
+.firstCard{
+    position: absolute;
+    max-width: vwDesktop(666);
+    left: vwDesktop(105);
+    top: vwDesktop(110);
+}
+
+.secondCard{
+    position: absolute;
+    max-width: vwDesktop(666);
+    left: vwDesktop(674);
+    top: vwDesktop(660);
+
+}
+
+.thirdCard{
+    position: absolute;
+    max-width: vwDesktop(666);
+    left: vwDesktop(105);
+    top: vwDesktop(1220);
+}
+
+.image{
+    width: vwDesktop(666);
+}
+
+
+.background{
+    position: absolute;
+    top: vwDesktop(-290);
+    width: vwDesktop(1440);
+}
+
+.desktopDisplay{
+    display: none;
+    @media (min-width: $desktop) {
+        display: block;
+    }
+}
+
+.mobileDisplay{
+    display: block;
+    @media (min-width: $desktop) {
+        display: none;
+    }
+    position: relative;
+}
+
+.firstMobileImage{
+    position: absolute;
+    top: vwMobile(-400);
+    left: vwMobile(-100);
+    width: vwMobile(200);
+    opacity: 0.3;
+    @apply rotate-[-90deg]
+}
+
+.secondMobileImage{
+    position: absolute;
+    top: vwMobile(-100);
+    left: vwMobile(-160);
+}
+
+.thirdMobileImage{
+    position: absolute;
+    top: vwMobile(180);
+    left: vwMobile(160);
+}
+
+.dotWrapper {
+    margin-top: vwMobile(50);
+}
+
+.cardImage {
+    margin-left: vwMobile(60);
+    width: vwMobile(200);
+    height: vwMobile(250)
+}
+
+.blockContentMobile{
+    position: absolute;
+    h1 {
+        font-size: vwMobile(28);
+        line-height: vwMobile(36);
+        color: $white;
+        text-align: left;
+        margin-left: vwMobile(80);
+        margin-top: vwMobile(15);
+        margin-bottom: vwMobile(30);
+        width: vwMobile(250);
+    }
+    p {
+        color: $white;
+        text-align: left;
+        margin-left: vwMobile(80);
+        width: vwMobile(160);
+        font-size: vwMobile(8);
+        line-height: vwDesktop(38);
+    }
+}
+
+.carouselWrapper {
+    @apply block;
+    position: absolute;
+    top: vwMobile(-330);
+    @media (min-width: $desktop) {
+      @apply hidden;
+    }
+}
+  

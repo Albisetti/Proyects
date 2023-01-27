@@ -1,0 +1,17 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.skipVideoButton {
+  @apply font-tenorSans transition-all text-white hover:text-gold uppercase;
+
+  font-size: vwMobile(16);
+  line-height: vwMobile(21);
+  transform: translateX(vwMobile(-35)) translateY(vwMobile(-28));
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(16);
+    line-height: vwDesktop(21.2);
+    transform: translateX(vwDesktop(-70)) translateY(vwDesktop(-28));
+  }
+}

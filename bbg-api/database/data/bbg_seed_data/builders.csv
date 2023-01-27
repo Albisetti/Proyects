@@ -1,0 +1,213 @@
+ID,BBG_Code,MemberName,Address,City,State,Zip,ContactName,Phone,Email,MemberSince,State1,Zip Code,Phone Number,Email Address,Rebate Level,Active
+1001,ajw,AJW Builders,PO Box 7773,Lynden,WA,null,Alex Wynstra,null,alexwynstra@gmail.com,2015-07-01T00:00:00Z,WA,52302,864-449-5589,jay@a2ebuilders.com,T1,TRUE
+1002,avb,American Village Builders,4200 W. Centre Ave,Portage,MI,null,Tom Fritz,null,tfritz@avbinc.com,null,MI,49024,269-352-2593 cell,tfritz@avbinc.com,T2,TRUE
+1003,bosgraaf,Bosgraaf Homes,148 S. River Ave Suite 100,Holland,MI,null,Tyler Petersen,null,Brandt.vanheest@bosgraaf.com/Tyler.Petersen@bosgraaf.com,null,MI,49423,616-886-1147,brandt.vanheest@bosgraaf.com,null,TRUE
+1004,bpci,Building Partners of Central Indiana,6510 Telecom Drive Suite 185,Indianapolis,IN,46278,Drake Branda,null,Drake@bagi.com,2011-02-17T00:00:00Z,IN,46201,null,null,T2,FALSE
+1005,capital,Capital Construction,PO Box 1702,Brighton,MI,null,Laura Hampton,null,laura@ccgbuilders.com,2014-04-16T00:00:00Z,MI,48116,null,laura@ccgbuilders.com,T1,TRUE
+1006,cottage,Cottage Homes,184 S. River Ave,Holland,MI,null,Eric,null,eric@cottagehome.com,null,MI,49423,null,eric@cottagehome.com,T1,TRUE
+1007,cwd,CWD Real Estate,50 Louis St NW. Suite A,Bath,MI,null,Cullen Hillary,null,chillary@cwdrealestate.com,null,MI,48808,null,chillary@cwdrealestate.com,T2,TRUE
+1008,dehaan,DeHaan Homes,3299 Hudson Trails Dr,Hudsonville,MI,null,Jodie Turcotte,null,jturcotte@dehaanhomes.com,2009-03-18T00:00:00Z,MI,49426,616-896-8300,EQuellet@dehaanhomes.com,T1,TRUE
+1009,dilw,Harris Doyle Homes (Dilworth Division),3111 Timberlake Dr,Vestavia Hills,AL,null,Ben Ballew/ Courtney Bell,null,Ben.ballew@dilworthdevelopment.com/courtney.bell@dilworthdevelopment.comcourtney.bell@dilworthdevelopment.comcourtney.bell@dilworthdevelopment.comcourtney.bell@dilworthdevelopment.com/courtney.bell@dilworthdevelopment.com,null,AL,35243,334-821-6610,kellie.lloyd@harrisdoyle.com,T1,TRUE
+1010,east,Eastbrook Homes,1188 E Paris Ave SE #100,Grand Rapids,MI,null,Rick Kowalski,null,kowalski@eastbrookhomes.com,null,MI,49546,(616) 455-0200,rharsh@eastbrookhomes.com,null,TRUE
+1011,ehs,Eastbrook Homes Southern,null,null,MI,null,Dean Priebe,null,priebe@eastbrookhomes.com,null,null,null,334-750-9843,priebe@eastbrookhomes.com,null,TRUE
+1012,elite,Elite Contractor Services,PO Box 547,Byron Center,MI,null,Eric Devries,null,ericldv5@gmail.com,2012-11-19T00:00:00Z,MI,49315,null,ericldv5@gmail.com,T1,TRUE
+1013,eandv,Elzinga & Volkers,86 E 6th St,Holland,MI,null,null,null,brandonb@elzinga-volkers.com,2009-07-31T00:00:00Z,MI,49423,null,brandonb@elzinga-volkers.com,T1,FALSE
+1014,ever,Everkept Construction,PO Box 736,Lynden,WA,null,Tim Wiersma,null,tim@everkeptconstruction.com,null,WA,98264,null,tim@everkeptconstruction.com,T1,TRUE
+1015,faber,"Faber Builders, Inc.",3240 Chili Ave,Rochester,NY,null,Jeremy Smith,null,jeremys@fabergroup.com,null,NY,14624,null,jeremys@fabergroup.com,T1,TRUE
+1016,giguere,Giguere Homes,6200 Pine Hollow Dr. Suite 100,East Lansing,MI,null,Derek Lisabeth,null,dlisabeth@giguerehomes.com,null,MI,48823,null,dlisabeth@giguerehomes.com,T1,TRUE
+1017,grb,Granite Ridge,1020 Woodland Plaza Run,Fort Wayne,IN,null,Stephanie Johnson,null,sjohnson@graniteridgebuilders.com,2017-05-10T00:00:00Z,IN,46825,null,sjohnson@graniteridgebuilders.com,T1,TRUE
+1018,jenmax,Jenmax Homes,6505 Auburn Road,Utica,MI,null,Arek Karcorzyk,null,arek.kacorzyk@me.com,2014-01-09T00:00:00Z,MI,48316,null,null,T1,FALSE
+1019,lewiston,Lewiston Properties,null,null,NY,null,Michael Lewis,null,lewistonproperties@gmail.com,null,null,null,null,null,T1,FALSE
+1020,maplewood,Maplewood Homes,5450 Shelby Road,Shelby,MI,null,Joe Hayes,null,joehayes@maplewoodhomes.com,2015-05-20T00:00:00Z,MI,49455,null,joehayes@maplewoodhomes.com,T1,FALSE
+1021,mayberry,Mayberry Homes,1650 Kendale Blvd Ste200,East Lansing,MI,null,Lindsey Coffelt,null,lindsey@mayberryhomes.com,null,MI,48823,null,lindsey@mayberryhomes.com,T2,TRUE
+1022,midwest,Midwest Construction,8516 Homestead Dr,Zeeland,MI,null,Brian VanBeveren/ Connor Grysen,null,bvanbeveren@midwestbuilt.com,2015-08-08T00:00:00Z,MI,49464,616-772-6070,connorg@midwestbuilt.com,T1,TRUE
+1023,mosaic,Mosaic Homes,2050 Caladon Dr NE. Suite B,Grand Rapids,MI,null,Leslie Herzog,null,leslie@mosaicproperties.com,2013-07-23T00:00:00Z,MI,49525,null,jennifer@mosaicproperties.com,T1,TRUE
+1024,mx3,MX3 Homes,2610 Manor Road,Austin,TX,null,Stephanie Koontz,null,stephanie@mx3homes.com,null,TX,78722,null,null,T1,FALSE
+1025,pathway,Pathway Homes,770 N US Highway 31 S,Traverse City,MI,null,Dustin Parks,null,dustinp@pathwayhomes.com,2010-10-29T00:00:00Z,MI,49685,null,garyj@pathwayhomes.com,T1,TRUE
+1026,rivendale,Rivendale Homes,1114 Lost Creek Blvd Suite 200,Austin,TX,null,Jesus Armendariz,null,jesus@rivendalehomestexas.com,null,TX,78746,null,purchasingpma@rivendalehomestexas.com,T1,TRUE
+1027,rockford,Rockford Homes,999 Polaris Pkwy Suite 200,Bloomfield Hills,OH (IN Template),null,Kim Wilcheck,null,kcurtis@rockfordhomes.net,null,OH,43240,null,pyoung@rockfordhomes.net,T2,TRUE
+1028,roersma,Roersma & Wurn Builders,908 W River Center Dr NE Suite A,Comstock Park,MI,null,Kevin Wurn,null,kevin@rwbuilders.com,null,MI,49321,null,pyoung@rockfordhomes.net,T2,TRUE
+1029,mccardel,Sean McCardel Construction,338 Water Watch Lane,Traverse City,MI,49686,Nancy Mclnnis,null,nancy.smccardel@gmail.com,2013-05-22T00:00:00Z,MI,49686,null,nancy.smccardel@gmail.com,T1,TRUE
+1030,616,616 Development,null,null,MI,null,Jeremy Frost,null,jfrost@itsdelivers.com,2012-04-19T00:00:00Z,null,null,null,null,T1,FALSE
+1031,sixty,Sixty North,314 Mac Ave,East Lansing,MI,null,Jane Sawyer,null,jane@5-4management.com,2015-05-15T00:00:00Z,MI,48823,517-913-0465,mike.peplowski@60-north.com,T1,TRUE
+1032,regal,Regal Crest,null,null,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,null,null,null,null,T1,FALSE
+1033,ballantry,Ballantry Homes,"20 Cachet Woods Ct, Ste 6",Markham,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,ON,L6C 3G1,null,cspeers@buildersbuyinggroup.com,T1,TRUE
+1034,phoenix,Phoenix Homes,18A Bentley Ave,Ottawa,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,ON,K2E 6T8,null,cspeers@buildersbuyinggroup.com,T1,TRUE
+1035,royal,Royalpark,65 Royal Park  Way,Woodbridge,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,ON,L4H 1J5,null,cspeers@buildersbuyinggroup.com,T1,TRUE
+1036,manitoba/Rock,Rock Cliff,null,null,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,null,null,null,cspeers@buildersbuyinggroup.com,T1,FALSE
+1037,heritage,Heritage Lane,null,null,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,null,null,null,cspeers@buildersbuyinggroup.com,T1,FALSE
+1066,polarwind,Polar Wind Investment,"171 Basaltic Rd, Unit 1",Vaughan,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,ON,L4K 1G4,null,cspeers@buildersbuyinggroup.com,T1,TRUE
+1067,gdk,GDK Construction Co,12 W 8th St Suite 250,Holland,MI,null,Jim Hoekstra,null,jhoekstra@gdkconstruction.com,2016-06-28T00:00:00Z,MI,49423,null,null,T1,TRUE
+1068,robertson,Robertson Brothers Homes,6905 Telegraph Rd Suite 200,Bloomfield Hills,MI,null,Natalie Buda,null,nbuda@robertsonhomes.com,2016-08-01T00:00:00Z,MI,48301,null,dneubecker@robertsonhomes.com,T2,TRUE
+1069,abc,ABC Operations,null,null,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,null,null,null,null,T1,FALSE
+1070,liv,LIV Communities,1005 Skyview Dr. Suite 301,Burlington,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,null,ON,L7P 5B1,null,cspeers@buildersbuyinggroup.com,T1,TRUE
+1071,glcb,Great Lakes Custom Builders,null,null,MI,null,James Wiese,null,jameswiese@yahoo.com,2017-02-13T00:00:00Z,null,null,null,null,T1,FALSE
+1073,kaitlin,Kaitlin Corp,28 Sandiford Dr,Whitechurch-Stouffville,Canada,null,Craig Speers,null,Craig@buildersbuyinggroup.ca,2017-01-01T00:00:00Z,ON,L4A 1L8,null,cspeers@buildersbuyinggroup.com,T1,TRUE
+1074,branthaven,Branthaven Homes,720 Oval Court,Burlington,Canada,null,Craig Speers,null,craig.speers@gmail.com,null,ON,L7L 5K2,null,cspeers@buildersbuyinggroup.com,T1,TRUE
+1075,cmalliance,CM Alliance,null,null,VA,null,John Redling,null,cmallianceinc@gmail.com,2017-03-16T00:00:00Z,null,null,null,null,T1,FALSE
+1076,tibbe,JTB Homes,1777 R.W. Berends SW,Wyoming,MI,null,Glenn Cook,null,Gcook@jimtibbehomes.com,2017-01-01T00:00:00Z,MI,49519,(517) 526-2551,gcook@jtbhomes.com,T1,TRUE
+1077,interra,Interra Homes,1777 R.W. Berends SW,Wyoming,MI,null,Mike Scafe,null,mscafe@interrahomes.com,2017-01-01T00:00:00Z,MI,49519,(517) 526-2551,gcook@jtbhomes.com,T1,TRUE
+1078,Lomb,Lombardo Homes,null,null,MI,null,Erin Smith,null,esmith@lombardohomes.com,2017-03-31T00:00:00Z,MI,null,null,null,T1,FALSE
+1079,ReExteriors,Renaissance Exteriors,1639 Lake Michigan Dr NW,Grand Rapids,MI,null,Sean Bush,null,sean@schultzbuilders.com,2017-06-26T00:00:00Z,MI,49534,null,sean@schultzbuilders.com,T1,TRUE
+1080,Cooney,Cooney Homes LLC,4460 Chancellor Drive,Dewitt,MI,null,John Cooney,null,Cooneyconstruction1@yahoo.com,2017-06-02T00:00:00Z,MI,48820,989-577-0212,cooneybill@hotmail.com,T1,TRUE
+1081,Pro-Side,Pro-Side LLC,104 Rotary Court,Auburn Hills,MI,48326,Neil McGrath,null,neilmcgrath.procon@yahoo.com,2017-10-31T00:00:00Z,MI,null,null,nmcgrath@prosidellc.net,T1,TRUE
+1082,Clearview,Clearview Homes,811 E South Blvd Suite 100,Rochester Hills,MI,null,Dorothy Deir,null,dorothy@myclearviewhome.com,2017-12-01T00:00:00Z,MI,48307,248-343-2248,steven@myclearviewhome.com,T2,TRUE
+1083,Creative,Creative Homes,707 Commerce Dr Suite 410,Woodbury,MN (Other Template),null,Jill Surine,null,jill@creativehci.com/chris@creativehci.com,2017-12-01T00:00:00Z,MN,55125,651-289-6801,jill@creativehci.com,T2,TRUE
+1084,Buescher,Bob Buescher Homes,1206 Ruston Pass,Fort Wayne,IN,46825,Troy Heisler,null,theisler@bobbuescherhomes.com,2018-03-01T00:00:00Z,IN,46447,260-490-3355,theisler@bobbuescherhomes.com,T2,TRUE
+1085,Lions,Lion Pride,147 2nd Ave,Rochelle,MI,null,Shawn Enoch,null,senoch@cedarsidinginc.com,2018-04-30T00:00:00Z,IL,61068,null,senoch@cedarsidinginc.com,T1,FALSE
+1086,Bldg Junkies,Building Junkies,null,null,MI,null,Rick Stokes,null,Rstokes@buildingjunkies.com,2018-06-13T00:00:00Z,null,null,null,null,T1,FALSE
+1087,Charleston Homes,Charleston Homes,3803 N. 153rd St Suite 200,Omaha,NE,null,EATON ONLY,null,null,2018-05-11T00:00:00Z,NE,68116,402-933-7224,dave.freel@charlestonhomesomaha.com,Flat,TRUE
+1088,Henry Homes,Henry Homes,4229 US Hwy 90,Pace,MI/FL,null,Eaton Only,null,ddodd@henrycompanyhomes.com,2018-06-18T00:00:00Z,FL,32571,null,ddodd@henrycompanyhomes.com,Flat,TRUE
+1089,sable,Sable Homes,11575 Edgerton Ave NE,Rockford,MI,null,Eaton Only,null,anna.ambrose@sablehomes.com,2018-06-18T00:00:00Z,MI,49341,null,bryan.burnham@sablehomes.com,Flat,TRUE
+1090,truland,Truland Homes,29891 Woodrow Lane Suite 100,Spanish Fort,AL,null,Eaton Only,null,null,2018-06-18T00:00:00Z,AL,36527,null,jcallihan@trulandhomes.com,Flat,TRUE
+1091,EETKO,22 New Home Company (formerly EETKO),3403 Veterans Drive,Traverse City,MI,49684,Amy Plamondon,null,amy@eetko.com,2018-09-04T00:00:00Z,MI,49684,null,shaun@22nhc.com,T1,TRUE
+1092,Norfolk Homes,Norfolk Homes,8178 Jackson Rd Suite D,Ann Arbor,MI,null,Mark Johson,null,Mjohnson@Norfolk-Homes.com,2018-10-15T00:00:00Z,MI,48103,null,mjohnson@norfolkhomes.com,T1,TRUE
+1093,Bellago Homes,Bellago Homes,1806 N Lindsay Rd,Mesa,AZ,null,Brooke Hidalgo,null,brooke@bellagohomes.com,2018-10-17T00:00:00Z,AZ,58213,null,brooke@bellagohomes.com,Flat,TRUE
+1094,Marcusse,Marcusse Construction Co.,6588 Center Industrial Dr,Jenison,MI,49426,Klynt Marcusse,null,klynt.marcusse@gmail.com,2018-11-20T00:00:00Z,MI,49428,null,klynt.marcusse@gmail.com,T1,TRUE
+1095,fedewa,Fedewa Homes,5570 Okemos Rd,East Lansing,MI,48823,Jerry Fedewa,null,gsfedewa@gmail.com,2018-12-06T00:00:00Z,MI,48823,517-719-6300,fedewagr@gmail.com,T1,TRUE
+1096,inverness,Inverness Homes,11305 Reed Hartman Hwy,Cincinnati,OH,45241,Abby Mays,null,abbym@interness-usa.com,2019-04-26T00:00:00Z,OH,45241,null,valeries@inverness-usa.com,T1,TRUE
+1097,Bayou,Bayou Real Estate Investments LLC,2685 Meadow Woods Dr NW,Grand Rapids,MI,49534,null,null,null,2019-05-24T00:00:00Z,MI,49503,null,null,T1,FALSE
+1098,COGS,COGS Approach Group Inc.,1910-505 Talbot St,London,Canada,N6A 2S6,Peter DeGelder,null,null,2019-05-08T00:00:00Z,ON,null,null,cspeers@buildersbuyinggroup.com,T1,FALSE
+1099,Alair,Alair Homes,"1124 Gainsborough Rd, Unit 17",London,Canada,V6Z 0E2,Blair McDaniel,null,Blair@alairhomes.com,2019-06-30T00:00:00Z,ON,N6H 5N1,519-800-5668,cspeers@buildersbuyinggroup.com,T1,TRUE
+1100,Bridgeport,Bridgeport Custom Homes LLC,71 Sharon Woods Rd,Wadsworth,OH,44281,Jason Cassidy,null,jason@bridgeportcustomhomes.com,2019-06-03T00:00:00Z,OH,44281,null,jason@bridgeportcustomhomes.com,T1,TRUE
+1101,Country View,Country View Estates LLC.,"13937 Webster Rd, Ste A",Bath,MI,48808,Julie Lynch,null,jlynch@contractsupply.com,2019-06-28T00:00:00Z,MI,48808,null,jlynch@contractsupply.com,T1,TRUE
+1102,scmmgmt,SCM Management,102-102 Armstrong Place,Canmore,Canada,T1W 0E2,Scott MacKenzie,null,info@builderlink.net,2019-07-03T00:00:00Z,AB,T1W 0E2,(403) 561-2344,cspeers@buildersbuyinggroup.com,T1,FALSE
+1103,hodge,"Steve Hodge Building & Development, LLC",201 Griffingate Drive,Midland City,AL,36350,Jim McGhee,334-791-5749,diamondjimrealtor@gmail.com,2019-09-23T00:00:00Z,AL,36350,334-791-5749,diamondjimrealtor@gmail.com,T1,TRUE
+1104,BUP Construction,BUP Construction Inc,PO Box 3691,Dillon,CO,80935,Zybnek Popek (ZB),970-409-2161,bup.construction@gmail.com,2019-09-08T00:00:00Z,CO,80435,null,info@builderlink.net,T1,TRUE
+1105,Ivey Residential,Ivey Residential LLC,"672 Industrial Park Dr, Ste 200",Evans,GA,30809,Jay Frye,706-524-8818,jay.frye@iveygroup.com,2019-09-05T00:00:00Z,GA,30809,(706) 868-9363,elaine.sheppard@iveygroup.com,T2,TRUE
+1106,Rancho Pacific,Rancho Pacific Construction,366 La Messa Ave,Rancho Santa Fe,CA,92067,Michael Demich (president),616-972-6106,mikedemich@aol.com,2019-10-02T00:00:00Z,null,null,null,admin@mcnearneyhomes.com,T1,TRUE
+1107,McNearney,McNearney Custom Homes,21039 Heron Way,Lakeville,MN,55044,Robert McNearney,952-985-0965,admin@mcnearneyhomes.com,2020-01-03T00:00:00Z,MN,55044,null,admin@mcnearneyhomes.com,T1,TRUE
+1108,ronclark,Ron Clark Construction & Design,7500 W 78th St,Edina,MN,55439,Cherri Engstrom,952-947-3026,cengstrom@ronclark.com,2020-03-10T00:00:00Z,MN,55424,null,cengstrom@ronclark.com,T1,TRUE
+1109,tjb,TJB Homes Inc.,9100 Baltimore St,Blaine,MN,55449,Gretchen Larson,763-780-2944,gretchen@tjbhomes.com,2020-01-04T00:00:00Z,null,null,null,gretchen@tjbhomes.com,T1,FALSE
+1110,werschay,Werschay Homes,3333 Roosevelt Rd,St Cloud,MN,56301,Jeff Buron,320-230-9909,jeff@werschayhomes.com,2020-03-11T00:00:00Z,MN,56304,null,jeff@werschayhomes.com,T1,TRUE
+1111,Amber Valley,Amber Valley Construction LLC,5103 Clyde Park Ave SW,Wyoming,MI,49509,Derek Anderson,616-965-1759,info@ambervalleyconstruction.com,2020-01-06T00:00:00Z,MI,49509,null,office@ambervalleyconstruction.com,T1,TRUE
+1112,Fisher Bldg,Fisher Building Co.,22 Mayfair Lane,Mahopac,NY,10541,Ian Fisher,null,ian@fisherbuildingco.com,2020-01-26T00:00:00Z,NY,10541, (845) 531-1691,null,T1,FALSE
+1113,Butte,Butte Construction Company,8 Seville Ct #100,Chico,CA,95928,Nick Starnes,530-809-1779,nick@butteconstructioncompany.com,2019-08-15T00:00:00Z,CA,95928,530-809-1779,nick@butteconstructioncompany.com,T1,TRUE
+1114,Delagrange,"Lynn Delagrange, Inc.",113 Airport North Office Park,Fort Wayne,IN,46825,Lynn Delagrange,260-490-4663,ladelagrange@gmail.com,2020-03-14T00:00:00Z,IN,46825,(260) 490-4663,ladelagrange@gmail.com,T1,TRUE
+1115,starhomes,"Star Homes by Delagrange & Richhart, Inc.","5909 Wheelock Rd, Suite 101",Fort Wayne,IN,46835,Jay Gremaux,260-755-5999,jay@starhomesinc.com,2020-03-31T00:00:00Z,IN,46805,260-755-5999,jay@starhomesinc.com,T1,TRUE
+1116,verity,"Verity Homes, Inc.","3100 N 14th St, Ste 1",Bismarck,ND,58503,Ben Buchmiller,701-354-2836,ben@verityhomes.com,null,ND,58503,509-379-5996,hgooss@verityhomes.com,T2,TRUE
+1117,windsor,Windsor Homes,7505 Westfield Drive,Fort Wayne,IN,46825,Robert Wacker,260-490-1302 x218,rwacker@mywindsorhome.com,2020-04-15T00:00:00Z,IN,46825,(260) 490-1302,sblinn@mywindsorhome.com,T1,TRUE
+1118,hiniker,"Hiniker Homes, Inc",23059 N Riverfront Dr,Mankato,MN,56001,Mark Hiniker,507-625-4300,mark@hinikerhomes.com,2020-04-20T00:00:00Z,MN,56001,(507) 625-4300,mark@hinikerhomes.com,T1,TRUE
+1119,dabbert,Dabbert Custom Homes,5522 36th St South,Fargo,ND,58104,Sam Caven,701-205-4979,sam@dabberthomes.com,2020-04-22T00:00:00Z,ND,58104,(701) 205-4979,sam@dabberthomes.com,T1,TRUE
+1120,parent,"Parent Builders, Inc.","1630 101st Ave NE, Ste 100",Blaine,null,null,null,null,null,null,MN,55449,(763) 274-1222,brian@parentbuildersinc.com,T1,TRUE
+1121,olthof,Olthof Homes,8051 Wicker Avenue,St John,null,null,null,null,null,null,IN,46373,(219) 558-8080,mevers@olthofhomes.com,T2,TRUE
+1122,aspen,Aspen Homes,PO Box 809,Bettendorf,null,null,null,null,null,null,IA,52722,(563) 332-4192,chris@aspenwindmiller.com,T1,TRUE
+1123,cjbldr,"C&J Builders, Inc.",316 Kamloops Place,River Falls,null,null,null,null,null,null,WI,54022,(715) 222-9731,jeffhusby@comcast.com,T1,TRUE
+1124,abode,Abode Construction,"3405 7th Ave, Ste 102",Marion,null,null,null,null,null,null,IA,52302,319-363-0709,gchada@abodeconstruction.com,T1,TRUE
+1125,jerry,Jerry's Homes,"3900 Westown Pkwy, Ste 100",Des Moines,null,null,null,null,null,null,IA,null,(515) 278-5992,andyb@jerryshomes.com,T2,TRUE
+1126,harbor,Harbor Homes,N27W24025 Paul Ct,Pewaukee,null,null,null,null,null,null,WI,53072,(262) 232-8520,mrussell@harborhomeswi.com,T2,TRUE
+1127,sbr,SBR Builders,3942 U.S. 6,Waterloo,null,null,null,null,null,null,IN,46793,260-445-4600,senright0@icloud.com,T1,TRUE
+1128,boaz,Boaz Enterprise LLC,38537 Lakeshore Dr,Harrison TWP,null,null,null,null,null,null,MI,48045,586-405-3977,boazllc20@gmail.com,T1,TRUE
+1129,silverthorne,Silverthorne Development Company,"1827 E Lincoln Hwy, Ste 1",Dekalb,null,null,null,null,null,null,IL,60115,630-664-5509,msalas@silverthornegroup.com,T2,TRUE
+1130,oevering,Oevering Homes LLC,"1433 Cernohous Ave, #A",Richmond,null,null,null,null,null,null,WI,54017,(715) 243-0001,travis@oeveringhomes.com,T1,TRUE
+1131,obrien,Tim O'Brien Homes,N27W24075 Paul Ct,Pewaukee,null,null,null,null,null,null,WI,53072,(262) 542-5750,tobrien@tobhomes.com,T2,TRUE
+1132,brightmind,Brightmind Enterprises,534 Abner Creek Rd,Greer,null,null,null,null,null,null,SC,29650,864-901-4811,charles.rohling@att.net,T1,TRUE
+1133,southerncreek,Southern Creek Construction,PO Box 1244,Central,null,null,null,null,null,null,SC,null,864-401-1147,boyce@southerncreekco.com,T1,TRUE
+1134,harris,Mark Harris Homes Inc.,244 Vockel Rd,Huntsville,null,null,null,null,null,null,AL,35811,(256) 851-7999,mary@markharrishomes.com,T1,TRUE
+1135,phhomes,PH Homes Inc.,"8255 Cascade Ave, Ste 110",Commerce,null,null,null,null,null,null,MI,48382,(248) 242-6838,cj@myphhome.com,T1,TRUE
+1136,willow,Willow Branch Homes,"1718 General George Patton Dr, Ste B",Brentwood,null,null,null,null,null,null,TN,37027,(615) 499-9887,rick@willowbranchpartners.com,T2,TRUE
+1137,construction,Construction USA,105 S Denny,Indianapolis,null,null,null,null,null,null,IN,46201,317-775-3709,wmsindy240@gmail.com,T2,TRUE
+1138,A2E,A2E Builders,1724 Locust Hill Rd,Greer,null,null,null,null,null,null,SC,29651,(864) 238-2304,jay@a2ebuilders.com,T1,TRUE
+1139,avemgmt,Avenue Group Management,31502 Woodward Ave,Royal Oak,null,null,null,null,null,null,MI,48073,248-335-7368,sean@335.rent,T1,TRUE
+1140,bartdarwin,"Bart Darwin Builders, Inc",191 Darwin Rd,Huntsville,null,null,null,null,null,null,AL,35811,(256) 990-3212,auburnbldr@gmail.com,T1,TRUE
+1193,C&M,C&M Properties & Construction,6176 Sandstone Rd,Eau Claire,null,null,null,null,null,null,WI,54701,715-861-1903,chelsea@candmhomebuilders.com,T2,TRUE
+1194,moceri,"Moceri Custom Homes, LLC",3005 University Dr,Auburn Hills,null,null,null,null,null,null,MI,48326,248-340-9400,frank@moceri.com,T1,TRUE
+1195,bercher,Bercher Homes,"800 Kennesaw Ave, Ste 100",Marrieta,null,null,null,null,null,null,GA,30067,770-590-5400,dbercher@bercherhomes.com,T1,TRUE
+1196,joss,Joss Construction,"4902 Dewitt Rd, Ste 101",Canton,null,null,null,null,null,null,MI,48188,734-812-6238,ryanjoss@gmail.com,T1,TRUE
+1197,perrino,"Perrino Custom Homes, LLC","7976 Mayfield Rd, Ste 100",Chesterland,null,null,null,null,null,null,OH,44026,440-919-1000,pat@perrino.us,T1,TRUE
+1198,mtc,MTC Construction,404 Santa Fe Pike,Columbia,null,null,null,null,null,null,TN,38401,615-830-4474,eli.routh@midtnco.com,T1,TRUE
+1199,jperry,J Perry Homes,2532 Regency Rd,Lexington,null,null,null,null,null,null,KY,40503,859-333-8129,steve@lexproperties.org,T1,TRUE
+1200,prestige,Prestige Luxury Homes,801 12th Ave S,North Myrtle Beach,null,null,null,null,null,null,SC,29577,843-492-4411,lynn@scbeachrealestate.net,T1,TRUE
+1201,pillar,Pillar Homes,1312 Bowman St,Clermont,null,null,null,null,null,null,FL,34711,352-394-1032,info@pillarhomes.com,T1,TRUE
+1202,punta,Punta Gorda Homes,2239 Cornelius Blvd,Port Charlotte,null,null,null,null,null,null,FL,33953,941-249-8830,null,T1,TRUE
+1203,maxwell,Maxwell Building Corp,658 W Indiantown Rd,Jupiter,null,null,null,null,null,null,FL,33458,561-748-6113,mmaxwell@mawsll.com,T1,TRUE
+1204,divosta,Divosta Investments,"4500 PGA Blvd, Ste 207",Palm Beach Gardens,null,null,null,null,null,null,FL,33418,561-691-9050,deagle@divostainvestments.com,T1,TRUE
+1205,suncountry,Sun Country Homes,787 Pondella Rd,Ft Myers,null,null,null,null,null,null,FL,33903,235-995-4663,suncountryhomesfl@outlook.com,T1,TRUE
+1206,monarch,Monarch Building Corp,"809 Walkerbilt Rd, Ste 5",Naples,null,null,null,null,null,null,FL,34110,230-403-7351,staylor@monarch.com,T1,TRUE
+1207,sycamore,Sycamore Homes,905 Republic Ave,Sycamore,null,null,null,null,null,null,FL,33805,352-777-6099,null,T1,TRUE
+1208,gho,GHO Homes,590 NW Mercantile Pl,Port St Lucie,null,null,null,null,null,null,FL,34986,727-257-1100,bhandler@gho.com,T1,TRUE
+1209,hartfl,Hart Homes of Florida,SE 12th St,Fort Lauderdale,null,null,null,null,null,null,FL,33316,954-564-9434,gh@harthomes.us,T1,TRUE
+1210,benezet,Benezet & Associates,"131 Prosperous Place, Unit 18B",Lexington,null,null,null,null,null,null,KY,40509,859-420-3479,cjbenezet@yahoo.com,T1,TRUE
+1211,oldtown,Old Town Design Group,1132 S Rangeline Rd,Carmel,null,null,null,null,null,null,IN,46032,317-281-4479,kevin.bettag@oldtowndesigngroup.com,T2,TRUE
+1212,gandg,G&G Custom Homes,15530 Shining Spring Dr,Westfield,null,null,null,null,null,null,IN,46074,317-418-7665,joe@ggcustomhomes.com,T1,TRUE
+1213,estridge,Estridge Homes,12965 Old Meridian St,Carmel,null,null,null,null,null,null,IN,46032,317-669-6204,robmcgraw@estridge.net,T1,TRUE
+1214,coronado,Coronado Custom Homes,1730 E 156th St,Carmel,null,null,null,null,null,null,IN,46033,317-867-4800,martin@homesbycoronado.com,T1,TRUE
+1215,essentials,Essential Homes of Indiana,PO Box 2737,Lafayette,null,null,null,null,null,null,IN,47996,764-426-2604,ryan@kennedyhomeslafayette.com,T1,TRUE
+1216,joyner,Joyner Homes,123 W Main St,Greenfield,null,null,null,null,null,null,IN,46140,317-468-2330,tom@joynerhomesonline.com,T1,TRUE
+1217,amato,Amato Homes,7140 Walton Rd,Walton Hills,null,null,null,null,null,null,OH,44146,330-590-2516,myamatohomes@gmail.com,T2,TRUE
+1218,stiner,"Stiner and Sons Construction, Inc.",13728 Hale Rd,Oberlin,null,null,null,null,null,null,OH,44074,440-775-2345,null,T1,TRUE
+1190,onetenten,OneTenTen Homes LLC,"3000 County Rd 42 W, Ste 202",Burnsville,null,null,null,null,null,null,MN,55337,952-953-5300,tim@onetentenhomes.com,T2,TRUE
+1191,avencia,Avencia Homes,998 Riverwalk Pkwy,Rock Hill,null,null,null,null,null,null,SC,29730,803-810-5450,jauman@avenciahomes.com,T2,TRUE
+1192,bluesky,Blue Sky Construction,6 N Public Square,Murfreesboro,null,null,null,null,null,null,TN,37130,615-405-5647,brian@bsky.email,T2,TRUE
+1219,yost,Yost Construction,260 S Logan,Elyria,null,null,null,null,null,null,OH,44035,440-366-2241,bbyost02@gmail.com,T2,TRUE
+1220,jfrancis,J Francis Builders,"101 Lovett Dr, #6510",Greenville,null,null,null,null,null,null,SC,29607,864-325-6853,joseph@jfrancisbuilders.com,T1,TRUE
+1221,liberty,Liberty Homes,"1107 New Pointe Blvd, Ste 15",Leland,null,null,null,null,null,null,NC,28451,910-597-2777,roger@libertyhomesandbuilding.com,T2,TRUE
+1222,hndhomes,HND Homes,"421 E Iris Dr, Ste 300",Nashville,null,null,null,null,null,null,TN,37204,615-390-6166,c.neuhoff@hndllc.com,T2,TRUE
+1223,hagood,Hagood Homes,"1908 Eastwood Rd, Ste 328",Wilmington,null,null,null,null,null,null,NC,28403,724-941-3226,patrickk@hagoodhomes.com,T1,TRUE
+1224,arhomes2,AR Homes - FL,4646 Tampa Dr,Tampa,null,null,null,null,null,null,FL,33408,800-274-6637,info@rutenberg.com,T2,TRUE
+1225,cchomes,CC Homes,"2020 Salzado St, Ste 200",Coral Gables,null,null,null,null,null,null,FL,33133,305-448-0353,info@cchomes.com,T2,TRUE
+1226,majestic,Majestic Homes,1300 Bent Pine Dr,Ft Myers,null,null,null,null,null,null,FL,33913,239-225-0812,info@majestic.com,T2,TRUE
+1227,nealcomm,Neal Communities,6646 Corporate Dr,Ft Myers,null,null,null,null,null,null,FL,34996,239-553-9000,info@neal.com,T2,TRUE
+1228,seagate,Seagate Properties,5656 Corkscrew Rd,Ft Myers,null,null,null,null,null,null,FL,34142,239-676-8800,info@seagateprop.com,T2,TRUE
+1229,stuart,Stuart Homes,510 Monterey Fr,Stuart,null,null,null,null,null,null,FL,33408,800-345-6600,info@stuarthomes.com,T1,TRUE
+1230,sweetwater,Sweetwater Homes,30051 Pond Ln,Big Pine Key,null,null,null,null,null,null,FL,33043,305-872-9520,cweinhofer@swhfla.com,T1,TRUE
+1231,brighton,Brighton Construction,827 Oxbow Dr,Myrtle Beach,null,null,null,null,null,null,SC,29579,843-995-1589,tbridgeman2@aol.com,T1,TRUE
+1232,krause,Rudy Krause Construction,26351 Old State Rd 4A,Ramrod Key,null,null,null,null,null,null,FL,33042,305-872-2100,rksconst@bellsouth.net,T1,TRUE
+1233,swfldreamhomes,SW Florida Dream Homes,13121 University Dr,Ft Myers,null,null,null,null,null,null,FL,33907,239-218-2332,jack.swfloridadreamhomes@gmail.com,T2,TRUE
+1234,merrill,Merrill Homes,441 Airport Dr North,Summerland Key,null,null,null,null,null,null,FL,33042,305-744-0711,partner@porch.com,T1,TRUE
+1236,beachcomber,Beachcomber Construction,5750 Powerline Rd,Ft Lauderdale,null,null,null,null,null,null,FL,33309,954-764-6550,info@millerconstruction.com,T2,TRUE
+1237,jerrys-cedar,"Jerry's Homes, Inc.",935 33rd Ave SW,Cedar Rapids,null,null,null,null,null,null,IA,52404,319-294-2290,drewr@jerryshomes.com,T2,TRUE
+1189,lexington,Lexington Homes Inc.,1300 N Kimps Ct,Green Bay,null,null,null,null,null,null,WI,54313,920-662-1611,rharrison@lexingtonneighborhoods.com,T2,TRUE
+1238,jdg,JDG Builders,6513 Donnelly Dr,Brownsburg,null,null,null,null,null,null,IN,46112,317-473-2672,jay@jdgbuildersllc.com,T1,TRUE
+1239,dailey,Dailey Homes,"1029 Monarch St, Ste 220",Lexington,null,null,null,null,null,null,KY,40513,859-621-5310,dball2222@aol.com,T1,TRUE
+1240,fairview,Fairview Construction Inc.,"1700 W Big Beaver Rd, Ste 120",Troy,null,null,null,null,null,null,MI,48084,248-602-2220,michael@fairviewco.com,T1,TRUE
+1241,blakeanthony,Blake Anthony Construction,18261 Shelley Pond Ct,Northville,null,null,null,null,null,null,MI,48168,734-664-4024,bveri22@gmail.com,T2,TRUE
+1242,toddbldrs,Todd Builders,425 Richmond Rd N,Berea,null,null,null,null,null,null,KY,40403,606-614-5372,patrickjustone@gmail.com,T2,TRUE
+1243,mmtconstr,MMT Construction,25 Palisades Point Dr,Lancaster,null,null,null,null,null,null,KY,40444,859-519-9377,jmhawley02@gmail.com,T2,TRUE
+1244,bluewillow,Blue Willow Property Group,125 Tanglewood Trail,Richmond,null,null,null,null,null,null,KY,40475-1684,859-621-0287,mccoyhomes@yahoo.com,T2,TRUE
+1187,flagship,Flagship Construction,1560 Burcale Rd. Suite A,Myrtle Beach,null,null,null,null,null,null,SC,29579,834-236-2800,stan@flagshipconstruction.com,T1,TRUE
+1188,roma,Roma Homes,3415 Holt St,Charlotte,null,null,null,null,null,null,NC,28205,704-906-6867,bill@roma-homes.com,T1,TRUE
+1141,boutiqueliving,Boutique Living by Curate,1800 Rossville Ave Suite 106,Chattanooga,null,null,null,null,null,null,TN,37415,(423) 680-6443,rachael@curatechatt.com,T1,TRUE
+1142,bestway,Bestway Construction Group LLC,191 Darwin Rd,Huntsville,null,null,null,null,null,null,AL,35811,(256) 468-2030,bestwayconstructiongroup@gmail.com,T1,TRUE
+1143,carlushall,Carlus Hall Builders LLC,1915 County Rd 106,Moulton,null,null,null,null,null,null,AL,35650,256-565-9858,chbldr1@gmail.com,T1,TRUE
+1144,conardhomes,Conard Custom Homes,2303 Hawthorn Place,Noblesville,null,null,null,null,null,null,IN,46060,317-514-1011,conardhomes@gmail.com,T1,TRUE
+1145,covington,Covington Homes,2049 Max Luther Drive,Huntsville,null,null,null,null,null,null,AL,35810,(256) 851-9988,craig@covingtonhomes.net,T1,TRUE
+1146,cypress,Cypress Homes LLC,4925 Red Brick Run,Sanford,null,null,null,null,null,null,FL,32771,321-299-6589,cypresshomebuilders@gmail.com,T1,TRUE
+1147,davishomes,Davis Homes,3950 Priority Way S. Dr. Suiet 210,Indianapolis,null,null,null,null,null,null,IN,46240,(317) 548-4663,newhome@davishomes.com,T1,TRUE
+1148,dhmorris,DH Morris Development,5519 Indian Hills Rd SE,Decatur,null,null,null,null,null,null,AL,35603,256-303-7029,peyton@morrisdevelopmentllc.com,T1,TRUE
+1149,diyanni,Diyanni Homes,1537 Brice RD,Reynoldsburg,null,null,null,null,null,null,OH,43068,(855) 349-2664,tspade@diyannihomes.com,T2,TRUE
+1152,fourcorners,Four Corners,"405 Calument Trace, Ste 200",Murfreesboro,null,null,null,null,null,null,TN,37127,(615) 308-6205,pj@fourcornerstn.com,T1,TRUE
+1153,hillconstruction,Hill Construction,PO Box 1358,Decatur,null,null,null,null,null,null,AL,35602,256-227-2323,hillconstruction@bellsouth.net,T2,TRUE
+1154,hyde,Hyde Homes,2101 Governors Dr,Huntsville,null,null,null,null,null,null,AL,35805,(256) 639-4663,dylan.bryant@hyde-homes.com,T2,TRUE
+1155,integbuilders,Integrity Builders Inc,10919 Ashton Drive,Fort Wayne,null,null,null,null,null,null,IN,46845,260-415-4402,darrinmertz@gmail.com,T1,TRUE
+1156,johnjames,John James Building Group,15308 Mystic Rock Dr,Carmel,null,null,null,null,null,null,IN,46033,317-431-6433,pjmilesjr@yahoo.com,T2,TRUE
+1157,kennedyhomes,Kennedy Homes,PO Box 2737,West,null,null,null,null,null,null,IN,47997,765-426-2604,ryan@kennedyhomeslafayette.com,T1,TRUE
+1158,mvpconst,MVP Construction,"2800 B Suite 1, Bob Wallace Ave SW",Huntsville,null,null,null,null,null,null,AL,35805,256-656-2092,bradshannon@bellsouth.net,T2,TRUE
+1159,radue,Radue Home Inc,585 S Broadway,Green Bay,null,null,null,null,null,null,WI,54304,920-317-0772,null,T1,TRUE
+1160,skogman,Skogman Homes,417 1st Ave SE,Cedar Rapids,null,null,null,null,null,null,IA,52401,null,null,T2,TRUE
+1161,strucmidwest,Structure Midwest,15304 Mystic Rock Dr.,Carmel,null,null,null,null,null,null,IN,46033,317-669-0096,steve@structuremidwest.com,T2,TRUE
+1162,thomphomesimprov,Thompson Home Improvement LLC,55742 Resort Rd,Three Rivers,null,null,null,null,null,null,MI,49093,269-207-1640,wthhompson@theroofingprofessional.com,T1,TRUE
+1163,trowbridge,Trowbridge Homes,2617 Beacon Hill Dr,Auburn Hills,null,null,null,null,null,null,MI,48326,810-217-6882,anisa@trowbridgeco.com,T1,TRUE
+1164,tumbleweed,Tumbleweed Tiny Homes Co.,1450 Valley Street,Colorado Springs,null,null,null,null,null,null,CO,80915,877-331-8469 x783,steve.weissmann@tumbleweedhouses.com,T2,TRUE
+1165,valor,Valor Communties,160 Whitney St,Fayetteville,null,null,null,null,null,null,GA,30214,334-467-1846,jeannie@valorcommunities.com,T2,TRUE
+1166,victormoses,Victor Moses,31502 Woodward Ave,Royal Oak,null,null,null,null,null,null,MI,48073,734-546-1265,sean@335.rent,T1,TRUE
+1167,walbilt,Wal Bilt Inc,191 Darwin Rd,Huntsville,null,null,null,null,null,null,AL,35811,256-783-7860,wal.bilt@yahoo.com,T1,TRUE
+1168,quest,Quest Custom Homes,11871 Plaza Drive Unit 2,Murrells Inlet,null,null,null,null,null,null,SC,29576,843-267-9080,neilmcg12th.procon@yahoo.com,T1,TRUE
+1169,ocean,Ocean Home Builders,3721 Wesley Street,Myrtle Beach,null,null,null,null,null,null,SC,29579,704-577-4111,steven@oceanhomebuilders.com,T1,TRUE
+1170,eka,EKA Build Corp,2290 Sandy Creek Trail,Hinckley,null,null,null,null,null,null,OH,44233,440-268-9041,info@ekabuild.com,T1,TRUE
+1171,arhomes,AR Homes - TN,"190 D Saundersville, Ste 4001",Hendersonville,null,null,null,null,null,null,TN,37075,703-851-6340,ggrundler@arhomes.com,T1,TRUE
+1172,groza,Groza Homes,511 SW Port St Lucie Blvd,Port St Lucie,null,null,null,null,null,null,FL,34984,772-336-7653,info@groza.com,T1,TRUE
+1173,huner,Hunter Quinn Homes,"852 Low Country Blvd, Unit 100A",Mount Pleasant,null,null,null,null,null,null,SC,29464,843-352-4070,wherring@hunterquinnhomes.com,T2,TRUE
+1174,joepease,Joe Pease Custom Builders,"430 Toney Penna Dr, Ste 3",Jupiter,null,null,null,null,null,null,FL,33458,561-385-0483,jpease@peacobuilders.com,T2,TRUE
+1175,kolter,Kolter Communities,5412 Blue Daze Way,Ft Pierce,null,null,null,null,null,null,FL,34007,772-210-6596,rsmithwick@kolter.com,T1,TRUE
+1176,lahrhomes,M Lahr Homes,2548 S Orange Blossom Trl #800,Orlando,null,null,null,null,null,null,FL,32804,407-702-4315,mike@mlahrhomes.com,T2,TRUE
+1177,sillman,Silliman CitySide,"1402 Edgewater Dr,  Ste 101",Orlando,null,null,null,null,null,null,FL,32804,407-849-5025,info@sillmanhomes.com,T2,TRUE
+1178,unity,Unity Homes,6 Blackjack Crossing,Walpole,null,null,null,null,null,null,FL,33408,800-856-8800,info@unity.com,T1,TRUE
+1179,masterpiece,Masterpiece Homes,666 W Price Blvd,N Port St Lucie,null,null,null,null,null,null,FL,34286,941-429-5355,info@masterpiece.com,T1,TRUE
+1180,apex,Apex Homes,28 E Washington St,Orlando,null,null,null,null,null,null,FL,32801,407-590-3501,info@apex.com,T1,TRUE
+1181,andruss,Andruss Building Co,3301 Heirloom Rose Place,Oviedo,null,null,null,null,null,null,FL,32776,404-415-0747,derek.andruss@gmail.com,T2,TRUE
+1182,celebration,Celebration Homes LLC,7123 Crossroads Blvd,Brentwood,null,null,null,null,null,null,TN,37027,616-476-0792,will@celebrationhomes.com,T2,TRUE
+1183,highland,Highland Homes,407 Moore Ave,Nashville,null,null,null,null,null,null,TN,37203,615-208-2214,robin@highlandhometn.com,T2,TRUE
+1184,drake,Drake Homes LLC,"2700 19th Place South, Ste 200",Homewood,null,null,null,null,null,null,AL,35209,205-337-0036,andrew@drakehomes.net,T2,TRUE
+1185,joon,Joon Properties LLC,7177 Nolensville Rd,Nolensville,null,null,null,null,null,null,TN,37135,615-776-7375,avi@joonproperties.com,T1,TRUE
+1186,rockychilders,Rocky Childers Construction,645 Elkwood Section Rd,Hazel Green,null,null,null,null,null,null,AL,35750,256-829-9446,rockychildersinc@hotmail.com,T1,TRUE

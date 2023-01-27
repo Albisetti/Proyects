@@ -1,0 +1,13 @@
+.text-white-with-blue-bold {
+  p {
+    @apply text-white font-almarose font-normal text-[15.81px] leading-[24px] mt-[20px];
+
+    strong {
+      @apply text-lightBlue font-bold;
+    }
+  }
+
+  p:first-child {
+    @apply mt-0;
+  }
+}

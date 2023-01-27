@@ -1,0 +1,89 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.galleryContainer {
+  @apply flex items-center justify-center overflow-scroll;
+  width: 100vw;
+  background: radial-gradient(at center, #fcedd1 0%, #b8c3cc 15%);
+  background-size: 400% 400%;
+  height: 100vh;
+  -webkit-animation: FloatingBackground 120s ease infinite;
+  -moz-animation: FloatingBackground 120s ease infinite;
+  -o-animation: FloatingBackground 120s ease infinite;
+  animation: FloatingBackground 120s ease infinite;
+
+  animation-direction: alternate-reverse;
+  @media (min-width: $tablet) {
+    overflow: hidden;
+    max-height: 100vh;
+  }
+}
+
+@-webkit-keyframes FloatingBackground {
+  0% {
+    background-position: 30% 30%;
+  }
+  25% {
+    background-position: 70% 70%;
+  }
+  50% {
+    background-position: 70% 30%;
+  }
+  100% {
+    background-position: 30% 70%;
+  }
+}
+@-moz-keyframes FloatingBackground {
+  0% {
+    background-position: 30% 30%;
+  }
+  25% {
+    background-position: 70% 70%;
+  }
+  50% {
+    background-position: 70% 30%;
+  }
+  100% {
+    background-position: 30% 70%;
+  }
+}
+@-o-keyframes FloatingBackground {
+  0% {
+    background-position: 30% 30%;
+  }
+  25% {
+    background-position: 70% 70%;
+  }
+  50% {
+    background-position: 70% 30%;
+  }
+  100% {
+    background-position: 30% 70%;
+  }
+}
+@keyframes FloatingBackground {
+  0% {
+    background-position: 30% 30%;
+  }
+  25% {
+    background-position: 70% 70%;
+  }
+  50% {
+    background-position: 70% 30%;
+  }
+  100% {
+    background-position: 30% 70%;
+  }
+}
+
+.containedGallery {
+  @apply flex flex-col;
+  height: 100vh;
+
+  width: 100%;
+  @media (min-width: $tablet) {
+    width: vwDesktop(1440);
+  }
+}

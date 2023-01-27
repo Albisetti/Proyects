@@ -1,0 +1,103 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.title {
+  @apply font-tenorSans text-navyBlue font-normal;
+
+  font-size: vwMobile(18);
+  line-height: vwMobile(18);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(22);
+    line-height: vwDesktop(29.15);
+  }
+}
+
+.sliderContainer {
+  margin-top: vwDesktop(90);
+}
+
+.swiper {
+  margin-top: vwDesktop(30);
+}
+
+.slide {
+  margin-top: vwMobile(10);
+  @media (min-width: $tablet) {
+    margin-top: unset;
+    padding-right: vwDesktop(10);
+  }
+
+  .itemContainer {
+    @apply border-steel;
+
+    border-bottom-width: vwMobile(1);
+    @media (min-width: $tablet) {
+      border-bottom-width: vwDesktop(1);
+    }
+
+    .itemText {
+      @apply font-monserrat text-midnightBlue;
+
+      font-size: vwMobile(15);
+      line-height: vwMobile(20);
+      padding: vwMobile(9) 0;
+      @media (min-width: $tablet) {
+        font-size: vwDesktop(18);
+        line-height: vwDesktop(20);
+        padding: unset;
+        padding-bottom: vwDesktop(16);
+        padding-top: vwDesktop(12);
+      }
+    }
+  }
+}
+
+.arrowContainer {
+  @apply flex cursor-pointer justify-between;
+
+  width: vwMobile(67);
+  @media (min-width: $tablet) {
+    width: vwDesktop(83);
+  }
+  .arrow {
+    width: vwMobile(24);
+    height: vwMobile(24);
+
+    path {
+      @apply fill-navyBlue;
+      transition: all 500ms ease-in-out;
+    }
+    path:last-child {
+      @apply stroke-navyBlue;
+      transition: all 500ms ease-in-out;
+    }
+    circle {
+      fill: transparent;
+      stroke: #242c60;
+      transition: all 500ms ease-in-out;
+    }
+    @media (min-width: $tablet) {
+      width: vwDesktop(30);
+      height: vwDesktop(30);
+    }
+  }
+
+  .arrow:hover {
+    path {
+      @apply fill-white;
+      transition: all 500ms ease-in-out;
+    }
+    path:last-child {
+      @apply stroke-white;
+      fill: none;
+      transition: all 500ms ease-in-out;
+    }
+    circle {
+      stroke: transparentize($color: #c4ac80, $amount: 0.5);
+      fill: #c4ac80;
+      transition: all 500ms ease-in-out;
+    }
+  }
+}

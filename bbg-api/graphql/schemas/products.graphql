@@ -1,0 +1,118 @@
+enum ProductGroup{
+    A @enum(value: "A")
+    B @enum(value: "B")
+    C @enum(value: "C")
+    D @enum(value: "D")
+}
+
+type Product{
+    id: ID
+    category: ProductCategories @belongsTo
+    bbg_product_code: String
+    name: String
+    require_quantity_reporting: Boolean
+    minimum_unit: Int
+    description: String
+    product_line: String
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+
+    images: [ProductImages] @hasMany(type: connection relation:"productImages")
+
+    programs: [Programs] @belongsToMany(type: connection)
+    programPivot: ProgramProductsPivot @rename(attribute: "pivot")
+
+    rebate_amount_type: rebate_amount_type
+    residential_rebate_amount: Float
+    multi_unit_rebate_amount: Float
+    commercial_rebate_amount: Float
+
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+
+    bundlePivot: BundleProductPivot @rename(attribute: "pivot")
+
+    rebateReports: [rebateReportThreeWayHouseRelation] @threeWayBelongsToMany(type: connection)
+    rebateReportPivot: RebateReportsHousesProducts @model(class:"App\\Models\\RebateReportsProducts") @rename(attribute: "pivot")
+    specificRebateHouseProduct(
+        rebateReport_id:ID!@rules(apply: ["required","exists:rebateReports,id"]),
+        house_id:ID!@rules(apply: ["required","exists:houses,id"]) )
+    : RebateReportsHousesProducts @method
+
+    organizationOverwrites: [Organizations!] @belongsToMany(type: CONNECTION model: "App\\Models\\Organizations")
+    organizationOverwritesPivotById(program_id: ID, organization_id:ID): organizationCustomProductPivot @method
+    customProductsPivot: organizationCustomProductPivot @rename(attribute: "pivot")
+    ConversionByActivityPivot: ConversionByActivityPivot @rename(attribute: "pivot")
+
+    customization_id: ID
+    customization: organizationCustomProductPivot
+
+    cust_bbg_residential_amount: Float
+    cust_builder_residential_amount: Float
+    cust_bbg_multi_unit_amount: Float
+    cust_builder_multi_unit_amount: Float
+    cust_bbg_commercial_amount: Float
+    cust_builder_commercial_amount: Float
+
+    openClaimsSum( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): claimSum @method
+    lastCloseClaim( year:Int, quarter: Int @rules(apply:["min:1","max:4"]), builderId:ID, programId:ID, productId:ID, regionId:ID, territoryManagerId:ID ): Claims @method
+}
+
+type OrganizationCustomProduct {
+    id:ID
+    product_id: Int
+    program_id: Int
+    organization_id: Int
+    overwrite_amount_type: overwrite_amount_type
+    residential_rebate_overwrite: Float
+    multi_unit_rebate_overwrite: Float
+    commercial_rebate_overwrite: Float
+    volume_bbg_rebate: Float
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+
+    claims(orderBy: [OrderByClause!] @orderBy): [Claims] @hasMany(type: connection)
+}
+
+type organizationCustomProductPivot {
+    id:ID
+    program_id: Int
+    organization_id: Int
+    overwrite_amount_type: overwrite_amount_type
+    residential_rebate_overwrite: Float
+    multi_unit_rebate_overwrite: Float
+    commercial_rebate_overwrite: Float
+    volume_bbg_rebate: Float
+    flat_builder_overwrite: Float
+    flat_bbg_overwrite: Float
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+
+    claims(orderBy: [OrderByClause!] @orderBy): [Claims] @hasMany(type: connection)
+}
+
+type ProductImages {
+    id: ID
+    path: String
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type ProductCategories {
+    id: ID
+    name: String
+}
+
+
+type ProductAndClaims {
+    model: Product
+    claim_template: [Programs]
+    customProduct_claim_template: [Organizations]
+}

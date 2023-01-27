@@ -1,0 +1,30 @@
+@use 'sass:math';
+
+$smallMobile: 340px;
+$mobile: 640px;
+$tablet: 768px;
+$desktop: 1024px;
+
+@function vw($vw) {
+  @return calc(var(--vw, 1vw) * $vw);
+}
+
+@function vh($vh) {
+  @return calc(var(--vh, 1vh) * $vh);
+}
+
+@function vwMobile($pixels) {
+  @return #{vw(math.div($pixels, 340) * 100)};
+}
+
+@function vwMobileSecondary($pixels) {
+  @return #{vw(math.div($pixels, 375) * 100)};
+}
+
+@function vwDesktop($pixels) {
+  @return #{vw(math.div($pixels, 1440) * 100)};
+}
+
+@function vwDesktop1080p($pixels) {
+  @return #{vw(math.div($pixels, 1920) * 100)};
+}

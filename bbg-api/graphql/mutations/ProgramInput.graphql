@@ -1,0 +1,135 @@
+input ProgramInput
+{
+    type: ProgramType
+    name: String
+    start_date: Date
+    end_date: Date
+
+    company: programCompaniesBelongsTo
+
+    available_specific_member_only: Boolean
+    all_builder_report_quantity: Boolean
+    bbg_rebate_unit: ProgramUnit
+
+    lot_and_address_requirement: ProgramAddressRequirement
+
+    require_certificate_occupancy: Boolean
+    require_brand: Boolean
+    require_serial_number: Boolean
+    require_model_number: Boolean
+    require_date_of_installation: Boolean
+    require_date_of_purchase: Boolean
+    require_distributor: Boolean
+
+    internal_description: String
+    builder_description: String
+    builder_description_short: String
+    learn_more_url: String
+
+    organizations: OrganizationInputBelongsToManySync
+    participants: ParticipantsProgramsRelation
+    valid_region_type: ValidRegion
+    regions: StateSync
+    products: ProductProgramSync
+
+    product_minimum_unit_requirement: productMinimumUnitRequirement
+    global_product_minimum_unit: Int
+    global_bbg_rebate_type:GlobalRebateType
+    global_product_rebate_amount_type: rebate_amount_type
+    global_product_residential_rebate_amount: Float
+    global_product_multi_unit_rebate_amount: Float
+    global_product_commercial_rebate_amount: Float
+    volume_bbg_rebate: Float
+
+    is_flat_rebate: Boolean
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+}
+
+input CreateProgramInput
+{
+    type: ProgramType!
+    name: String!
+    start_date: Date!
+    end_date: Date!
+
+    company: programCompaniesCreateBelongsTo
+
+    available_specific_member_only: Boolean
+    all_builder_report_quantity: Boolean
+    bbg_rebate_unit: ProgramUnit
+
+    lot_and_address_requirement: ProgramAddressRequirement
+
+    require_certificate_occupancy: Boolean
+    require_brand: Boolean
+    require_serial_number: Boolean
+    require_model_number: Boolean
+    require_date_of_installation: Boolean
+    require_date_of_purchase: Boolean
+    require_distributor: Boolean
+
+    internal_description: String
+    builder_description: String
+    builder_description_short: String
+    learn_more_url: String
+
+    organizations: OrganizationInputBelongsToManySync
+    participants: ParticipantsProgramsRelation
+    valid_region_type: ValidRegion
+    regions: StateSync
+    products: ProductProgramSync
+
+    product_minimum_unit_requirement: productMinimumUnitRequirement
+    global_product_minimum_unit: Int
+    global_bbg_rebate_type:GlobalRebateType
+    global_product_rebate_amount_type: rebate_amount_type
+    global_product_residential_rebate_amount: Float
+    global_product_multi_unit_rebate_amount: Float
+    global_product_commercial_rebate_amount: Float
+    volume_bbg_rebate: Float
+
+    is_flat_rebate: Boolean
+    flat_builder_rebate: Float
+    flat_bbg_rebate: Float
+}
+
+input ProductProgramSync {
+    """connect:[ProductProgramSyncInput!]"""
+    sync:[ProductProgramSyncInput]
+    syncWithoutDetaching:[ProductProgramSyncInput]
+    disconnect: [ID]
+}
+
+input ProductProgramSyncInput {
+    id: ID
+
+    volume_bbg_rebate: Float
+    multi_reporting: Boolean """TODO: check other with same product ID, set to match"""
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+input UpdatePrograminput
+{
+    id: ID!
+    input: ProgramInput!
+}
+
+input ProgramBelongsToCreate {
+    connect:ID @rules(apply: ["exists:programs,id"])
+}
+
+input programCompaniesCreateBelongsTo {
+    connect: ID
+}
+
+input programCompaniesBelongsTo {
+    connect: ID
+    disconnect: ID
+}
+
+input UpdateProgramCompaniesInput{
+    id: ID
+    name: String @rules(apply: ["sometimes"])
+}

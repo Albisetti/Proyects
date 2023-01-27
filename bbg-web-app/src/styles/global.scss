@@ -1,0 +1,48 @@
+body {
+    @apply font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+};
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.backgroundPage {
+
+    position: relative;
+}
+
+.backgroundPage::before {
+  content: "";
+  height: 60%;
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background:url("../components/Images/iStock-Blueprint-min-min-1.png"), #188DC2
+}
+
+.backgroundPage::after {
+  content: "";
+  transform: rotate(-5deg);
+  height: 70%;
+  background-size: cover;
+  width: 120vw;
+  position: absolute;
+  left: -10vw;
+  top: 40%;
+  background:url("../components/Images/bg-strcture.png"), #342e2e;
+}
+
+input::placeholder {
+  @apply text-placeHolder;
+}

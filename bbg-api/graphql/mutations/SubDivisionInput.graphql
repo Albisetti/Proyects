@@ -1,0 +1,57 @@
+input CreateSubDivisionInput{
+    name: String!
+    """property: PropertyRelation"""
+    property_id: Int @rules(apply: ["exists:properties,id"])
+    """TODO: fix create nested mutator"""
+    houses: HousesRelation
+    organization: subdivisionOrganizationBelongsToRelation
+}
+
+input SubDivisionInput{
+    name: String
+    """property: PropertyRelation"""
+    property_id: Int @rules(apply: ["exists:properties,id"])
+    """TODO: fix create nested mutator"""
+    houses: HousesRelation
+}
+
+input UpdateSubDivisionInput{
+    id: ID
+    input: SubDivisionInput
+}
+
+input SubDivisionRelation{
+    update: [UpdateSubDivisionInput]
+    create: [SubDivisionInput]
+    connect: [ID]
+    sync: [ID]
+    disconnect: [ID]
+    delete: [ID]
+}
+
+input CreateSubDivisionRelation{
+    create: [SubDivisionInput]
+}
+
+input SubDivisionInputBelongsToMany {
+    create: CreateSubDivisionInput
+    connect: ID
+}
+
+input SubDivisionInputBelongsTo{
+    upsert: [UpdateSubDivisionInput]
+    create: [CreateSubDivisionInput]
+    connect: [ID]
+    sync: [ID]
+}
+
+input subdivisionOrganizationBelongsToRelation {
+    connect: ID
+}
+
+input subdivisionOrganizationHasManyRelation {
+    connect: [ID]
+    sync: [ID]
+    syncWithoutDetaching: [ID]
+    disconnect: [ID]
+}

@@ -1,0 +1,65 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.header {
+  @apply block;
+
+  @media (min-width: $desktop) {
+    @apply border-fontGray flex items-center justify-between;
+    border-bottom-width: vwDesktop(2);
+    height: vwDesktop(74);
+    padding: 0 vwDesktop(40);
+  }
+}
+
+.headerWrapper {
+  @apply relative z-10 bg-white;
+  padding: vwMobile(10) vwMobile(70);
+
+  @media (min-width: $desktop) {
+    @apply flex flex-row w-full justify-between
+    items-center;
+    padding-top: vwDesktop(6);
+    padding-bottom: vwDesktop(6);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.menuToggle {
+  @apply absolute top-0 right-0 h-auto text-fontGray hover:text-pageText cursor-pointer;
+  width: vwMobile(24);
+  margin-top: vwMobile(20);
+  margin-right: vwMobile(15);
+
+  * {
+    fill: currentColor;
+  }
+}
+
+.headerLogoContainer {
+  @media (min-width: $desktop) {
+    @apply w-1/5;
+  }
+}
+
+.logo {
+  @media (min-width: $desktop) {
+    width: vwDesktop(223);
+    height: vwDesktop(38);
+  }
+}
+
+.headerSearchIcon {
+  @media (min-width: $desktop) {
+    @apply h-full w-1/5 justify-end opacity-70 hover:opacity-100 cursor-pointer self-end;
+
+    svg {
+      @apply ml-auto;
+      padding-bottom: vwDesktop(5);
+      width: vwDesktop(15);
+    }
+  }
+}

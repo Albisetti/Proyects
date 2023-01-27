@@ -1,0 +1,125 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.sectionContainer {
+  position: relative;
+  padding-top: vwDesktop(67);
+  padding-bottom: vwMobileSecondary(30);
+
+  @media (min-width: $desktop) {
+    padding-bottom: vwDesktop(117);
+  }
+
+  .subSection {
+    padding-left: vwDesktop(158);
+    display: none;
+
+    @media (min-width: $desktop) {
+      display: block;
+    }
+  }
+
+  .subSectionMobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      display: none;
+    }
+
+    a {
+      margin: 0;
+      margin-bottom: vwMobileSecondary(24);
+      background-color: transparent;
+      width: fit-content;
+
+      span {
+        font-size: vwMobileSecondary(20);
+        line-height: vwMobileSecondary(21);
+        color: $fontGray;
+      }
+    }
+  }
+}
+
+.mainTitle {
+  margin-bottom: vwMobileSecondary(35);
+  font-size: vwMobileSecondary(50);
+  line-height: vwMobileSecondary(50);
+  @media (min-width: $desktop) {
+    margin-bottom: vwDesktop(55);
+    font-size: vwDesktop(120);
+    line-height: vwDesktop(120);
+  }
+}
+
+.linksContainer {
+  display: flex;
+  margin-bottom: vwDesktop(48);
+
+  .linkBlock {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: vwDesktop(2) solid $blue;
+    border-right: none;
+    width: vwDesktop(224);
+    height: vwDesktop(48);
+    transition: all 0.3s;
+
+    &.active {
+      background-color: $blue;
+
+      p {
+        color: white;
+        @apply font-bodyBold;
+      }
+    }
+  }
+  .linkBlock:last-child {
+    border-right: vwDesktop(2) solid $blue;
+  }
+}
+
+.linkContentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+
+  .description {
+    width: vwDesktop(288);
+    text-align: left;
+    margin-bottom: vwDesktop(27);
+    min-height: vwDesktop(73);
+  }
+
+  a {
+    margin: 0;
+    background-color: transparent;
+    width: fit-content;
+
+    span {
+      font-size: vwDesktop(17);
+      line-height: vwDesktop(21);
+      color: $fontGray;
+    }
+  }
+}
+
+.rightBGImage {
+  position: absolute;
+  width: vwDesktop(220);
+  height: vwDesktop(321);
+  top: vwDesktop(130);
+  right: 0;
+
+  display: none;
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}

@@ -1,0 +1,62 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+
+.wrapper{
+    margin-top: vwDesktop(80)
+}
+
+.title{
+    font-size: vwMobile(55);
+    @media (min-width: $desktop) {
+        font-size: vwDesktop(120);
+    }
+}
+
+.text{
+    @apply grid justify-items-center;
+    font-weight: normal;
+    font-size: vwMobile(8);
+    width: vwMobile(130);
+    margin-left: vwMobile(105);
+    margin-top: vwMobile(15);
+    margin-bottom: vwMobile(-10);
+    @media (min-width: $desktop) {
+        font-size: auto;
+        width: auto;
+        margin-left: auto;
+        margin-bottom: auto;
+        margin-top: vwDesktop(70);
+    }
+}
+
+.ctaWrapper{
+    position: relative;
+    margin-left: vwMobile(-30);
+    @apply grid justify-items-center;
+    @media (min-width: $desktop) {
+        @apply grid grid-cols-2 justify-items-center;
+        margin-left: vwDesktop(463);
+        width: vwDesktop(516);
+      }
+    div:first-child{
+        margin-bottom: vwMobile(-10);
+        @media (min-width: $desktop) {
+            margin-bottom: vwDesktop(0);
+        }
+    }
+}
+
+.cta *{
+    @apply grid justify-items-center;
+    width: vwMobile(270);
+    padding-top: vwMobile(3);
+    padding-bottom: vwMobile(3);
+    font-size: vwMobile(10);
+    @media (min-width: $desktop) {
+        width: vwDesktop(250);
+        font-size: vwDesktop(24);
+    }
+}

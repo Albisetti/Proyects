@@ -1,0 +1,57 @@
+.form-control {
+  @apply w-full;
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"] {
+    @apply appearance-none text-[16px] leading-[24px] text-black placeholder-gray-600;
+    @apply border-[1px] border-transparent border-b-black focus:border-[1px] focus:border-black rounded-none focus:ring-0;
+    @apply bg-transparent focus:bg-gray-200;
+    @apply p-[12px] w-full max-w-full;
+  }
+
+  select,
+  textarea {
+    @apply appearance-none text-[16px] leading-[24px] text-black placeholder-gray-600;
+    @apply border-[1px] border-black focus:ring-0 rounded-none p-[12px];
+    @apply bg-transparent focus:bg-gray-200;
+    @apply p-[12px] w-full max-w-full;
+  }
+
+  input[type="submit"] {
+    @apply font-bold text-[14px] leading-[20px] uppercase text-center cursor-pointer;
+    @apply inline-block border rounded-none py-[15px] px-[12px] w-[300px] max-w-full;
+    @apply text-black border-black bg-transparent hover:text-white hover:bg-blue-600;
+    transition: all 0.5s ease;
+    outline: none;
+  }
+
+  span {
+    @apply hidden;
+  }
+
+  &.invalid {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"] {
+      @apply border-b-red-600 text-red-600 placeholder-red-600 focus:border-red-600;
+    }
+
+    select,
+    textarea {
+      @apply border-red-600 text-red-600 placeholder-red-600 focus:border-red-600;
+    }
+
+    span {
+      @apply block text-[13px] leading-[25px] text-red-600 mt-[11px];
+    }
+  }
+}

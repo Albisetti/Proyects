@@ -1,0 +1,15 @@
+type SystemMessage {
+    id:ID
+    message:String
+    message_action:String
+    user: User @belongsTo
+    created_at:DateTime
+    updated_at:DateTime
+    deleted_at:DateTime
+    sent_at:DateTime
+    read_at:DateTime
+
+    related_entity: SystemMessage_related_entity
+}
+
+union SystemMessage_related_entity = Programs | Bundles | SubDivision | Disputes | Organizations | ConversionFlatPayment | ConversionFlatPercent | ConversionTieredPercent | ConversionByActivity

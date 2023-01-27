@@ -1,0 +1,100 @@
+name: Deploy dev API
+
+on:
+  push:
+    branches: [ dev ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy dev API
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout dev branch
+      uses: actions/checkout@v2
+      with:
+        ref: dev
+    - name: Environment variables
+      run: |
+        echo "APP_NAME=\"${{ secrets.APP_NAME }}\"" >> .env
+        echo "APP_ENV=${{ secrets.DEV_APP_ENV }}" >> .env
+        echo "APP_KEY=base64:c5L7KcbEqeht21TN4zUiQawCxQPOtfQ4RqgE/eZmk1o=" >> .env
+        echo "APP_DEBUG=${{ secrets.DEV_APP_DEBUG }}" >> .env
+        echo "APP_URL=${{ secrets.DEV_APP_URL }}" >> .env
+        echo "CLOCKWORK_ENABLE=false" >> .env
+        echo "WEB_URL=${{ secrets.DEV_WEB_URL }}" >> .env
+        echo "APP_TIMEZONE=UTC" >> .env
+        echo "LOG_CHANNEL=stack" >> .env
+        echo "DB_CONNECTION=mysql" >> .env
+        echo "DB_HOST=${{ secrets.DEV_DB_HOST }}" >> .env
+        echo "DB_PORT=3306" >> .env
+        echo "LIGHTHOUSE_CACHE_ENABLE=false" >> .env
+        echo "DB_DATABASE=${{ secrets.DEV_DB_DATABASE }}" >> .env
+        echo "DB_USERNAME=${{ secrets.DEV_DB_USERNAME }}" >> .env
+        echo "DB_PASSWORD=\"${{ secrets.DEV_DB_PASSWORD }}\"" >> .env
+        echo "SCOUT_DRIVER=meilisearch" >> .env
+        echo "MEILISEARCH_HOST=\"http://localhost:7700\"" >> .env
+        echo "SCOUT_QUEUE=true" >> .env
+        echo "MAIL_MAILER=smtp" >> .env
+        echo "MAIL_HOST=smtp.sendgrid.net" >> .env
+        echo "MAIL_PORT=587" >> .env
+        echo "MAIL_USERNAME=apikey" >> .env
+        echo "MAIL_PASSWORD=${{ secrets.SENDGRID_API_KEY }}" >> .env
+        echo "SENTRY_LARAVEL_DSN=${{ secrets.DEV_SENTRY_DSN }}" >> .env
+        echo "WORDPRESS_GRAPHQL_ENDPOINT=${{ secrets.DEV_WORDPRESS_GRAPHQL_ENDPOINT }}" >> .env
+        echo "WORDPRESS_USERNAME=${{ secrets.DEV_WORDPRESS_GRAPHQL_USERNAME }}" >> .env
+        echo "WORDPRESS_PASSWORD=\"${{ secrets.DEV_WORDPRESS_GRAPHQL_PASSWORD }}\"" >> .env
+        echo "HORIZON_BASIC_AUTH_USERNAME=${{ secrets.DEV_HORIZON_AUTH_USERNAME }}" >> .env
+        echo "ANALYTICS_VIEW=\"${{ secrets.GOOGLE_ANALYTICS_VIEW }}\"" >> .env
+        echo "HORIZON_BASIC_AUTH_PASSWORD=${{ secrets.DEV_HORIZON_AUTH_PASSWORD }}" >> .env
+        echo "ADMIN_EMAIL_FROM=${{ secrets.DEV_EMAIL_FROM }}" >> .env
+    - name: Setup
+      run: |
+        composer install -n --prefer-dist
+    - name: Migration
+      run: |
+        php artisan migrate
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.DEV_SSH_KEY }}
+        known_hosts: ${{ secrets.DEV_SSH_FINGERPRINT }}
+        if_key_exists: fail
+    - name: Deployment
+      run: |
+        zip -r dist.zip .
+        rsync dist.zip ubuntu@${{ secrets.DEV_EC2_URL }}:${{ secrets.DEV_REMOTE_PATH }}/dist.zip
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "unzip -o ${{ secrets.DEV_REMOTE_PATH }}/dist.zip -d ${{ secrets.DEV_REMOTE_PATH }}"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "rm ${{ secrets.DEV_REMOTE_PATH }}/dist.zip"
+    - name: Set storage permissions
+      run: |
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "sudo chgrp -R www-data ${{ secrets.DEV_REMOTE_PATH }}/storage && sudo chmod -R g+w ${{ secrets.DEV_REMOTE_PATH }}/storage"
+    - name: Flush, Import and Curl
+      run: |
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\Houses' && php artisan scout:import 'App\Models\Houses'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\Bundles' && php artisan scout:import 'App\Models\Bundles'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\Claims' && php artisan scout:import 'App\Models\Claims'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\Organizations' && php artisan scout:import 'App\Models\Organizations'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\ProductCategories' && php artisan scout:import 'App\Models\ProductCategories'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\Products' && php artisan scout:import 'App\Models\Products'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\SubContractors' && php artisan scout:import 'App\Models\SubContractors'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\SubDivision' && php artisan scout:import 'App\Models\SubContractors'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "cd /srv/bbg && php artisan scout:flush 'App\Models\User' && php artisan scout:import 'App\Models\User'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/organizations/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"hasActionRequireRebate\",\"hasReadiedRebate\",\"hasCompletedRebate\",\"organization_type\",\"participatingPrograms\",\"CanadaApproved\",\"USApproved\", \"approvedStates\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/programs/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"id\",\"valid_region_type\",\"iso_codes\",\"claimable\",\"available_specific_member_only\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/sub_divisions/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organization_id\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/sub_contractors/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organizations\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/bundles/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organization_id\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/users/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"type\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/houses/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"organization_id\",\"subdivision_organization_id\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/products/settings/filterable-attributes' --header 'Content-Type: application/json' --data-raw '[\"id\",\"programIds\",\"customization_id\"]'"
+        ssh ubuntu@${{ secrets.DEV_EC2_URL }} "curl --location --request POST 'http://localhost:7700/indexes/programs/settings/sortable-attributes' --header 'Content-Type: application/json' --data-raw '[\"name\"]'"
+    - name: Slack
+      uses: 8398a7/action-slack@v3
+      with:
+        job_name: Deploy dev API
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      if: always()

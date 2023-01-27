@@ -1,0 +1,113 @@
+.btn {
+  @apply appearance-none text-center font-medium uppercase;
+  @apply inline-block max-w-full cursor-pointer rounded-none border-2 p-[.625rem] transition-colors duration-300 md:p-[.825rem] lg:p-4;
+  @apply text-[.625rem] leading-[.8163rem] tracking-[0.08em] md:text-[.825rem] md:leading-[1rem] lg:text-[1rem] lg:leading-[1.3062rem];
+
+  /* Variants */
+  &--menu {
+    @apply border-black bg-black text-white hover:border-black hover:bg-black;
+  }
+
+  /* Sizes */
+  &--sm {
+    @apply p-[.625rem] text-[.625rem] leading-[.8163rem];
+  }
+
+  /* Colors */
+  &--black {
+    @apply border-black bg-black text-white hover:border-white hover:bg-white hover:text-black;
+  }
+  &--black-outline {
+    @apply border-black bg-transparent text-black hover:bg-black hover:text-white;
+  }
+
+  &--white {
+    @apply border-white bg-white text-black hover:border-black hover:bg-black hover:text-white;
+  }
+  &--white-outline {
+    @apply border-white bg-transparent text-white hover:bg-white hover:text-black;
+  }
+
+  /* States */
+  &:disabled {
+    @apply cursor-not-allowed border-black/25 bg-black/25 text-white;
+  }
+}
+.btn-angle {
+  background: linear-gradient(135deg, #0971ce 50%, #ffffff00 50%);
+  background-size: contain;
+}
+.btn-angle-white {
+  background: linear-gradient(135deg, #ffffff 50%, #ffffff00 50%);
+  background-size: contain;
+}
+
+.btn-text {
+  @apply appearance-none text-center text-[1.5rem] font-medium uppercase leading-[1.9587rem] tracking-[0.08em];
+  @apply inline-block max-w-full cursor-pointer rounded-none p-[1.125rem] transition-colors duration-300;
+
+  /* Variants */
+  &--menu {
+    @apply !px-0 !font-normal text-black hover:text-black;
+  }
+
+  /* Sizes */
+  &--sm {
+    @apply p-[.75rem] text-[1rem] leading-[1.3062rem];
+  }
+
+  /* Colors */
+  &--black {
+    @apply text-black  hover:text-black;
+  }
+  &--white {
+    @apply text-white hover:text-black;
+  }
+  &--gray {
+    @apply text-black/50  hover:text-black;
+  }
+}
+
+.btn-colored {
+  @apply flex max-w-full items-center justify-center overflow-hidden whitespace-nowrap bg-cover bg-no-repeat pl-3 pr-9 font-bold;
+}
+
+.btn-blue {
+  @apply mr-[-20px] h-[27px] min-w-[146px] bg-smallBlueButton  text-[12px] text-white group-hover:bg-smallWhiteButton  group-hover:text-blue  lg:mr-[-27px] lg:h-[39px]  lg:min-w-[212px] lg:bg-blueButton lg:text-[18px] lg:group-hover:bg-whiteButton;
+}
+
+.btn-white {
+  @apply mr-[-20px] h-[27px] min-w-[146px]  bg-smallWhiteButton text-[12px] text-blue group-hover:bg-smallBlueButton group-hover:text-white lg:mr-[-27px] lg:h-[39px] lg:min-w-[212px] lg:bg-whiteButton lg:text-[18px] lg:group-hover:bg-blueButton;
+}
+
+.btn-blue-small {
+  @apply mr-[-20px] h-[27px] min-w-[146px] bg-smallBlueButton text-[12px] text-white;
+}
+
+.btn-white-small {
+  @apply mr-[-20px] h-[27px] min-w-[146px] bg-smallWhiteButton text-[12px] text-blue;
+}
+
+.blue-lines {
+  @apply h-[27.21px] w-[41.77px] bg-smallBlueLines group-hover:bg-smallWhiteLines lg:h-[37.87px] lg:w-[58.13px] lg:bg-blueLines lg:group-hover:bg-whiteLines;
+}
+
+.white-lines {
+  @apply h-[27.21px] w-[41.77px] bg-smallWhiteLines group-hover:bg-smallBlueLines  lg:h-[37.87px] lg:w-[58.13px] lg:bg-whiteLines lg:group-hover:bg-blueLines;
+}
+
+.btn-icon {
+  @apply flex h-[53px] w-[57px] max-w-full appearance-none items-center justify-center;
+  @apply cursor-pointer rounded-none border-2 transition-colors duration-300;
+
+  /* Colors */
+  &--black {
+    @apply border-black bg-black text-white hover:border-white hover:bg-white hover:text-black;
+  }
+  &--black-outline {
+    @apply border-black bg-transparent text-black hover:bg-black hover:text-white;
+  }
+  &--white {
+    @apply border-white bg-white text-black hover:border-black hover:bg-black hover:text-white;
+  }
+}

@@ -1,0 +1,70 @@
+enum HouseStatus {
+    active
+    archived
+    deleted
+    draft
+}
+
+enum PropertyType {
+    RESIDENTIAL @enum(value:"residential")
+    MULTIUNIT @enum(value:"multi-unit")
+    COMMERCIAL @enum(value:"commercial")
+}
+
+type House{
+    id: ID
+    property_type: PropertyType
+    project_number: String @rules(apply: ["max: 30"])
+    model: String @rules(apply: ["max: 40"])
+    square_footage: Float
+    expected_completion_date: Date
+    status: HouseStatus
+    organization: Organizations @hasOne
+    products: [Product!] @belongsToMany(type: CONNECTION)
+        @orderBy(column: "prog_name", direction: ASC)
+        @orderBy(column: "cat_name", direction: ASC)
+        @orderBy(column: "bbg_product_code", direction: ASC)
+    address: String
+    address2: String
+    zip_postal: String
+    lot_number: String
+    city: String
+    state: State @hasOne
+    invoices: [Invoice!] @hasMany(type: CONNECTION)
+    purchase_order_id: Int
+    confirmed_occupancy: Date
+    files: HouseFiles @hasMany(type: connection relation:"houseFiles")
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+
+    subdivision: SubDivision @belongsTo
+
+    """Pivot table for claim"""
+    claimPivot: ClaimPivot @rename(attribute: "pivot")
+
+    rebateReports: [rebateReportThreeWayRebateRelation!] @threeWayBelongsToMany(type: connection)
+    """Pivot Fields for RebateReports and Houses relationship, only usable from rebateReports{houses(){}}"""
+    RebateReportsHousesPivot: RebateReportsHousesProducts @model(class:"App\\Models\\RebateReportsHousesProducts") @rename(attribute: "pivot")
+}
+
+type HouseFiles {
+    id: ID
+    path: String
+    created_by: Int
+    updated_by: Int
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+type HousesPerSubdivision {
+    id: ID
+    name: String
+    houses: [rebateHousePair]
+}
+
+type rebateHousePair {
+    house: House
+    rebate: RebateReportsHousesProducts
+}

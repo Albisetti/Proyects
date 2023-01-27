@@ -1,0 +1,182 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.awardsWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: $orange;
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 vwDesktop(40);
+  }
+
+  .awards {
+    @apply w-full flex flex-col relative;
+    min-width: 55%;
+    padding: vwMobile(115) 0 vwMobile(50) 0;
+    @media (min-width: $desktop) {
+    padding: vwDesktop(20) 0 vwDesktop(50) 0;
+    }
+
+    .awardsArrow {
+      @apply hidden;
+      @media (min-width: $desktop) {
+        @apply block;
+        width: vwDesktop(173);
+        right: vwDesktop(160);
+        top: vwDesktop(105);
+        @apply absolute;
+      }
+    }
+
+    .title1 {
+      font-size: vwMobile(50);
+      line-height: vwMobile(50);
+      margin-left: vwMobile(50);
+      @apply rotate-[-3deg] text-left text-white;
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(132);
+        line-height: vwDesktop(132);
+        margin-left: vwDesktop(90);
+      }
+    }
+    .title2 {
+      @apply rotate-[-3deg] text-right text-white;
+      font-size: vwMobile(50);
+      line-height: vwMobile(50);
+      margin-right: vwMobile(50);
+      margin-bottom: vwMobile(20);
+      @media (min-width: $desktop) {
+        font-size: vwDesktop(132);
+        line-height: vwDesktop(80);
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-left: vwDesktop(180);
+        @apply rotate-[-3deg] text-left text-white;
+      }
+    }
+
+    .awardsGrid {
+      @apply grid grid-cols-2 text-center;
+      gap: vwMobile(15) 0;
+      margin-top: vwMobile(50);
+      margin: 0 vwMobile(50);
+      @media (min-width: $desktop) {
+        @apply grid grid-cols-4 text-center;
+        gap: 0;
+        margin: vwDesktop(90) 0 0 0;
+        border-color: $white;
+        border-style: dotted;
+        border-width: 0 vwDesktop(2);
+      }
+
+      .listItem {
+        @apply text-center font-bodyBold text-white;
+        font-size: vwMobile(12);
+        line-height: vwMobile(16);
+        border-color: $white;
+        border-style: dotted;
+        border-width: 0 vwMobile(2);
+        &:nth-child(even) {
+          border-width: 0 vwMobile(2) 0 0;
+        }
+        @media (min-width: $desktop) {
+          font-size: vwDesktop(20);
+          line-height: vwDesktop(26);
+          border-color: $white;
+          border-style: dotted;
+          border-width: 0 vwDesktop(2) 0 0;
+
+          &:nth-child(even) {
+            border-width: 0 vwDesktop(2) 0 0;
+          }
+          &:last-child {
+            border-width: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .images {
+    @apply w-full relative;
+    .leftImageWrapper {
+      max-width: vwMobile(160);
+      margin-left: vwMobile(30);
+      margin-top: vwMobile(90);
+      @apply rotate-[-25.634deg] relative;
+      @media (min-width: $desktop) {
+        max-width: vwDesktop(260);
+        left: vwDesktop(30);
+        margin: 0;
+        top: vwDesktop(20);
+        @apply rotate-[-25.634deg] absolute;
+      }
+
+      .leftImage {
+        margin-top: vwMobile(5);
+        @media (min-width: $desktop) {
+        margin-top: vwDesktop(25);
+        }
+        .leftActualImage {
+          padding: 0 vwMobile(5);
+          @media (min-width: $desktop) {
+          padding: 0 vwDesktop(15);
+          }
+        }
+
+        .leftImageCaption {
+          font-size: vwMobile(18.57);
+          line-height: vwMobile(18.57);
+          margin-bottom: vwMobile(-2);
+          margin-top: vwMobile(7);
+          @media (min-width: $desktop) {
+          font-size: vwDesktop(38.57);
+          line-height: vwDesktop(38.57);
+          margin-bottom: vwDesktop(40);
+          margin-top: vwDesktop(10);
+          }
+        }
+      }
+    }
+    .medalImage {
+      max-width: vwMobile(120);
+      @apply absolute rotate-[-44.47deg];
+      top: vwMobile(60);
+      right: vwMobile(30);
+      @media (min-width: $desktop) {
+      max-width: vwDesktop(210);
+      @apply absolute rotate-[-44.47deg];
+      top: vwDesktop(-40);
+      right: vwDesktop(90);
+      }
+    }
+    .productImage {
+      max-width: vwMobile(180);
+      @apply absolute z-2;
+      top: vwMobile(35);
+      left: vwMobile(75);
+      @media (min-width: $desktop) {
+      max-width: vwDesktop(310);
+      @apply absolute z-2;
+      top: vwDesktop(-60);
+      left: vwDesktop(100);
+      }
+    }
+    .annotationImage {
+        max-width: vwMobile(60);
+        @apply absolute z-2 rotate-[15deg];
+        top: vwMobile(63);
+        left: vwMobile(15);
+      @media (min-width: $desktop) {
+        max-width: vwDesktop(95);
+        @apply absolute z-2;
+        top: vwDesktop(15);
+        left: vwDesktop(-22);
+      }
+    }
+  }
+}

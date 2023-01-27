@@ -1,0 +1,81 @@
+@import '../../styles/styles/spacing.scss';
+@import '../../styles/styles/breakpoints.scss';
+@import '../../styles/styles/typography.scss';
+@import '../../styles/styles/colors.scss';
+
+.navigation {
+  @apply fixed top-0 left-0 z-[999] w-full h-screen overflow-auto bg-orange;
+  @apply transition-all duration-300 translate-x-[100%];
+
+  &.navigationOpen {
+    @apply translate-x-0;
+  }
+}
+
+.closeContainer {
+  @apply border-b-2 border-white;
+  padding: vwMobile(20) vwMobile(15);
+}
+
+.close {
+  @apply h-auto text-white cursor-pointer;
+  width: vwMobile(18);
+
+  * {
+    fill: currentColor;
+  }
+}
+
+.mainMenu {
+  @apply p-0 list-none;
+
+  li {
+    @apply text-center relative;
+
+    a {
+      @apply inline-block text-white;
+      padding: vwMobile(20) 0;
+      font-size: vwMobile(16);
+      line-height: vwMobile(16);
+    }
+
+    ul {
+      @apply bg-white p-0 list-none;
+      @apply transition-all duration-300 overflow-hidden;
+      padding: 0;
+      height: 0;
+
+      li {
+        @apply bg-white text-orange text-center;
+
+        a {
+          @apply text-orange;
+          padding: vwMobile(8) 0;
+        }
+      }
+
+      &.dropdownOpen {
+        @apply overflow-visible;
+        padding: vwMobile(15) 0;
+        height: auto;
+      }
+    }
+
+    .dropdownIcon {
+      @apply absolute top-0 right-0 h-auto text-white;
+      @apply transition-all duration-300;
+      width: vwMobile(25);
+      margin-top: vwMobile(15);
+      margin-bottom: vwMobile(15);
+      margin-right: vwMobile(15);
+
+      * {
+        fill: currentColor;
+      }
+
+      &.dropdownIconOpen {
+        @apply rotate-90;
+      }
+    }
+  }
+}

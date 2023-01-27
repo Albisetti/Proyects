@@ -1,0 +1,36 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.leftImageWrapper {
+  @apply flex flex-col  absolute bg-extraLightGray origin-bottom;
+  box-shadow: vwMobile(-8) vwMobile(8) vwMobile(8) vwMobile(-4)
+    rgba(85, 87, 90, 0.3);
+
+  @media (min-width: $desktop) {
+    @apply absolute;
+    box-shadow: vwDesktop(-8) vwDesktop(8) vwDesktop(8) vwDesktop(-4)
+    rgba(85, 87, 90, 0.3);
+
+  }
+  
+  .leftImage {
+    @apply flex flex-col justify-center items-center;
+    .leftActualImage {
+      @apply bg-cover bg-no-repeat;
+    }
+
+    .leftImageCaption {
+      @apply text-center  font-title text-fontGray;
+    }
+  }
+
+  .playIcon {
+    @apply absolute block top-[50%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer  left-1/2 text-white z-[1];
+    width: vwMobile(32);
+    @media (min-width: $desktop) {
+      width: vwDesktop(32);
+    }
+  }
+}

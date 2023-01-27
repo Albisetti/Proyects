@@ -1,0 +1,46 @@
+@import '../../../../styles/custom-styles/typography.scss';
+@import '../../../../styles/custom-styles/breakpoints.scss';
+@import '../../../../styles/custom-styles/spacing.scss';
+@import '../../../../styles/custom-styles/colors.scss';
+
+.amenitiesContentContainer {
+  @media (min-width: $tablet) {
+    max-width: vwDesktop(415);
+  }
+}
+
+.amenitiesTitle {
+  @apply text-navyBlue font-glamourn;
+  font-weight: 400;
+
+  font-size: vwMobile(32);
+  line-height: vwMobile(34);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(32);
+    line-height: vwDesktop(35.2);
+    width: vwDesktop(386);
+  }
+}
+
+.amenitiesSubtitle {
+  @apply text-copy font-monserrat font-light;
+
+  font-size: vwMobile(14);
+  line-height: vwMobile(18);
+  margin-top: vwMobile(15);
+  @media (min-width: $tablet) {
+    font-size: vwDesktop(16);
+    line-height: vwDesktop(21.2);
+    width: vwDesktop(386);
+    margin-top: vwDesktop(20);
+  }
+}
+
+.amenitiesLinkListContainer {
+  margin-top: vwMobile(10);
+  float: right;
+  @media (min-width: $tablet) {
+    margin-top: unset;
+    float: unset;
+  }
+}

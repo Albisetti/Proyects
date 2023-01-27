@@ -1,0 +1,106 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+
+.wrapper{
+    height: vwMobile(950);
+    @media (min-width: $desktop) {
+        height: auto;
+        @apply grid grid-cols-2;
+    }
+}
+
+.textLeft{
+    width: vwMobile(240);
+    margin-left: vwMobile(40);
+
+    p{
+        font-size: vwMobile(12);
+        line-height: vwMobile(16);
+        text-align: left;
+    }
+    @media (min-width: $desktop) {
+        width: vwDesktop(450);
+        margin-left: vwDesktop(160);
+        margin-top: vwDesktop(200);
+        p{
+            font-size: vwDesktop(18);
+            line-height: vwDesktop(21);
+            text-align: left;
+        }
+    }
+}
+
+.subtitle{
+    width: vwMobile(310);
+    margin-top: vwMobile(40);
+    margin-left: vwMobile(12);
+    h1{
+        font-size: vwMobile(24);
+        line-height: vwMobile(10.4);
+        text-align: center;
+        margin-bottom: vwMobile(10);
+    }
+
+    p{
+        font-size: vwMobile(12);
+        line-height: vwMobile(18.5);
+        text-align: center;
+    }
+    @media (min-width: $desktop) {
+        width: vwDesktop(460);
+        margin-left: vwDesktop(160);
+        margin-top: vwDesktop(100);
+        h1{
+            font-size: vwDesktop(40);
+            line-height: vwDesktop(14.4);
+            text-align: center;
+            margin-bottom: vwDesktop(30);
+            font-weight: bold;
+        }
+    
+        p{
+            font-size: vwDesktop(18);
+            line-height: vwDesktop(20.5);
+            text-align: center;
+        }
+    }
+}
+
+
+.textCtaWrapper{
+    position: absolute;
+    top: vwMobile(2160);
+    @apply order-last;
+    @media (min-width: $desktop) {
+        position: inherit;
+        top: auto;
+        @apply order-first;
+    }
+}
+
+.ctaModuleWrapper > *{
+    width: vwMobile(10);
+    margin-left: vwMobile(20);
+    @media (min-width: $desktop) {
+        min-width: vwDesktop(250);
+        max-width: vwDesktop(250);
+        width: vwDesktop(10);
+        max-height: vwDesktop(48);
+        margin-left: vwDesktop(260);
+        margin-top: vwDesktop(40);
+    }
+
+}
+
+.clipboard > *{
+    @apply order-first;
+    top: vwMobile(535);
+    @media (min-width: $desktop) {
+        @apply order-last;
+        left: vwDesktop(40);
+        top: vwDesktop(-70);
+    }
+}

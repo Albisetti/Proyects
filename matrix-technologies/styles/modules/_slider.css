@@ -1,0 +1,50 @@
+:root {
+  --swiper-nav-size: 1.75rem;
+  --swiper-nav-size-sm: 3rem;
+  --swiper-nav-size-md: 4.15rem;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply mt-[calc(0px-(var(--swiper-nav-size)/2))] h-[var(--swiper-nav-size)] w-[var(--swiper-nav-size)];
+  @apply sm:mt-[calc(0px-(var(--swiper-nav-size-sm)/2))] sm:h-[var(--swiper-nav-size-sm)] sm:w-[var(--swiper-nav-size-sm)];
+  @apply md:mt-[calc(0px-(var(--swiper-nav-size-md)/2))] md:h-[var(--swiper-nav-size-md)] md:w-[var(--swiper-nav-size-md)];
+
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply transition-all duration-100 hover:scale-110;
+}
+
+.swiper-button-prev {
+  @apply right-auto;
+}
+.swiper-button-next {
+  @apply left-auto;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  @apply pointer-events-none cursor-auto opacity-[0.35];
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  @apply h-full w-full bg-contain bg-no-repeat content-[''];
+}

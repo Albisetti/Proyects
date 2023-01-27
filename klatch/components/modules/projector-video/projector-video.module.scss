@@ -1,0 +1,40 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+.videoScreenWrapper {
+  @apply relative;
+  margin-top: vwDesktop(80);
+  padding: 0 vwDesktop(85);
+}
+
+.videoScreenImage {
+  @apply rotate-[0.1deg] w-full;
+
+  height: vwMobileSecondary(500);
+  image-rendering: pixelated;
+  @media (min-width: $desktop) {
+    height: vwDesktop(842);
+    image-rendering: auto;
+  }
+}
+
+.videoPreviewWrapper {
+  @apply absolute w-[79.75%] h-[82.5%];
+  top: 9%;
+  left: 9.8%;
+}
+
+.videoPreviewImage {
+  @apply w-full h-full object-cover object-center;
+}
+
+.playIcon {
+  @apply absolute block top-[50%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer  left-1/2 text-white z-[1] transition-all duration-200 hover:scale-110;
+
+  width: vwMobileSecondary(40);
+  @media (min-width: $desktop) {
+    width: vwDesktop(75);
+  }
+}

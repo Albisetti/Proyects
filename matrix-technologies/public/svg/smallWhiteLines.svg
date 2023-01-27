@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41.773" height="27.211" viewBox="0 0 41.773 27.211">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Trazado_10" data-name="Trazado 10" d="M0-10.655H41.773V-37.866H0Z" transform="translate(0 37.866)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_176" data-name="Grupo 176" transform="translate(0 37.866)">
+    <g id="Grupo_6" data-name="Grupo 6" transform="translate(0 -37.866)" clip-path="url(#clip-path)">
+      <g id="Grupo_3" data-name="Grupo 3" transform="translate(0.252 0.257)">
+        <path id="Trazado_7" data-name="Trazado 7" d="M0-10.454l27.216-26.7" transform="translate(0 37.152)" fill="#fff" stroke="#fff" stroke-width="1"/>
+      </g>
+      <g id="Grupo_4" data-name="Grupo 4" transform="translate(7.279 0.257)">
+        <path id="Trazado_8" data-name="Trazado 8" d="M0-10.454l27.216-26.7" transform="translate(0 37.152)" fill="#fff" stroke="#fff" stroke-width="1"/>
+      </g>
+      <g id="Grupo_5" data-name="Grupo 5" transform="translate(14.306 0.257)">
+        <path id="Trazado_9" data-name="Trazado 9" d="M0-10.454l27.216-26.7" transform="translate(0 37.152)" fill="#fff" stroke="#fff" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

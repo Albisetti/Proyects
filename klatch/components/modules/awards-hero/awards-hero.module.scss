@@ -1,0 +1,55 @@
+@import '../../../styles/styles/spacing.scss';
+@import '../../../styles/styles/breakpoints.scss';
+@import '../../../styles/styles/typography.scss';
+@import '../../../styles/styles/colors.scss';
+
+
+.heading {
+  margin-top: vwDesktop(82);
+  @media (min-width: $desktop) {
+    font-size: vwDesktop(120);
+    line-height: vwDesktop(120);
+  }
+}
+
+.awardsHeroWrapper {
+  position: relative;
+  height: vwDesktop(1120);
+}
+
+.goodFoodAwardImage {
+  width: vwDesktop(633);
+  top: vwDesktop(264);
+  left: vwDesktop(-73);
+  position: absolute;
+  z-index: 1;
+}
+
+.goldenBeanEspressoImage {
+  width: vwDesktop(466);
+  top: vwDesktop(524);
+  left: vwDesktop(1090);
+  position: absolute;
+  z-index: 1;
+}
+
+.coffeeReviewImage {
+  width: vwDesktop(384.61);
+  top: vwDesktop(608);
+  left: vwDesktop(293);
+  @apply rotate-[14.37deg];
+  position: absolute;
+  z-index: 2;
+}
+
+.leftImageWrapper {
+  width: vwDesktop(1310.2003);
+  position: absolute;
+  right: vwDesktop(-90);
+  top: vwDesktop(133);
+  @apply rotate-[-352deg];
+
+  .leftImage {
+    margin: vwDesktop(26);
+  }
+}
